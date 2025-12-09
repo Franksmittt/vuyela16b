@@ -18,7 +18,11 @@ import {
   Zap,
   Globe,
   Building2,
-  Route
+  Route,
+  Mail,
+  Phone,
+  UserCircle,
+  Briefcase
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRef } from 'react';
@@ -432,6 +436,199 @@ export function AboutPageContent() {
                 </motion.div>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Meet the Team Section */}
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a] relative">
+        <div className="container px-4 sm:px-6 max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 text-[#FFD700] mb-6">
+              <Users className="h-6 w-6" />
+              <span className="text-sm font-semibold uppercase tracking-wider">Our Team</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 font-poppins">
+              Meet the <span className="text-[#FFD700]">Vuyela Team</span>
+            </h2>
+            <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
+              The dedicated professionals behind our success. From directors to specialists, each team member plays a crucial role in delivering excellence.
+            </p>
+          </motion.div>
+
+          {/* Directors Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+            className="mb-16"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center font-poppins">
+              <span className="text-[#FFD700]">Directors</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {[
+                {
+                  name: 'Jaco',
+                  role: 'Director',
+                  phone: '+27 72 405 9931',
+                  email: 'jaco@vuyelalogistics.co.za',
+                  description: 'Co-founder and director, leading strategic operations and business development.',
+                },
+                {
+                  name: 'Wayne',
+                  role: 'Director',
+                  phone: '+27 73 030 9679',
+                  email: 'wayne@vuyelalogistics.co.za',
+                  description: 'Co-founder and director, overseeing daily operations and client relationships.',
+                },
+              ].map((director, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ ...springConfig, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-xl p-6 sm:p-8 border-2 border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300 relative overflow-hidden group"
+                >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 rounded-full bg-[#FFD700] flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <UserCircle className="h-12 w-12 text-[#1a1a1a]" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white mb-2 text-center font-poppins">{director.name}</h4>
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <Briefcase className="h-4 w-4 text-[#FFD700]" />
+                      <p className="text-[#FFD700] font-semibold text-sm uppercase tracking-wide">{director.role}</p>
+                    </div>
+                    <p className="text-gray-300 text-sm text-center mb-6 leading-relaxed">{director.description}</p>
+                    <div className="space-y-3 pt-6 border-t border-[#3a3a3a]">
+                      <a
+                        href={`tel:${director.phone.replace(/\s/g, '')}`}
+                        className="flex items-center justify-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors duration-200 group/item"
+                      >
+                        <Phone className="h-4 w-4 text-[#FFD700] group-hover/item:scale-110 transition-transform" />
+                        <span className="text-sm">{director.phone}</span>
+                      </a>
+                      <a
+                        href={`mailto:${director.email}`}
+                        className="flex items-center justify-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors duration-200 group/item"
+                      >
+                        <Mail className="h-4 w-4 text-[#FFD700] group-hover/item:scale-110 transition-transform" />
+                        <span className="text-sm break-all">{director.email}</span>
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Team Members Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 text-center font-poppins">
+              Our <span className="text-[#FFD700]">Team</span>
+            </h3>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {[
+                {
+                  name: 'Melissa',
+                  role: 'Accounts',
+                  phone: '+27 78 592 4123',
+                  email: 'accounts@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Verushka',
+                  role: 'Administration',
+                  phone: '+27 82 457 8760',
+                  email: 'admin@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Mala',
+                  role: 'Operations',
+                  phone: '+27 73 490 0317',
+                  email: 'mala@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Martin',
+                  role: 'Shipping',
+                  phone: '+27 67 881 8419',
+                  email: 'shipping@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Aneri',
+                  role: 'Operations',
+                  phone: '+27 82 670 9214',
+                  email: 'aneri@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Karina',
+                  role: 'Operations',
+                  phone: '+27 83 349 5467',
+                  email: 'karina.rossouw@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Mike',
+                  role: 'Operations',
+                  phone: '+27 62 848 8623',
+                  email: 'mike@vuyelalogistics.co.za',
+                },
+                {
+                  name: 'Deon',
+                  role: 'Refuel Operations',
+                  phone: '+27 67 209 0841',
+                  email: 'refuel@vuyelalogistics.co.za',
+                },
+              ].map((member, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-[#2a2a2a] rounded-xl p-6 border border-[#3a3a3a] hover:border-[#FFD700]/50 transition-all duration-300 group"
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={springConfig}
+                >
+                  <div className="w-16 h-16 rounded-full bg-[#FFD700] flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                    <UserCircle className="h-8 w-8 text-[#1a1a1a]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-2 text-center font-poppins">{member.name}</h4>
+                  <p className="text-[#FFD700] text-sm font-medium text-center mb-4">{member.role}</p>
+                  <div className="space-y-2 pt-4 border-t border-[#3a3a3a]">
+                    <a
+                      href={`tel:${member.phone.replace(/\s/g, '')}`}
+                      className="flex items-center gap-2 text-gray-400 hover:text-[#FFD700] transition-colors duration-200 text-xs group/item"
+                    >
+                      <Phone className="h-3 w-3 text-[#FFD700] flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                      <span className="truncate">{member.phone}</span>
+                    </a>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-2 text-gray-400 hover:text-[#FFD700] transition-colors duration-200 text-xs group/item"
+                    >
+                      <Mail className="h-3 w-3 text-[#FFD700] flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                      <span className="truncate break-all">{member.email}</span>
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </section>
