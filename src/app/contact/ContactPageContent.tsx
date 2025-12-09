@@ -319,6 +319,46 @@ export function ContactPageContent() {
         </div>
       </section>
 
+      {/* Google Maps Section */}
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a] relative">
+        <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">
+              Find Us on <span className="text-[#FFD700]">Google Maps</span>
+            </h2>
+            <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-2">
+              83 Main Reef Road, Elandsfontein, Germiston, 1601
+            </p>
+            <p className="text-gray-400 text-sm">By Appointment Only</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+            className="rounded-xl overflow-hidden border-2 border-[#3a3a3a] shadow-2xl"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.4366703955884!2d28.126469374627135!3d-26.207192664094386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950fdd715c9bb9%3A0x5c412433d96955f6!2sVuyela%20Logistics!5e1!3m2!1sen!2sza!4v1765304451312!5m2!1sen!2sza"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="Vuyela Logistics Location"
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* Additional Info Section */}
       <section className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a] relative">
         <div className="container px-4 sm:px-6 max-w-6xl mx-auto">

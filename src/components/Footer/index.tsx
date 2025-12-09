@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Suspense } from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { getCurrentYear } from '@/lib/date';
 
 function CurrentYear() {
@@ -118,35 +118,31 @@ export default function MainFooter() {
           {/* Contact */}
           <div>
             <h4 className="text-white font-semibold mb-4 font-poppins">Contact</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <Mail className="h-4 w-4 text-[#FFD700] flex-shrink-0 mt-1" />
+            <div className="space-y-4">
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-[#FFD700] flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    83 Main Reef Road<br />
+                    Elandsfontein<br />
+                    Germiston<br />
+                    1601
+                  </p>
+                </div>
+              </div>
+              <div className="pt-2">
+                <p className="text-gray-400 text-xs mb-3">By Appointment Only</p>
                 <a
-                  href="mailto:accounts@vuyelalogistics.co.za"
-                  className="text-gray-300 text-sm hover:text-[#FFD700] transition-colors duration-200"
+                  href="https://maps.app.goo.gl/pCWiKAZwaqEBiqhi9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#FFD700] text-sm font-medium hover:text-white transition-colors duration-200 group"
                 >
-                  accounts@vuyelalogistics.co.za
+                  Get Directions
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail className="h-4 w-4 text-[#FFD700] flex-shrink-0 mt-1" />
-                <a
-                  href="mailto:jaco@vuyelalogistics.co.za"
-                  className="text-gray-300 text-sm hover:text-[#FFD700] transition-colors duration-200"
-                >
-                  jaco@vuyelalogistics.co.za
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail className="h-4 w-4 text-[#FFD700] flex-shrink-0 mt-1" />
-                <a
-                  href="mailto:wayne@vuyelalogistics.co.za"
-                  className="text-gray-300 text-sm hover:text-[#FFD700] transition-colors duration-200"
-                >
-                  wayne@vuyelalogistics.co.za
-                </a>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
 
