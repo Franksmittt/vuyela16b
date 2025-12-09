@@ -79,22 +79,16 @@ export function ContactPageContent() {
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: 'Phone',
-      content: '+27 (0) 11 123 4567',
-      link: 'tel:+27111234567',
+      icon: MapPin,
+      title: 'Address',
+      content: '83 Main Reef Road, Elandsfontein, Germiston, 1601',
+      link: '#',
     },
     {
       icon: Mail,
-      title: 'Email',
-      content: 'info@vuyela.com',
-      link: 'mailto:info@vuyela.com',
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      content: 'Main Reef Road, Elandsfontein, Gauteng, South Africa',
-      link: '#',
+      title: 'Website',
+      content: 'www.vuyelalogistics.co.za',
+      link: 'https://www.vuyelalogistics.co.za',
     },
     {
       icon: Clock,
@@ -383,79 +377,144 @@ export function ContactPageContent() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  name: 'General Inquiries',
-                  role: 'Main Office',
-                  email: 'info@vuyela.com',
-                  phone: '+27 (0) 11 123 4567',
-                  department: 'All Services',
-                },
-                {
-                  name: 'Vuyela Bulk',
-                  role: 'Warehousing & Handling',
-                  email: 'bulk@vuyela.com',
-                  phone: '+27 (0) 11 123 4568',
-                  department: 'Bulk Operations',
-                },
-                {
-                  name: 'Vuyela Logistics',
-                  role: 'Road Freight & Transport',
-                  email: 'logistics@vuyela.com',
-                  phone: '+27 (0) 11 123 4569',
-                  department: 'Transport Operations',
-                },
-                {
-                  name: 'Vuyela Freight',
-                  role: 'Ocean Freight & Customs',
-                  email: 'freight@vuyela.com',
-                  phone: '+27 (0) 11 123 4570',
-                  department: 'Freight Forwarding',
-                },
-                {
-                  name: 'Vuyela Refuel',
-                  role: 'Energy Solutions',
-                  email: 'refuel@vuyela.com',
-                  phone: '+27 (0) 11 123 4571',
-                  department: 'Fuel Supply',
-                },
-                {
-                  name: 'Operations Manager',
-                  role: '24/7 Operations',
-                  email: 'operations@vuyela.com',
-                  phone: '+27 (0) 11 123 4572',
-                  department: 'Operations',
-                },
-              ].map((contact, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-[#2a2a2a] rounded-lg p-6 border border-[#3a3a3a] hover:border-[#FFD700]/50 transition-all duration-300"
-                  whileHover={{ y: -4 }}
-                  transition={springConfig}
-                >
-                  <h3 className="text-xl font-bold text-white mb-1 font-poppins">{contact.name}</h3>
-                  <p className="text-[#FFD700] text-sm font-medium mb-4">{contact.role}</p>
-                  <p className="text-gray-400 text-xs uppercase tracking-wide mb-4">{contact.department}</p>
-                  
-                  <div className="space-y-3">
-                    <a
-                      href={`mailto:${contact.email}`}
-                      className="flex items-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors text-sm"
-                    >
-                      <Mail className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
-                      <span className="break-all">{contact.email}</span>
-                    </a>
-                    <a
-                      href={`tel:${contact.phone.replace(/\s/g, '')}`}
-                      className="flex items-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors text-sm"
-                    >
-                      <Phone className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
-                      <span>{contact.phone}</span>
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
+            {/* Directors Section */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center font-poppins">
+                <span className="text-[#FFD700]">Directors</span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                {[
+                  {
+                    name: 'Jaco',
+                    role: 'Director',
+                    email: 'jaco@vuyelalogistics.co.za',
+                    phone: '+27 72 405 9931',
+                  },
+                  {
+                    name: 'Wayne',
+                    role: 'Director',
+                    email: 'wayne@vuyelalogistics.co.za',
+                    phone: '+27 73 030 9679',
+                  },
+                ].map((director, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ ...springConfig, delay: index * 0.1 }}
+                    className="bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-xl p-6 border-2 border-[#FFD700]/30 hover:border-[#FFD700] transition-all duration-300"
+                    whileHover={{ y: -4 }}
+                  >
+                    <h4 className="text-xl font-bold text-white mb-2 font-poppins">{director.name}</h4>
+                    <p className="text-[#FFD700] text-sm font-medium mb-4">{director.role}</p>
+                    <div className="space-y-3 pt-4 border-t border-[#3a3a3a]">
+                      <a
+                        href={`tel:${director.phone.replace(/\s/g, '')}`}
+                        className="flex items-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors text-sm"
+                      >
+                        <Phone className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
+                        <span>{director.phone}</span>
+                      </a>
+                      <a
+                        href={`mailto:${director.email}`}
+                        className="flex items-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors text-sm"
+                      >
+                        <Mail className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
+                        <span className="break-all">{director.email}</span>
+                      </a>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Team Members Section */}
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6 text-center font-poppins">
+                Our <span className="text-[#FFD700]">Team</span>
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  {
+                    name: 'Melissa',
+                    role: 'Accounts',
+                    email: 'accounts@vuyelalogistics.co.za',
+                    phone: '+27 78 592 4123',
+                  },
+                  {
+                    name: 'Verushka',
+                    role: 'Administration',
+                    email: 'admin@vuyelalogistics.co.za',
+                    phone: '+27 82 457 8760',
+                  },
+                  {
+                    name: 'Mala',
+                    role: 'Operations',
+                    email: 'mala@vuyelalogistics.co.za',
+                    phone: '+27 73 490 0317',
+                  },
+                  {
+                    name: 'Martin',
+                    role: 'Shipping',
+                    email: 'shipping@vuyelalogistics.co.za',
+                    phone: '+27 67 881 8419',
+                  },
+                  {
+                    name: 'Aneri',
+                    role: 'Operations',
+                    email: 'aneri@vuyelalogistics.co.za',
+                    phone: '+27 82 670 9214',
+                  },
+                  {
+                    name: 'Karina',
+                    role: 'Operations',
+                    email: 'karina.rossouw@vuyelalogistics.co.za',
+                    phone: '+27 83 349 5467',
+                  },
+                  {
+                    name: 'Mike',
+                    role: 'Operations',
+                    email: 'mike@vuyelalogistics.co.za',
+                    phone: '+27 62 848 8623',
+                  },
+                  {
+                    name: 'Deon',
+                    role: 'Refuel Operations',
+                    email: 'refuel@vuyelalogistics.co.za',
+                    phone: '+27 67 209 0841',
+                  },
+                ].map((member, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ ...springConfig, delay: index * 0.05 }}
+                    className="bg-[#2a2a2a] rounded-lg p-6 border border-[#3a3a3a] hover:border-[#FFD700]/50 transition-all duration-300"
+                    whileHover={{ y: -4 }}
+                  >
+                    <h4 className="text-lg font-bold text-white mb-2 font-poppins">{member.name}</h4>
+                    <p className="text-[#FFD700] text-sm font-medium mb-4">{member.role}</p>
+                    <div className="space-y-2 pt-4 border-t border-[#3a3a3a]">
+                      <a
+                        href={`tel:${member.phone.replace(/\s/g, '')}`}
+                        className="flex items-center gap-2 text-gray-300 hover:text-[#FFD700] transition-colors text-xs"
+                      >
+                        <Phone className="h-3 w-3 text-[#FFD700] flex-shrink-0" />
+                        <span className="truncate">{member.phone}</span>
+                      </a>
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="flex items-center gap-2 text-gray-300 hover:text-[#FFD700] transition-colors text-xs"
+                      >
+                        <Mail className="h-3 w-3 text-[#FFD700] flex-shrink-0" />
+                        <span className="truncate break-all">{member.email}</span>
+                      </a>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
