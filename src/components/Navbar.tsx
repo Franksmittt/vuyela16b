@@ -106,11 +106,13 @@ export default function MainNavbar() {
           type="button"
           className="md:hidden text-white hover:text-[#FFD700] transition-colors duration-200"
           onClick={handleToggle}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? (
-            <X className="h-6 w-6" />
+            <X className="h-6 w-6" aria-hidden="true" />
           ) : (
-            <Menu className="h-6 w-6" />
+            <Menu className="h-6 w-6" aria-hidden="true" />
           )}
         </button>
 

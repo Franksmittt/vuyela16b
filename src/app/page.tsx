@@ -134,7 +134,7 @@ export default function Home() {
             {...fadeIn}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-poppins text-[#1a1a1a]">
-              Our <span className="text-[#FFD700]">Services</span>
+              Our <span className="text-[#B8860B]">Services</span>
             </h2>
             <p className="max-w-2xl text-gray-600 text-lg">
               Comprehensive logistics solutions across four specialized divisions
