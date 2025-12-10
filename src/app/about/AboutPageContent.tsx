@@ -575,7 +575,7 @@ export function AboutPageContent() {
                 },
                 {
                   name: 'Aneri',
-                  role: 'Operations',
+                  role: 'HR',
                   phone: '+27 82 670 9214',
                   email: 'aneri@vuyelalogistics.co.za',
                 },

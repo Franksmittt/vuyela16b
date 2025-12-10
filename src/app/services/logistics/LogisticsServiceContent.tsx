@@ -64,7 +64,7 @@ export function LogisticsServiceContent() {
     {
       icon: MapPin,
       title: 'Nationwide Coverage',
-      description: 'Reliable transport solutions across South Africa and SADC regions.',
+      description: 'Reliable transport solutions across South Africa.',
     },
     {
       icon: Clock,
@@ -86,9 +86,9 @@ export function LogisticsServiceContent() {
 
   const capabilities = [
     'Single Container Movement',
-    'Full Train Load Services',
     'Point A to Point B Transport',
-    'Cross-Border (SADC) Logistics',
+    'Breakbulk Transport (Coils, Containers)',
+    'Collections & Deliveries',
     'Time-Sensitive Deliveries',
     'Flexible Scheduling',
   ];
@@ -123,9 +123,9 @@ export function LogisticsServiceContent() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed mb-8"
             >
-              Own fleet operations with 24/7 monitoring. Container logistics, intermodal solutions, 
-              and reliable transport across South Africa. We move containers daily to and from 
-              South Africa's major ports with speed and efficiency.
+              Own fleet operations with 24/7 monitoring. Specializing in breakbulk transport including 
+              coils, containers, and other cargo. We provide collections and deliveries across South Africa, 
+              moving containers daily to and from South Africa's major ports with speed and efficiency.
             </motion.p>
 
             <motion.div

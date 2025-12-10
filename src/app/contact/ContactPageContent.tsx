@@ -502,7 +502,7 @@ export function ContactPageContent() {
                   },
                   {
                     name: 'Aneri',
-                    role: 'Operations',
+                    role: 'HR',
                     email: 'aneri@vuyelalogistics.co.za',
                     phone: '+27 82 670 9214',
                   },

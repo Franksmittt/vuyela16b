@@ -54,7 +54,7 @@ export function FreightServiceContent() {
     {
       icon: ShieldCheck,
       title: 'Customs Expertise',
-      description: 'Border clearance in/out of South Africa and over border (SADC) destinations, acquittals, and documentation.',
+      description: 'Border clearance in/out of South Africa and over border destinations, acquittals, and documentation.',
     },
     {
       icon: FileText,
@@ -80,7 +80,6 @@ export function FreightServiceContent() {
     'Customs Clearing & Forwarding',
     'Border Clearance Services',
     'Documentation & Acquittals',
-    'SADC Destination Services',
     'Freight Booking Services',
   ];
 

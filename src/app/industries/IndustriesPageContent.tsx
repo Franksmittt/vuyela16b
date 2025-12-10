@@ -67,12 +67,12 @@ export function IndustriesPageContent() {
         'Grain & Cereals',
         'Fresh Produce',
         'Agricultural Inputs',
+        'Fertilizers',
         'Bagged Cargo',
       ],
       services: [
         'Flexible transport solutions',
         'Seasonal demand management',
-        'Temperature-controlled options',
         'Reliable supply chain partners',
         'Time-sensitive deliveries',
       ],
