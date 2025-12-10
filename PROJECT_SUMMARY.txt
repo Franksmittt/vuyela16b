@@ -72,89 +72,70 @@ Team:
 PAGES & ROUTES
 ================================================================================
 1. Home Page (/)
-   - Hero section with background image
-   - Services overview (4 divisions)
-   - About Vuyela Group section
-   - Industries We Serve section
-   - Vision & Mission section
-   - Why Choose Vuyela section
-   - Trust benefits slider
+   Main landing page showcasing Vuyela Group's services, company story, and value 
+   propositions. Features hero section, services overview, company introduction, 
+   industries served, vision & mission, and trust indicators.
 
 2. About Us (/about)
-   - Company story and journey
-   - Timeline (2019-2024 milestones)
-   - Core Values section
-   - Vision & Mission
-   - Stats (60+ professionals, 24/7 operations, etc.)
-   - Meet the Team section (Directors + 8 team members)
-   - CTA section
+   Company history and culture page. Tells the story from a single truck in 2019 to 
+   a new generation logistics company. Includes timeline, core values, vision & mission, 
+   company stats, and complete team directory with contact information.
 
 3. Services (/services)
-   - Overview of all 4 service divisions
-   - Detailed service cards with features
-   - Links to individual service pages
+   Overview page of all four service divisions (Bulk, Logistics, Freight, Refuel). 
+   Provides quick access to detailed information about each service offering with 
+   feature highlights and links to individual service pages.
 
 4. Vuyela Bulk (/services/bulk)
-   - Warehousing & Handling services
-   - Features: SARS Bonded, SOLAS Certified, etc.
-   - Services offered list
-   - Commodities handled
+   Detailed page for warehousing and bulk handling services. Highlights SARS Bonded 
+   Warehouse, SOLAS certified weighbridges, stockpiling, containerization, and bagging 
+   facilities. Lists services and commodities handled.
 
 5. Vuyela Logistics (/services/logistics)
-   - Road Freight & Transport
-   - Breakbulk transport (coils, containers)
-   - Collections & Deliveries
-   - Own fleet operations
-   - Capabilities and services
+   Road freight and transport services page. Focuses on own fleet operations, breakbulk 
+   transport (coils, containers), collections and deliveries, container logistics, and 
+   nationwide coverage across South Africa.
 
 6. Vuyela Freight (/services/freight)
-   - Ocean Freight & Customs
-   - Customs clearing services
-   - Border clearance
-   - Services offered
+   Ocean freight forwarding and customs clearing services. Details strategic shipping 
+   partnerships, customs expertise, border clearance, documentation services, and 
+   global freight management capabilities.
 
 7. Vuyela Refuel (/services/refuel)
-   - Energy Solutions
-   - 50ppm Diesel Supply
-   - Quality testing protocols
+   Energy solutions page featuring premium 50ppm diesel supply. Highlights quality 
+   assurance testing, storage capacity, pumping stations, and the "Pregnancy Test" 
+   protocol for fuel purity.
 
 8. Industries (/industries)
-   - Mining Logistics section
-   - Agricultural Logistics section
-   - Key commodities for each
-   - Services for each industry
+   Industry-specific logistics solutions page. Covers Mining Logistics (ores, minerals) 
+   and Agricultural Logistics (grain, produce, fertilizers). Shows key commodities 
+   and specialized services for each industry sector.
 
 9. Facilities (/facilities)
-   - Facility features and certifications
-   - SOLAS Certified Weighbridges
-   - SARS Bonded Warehouse
-   - CCTV Coverage
-   - Infrastructure details
+   Infrastructure and facility showcase page. Details the Elandsfontein facility including 
+   SOLAS certified weighbridges, SARS Bonded Warehouse, full yard camera coverage, 
+   containerization capabilities, and security features.
 
 10. The Vuyela Network (/network)
-    - Strategic partnerships
-    - TFR partnerships
-    - Shipping line partnerships
-    - Network capabilities
+    Strategic partnerships and network capabilities page. Highlights relationships with 
+    TFR, shipping agents, road freight companies, and other logistics partners that 
+    enable comprehensive service delivery.
 
 11. Contact (/contact)
-    - Contact form
-    - Contact information section
-    - Team contact details (Directors + Team)
-    - Google Maps embed
-    - Address: 83 Main Reef Road, Elandsfontein, Germiston, 1601
-    - "By Appointment Only" notice
+    Contact and inquiry page with contact form, company address, team contact directory, 
+    and embedded Google Maps. Includes "By Appointment Only" notice and location details 
+    for the Elandsfontein facility.
 
 12. Dashboard (/dashboard)
-    - User dashboard (placeholder)
-    - Settings page (/dashboard/settings)
+    User dashboard placeholder page with basic navigation structure. Includes settings 
+    page for future user account management features.
 
 13. Posts (/posts)
-    - Blog posts listing page
-    - Search and filter functionality
+    Blog/news posts listing page with search and filter functionality. Designed for 
+    future content marketing and company news updates.
 
 14. API Routes
-    - /api/posts - Dynamic API route for posts
+    - /api/posts - Dynamic API route for blog posts data
 
 COMPONENTS
 ================================================================================
