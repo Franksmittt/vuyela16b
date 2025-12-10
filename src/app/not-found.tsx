@@ -5,15 +5,7 @@ import { AlertTriangle, ArrowLeft, Home } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-const NotFound = ({ error }: any) => {
-  useEffect(() => {
-    if (error) console.error(error);
-  }, [error]);
-
-  return <NotFoundContent />;
-};
-
-const NotFoundContent = () => {
+export default function NotFound() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [particles] = useState(() =>
@@ -165,6 +157,4 @@ const NotFoundContent = () => {
       </motion.div>
     </div>
   );
-};
-
-export default NotFound;
+}
