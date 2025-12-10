@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Fuel, 
@@ -225,7 +226,7 @@ export function RefuelServiceContent() {
               <h3 className="text-2xl font-bold text-white mb-6 font-poppins">
                 Quality <span className="text-[#FFD700]">Testing</span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-6">
                 {qualityChecks.map((check, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <ShieldCheck className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
@@ -233,6 +234,22 @@ export function RefuelServiceContent() {
                   </li>
                 ))}
               </ul>
+              {/* AI Prompt Goal: Lab Testing/Pump - Image showing fuel quality testing in lab or at pump station */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative w-full h-64 rounded-lg overflow-hidden"
+              >
+                <Image
+                  src="https://placehold.co/400x400/111111/D4AF37?text=Lab+Testing%2FPump"
+                  alt="Fuel quality testing"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>

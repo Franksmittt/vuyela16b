@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Ship, 
@@ -190,6 +191,22 @@ export function FreightServiceContent() {
               </motion.div>
             ))}
           </motion.div>
+          {/* AI Prompt Goal: Durban Port Ship - Wide image showing ships at Durban port with containers */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full max-w-4xl mx-auto h-64 md:h-96 mt-12 rounded-lg overflow-hidden"
+          >
+            <Image
+              src="https://placehold.co/1000x500/111111/D4AF37?text=Durban+Port+Ship"
+              alt="Durban port shipping operations"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1000px"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -208,7 +225,7 @@ export function FreightServiceContent() {
               <h3 className="text-2xl font-bold text-white mb-6 font-poppins">
                 Services <span className="text-[#FFD700]">Offered</span>
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-6">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
@@ -216,6 +233,22 @@ export function FreightServiceContent() {
                   </li>
                 ))}
               </ul>
+              {/* AI Prompt Goal: SA Border Map - Image showing South African border map with clearance points */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative w-full h-48 rounded-lg overflow-hidden"
+              >
+                <Image
+                  src="https://placehold.co/400x300/111111/D4AF37?text=SA+Border+Map"
+                  alt="South African border clearance map"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Benefits */}

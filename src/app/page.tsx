@@ -23,6 +23,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           {/* Hero Background Image */}
+          {/* AI Prompt Goal: Hero Truck Dusk - Full-width hero image showing Vuyela truck at dusk/sunset */}
           <div className="absolute inset-0">
             <Image
               src="/images/hero_1.jpg"
@@ -186,6 +187,32 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
+                {/* Service thumbnail image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                  className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={
+                      service.title === 'Vuyela Bulk' 
+                        ? '/images/Gemini_Generated_Image_wa7qvewa7qvewa7q.png'
+                        : service.title === 'Vuyela Logistics'
+                        ? '/images/Gemini_Generated_Image_zcvciizcvciizcvc.png'
+                        : service.title === 'Vuyela Refuel'
+                        ? '/images/Gemini_Generated_Image_k7jw5hk7jw5hk7jw.png'
+                        : service.title === 'Vuyela Freight'
+                        ? '/images/Gemini_Generated_Image_j5eynmj5eynmj5ey.png'
+                        : `https://placehold.co/300x200/111111/D4AF37?text=${encodeURIComponent(service.title)}`
+                    }
+                    alt={`${service.title} service`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
                 <div className={`${service.color} w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="h-8 w-8 text-[#1a1a1a]" />
                 </div>
@@ -237,19 +264,39 @@ export default function Home() {
                   Built on the Road,{' '}
                   <span className="text-[#FFD700]">Defined by Excellence</span>
                 </h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  The Vuyela story is one of resilience and deliberate growth. We commenced operations with a single truck, transporting commodities for a leading South African mining contractor. That single vehicle represented a promise—a commitment to reliability that formed the bedrock of our company culture.
-                </p>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  Today, Vuyela Group is a "new generation logistics company" with over 60 dedicated professionals and a strong operational presence in Elandsfontein. We don't just move cargo; we provide lasting solutions to the South African transport market, ensuring that whether you are moving chrome, manganese, or general freight, you are partnered with a team that treats your business as their own.
-                </p>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link mb-12"
-                >
-                  Learn More About Us
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-8">
+                  <div>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                      The Vuyela story is one of resilience and deliberate growth. We commenced operations with a single truck, transporting commodities for a leading South African mining contractor. That single vehicle represented a promise—a commitment to reliability that formed the bedrock of our company culture.
+                    </p>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                      Today, Vuyela Group is a "new generation logistics company" with over 60 dedicated professionals and a strong operational presence in Elandsfontein. We don't just move cargo; we provide lasting solutions to the South African transport market, ensuring that whether you are moving chrome, manganese, or general freight, you are partnered with a team that treats your business as their own.
+                    </p>
+                    <Link
+                      href="/about"
+                      className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link mb-12"
+                    >
+                      Learn More About Us
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                  {/* Elandsfontein facility aerial view */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden"
+                  >
+                    <Image
+                      src="/images/Gemini_Generated_Image_a7w2wpa7w2wpa7w2.png"
+                      alt="Elandsfontein facility aerial view"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </motion.div>
+                </div>
               </div>
               
               {/* Stats Grid - 1 row, 4 columns */}

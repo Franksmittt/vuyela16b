@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Mail, 
@@ -317,6 +318,26 @@ export function ContactPageContent() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Facility Entrance Image */}
+      {/* AI Prompt Goal: Facility Entrance - Image showing the entrance to the Vuyela facility at 83 Main Reef Road */}
+      <section className="w-full py-0 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative w-full max-w-4xl mx-auto h-64 md:h-96 mb-12"
+        >
+          <Image
+            src="https://placehold.co/800x400/111111/D4AF37?text=Facility+Entrance"
+            alt="Vuyela facility entrance"
+            fill
+            className="object-cover rounded-lg"
+            sizes="(max-width: 1024px) 100vw, 800px"
+          />
+        </motion.div>
       </section>
 
       {/* Google Maps Section */}

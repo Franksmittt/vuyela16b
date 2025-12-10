@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Globe,
@@ -124,7 +125,7 @@ export function NetworkPageContent() {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
             >
               Strategic partnerships and relationships that power our logistics network. 
               Strong connections with TFR, shipping agents, road freight companies, and global partners 
@@ -132,6 +133,26 @@ export function NetworkPageContent() {
             </motion.p>
           </motion.div>
         </div>
+      </section>
+
+      {/* Network Infographic */}
+      {/* Logistics Network Web - Large infographic showing Vuyela's logistics network with connections */}
+      <section className="w-full py-0 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative w-full max-w-4xl mx-auto h-64 md:h-96"
+        >
+          <Image
+            src="/images/Gemini_Generated_Image_hjidjyhjidjyhjid.png"
+            alt="Vuyela logistics network infographic"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 800px"
+          />
+        </motion.div>
       </section>
 
       {/* Network Overview Section */}

@@ -169,6 +169,22 @@ export function ServicesPageContent() {
                   whileHover={{ y: -4 }}
                   transition={springConfig}
                 >
+                  {/* AI Prompt Goal: Icon {service.title} - Square icon/thumbnail representing the service division */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
+                  >
+                    <Image
+                      src={`https://placehold.co/200x200/111111/D4AF37?text=Icon+${encodeURIComponent(service.title)}`}
+                      alt={`${service.title} icon`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </motion.div>
                   <div className={`${service.color} w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="h-8 w-8 text-[#1a1a1a]" />
                   </div>

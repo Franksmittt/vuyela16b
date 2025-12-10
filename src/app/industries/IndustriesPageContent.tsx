@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Warehouse, 
@@ -133,6 +134,22 @@ export function IndustriesPageContent() {
                 whileHover={{ y: -4 }}
                 transition={springConfig}
               >
+                {/* AI Prompt Goal: Header image for {industry.title} - {industry.title === 'Mining Logistics' ? 'Ore Stockpiles' : 'Grain Silos'} */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={`https://placehold.co/600x300/111111/D4AF37?text=${encodeURIComponent(industry.title === 'Mining Logistics' ? 'Ore Stockpiles' : 'Grain Silos')}`}
+                    alt={`${industry.title} header image`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
                     <industry.icon className="h-6 w-6 text-[#1a1a1a]" />

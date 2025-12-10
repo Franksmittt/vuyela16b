@@ -25,9 +25,10 @@ import {
   Briefcase
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRef } from 'react';
 
-export function AboutPageContent() {
+export default function AboutPageContent() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Premium spring configuration - Critically Damped
@@ -254,6 +255,23 @@ export function AboutPageContent() {
             </p>
           </motion.div>
 
+          {/* Timeline Graphic - Visual timeline graphic showing company growth from 2019-2024 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full h-64 md:h-96 mb-12 rounded-lg overflow-hidden"
+          >
+            <Image
+              src="/images/Gemini_Generated_Image_z73zn9z73zn9z73z.png"
+              alt="Company timeline graphic"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </motion.div>
+
           <div className="relative">
             {/* Vertical timeline line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#2a2a2a]" />
@@ -348,7 +366,17 @@ export function AboutPageContent() {
 
       {/* Vision & Mission Section */}
       <section className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a] relative">
-        <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
+        {/* AI Prompt Goal: Global Map Dark - Dark themed world map showing global logistics network */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://placehold.co/1920x600/111111/D4AF37?text=Global+Map+Dark"
+            alt="Global logistics network map"
+            fill
+            className="object-cover opacity-20"
+            sizes="100vw"
+          />
+        </div>
+        <div className="container px-4 sm:px-6 max-w-6xl mx-auto relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"

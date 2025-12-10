@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Truck, 
@@ -95,6 +96,20 @@ export function LogisticsServiceContent() {
 
   return (
     <div className="flex flex-col w-full overflow-hidden bg-[#1a1a1a]">
+      {/* Hero Banner Image */}
+      {/* AI Prompt Goal: Branded Fleet Road - Banner image showing Vuyela branded trucks on the road */}
+      <section className="relative w-full h-64 md:h-96">
+        <Image
+          src="https://placehold.co/1920x600/111111/D4AF37?text=Branded+Fleet+Road"
+          alt="Vuyela fleet on the road"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#1a1a1a]/60" />
+      </section>
+
       {/* Hero Section */}
       <section className="relative w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]">
         <div className="container px-4 sm:px-6 max-w-5xl mx-auto">
@@ -119,14 +134,29 @@ export function LogisticsServiceContent() {
               <span className="text-[#FFD700]">Transport</span>
             </motion.h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed mb-8"
-            >
-              Own fleet operations with 24/7 monitoring. Specializing in breakbulk transport including 
-              coils, containers, and other cargo. We provide collections and deliveries across South Africa, 
-              moving containers daily to and from South Africa's major ports with speed and efficiency.
-            </motion.p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mb-8">
+              <motion.p
+                variants={itemVariants}
+                className="text-lg sm:text-xl text-gray-300 leading-relaxed"
+              >
+                Own fleet operations with 24/7 monitoring. Specializing in breakbulk transport including 
+                coils, containers, and other cargo. We provide collections and deliveries across South Africa, 
+                moving containers daily to and from South Africa's major ports with speed and efficiency.
+              </motion.p>
+              {/* AI Prompt Goal: Coil Transport - Image showing coils being transported on a truck */}
+              <motion.div
+                variants={itemVariants}
+                className="relative w-full h-48 md:h-64 rounded-lg overflow-hidden"
+              >
+                <Image
+                  src="https://placehold.co/400x300/111111/D4AF37?text=Coil+Transport"
+                  alt="Coil transport operations"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </motion.div>
+            </div>
 
             <motion.div
               variants={itemVariants}

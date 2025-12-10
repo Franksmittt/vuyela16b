@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   ShieldCheck,
@@ -235,6 +236,26 @@ export function FacilitiesPageContent() {
   return (
     <div className="flex flex-col w-full overflow-hidden bg-[#1a1a1a]">
       {/* Hero Section */}
+      {/* Facility Aerial Security - Large hero image showing aerial view of facility with security features visible */}
+      <section className="relative w-full py-0">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative w-full h-64 md:h-96"
+        >
+          <Image
+            src="/images/Gemini_Generated_Image_yong6oyong6oyong.png"
+            alt="Vuyela facility aerial view"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-[#1a1a1a]/60" />
+        </motion.div>
+      </section>
       <section className="relative w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]">
         <div className="container px-4 sm:px-6 max-w-5xl mx-auto text-center">
           <motion.div

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
   ArrowRight, 
   Warehouse, 
@@ -191,6 +192,47 @@ export function BulkServiceContent() {
                 <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{feature.description}</p>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Images Grid Section */}
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a] relative">
+        <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            {/* Loading Bags - Image showing bagging operations with workers loading bags */}
+            <motion.div
+              variants={itemVariants}
+              className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden"
+            >
+              <Image
+                src="/images/Gemini_Generated_Image_umq2vsumq2vsumq2.png"
+                alt="Bagging operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+
+            {/* Weighbridge Action - Image showing weighbridge operations with trucks and containers */}
+            <motion.div
+              variants={itemVariants}
+              className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden"
+            >
+              <Image
+                src="/images/Gemini_Generated_Image_jjm28ajjm28ajjm2.png"
+                alt="Weighbridge operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </section>
