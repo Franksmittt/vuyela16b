@@ -1,0 +1,353 @@
+================================================================================
+                    VUYELA GROUP - PROJECT SUMMARY
+================================================================================
+
+PROJECT OVERVIEW
+================================================================================
+Project Name: Vuyela Group Website
+Framework: Next.js 16.0.7 (React 19.2.1)
+TypeScript: Yes
+Build Tool: Turbopack
+Deployment: Vercel-ready
+Status: Production-ready
+
+COMPANY INFORMATION
+================================================================================
+Company: Vuyela Group
+Industry: Logistics & Supply Chain Solutions
+Location: 83 Main Reef Road, Elandsfontein, Germiston, 1601, South Africa
+Website: www.vuyelalogistics.co.za
+Tagline: "Locally Invested. Globally Connected."
+
+About Vuyela Group:
+- Founded in 2019, started with a single truck
+- Now a "new generation logistics company" with 60+ dedicated professionals
+- Premier logistics solutions from Elandsfontein, South Africa
+- Specializes in precision logistics, bulk handling, and energy solutions
+- 24/7 operations with own fleet
+- SOLAS Certified, NOSA Safety Standards, SARS Bonded Warehouse
+
+BUSINESS DIVISIONS
+================================================================================
+1. Vuyela Bulk
+   - Warehousing & Handling
+   - SARS Bonded Warehouse
+   - SOLAS Certified Weighbridges
+   - Stockpiling & Containerization
+
+2. Vuyela Logistics
+   - Road Freight & Transport
+   - Own Fleet Operations
+   - Breakbulk Transport (Coils, Containers)
+   - Collections & Deliveries
+   - Container Logistics
+
+3. Vuyela Freight
+   - Ocean Freight & Customs
+   - Freight Forwarding
+   - Customs Clearing
+   - Border Clearance Services
+
+4. Vuyela Refuel
+   - Energy Solutions
+   - Premium 50ppm Diesel Supply
+   - Quality Assurance Testing
+
+TEAM MEMBERS
+================================================================================
+Directors:
+- Jaco (Director) - jaco@vuyelalogistics.co.za - +27 72 405 9931
+- Wayne (Director) - wayne@vuyelalogistics.co.za - +27 73 030 9679
+
+Team:
+- Melissa (Accounts) - accounts@vuyelalogistics.co.za - +27 78 592 4123
+- Verushka (Administration) - admin@vuyelalogistics.co.za - +27 82 457 8760
+- Mala (Operations) - mala@vuyelalogistics.co.za - +27 73 490 0317
+- Martin (Shipping) - shipping@vuyelalogistics.co.za - +27 67 881 8419
+- Aneri (HR) - aneri@vuyelalogistics.co.za - +27 82 670 9214
+- Karina (Operations) - karina.rossouw@vuyelalogistics.co.za - +27 83 349 5467
+- Mike (Operations) - mike@vuyelalogistics.co.za - +27 62 848 8623
+- Deon (Refuel Operations) - refuel@vuyelalogistics.co.za - +27 67 209 0841
+
+PAGES & ROUTES
+================================================================================
+1. Home Page (/)
+   - Hero section with background image
+   - Services overview (4 divisions)
+   - About Vuyela Group section
+   - Industries We Serve section
+   - Vision & Mission section
+   - Why Choose Vuyela section
+   - Trust benefits slider
+
+2. About Us (/about)
+   - Company story and journey
+   - Timeline (2019-2024 milestones)
+   - Core Values section
+   - Vision & Mission
+   - Stats (60+ professionals, 24/7 operations, etc.)
+   - Meet the Team section (Directors + 8 team members)
+   - CTA section
+
+3. Services (/services)
+   - Overview of all 4 service divisions
+   - Detailed service cards with features
+   - Links to individual service pages
+
+4. Vuyela Bulk (/services/bulk)
+   - Warehousing & Handling services
+   - Features: SARS Bonded, SOLAS Certified, etc.
+   - Services offered list
+   - Commodities handled
+
+5. Vuyela Logistics (/services/logistics)
+   - Road Freight & Transport
+   - Breakbulk transport (coils, containers)
+   - Collections & Deliveries
+   - Own fleet operations
+   - Capabilities and services
+
+6. Vuyela Freight (/services/freight)
+   - Ocean Freight & Customs
+   - Customs clearing services
+   - Border clearance
+   - Services offered
+
+7. Vuyela Refuel (/services/refuel)
+   - Energy Solutions
+   - 50ppm Diesel Supply
+   - Quality testing protocols
+
+8. Industries (/industries)
+   - Mining Logistics section
+   - Agricultural Logistics section
+   - Key commodities for each
+   - Services for each industry
+
+9. Facilities (/facilities)
+   - Facility features and certifications
+   - SOLAS Certified Weighbridges
+   - SARS Bonded Warehouse
+   - CCTV Coverage
+   - Infrastructure details
+
+10. The Vuyela Network (/network)
+    - Strategic partnerships
+    - TFR partnerships
+    - Shipping line partnerships
+    - Network capabilities
+
+11. Contact (/contact)
+    - Contact form
+    - Contact information section
+    - Team contact details (Directors + Team)
+    - Google Maps embed
+    - Address: 83 Main Reef Road, Elandsfontein, Germiston, 1601
+    - "By Appointment Only" notice
+
+12. Dashboard (/dashboard)
+    - User dashboard (placeholder)
+    - Settings page (/dashboard/settings)
+
+13. Posts (/posts)
+    - Blog posts listing page
+    - Search and filter functionality
+
+14. API Routes
+    - /api/posts - Dynamic API route for posts
+
+COMPONENTS
+================================================================================
+Navigation:
+- MainNavbar.tsx - Sticky header with mobile menu, services dropdown
+- Footer/index.tsx - Footer with company info, links, contact details
+
+UI Components:
+- Header/index.tsx - Alternative header component
+- PostCard.tsx - Blog post card component
+- ThemeToggle.tsx - Dark/light theme toggle
+- PreloadFonts/ - Font preloading component
+
+Form Components:
+- inputs/index.tsx - Input components
+
+UI Library (shadcn-style):
+- ui/badge.tsx
+- ui/button.tsx
+- ui/input.tsx
+- ui/skeleton.tsx
+
+Providers:
+- providers/query.tsx - TanStack Query provider
+- providers/theme.tsx - Theme provider (next-themes)
+- providers/ToasterProvider.tsx - Toast notifications
+
+Layouts:
+- layouts/ErrorLayout/ - Error page layout
+
+DESIGN SYSTEM
+================================================================================
+Color Palette:
+- Primary Background: #1a1a1a (Dark)
+- Secondary Background: #2a2a2a (Medium Dark)
+- Tertiary Background: #3a3a3a (Lighter Dark)
+- Accent Gold: #FFD700 (Primary brand color)
+- Text Primary: White (#FFFFFF)
+- Text Secondary: Gray-300 (#D1D5DB)
+- Text Muted: Gray-400 (#9CA3AF)
+- Light Background: White (#FFFFFF) for alternating sections
+
+Typography:
+- Primary Font: Inter (--font-inter)
+- Display Font: Poppins (--font-poppins)
+- Font weights: 400, 500, 600, 700
+
+Layout:
+- Container: max-w-full with responsive padding (px-4 sm:px-6)
+- Sections: py-12 sm:py-16 md:py-20
+- Responsive breakpoints: sm (640px), md (768px), lg (1024px)
+- Grid layouts: 1 column mobile, 2 columns tablet, 3-4 columns desktop
+
+Styling Approach:
+- Tailwind CSS v4 with canonical syntax
+- Custom CSS variables for theming
+- Dark theme optimized
+- Light/dark mode support via next-themes
+
+Animations:
+- Framer Motion for page transitions
+- Spring animations (stiffness: 400, damping: 25)
+- Staggered animations for lists
+- Hover effects and transitions
+
+FEATURES
+================================================================================
+- Fully responsive design (mobile-first)
+- SEO optimized (meta tags, OpenGraph, Twitter cards)
+- Accessibility compliant (ARIA labels, semantic HTML)
+- Performance optimized (Next.js Image, lazy loading)
+- Modern image formats (AVIF, WebP)
+- Fast page loads (fetchPriority for LCP)
+- Smooth animations and transitions
+- Contact form with validation
+- Google Maps integration
+- Team directory with contact info
+- Service pages with detailed information
+- Industry-specific content
+
+TECHNICAL STACK
+================================================================================
+Core:
+- Next.js 16.0.7 (App Router)
+- React 19.2.1
+- TypeScript 5.8.3
+- Node.js >= 22.0.0
+
+Styling:
+- Tailwind CSS 4.1.4
+- PostCSS 8.5.3
+- Custom CSS variables
+
+UI Libraries:
+- Framer Motion 12.7.4 (animations)
+- Lucide React 0.553.0 (icons)
+- React Hot Toast 2.4.1 (notifications)
+- next-themes 0.4.6 (theme management)
+
+Data Fetching:
+- TanStack Query 5.90.8
+- Axios 1.8.2
+
+Forms:
+- React Hook Form 7.53.1
+
+Development Tools:
+- ESLint 9.39.1
+- Prettier 3.3.3
+- Husky 9.1.6 (Git hooks)
+- Commitlint 19.5.0
+- TypeScript strict mode
+
+BUILD & DEPLOYMENT
+================================================================================
+Build Command: npm run build
+Dev Command: npm run dev
+Start Command: npm run start
+
+Build Output:
+- 17 pages generated
+- Static pages: 16
+- Dynamic API routes: 1
+- Optimized for production
+
+Deployment:
+- Platform: Vercel
+- Configuration: vercel.json included
+- Security: React2Shell patched (Next.js 16.0.7)
+- Performance: Optimized images, modern formats
+
+PERFORMANCE OPTIMIZATIONS
+================================================================================
+- Hero image with fetchPriority="high" and quality=85
+- AVIF and WebP image formats enabled
+- ES2020 target (reduced legacy JavaScript)
+- Compression enabled
+- Code splitting and lazy loading
+- Optimized fonts (display: swap)
+- Removed console logs in production
+
+ACCESSIBILITY
+================================================================================
+- Semantic HTML structure
+- ARIA labels on interactive elements
+- Keyboard navigation support
+- Screen reader friendly
+- Sufficient color contrast ratios
+- Descriptive link text
+- Accessible form labels
+
+SEO FEATURES
+================================================================================
+- Comprehensive meta tags
+- OpenGraph tags
+- Twitter Card metadata
+- Structured data ready
+- Semantic HTML
+- Descriptive alt text for images
+- Optimized page titles and descriptions
+
+CONTENT HIGHLIGHTS
+================================================================================
+Industries Served:
+- Mining Logistics (Chrome, Manganese, Iron Ore, Coal, Ferroalloys)
+- Agricultural Logistics (Grain, Fresh Produce, Fertilizers, Agricultural Inputs)
+
+Key Services:
+- Container logistics and intermodal solutions
+- Breakbulk transport (coils, containers)
+- Collections and deliveries
+- Customs clearing and forwarding
+- Ocean freight management
+- Warehousing and stockpiling
+- Energy solutions (diesel supply)
+
+Certifications & Standards:
+- SOLAS Certified Weighbridges
+- NOSA Safety Standards
+- SARS Bonded Warehouse
+- Full Yard Camera Coverage
+
+NOTES
+================================================================================
+- All SADC references have been removed from the website
+- Contact information updated with correct team roles
+- Google Maps integration added to contact page
+- Footer updated with address and "By Appointment Only" notice
+- Performance optimizations applied
+- Accessibility improvements implemented
+- All pages tested and verified
+
+================================================================================
+                    END OF PROJECT SUMMARY
+================================================================================
+
