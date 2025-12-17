@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Details Collector</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .image-preview {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            background-color: #e2e8f0;
+        }
+        /* Fallback for broken images to make them look decent */
+        img[alt]:after {  
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f1f5f9;
+            font-family: 'Helvetica';
+            font-weight: 300;
+            line-height: 2;  
+            text-align: center;
+            content: "Image not found: " attr(alt);
+            color: #64748b;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen font-sans">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Staff Data Entry</h1>
+                <p class="text-sm text-slate-500">Auto-saves to browser storage as you type.</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="clearData()" class="px-4 py-2 text-sm font-medium text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors">
+                    Reset All
+                </button>
+                <button onclick="exportData()" class="flex items-center gap-2 px-6 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                    </svg>
+                    Export JSON
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div id="staff-container" class="grid grid-cols-1 gap-8">
+            <!-- Cards will be injected here via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200 mt-12 py-8 text-center text-slate-500 text-sm">
+        <p>Generated for Vuyela16 Staff Management.</p>
+    </footer>
+
+    <script>
+        // List of files provided by user
+        const staffFiles = [
+            "wayne.jpg",
+            "alan.jpg",
+            "Aneri.jpg",
+            "deon.jpg",
+            "office1.png",
+            "office1a.png",
+            "Jaco.jpg",
+            "shine.jpg",
+            "ukn01.jpg",
+            "ukn02.jpg",
+            "sipho.png"
+        ];
+
+        // Unique ID for local storage to prevent conflicts with other apps
+        const STORAGE_KEY = 'vuyela_staff_data_v1';
+
+        // Load existing data from localStorage or initialize empty object
+        let staffData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+
+        // Initialize data structure if new files added
+        staffFiles.forEach(file => {
+            if (!staffData[file]) {
+                staffData[file] = {
+                    filename: file,
+                    name: "",
+                    surname: "",
+                    contact: "",
+                    email: "",
+                    title: "",
+                    brief: ""
+                };
+            }
+        });
+
+        const container = document.getElementById('staff-container');
+
+        // Render the form cards
+        function render() {
+            container.innerHTML = '';
+            
+            staffFiles.forEach((file, index) => {
+                const data = staffData[file];
+                
+                // Determine clean name for display title (remove extension)
+                const displayName = file.split('.')[0].charAt(0).toUpperCase() + file.split('.')[0].slice(1);
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col md:flex-row";
+                
+                card.innerHTML = `
+                    <div class="md:w-1/3 bg-slate-50 p-4 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-200 relative group">
+                        <div class="w-full relative">
+                            <img src="./${file}" alt="${file}" class="image-preview shadow-sm" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmMWZGODkiLz48dGV4dCB4PSI1MCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTQxQjhCIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+SW1hZ2UgTWlzc2luZzwvdGV4dD48L3N2Zz4='">
+                            <div class="absolute top-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+                                ${file}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3 p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h2 class="text-xl font-bold text-slate-800">Staff Member #${index + 1} <span class="text-slate-400 text-sm font-normal">(${file})</span></h2>
+                            ${isComplete(data) ? '<span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">Complete</span>' : '<span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">In Progress</span>'}
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Name -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">First Name</label>
+                                <input type="text" value="${data.name || ''}" 
+                                    oninput="updateField('${file}', 'name', this.value)"
+                                    class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="e.g. Wayne">
+                            </div>
+
+                            <!-- Surname -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Surname</label>
+                                <input type="text" value="${data.surname || ''}" 
+                                    oninput="updateField('${file}', 'surname', this.value)"
+                                    class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="Surname">
+                            </div>
+
+                            <!-- Title -->
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Job Title</label>
+                                <input type="text" value="${data.title || ''}" 
+                                    oninput="updateField('${file}', 'title', this.value)"
+                                    class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="e.g. Senior Manager">
+                            </div>
+
+                            <!-- Contact -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Contact Number</label>
+                                <input type="tel" value="${data.contact || ''}" 
+                                    oninput="updateField('${file}', 'contact', this.value)"
+                                    class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="+27 ...">
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Email Address</label>
+                                <input type="email" value="${data.email || ''}" 
+                                    oninput="updateField('${file}', 'email', this.value)"
+                                    class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="name@company.com">
+                            </div>
+
+                            <!-- Brief -->
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1">Brief / Bio</label>
+                                <textarea 
+                                    oninput="updateField('${file}', 'brief', this.value)"
+                                    rows="3"
+                                    class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="Short description or bio...">${data.brief || ''}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Check if essential fields are filled
+        function isComplete(entry) {
+            return entry.name && entry.surname && entry.title;
+        }
+
+        // Handle input changes
+        window.updateField = function(filename, field, value) {
+            staffData[filename][field] = value;
+            saveToStorage();
+            
+            // Re-eval completeness visual (optional, might be too jittery if full re-render, so skipping re-render for input)
+        };
+
+        function saveToStorage() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(staffData));
+        }
+
+        window.clearData = function() {
+            if(confirm("Are you sure you want to clear all entered data? This cannot be undone.")) {
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            }
+        }
+
+        window.exportData = function() {
+            // Convert data object to array
+            const dataArray = Object.values(staffData);
+            
+            // Create a Blob
+            const dataStr = JSON.stringify(dataArray, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            
+            // Create download link
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "staff_data_export.json";
+            document.body.appendChild(a);
+            a.click();
+            
+            // Cleanup
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        };
+
+        // Initial Render
+        render();
+
+    </script>
+</body>
+</html>

@@ -44,33 +44,33 @@ export function FreightServiceContent() {
   const features = [
     {
       icon: Ship,
-      title: 'Strategic Partnerships',
-      description: 'Developed partnerships with major shipping lines ensuring coverage for all customer requirements worldwide.',
+      title: 'Partnerships That Open Doors',
+      description: 'Our relationships with major shipping lines aren\'t just business connections—they\'re partnerships built on trust and performance. When you need space on a vessel, we don\'t just make phone calls; we leverage relationships that we\'ve cultivated over years. This means better rates, priority booking, and access to routes that others can\'t guarantee. Worldwide coverage isn\'t a promise; it\'s a reality built on real relationships with real shipping lines.',
     },
     {
       icon: Globe,
-      title: 'Global Coverage',
-      description: 'Shipping mainly to Asia, with the ability to facilitate exports to any country worldwide.',
+      title: 'From Asia to Everywhere',
+      description: 'While Asia remains a primary trade corridor for South African exports, our capabilities extend far beyond. We\'ve facilitated shipments to Europe, the Americas, the Middle East, and beyond. The question isn\'t "Can we ship there?"—it\'s "When do you need it there?" Our network of shipping partners ensures that no destination is out of reach, and no requirement is too complex.',
     },
     {
       icon: ShieldCheck,
-      title: 'Customs Expertise',
-      description: 'Border clearance in/out of South Africa and over border destinations, acquittals, and documentation.',
+      title: 'Customs Made Simple',
+      description: 'Border clearance isn\'t just paperwork—it\'s navigating complex regulations, understanding tariff codes, and knowing which procedures apply when. Our customs expertise comes from years of handling everything from straightforward exports to complex imports with special requirements. We don\'t just file documentation; we understand the system, anticipate challenges, and solve problems before they become delays. South African borders, neighboring countries, or international destinations—we handle it all.',
     },
     {
       icon: FileText,
-      title: 'Complete Documentation',
-      description: 'Full handling of all customs and shipping documentation for seamless trade facilitation.',
+      title: 'Documentation That Works',
+      description: 'Shipping documentation can make or break an export. Get it wrong, and your cargo sits at port while you fix errors. Get it right, and everything flows smoothly. We handle all documentation—from bills of lading to certificates of origin, from customs declarations to export permits. Our team understands that documentation isn\'t just paperwork; it\'s the foundation of successful international trade. We get it right the first time, every time.',
     },
     {
       icon: Ship,
-      title: 'Flexible Shipping',
-      description: 'Cost-effective solutions for both large and small volumes with competitive rates and flexible routes.',
+      title: 'Flexibility That Fits',
+      description: 'Not every shipment is a full container, and not every route is standard. We understand that your cargo volumes, timelines, and destinations vary. That\'s why we offer flexible shipping solutions—whether you need one container or one hundred, standard routes or specialized handling. Competitive rates don\'t mean one-size-fits-all; they mean solutions that fit your specific needs and budget. Large volumes or small, we make it work.',
     },
     {
       icon: ShieldCheck,
-      title: 'Trusted Partner',
-      description: 'Decades of experience handling diverse cargo with a wide network of carriers.',
+      title: 'Experience You Can Trust',
+      description: 'Decades of combined experience means we\'ve seen it all—from standard container shipments to oversized cargo, from perishable goods to hazardous materials. Our network of carriers isn\'t just a list; it\'s a curated selection of partners we trust with our clients\' cargo. This experience becomes your advantage: we know what works, what doesn\'t, and how to handle challenges before they become problems.',
     },
   ];
 
@@ -123,9 +123,7 @@ export function FreightServiceContent() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed mb-8"
             >
-              Complete freight forwarding and customs clearing services. Strategic partnerships with 
-              major shipping lines ensure we have coverage for all customer requirements worldwide. 
-              We're not just your average freight forwarder.
+              Ocean freight isn't just about booking space on a vessel—it's about understanding routes, rates, regulations, and relationships. Our strategic partnerships with major shipping lines didn't happen overnight; they were built through years of consistent performance and reliability. Whether you're exporting chrome to Asia, importing machinery from Europe, or moving commodities to any corner of the globe, we have the coverage, the expertise, and the relationships to make it happen. We're not just your average freight forwarder; we're your logistics partner in global trade.
             </motion.p>
 
             <motion.div
@@ -288,7 +286,7 @@ export function FreightServiceContent() {
               Ready to Ship <span className="text-[#FFD700]">Globally?</span>
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Contact us to discuss your ocean freight and customs clearing needs.
+              Every international shipment is unique—different destinations, different cargo, different timelines. Let's discuss your specific requirements and explore how our shipping partnerships, customs expertise, and global coverage can simplify your international trade.
             </p>
             <Link
               href="/contact"

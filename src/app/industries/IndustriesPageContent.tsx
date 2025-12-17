@@ -44,7 +44,7 @@ export function IndustriesPageContent() {
     {
       icon: Warehouse,
       title: 'Mining Logistics',
-      description: 'From pit to port. With well-trained staff possessing years of experience in the commodity sector, we provide practical, real-world solutions for the movement of ores and minerals.',
+      description: 'From pit to port—we know this journey intimately. Our team didn\'t learn mining logistics from manuals; they learned it on the ground, handling chrome concentrate, manganese ore, and iron ore through every stage of the supply chain. Years of experience in the commodity sector means we understand what others miss: the weight of ROM versus concentrate, the timing critical to vessel bookings, the documentation required for international trade. When mining companies trust us with their ores and minerals, they\'re trusting partners who speak their language, understand their challenges, and deliver practical, real-world solutions that actually work.',
       commodities: [
         'Chrome (Concentrate & ROM)',
         'Manganese & Iron Ore',
@@ -63,7 +63,7 @@ export function IndustriesPageContent() {
     {
       icon: Truck,
       title: 'Agricultural Logistics',
-      description: 'Feeding the future. With more than 7 billion people on the planet, the demand on the African agricultural sector is immense. We understand the seasonality and sensitivity of agricultural products.',
+      description: 'Feeding the future means understanding timing like no other industry. When harvest season peaks, there\'s no second chance—grain needs to move while it\'s fresh, fertilizers must arrive before planting windows close, and produce can\'t wait for convenient shipping schedules. We\'ve worked alongside farmers and agribusinesses long enough to understand that agricultural logistics isn\'t just about transport; it\'s about respecting nature\'s calendar. Seasonality isn\'t an inconvenience—it\'s the reality that shapes everything we do. We understand the sensitivity of agricultural products, the urgency of harvest windows, and the critical importance of getting it right when timing matters most.',
       commodities: [
         'Grain & Cereals',
         'Fresh Produce',
@@ -109,8 +109,7 @@ export function IndustriesPageContent() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
-              Specialized logistics solutions for key sectors. We understand the unique requirements 
-              of each industry and deliver tailored solutions that keep your operations running smoothly.
+              Every industry has its rhythm, its challenges, and its critical requirements. Mining operations don't move on a 9-to-5 schedule, and agricultural harvests don't wait for convenient timing. We've built our expertise not by trying to serve everyone, but by deeply understanding the industries we know best. This isn't generic logistics adapted to different sectors—it's specialized knowledge, industry-specific solutions, and partnerships built on understanding what really matters to your business.
             </motion.p>
           </motion.div>
         </div>
@@ -214,8 +213,7 @@ export function IndustriesPageContent() {
               Need Industry-Specific <span className="text-[#FFD700]">Solutions?</span>
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Our experienced team understands the unique challenges of your industry. 
-              Contact us to discuss how we can tailor our services to your needs.
+              Every industry has its own story, its own challenges, and its own requirements. We've chosen to specialize in mining and agricultural logistics because we understand these sectors deeply—not as outsiders looking in, but as partners who've been there, done that, and know what works. Let's discuss how our specialized expertise can become your competitive advantage.
             </p>
             <Link
               href="/contact"

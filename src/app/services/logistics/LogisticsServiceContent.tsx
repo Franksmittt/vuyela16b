@@ -44,33 +44,33 @@ export function LogisticsServiceContent() {
   const features = [
     {
       icon: Truck,
-      title: 'Own Fleet',
-      description: 'Total control over reliability and safety with our own fleet of heavy-duty trucks.',
+      title: 'Our Fleet, Our Responsibility',
+      description: 'We don\'t outsource reliability to third-party contractors. Our own fleet means we control maintenance schedules, driver training, and vehicle standards. When you see a Vuyela truck on the road, you\'re seeing our commitment to quality rolling by—well-maintained, professionally driven, and mission-focused. No excuses, no subcontractor issues, just trucks you can count on.',
     },
     {
       icon: Clock,
-      title: '24/7 Operations',
-      description: 'Live system with full yard camera coverage and continuous monitoring for speed and efficiency.',
+      title: 'Never-Stop Logistics',
+      description: 'Deadlines don\'t respect business hours, and neither do we. Our 24/7 operations mean your cargo moves when it needs to move—whether that\'s a midnight collection or a weekend delivery. With live tracking systems and full yard camera coverage, you\'re never in the dark. We\'ve built our operations around the reality that logistics never sleeps, and neither should your visibility.',
     },
     {
       icon: Route,
-      title: 'Container Logistics',
-      description: 'Daily movement of containers to and from South Africa\'s major ports.',
+      title: 'Port Connections That Matter',
+      description: 'Moving containers to and from Durban isn\'t just transport—it\'s timing. Every day, we coordinate with port authorities, shipping lines, and terminal operators to ensure your containers arrive exactly when they need to. We understand vessel schedules, booking deadlines, and the critical timing that separates successful exports from costly delays. Daily port movements aren\'t just routes; they\'re relationships we\'ve built over years.',
     },
     {
       icon: ShieldCheck,
-      title: 'Strategic Partnerships',
-      description: 'Strong relationships with TFR, shipping agents, and road freight companies.',
+      title: 'Network That Works',
+      description: 'Years of working with TFR, shipping agents, and transport partners means we\'ve built relationships that get results. When you need a favor, when standard procedures won\'t work, when you\'re racing against a deadline—that\'s when our network pays dividends. We don\'t just know people; we know how to get things done, even when the system says it can\'t be done.',
     },
     {
       icon: MapPin,
-      title: 'Nationwide Coverage',
-      description: 'Reliable transport solutions across South Africa.',
+      title: 'Everywhere You Need Us',
+      description: 'From Johannesburg to Cape Town, Durban to Bloemfontein, we cover South Africa with the same reliability wherever we operate. Our nationwide coverage doesn\'t mean we\'re spread thin—it means we\'ve built consistent service standards that travel with our trucks. Same quality, same commitment, same reliability, regardless of distance.',
     },
     {
       icon: Clock,
-      title: 'Speed & Efficiency',
-      description: 'Delays kept to a minimum - trucks have to make money, and so do you.',
+      title: 'Time Is Money',
+      description: 'We understand this better than anyone: every hour a truck sits idle is money lost. For you and for us. That\'s why we\'ve optimized our operations for speed and efficiency—from quick turnarounds at our facility to streamlined port processes. Delays aren\'t just inconvenient; they\'re expensive. That understanding drives everything we do, ensuring your cargo moves fast because time costs money for both of us.',
     },
   ];
 
@@ -139,9 +139,7 @@ export function LogisticsServiceContent() {
                 variants={itemVariants}
                 className="text-lg sm:text-xl text-gray-300 leading-relaxed"
               >
-                Own fleet operations with 24/7 monitoring. Specializing in breakbulk transport including 
-                coils, containers, and other cargo. We provide collections and deliveries across South Africa, 
-                moving containers daily to and from South Africa's major ports with speed and efficiency.
+                Every day, our trucks hit the road with one purpose: getting your cargo where it needs to be, when it needs to be there. Our own fleet means we control maintenance, driver standards, and reliability—no third-party excuses, no blame-shifting. Whether it's coils heading to manufacturing plants, containers racing to catch vessel deadlines, or breakbulk cargo with special handling requirements, we move it all. Daily movements between Durban port, TFR terminals, and destinations across South Africa aren't just routes on a map—they're commitments we keep, one delivery at a time.
               </motion.p>
               {/* AI Prompt Goal: Coil Transport - Image showing coils being transported on a truck */}
               <motion.div
@@ -286,7 +284,7 @@ export function LogisticsServiceContent() {
               Need Transport <span className="text-[#FFD700]">Solutions?</span>
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Contact us to discuss your road freight and transport requirements.
+              Whether you're moving containers, coils, breakbulk, or general freight, every transport requirement is unique. Let's discuss your specific needs and explore how our fleet, our network, and our commitment to reliability can become your competitive advantage.
             </p>
             <Link
               href="/contact"

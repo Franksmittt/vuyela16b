@@ -264,21 +264,14 @@ export default function Home() {
                   Built on the Road,{' '}
                   <span className="text-[#FFD700]">Defined by Excellence</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-8">
-                  <div>
-                    <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                      The Vuyela story is one of resilience and deliberate growth. We commenced operations with a single truck, transporting commodities for a leading South African mining contractor. That single vehicle represented a promise—a commitment to reliability that formed the bedrock of our company culture.
+                
+                {/* Text next to image layout */}
+                <div className="flex flex-col md:flex-row gap-6 items-start mb-6">
+                  {/* First paragraph - flows next to image */}
+                  <div className="flex-1">
+                    <p className="text-gray-300 text-lg leading-relaxed">
+                      It started with one truck and a handshake. In 2019, Jaco and Wayne took a leap of faith, transporting commodities for a leading South African mining contractor. That single vehicle wasn't just transportation, it was their promise. Every delivery, every kilometer driven, was an opportunity to prove that reliability isn't just a service, it's a way of doing business. 
                     </p>
-                    <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                      Today, Vuyela Group is a "new generation logistics company" with over 60 dedicated professionals and a strong operational presence in Elandsfontein. We don't just move cargo; we provide lasting solutions to the South African transport market, ensuring that whether you are moving chrome, manganese, or general freight, you are partnered with a team that treats your business as their own.
-                    </p>
-                    <Link
-                      href="/about"
-                      className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link mb-12"
-                    >
-                      Learn More About Us
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                    </Link>
                   </div>
                   {/* Elandsfontein facility aerial view */}
                   <motion.div
@@ -286,7 +279,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden"
+                    className="relative w-full md:w-1/2 flex-shrink-0 h-64 md:h-80 rounded-lg overflow-hidden"
                   >
                     <Image
                       src="/images/Gemini_Generated_Image_a7w2wpa7w2wpa7w2.png"
@@ -296,6 +289,23 @@ export default function Home() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </motion.div>
+                </div>
+
+                {/* Remaining text flows full width below image */}
+                <div className="mb-8">
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    What began as two directors with boots on the ground has grown into something remarkable. Today, our Elandsfontein facility hums with the energy of 60+ dedicated professionals who share that same commitment. We've expanded from that single truck to a comprehensive logistics network, but the philosophy remains unchanged: when your cargo is in our hands, it's treated like our own. Whether it's chrome heading to Durban port or manganese bound for international markets, every shipment carries the weight of our reputation.
+                  </p>
+                  <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                    We don't just move cargo from point A to point B. We understand that behind every shipment is a business depending on us. A mining operation waiting for critical supplies, a manufacturer counting on timely deliveries, or an exporter racing against vessel schedules. That understanding drives everything we do, from our 24/7 operations to our hands-on director involvement in daily logistics challenges.
+                  </p>
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link"
+                  >
+                    Discover Our Full Story
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
               
@@ -356,6 +366,22 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              {/* Mining Logistics Image - Ground-level medium shot showing mining logistics operations */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
+              >
+                <Image
+                  src="/images/Mining Logisticshp.jpg"
+                  alt="Mining logistics operations"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </motion.div>
               <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Warehouse className="h-8 w-8 text-[#1a1a1a]" />
               </div>
@@ -363,7 +389,7 @@ export default function Home() {
                 Mining Logistics
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                From pit to port. With well-trained staff possessing years of experience in the commodity sector, we provide practical, real-world solutions for the movement of ores and minerals.
+                From pit to port, we've been there. Our team didn't learn logistics from textbooks; they learned it on the mine roads, in the weighbridge queues, and during those critical moments when a shipment deadline can't be missed. Years of handling everything from chrome concentrate to ROM means we understand the weight, literally and figuratively, of getting it right the first time. When you're moving ores and minerals, there's no room for learning curves. Just reliable, proven solutions.
               </p>
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center gap-2">
@@ -388,6 +414,22 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
+              {/* Agricultural Logistics Image - Ground-level medium shot showing agricultural logistics operations */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
+              >
+                <Image
+                  src="https://placehold.co/800x400/111111/D4AF37?text=Agricultural+Logistics"
+                  alt="Agricultural logistics operations"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </motion.div>
               <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Truck className="h-8 w-8 text-[#1a1a1a]" />
               </div>
@@ -395,7 +437,7 @@ export default function Home() {
                 Agricultural Logistics
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Feeding the future. With more than 7 billion people on the planet, the demand on the African agricultural sector is immense. We understand the seasonality and sensitivity of agricultural products.
+                Feeding the future starts with understanding timing. When harvest season peaks, there's no second chance. Grain needs to move while it's fresh, fertilizers must arrive before planting windows close, and produce can't wait. We've worked alongside farmers and agribusinesses long enough to know that agricultural logistics isn't just about transport; it's about respecting the seasons, understanding crop cycles, and ensuring that when the sun sets on harvest day, your product is already moving toward market.
               </p>
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center gap-2">
@@ -438,7 +480,7 @@ export default function Home() {
                 <span className="text-[#FFD700]">Business Forward?</span>
               </h2>
               <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-                Get in touch with our team to discuss your logistics needs. We're here to provide customized solutions that fit your business.
+                Every successful logistics partnership starts with a conversation. Whether you're moving your first shipment or your thousandth, our team is here to listen to your unique challenges and craft solutions that fit your business like a glove. No cookie-cutter approaches, just tailored logistics that make sense for you.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -500,7 +542,7 @@ export default function Home() {
                   Our Vision
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  To stand as the preeminent logistics partner in South Africa, driving national economic growth through decisive action, sustainable expansion, and the seamless integration of local and international supply chains. We envision a future where Vuyela Group is the pulse of African trade, contributing tangibly to the GDP of South Africa by setting the global standard for reliability in logistics and warehousing.
+                  We envision Vuyela Group as the backbone of South African commerce: the reliable partner that makes trade flow seamlessly. Every shipment we handle, every container we move, contributes to something bigger: national economic growth, job creation, and South Africa's position in global markets. We're not just aiming to be the best logistics company; we're building the infrastructure of trust that allows businesses to scale, exporters to compete, and the economy to thrive. When international partners think of South African logistics, we want Vuyela to come to mind first, known for reliability that sets the global standard.
                 </p>
               </motion.div>
 
@@ -518,7 +560,7 @@ export default function Home() {
                   Our Mission
                 </h3>
                 <p className="text-gray-300 leading-relaxed mb-4">
-                  To achieve operational excellence through a customer-centric approach that prioritizes the safety, security, and efficiency of every commodity entrusted to us.
+                  Our mission is simple but profound: treat every shipment as if it's our own. This means that when cargo comes through our gates, it becomes our responsibility: not just to deliver it, but to protect it, track it, and ensure it arrives exactly as promised. We've built our operations around this principle, from our 24/7 monitoring systems to our hands-on director involvement. Excellence isn't a goal we're working toward; it's the standard we've maintained since day one.
                 </p>
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start gap-3">
@@ -572,33 +614,33 @@ export default function Home() {
             {[
               {
                 icon: Handshake,
-                title: 'Hands-On Approach',
-                description: 'Our directors are involved in daily operations, ensuring promises made are promises kept.',
+                title: 'Hands-On Leadership',
+                description: 'Jaco and Wayne aren\'t boardroom directors. They\'re in the yard, on the phone, solving problems in real-time. When you work with Vuyela, you get direct access to decision-makers who understand logistics from the ground up. Promises made are promises kept, because the people making them are the same ones executing them.',
               },
               {
                 icon: ShieldCheck,
-                title: 'Custodian of Your Product',
-                description: 'We accept full responsibility for the safety, protection, and security of your cargo.',
+                title: 'Your Cargo, Our Responsibility',
+                description: 'When your shipment enters our facility, we become its custodian. That means every kilogram is tracked, every container is monitored, and every delivery is guaranteed. We\'ve built our entire operation around this simple principle: if it\'s in our hands, it\'s our responsibility to get it where it needs to go, exactly as promised.',
               },
               {
                 icon: Clock,
-                title: '24/7 Operations',
-                description: 'Live system with full yard camera coverage and continuous monitoring for speed and efficiency.',
+                title: 'Never Sleep Logistics',
+                description: 'Logistics doesn\'t take weekends off, and neither do we. Our 24/7 operations mean your cargo moves when it needs to move, not when business hours allow. With live tracking systems and full yard camera coverage, you\'re always connected to your shipment, whether it\'s midnight or midday.',
               },
               {
                 icon: Truck,
-                title: 'Own Fleet',
-                description: 'Total control over reliability and safety with our own fleet of heavy-duty trucks.',
+                title: 'Own Fleet, Own Control',
+                description: 'We don\'t rely on third-party contractors when reliability matters most. Our own fleet means we control maintenance schedules, driver training, and vehicle standards. When you see a Vuyela truck on the road, you\'re seeing our commitment to quality rolling by: maintained, monitored, and mission-focused.',
               },
               {
                 icon: Award,
-                title: 'Certified Excellence',
-                description: 'SOLAS certified weighbridges, NOSA safety standards, and SARS Bonded Warehouse facility.',
+                title: 'Certified by Choice',
+                description: 'SOLAS certified weighbridges, NOSA safety standards, SARS Bonded Warehouse. These aren\'t just certifications on the wall. They\'re proof that we\'ve invested in doing things right, from international shipping compliance to workplace safety. We didn\'t have to meet these standards; we chose to exceed them.',
               },
               {
                 icon: TrendingUp,
-                title: 'Strategic Partnerships',
-                description: 'Strong relationships with TFR, shipping agents, and road freight companies for seamless operations.',
+                title: 'Built on Relationships',
+                description: 'Years of working with TFR, shipping lines, and transport partners means we\'ve built relationships that get results. When you need a favor, when you\'re racing a deadline, when standard procedures won\'t work, that\'s when our network pays dividends. We don\'t just know people; we know how to get things done.',
               },
             ].map((feature, index) => (
               <motion.div

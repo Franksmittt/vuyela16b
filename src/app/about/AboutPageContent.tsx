@@ -64,35 +64,59 @@ export default function AboutPageContent() {
 
   // Timeline milestones
   const milestones = [
-    { year: '2019', title: 'The Beginning', description: 'Started with a single truck, a promise, and unwavering commitment to reliability.' },
-    { year: '2020', title: 'Rapid Expansion', description: 'Grew our fleet and established strategic partnerships across South Africa.' },
-    { year: '2021', title: 'Facility Launch', description: 'Opened our Elandsfontein facility with SARS Bonded Warehouse certification.' },
-    { year: '2022', title: 'SOLAS Certification', description: 'Achieved SOLAS certified weighbridges, setting new industry standards.' },
-    { year: '2023', title: 'Network Growth', description: 'Expanded to 60+ professionals and established The Vuyela Network.' },
-    { year: '2024', title: 'Industry Leadership', description: 'Recognized as a new generation logistics company driving South African trade.' },
+    { 
+      year: '2019', 
+      title: 'The Beginning', 
+      description: 'One truck, two directors, one contract. That\'s how it started. Jaco and Wayne took a leap of faith, betting everything on a simple principle: if you deliver consistently, clients will trust you with more. That first truck didn\'t just transport commodities—it carried the weight of their vision. Every kilometer driven, every delivery completed, was proof that reliability builds reputation.' 
+    },
+    { 
+      year: '2020', 
+      title: 'Building Trust', 
+      description: 'Year two wasn\'t about rapid growth—it was about earning trust. We expanded our fleet carefully, choosing partners who shared our values. Every new truck meant new capacity, but more importantly, it meant new opportunities to prove ourselves. We established relationships with TFR and shipping lines that would become the foundation of our network. Growth came, but it came through reputation, not marketing.' 
+    },
+    { 
+      year: '2021', 
+      title: 'A Home Base', 
+      description: 'The Elandsfontein facility wasn\'t just a warehouse—it was a statement. By achieving SARS Bonded Warehouse certification, we were telling the market: we\'re serious about international trade. This was our commitment to being more than a transport company; we were becoming a complete logistics solution. The facility became the heart of our operations, where cargo, containers, and commodities flowed through our hands with precision.' 
+    },
+    { 
+      year: '2022', 
+      title: 'Raising Standards', 
+      description: 'SOLAS certification wasn\'t necessary for our business—we pursued it anyway. Why? Because excellence isn\'t about meeting minimum standards; it\'s about exceeding them. Our certified weighbridges meant international shipping compliance, reduced disputes, and absolute confidence in weight documentation. We weren\'t just investing in equipment; we were investing in credibility that would open doors globally.' 
+    },
+    { 
+      year: '2023', 
+      title: 'The Vuyela Family', 
+      description: 'Reaching 60+ professionals wasn\'t just about numbers—it was about finding the right people. Each team member who joined us brought expertise, commitment, and alignment with our values. The Vuyela Network became more than a logistics operation; it became a community of professionals who understood that in logistics, reputation is everything. We didn\'t just hire employees; we built a team.' 
+    },
+    { 
+      year: '2024', 
+      title: 'Leading the Way', 
+      description: 'Five years in, we\'re recognized as a new generation logistics company—but we haven\'t forgotten where we started. We still operate with the same principles: hands-on leadership, personal accountability, and unwavering reliability. The difference? Now we have the infrastructure, team, and network to deliver on a scale that matches our ambition. The journey continues, but the foundation remains the same.' 
+    },
   ];
 
   // Core values
   const values = [
     {
       icon: Handshake,
-      title: 'Partnership First',
-      description: 'We treat every interaction as a partnership, ensuring your success is our success.',
+      title: 'Partnership, Not Transactions',
+      description: 'We don\'t see ourselves as a vendor; we see ourselves as your logistics partner. When you succeed, we succeed. When you face a challenge, we face it with you. This isn\'t just a business relationship—it\'s a commitment to your long-term success. That\'s why clients come back year after year, and why referrals make up a significant portion of our business. Partnership means we\'re invested in your outcome, not just our invoice.',
     },
     {
       icon: ShieldCheck,
-      title: 'Custodian Responsibility',
-      description: 'Full accountability for the safety, protection, and security of your cargo.',
+      title: 'Custodian of Your Cargo',
+      description: 'The moment your cargo enters our facility or our trucks, we become its custodian. That word—custodian—carries weight. It means we\'re not just handling your shipment; we\'re protecting it, tracking it, and taking full responsibility for its safety and security. We\'ve built our entire operation around this principle: if it\'s in our hands, it\'s our responsibility. No excuses, no exceptions.',
     },
     {
       icon: Zap,
-      title: 'Operational Excellence',
-      description: '24/7 operations with live systems, full yard coverage, and continuous monitoring.',
+      title: 'Excellence in Motion',
+      description: 'Logistics never stops, and neither do we. Our 24/7 operations aren\'t just a service feature—they\'re a reflection of how seriously we take our responsibility. With live tracking systems, full yard camera coverage, and continuous monitoring, you\'re never in the dark about where your cargo is. We\'ve invested in technology not to replace personal service, but to enhance it—giving you visibility while maintaining the human touch.',
     },
     {
       icon: Heart,
-      title: 'Hands-On Leadership',
-      description: 'Directors involved in daily operations, ensuring promises made are promises kept.',
+      title: 'Leadership by Example',
+      description: 'Jaco and Wayne didn\'t build Vuyela from a distance—they built it from the front lines. Even today, you\'ll find them in the yard, on the phone with clients, solving problems in real-time. This hands-on approach isn\'t just about control; it\'s about culture. When directors are personally involved, it sends a message: no job is too small, no problem is too complex, and no promise is too difficult to keep. Leadership by example, every single day.',
     },
   ];
 
@@ -127,8 +151,7 @@ export default function AboutPageContent() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
             >
-              From a single truck to a new generation logistics company. 
-              Our journey is one of resilience, deliberate growth, and unwavering commitment to reliability.
+              What happens when two logistics professionals decide to build something different? They start with one truck, one contract, and one unshakeable belief: reliability isn't negotiable. Five years later, that same principle has grown into a company that moves millions of tons of cargo, employs over 60 people, and never forgets where it started. This is our story—told through every delivery, every partnership, and every promise kept.
             </motion.p>
 
             <motion.div
@@ -184,9 +207,7 @@ export default function AboutPageContent() {
                   <h3 className="text-xl font-bold text-white font-poppins">The Beginning</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                  The Vuyela story is one of resilience and deliberate growth. We commenced operations with a single truck, 
-                  transporting commodities for a leading South African mining contractor. That single vehicle represented 
-                  a promise, a commitment to reliability that formed the bedrock of our company culture.
+                  Every great company has a moment when it all begins. For Vuyela, that moment came in 2019 when Jaco and Wayne made a decision that would change everything: they would start their own logistics company, but they'd do it differently. No shortcuts, no empty promises—just one truck, one client, and a commitment to reliability that would become our DNA. That first contract with a leading South African mining contractor wasn't just business; it was a test. Could they deliver on time, every time? Could they build trust through consistent performance? The answer, it turned out, was yes—and that single vehicle became the foundation for everything we've built since.
                 </p>
               </motion.div>
 
@@ -202,8 +223,7 @@ export default function AboutPageContent() {
                   <h3 className="text-xl font-bold text-white font-poppins">Today</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-sm">
-                  Today, Vuyela Group is a "new generation logistics company" with over 60 dedicated professionals and 
-                  a strong operational presence in Elandsfontein.
+                  Today, Vuyela Group has grown far beyond that first truck, but the spirit remains the same. Our Elandsfontein facility is home to over 60 professionals who've chosen to build their careers with us—each one understanding that reliability isn't a company slogan, it's a daily practice. We're a "new generation logistics company" because we combine old-school values (handshakes, accountability, personal service) with modern capabilities (live tracking, SOLAS certification, SARS bonding). The result? A company that's both human and high-tech, personal and professional.
                 </p>
               </motion.div>
 
@@ -220,14 +240,12 @@ export default function AboutPageContent() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                    We don't just move cargo; we provide lasting solutions to the South African transport market, ensuring 
-                    that whether you are moving chrome, manganese, or general freight, you are partnered with a team that 
-                    treats your business as their own.
+                    We don't see ourselves as just another logistics provider. When a mining company needs chrome moved to port, we understand that their entire operation depends on that shipment reaching the vessel on time. When an exporter is racing against a booking deadline, we know that their international reputation is on the line. This understanding changes how we operate—we're not moving boxes and containers; we're moving businesses, livelihoods, and opportunities. That's why we've built our company around a simple but powerful philosophy: treat every client's business as if it's our own.
                   </p>
                   <div className="flex items-center">
                     <p className="text-base sm:text-lg text-white leading-relaxed">
-                      Our journey from a single truck to a comprehensive logistics network reflects our core philosophy: 
-                      <strong className="text-[#FFD700] block mt-2"> every delivery matters, every relationship counts, and every promise must be kept.</strong>
+                      Our journey from a single truck to a comprehensive logistics network wasn't accidental—it was intentional. Every expansion, every new service, every team member we've hired has been chosen because they share our core belief: 
+                      <strong className="text-[#FFD700] block mt-2"> every delivery matters, every relationship counts, and every promise must be kept. No exceptions. No excuses.</strong>
                     </p>
                   </div>
                 </div>
@@ -393,10 +411,7 @@ export default function AboutPageContent() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 font-poppins">Our Vision</h3>
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                To stand as the preeminent logistics partner in South Africa, driving national economic growth through 
-                decisive action, sustainable expansion, and the seamless integration of local and international supply chains. 
-                We envision a future where Vuyela Group is the pulse of African trade, contributing tangibly to the GDP 
-                of South Africa by setting the global standard for reliability in logistics and warehousing.
+                Our vision is ambitious but grounded: to be the logistics partner that South African businesses choose not because they have to, but because they want to. We see ourselves as more than a service provider—we're a critical link in the supply chains that drive national economic growth. Every shipment we handle contributes to something bigger: job creation, export revenue, and South Africa's position in global markets. When international partners think of reliable South African logistics, we want Vuyela to be the name that comes to mind first—a company that sets the global standard for what logistics excellence looks like, built right here in Elandsfontein.
               </p>
             </motion.div>
 
@@ -409,19 +424,32 @@ export default function AboutPageContent() {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 font-poppins">Our Mission</h3>
               <p className="text-gray-300 leading-relaxed text-sm sm:text-base mb-6">
-                To achieve operational excellence through a customer-centric approach that prioritizes the safety, security, 
-                and efficiency of every commodity entrusted to us.
+                Our mission is elegantly simple: treat every shipment as if it's our own. This isn't a marketing slogan—it's how we've operated since day one. When cargo comes through our gates or into our trucks, it becomes our responsibility. Not just to deliver it, but to protect it, track it, and ensure it arrives exactly as promised, when promised. We've built everything—from our 24/7 monitoring systems to our hands-on director involvement—around this single principle: operational excellence isn't a goal we're working toward; it's the standard we've maintained since that first truck hit the road.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Expertise: Leveraging decades of collective knowledge',
-                  'Accountability: Acting as true custodian of customer product',
-                  'Partnership: Treating every interaction as a partnership',
-                  'Integrity: Operating with transparency and honesty',
+                  {
+                    label: 'Expertise',
+                    text: 'Our team brings decades of collective experience in logistics, warehousing, and supply chain management—knowledge that comes from doing, not just learning.'
+                  },
+                  {
+                    label: 'Accountability',
+                    text: 'When your cargo is in our hands, we accept full responsibility. No passing the buck, no excuses—just complete ownership of the outcome.'
+                  },
+                  {
+                    label: 'Partnership',
+                    text: 'We don\'t see clients as transactions; we see them as partners in success. Your challenges become our challenges, and your wins become our wins.'
+                  },
+                  {
+                    label: 'Integrity',
+                    text: 'Transparency and honesty aren\'t just policies—they\'re non-negotiables. You\'ll always know where your cargo is, what\'s happening, and why.'
+                  },
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-300 text-sm sm:text-base">{item}</span>
+                    <span className="text-gray-300 text-sm sm:text-base">
+                      <strong className="text-white">{item.label}:</strong> {item.text}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -506,14 +534,12 @@ export default function AboutPageContent() {
                 {
                   name: 'Jaco',
                   role: 'Director',
-                  phone: '+27 72 405 9931',
                   email: 'jaco@vuyelalogistics.co.za',
                   description: 'Co-founder and director, leading strategic operations and business development.',
                 },
                 {
                   name: 'Wayne',
                   role: 'Director',
-                  phone: '+27 73 030 9679',
                   email: 'wayne@vuyelalogistics.co.za',
                   description: 'Co-founder and director, overseeing daily operations and client relationships.',
                 },
@@ -538,13 +564,6 @@ export default function AboutPageContent() {
                     </div>
                     <p className="text-gray-300 text-sm text-center mb-6 leading-relaxed">{director.description}</p>
                     <div className="space-y-3 pt-6 border-t border-[#3a3a3a]">
-                      <a
-                        href={`tel:${director.phone.replace(/\s/g, '')}`}
-                        className="flex items-center justify-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors duration-200 group/item"
-                      >
-                        <Phone className="h-4 w-4 text-[#FFD700] group-hover/item:scale-110 transition-transform" />
-                        <span className="text-sm">{director.phone}</span>
-                      </a>
                       <a
                         href={`mailto:${director.email}`}
                         className="flex items-center justify-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors duration-200 group/item"
@@ -674,8 +693,7 @@ export default function AboutPageContent() {
               Ready to Partner with <span className="text-[#FFD700]">Vuyela?</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join the companies that trust Vuyela Group for their logistics needs. 
-              Experience the difference that comes from working with a team that treats your business as their own.
+              Every successful partnership starts with a conversation. Whether you're moving your first shipment or your thousandth, we're here to listen, understand your unique challenges, and craft logistics solutions that actually make sense for your business. Join the companies that have discovered what it means to work with a team that treats your cargo, your deadlines, and your business as if they were our own.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link

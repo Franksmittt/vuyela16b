@@ -14,6 +14,7 @@ import {
   Target
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function ServicesPageContent() {
   const springConfig = {
@@ -141,8 +142,7 @@ export function ServicesPageContent() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
-              Four specialized divisions working together to provide comprehensive logistics solutions 
-              that keep South Africa moving 24/7, on time, every time.
+              Four divisions, one mission: keeping South Africa's commerce flowing. Vuyela Bulk, Logistics, Freight, and Refuel didn't happen by accident—they grew from recognizing that modern logistics requires specialized expertise in warehousing, transport, international shipping, and energy solutions. These aren't separate businesses; they're interconnected services working together to provide something rare in logistics: a complete solution from a single partner who understands how all the pieces fit together.
             </motion.p>
           </motion.div>
         </div>
@@ -239,7 +239,7 @@ export function ServicesPageContent() {
               Ready to Get <span className="text-[#FFD700]">Started?</span>
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-              Contact us today to discuss your logistics needs and discover how Vuyela Group can help streamline your supply chain.
+              Every business has unique logistics challenges, and every challenge has a solution. Let's discuss your specific needs and discover how our four specialized divisions can work together to streamline your supply chain, reduce complexity, and give you one reliable partner instead of multiple vendors.
             </p>
             <Link
               href="/contact"

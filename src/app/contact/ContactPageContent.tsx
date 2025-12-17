@@ -449,13 +449,11 @@ export function ContactPageContent() {
                     name: 'Jaco',
                     role: 'Director',
                     email: 'jaco@vuyelalogistics.co.za',
-                    phone: '+27 72 405 9931',
                   },
                   {
                     name: 'Wayne',
                     role: 'Director',
                     email: 'wayne@vuyelalogistics.co.za',
-                    phone: '+27 73 030 9679',
                   },
                 ].map((director, index) => (
                   <motion.div
@@ -470,13 +468,6 @@ export function ContactPageContent() {
                     <h4 className="text-xl font-bold text-white mb-2 font-poppins">{director.name}</h4>
                     <p className="text-[#FFD700] text-sm font-medium mb-4">{director.role}</p>
                     <div className="space-y-3 pt-4 border-t border-[#3a3a3a]">
-                      <a
-                        href={`tel:${director.phone.replace(/\s/g, '')}`}
-                        className="flex items-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors text-sm"
-                      >
-                        <Phone className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
-                        <span>{director.phone}</span>
-                      </a>
                       <a
                         href={`mailto:${director.email}`}
                         className="flex items-center gap-3 text-gray-300 hover:text-[#FFD700] transition-colors text-sm"
