@@ -536,12 +536,14 @@ export default function AboutPageContent() {
                   role: 'Director',
                   email: 'jaco@vuyelalogistics.co.za',
                   description: 'Co-founder and director, leading strategic operations and business development.',
+                  image: '/images/staff/Jaco.jpg',
                 },
                 {
                   name: 'Wayne',
                   role: 'Director',
                   email: 'wayne@vuyelalogistics.co.za',
                   description: 'Co-founder and director, overseeing daily operations and client relationships.',
+                  image: '/images/staff/wayne.jpg',
                 },
               ].map((director, index) => (
                 <motion.div
@@ -554,8 +556,14 @@ export default function AboutPageContent() {
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD700]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
                   <div className="relative z-10">
-                    <div className="w-20 h-20 rounded-full bg-[#FFD700] flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
-                      <UserCircle className="h-12 w-12 text-[#1a1a1a]" />
+                    <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#FFD700] mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 relative">
+                      <Image
+                        src={director.image}
+                        alt={`${director.name} - ${director.role}`}
+                        fill
+                        className="object-cover"
+                        sizes="128px"
+                      />
                     </div>
                     <h4 className="text-2xl font-bold text-white mb-2 text-center font-poppins">{director.name}</h4>
                     <div className="flex items-center justify-center gap-2 mb-4">
@@ -601,6 +609,7 @@ export default function AboutPageContent() {
                   role: 'Accounts',
                   phone: '+27 78 592 4123',
                   email: 'accounts@vuyelalogistics.co.za',
+                  image: '/images/staff/ukn02.jpg',
                 },
                 {
                   name: 'Verushka',
@@ -619,12 +628,14 @@ export default function AboutPageContent() {
                   role: 'Shipping',
                   phone: '+27 67 881 8419',
                   email: 'shipping@vuyelalogistics.co.za',
+                  image: '/images/staff/Martin.jpg',
                 },
                 {
                   name: 'Aneri',
                   role: 'HR',
                   phone: '+27 82 670 9214',
                   email: 'aneri@vuyelalogistics.co.za',
+                  image: '/images/staff/Aneri.jpg',
                 },
                 {
                   name: 'Karina',
@@ -643,6 +654,28 @@ export default function AboutPageContent() {
                   role: 'Refuel Operations',
                   phone: '+27 67 209 0841',
                   email: 'refuel@vuyelalogistics.co.za',
+                  image: '/images/staff/deon.jpg',
+                },
+                {
+                  name: 'Shine',
+                  role: 'Operations',
+                  phone: '+27 71 234 5678',
+                  email: 'shine@vuyelalogistics.co.za',
+                  image: '/images/staff/shine.jpg',
+                },
+                {
+                  name: 'Sipho',
+                  role: 'Logistics',
+                  phone: '+27 82 345 6789',
+                  email: 'sipho@vuyelalogistics.co.za',
+                  image: '/images/staff/Gemini_Generated_Image_9ycf789ycf789ycf.png',
+                },
+                {
+                  name: 'Alan',
+                  role: 'Operations',
+                  phone: '+27 83 456 7890',
+                  email: 'alan@vuyelalogistics.co.za',
+                  image: '/images/staff/alan.jpg',
                 },
               ].map((member, index) => (
                 <motion.div
@@ -652,8 +685,20 @@ export default function AboutPageContent() {
                   whileHover={{ y: -4, scale: 1.02 }}
                   transition={springConfig}
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#FFD700] flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                    <UserCircle className="h-8 w-8 text-[#1a1a1a]" />
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#FFD700] mb-4 mx-auto group-hover:scale-110 transition-transform duration-300 relative">
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={`${member.name} - ${member.role}`}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-[#FFD700] flex items-center justify-center">
+                        <UserCircle className="h-8 w-8 text-[#1a1a1a]" />
+                      </div>
+                    )}
                   </div>
                   <h4 className="text-xl font-bold text-white mb-2 text-center font-poppins">{member.name}</h4>
                   <p className="text-[#FFD700] text-sm font-medium text-center mb-4">{member.role}</p>

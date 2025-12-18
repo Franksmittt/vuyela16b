@@ -257,83 +257,120 @@ export function FacilitiesPageContent() {
         </motion.div>
       </section>
       <section className="relative w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]">
-        <div className="container px-4 sm:px-6 max-w-5xl mx-auto text-center">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+        <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 text-[#FFD700] mb-6"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
             >
-              <Building2 className="h-5 w-5" />
-              <span className="text-sm font-semibold uppercase tracking-wider">Our Infrastructure</span>
+              <motion.div
+                variants={itemVariants}
+                className="inline-flex items-center gap-2 text-[#FFD700] mb-6"
+              >
+                <Building2 className="h-5 w-5" />
+                <span className="text-sm font-semibold uppercase tracking-wider">Our Infrastructure</span>
+              </motion.div>
+
+              <motion.h1
+                variants={itemVariants}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-poppins text-white mb-6 leading-tight"
+              >
+                World-Class <span className="text-[#FFD700]">Facilities</span>
+              </motion.h1>
+
+              <motion.p
+                variants={itemVariants}
+                className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-8"
+              >
+                State-of-the-art infrastructure designed for efficiency, security, and compliance. 
+                Our Elandsfontein facility combines cutting-edge technology with industry-leading standards 
+                to deliver exceptional service.
+              </motion.p>
+
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-col sm:flex-row items-start gap-4"
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex h-12 sm:h-14 items-center justify-center rounded-full bg-[#FFD700] px-8 sm:px-10 text-sm sm:text-base font-semibold text-[#1a1a1a] shadow-lg hover:bg-[#1a1a1a] hover:text-[#FFD700] border-2 border-[#FFD700] transition-all duration-300 hover:scale-105 group"
+                >
+                  Schedule a Visit
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex h-12 sm:h-14 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 sm:px-10 text-sm sm:text-base font-semibold text-white shadow-sm hover:bg-white/10 hover:border-[#FFD700] transition-all duration-300 hover:scale-105"
+                >
+                  Our Services
+                </Link>
+              </motion.div>
             </motion.div>
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-poppins text-white mb-6 leading-tight"
-            >
-              World-Class <span className="text-[#FFD700]">Facilities</span>
-            </motion.h1>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8"
-            >
-              State-of-the-art infrastructure designed for efficiency, security, and compliance. 
-              Our Elandsfontein facility combines cutting-edge technology with industry-leading standards 
-              to deliver exceptional service.
-            </motion.p>
-
+            {/* Hero Image 1 */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              initial="hidden"
+              animate="visible"
+              className="relative w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
-              <Link
-                href="/contact"
-                className="inline-flex h-12 sm:h-14 items-center justify-center rounded-full bg-[#FFD700] px-8 sm:px-10 text-sm sm:text-base font-semibold text-[#1a1a1a] shadow-lg hover:bg-[#1a1a1a] hover:text-[#FFD700] border-2 border-[#FFD700] transition-all duration-300 hover:scale-105 group"
-              >
-                Schedule a Visit
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex h-12 sm:h-14 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 sm:px-10 text-sm sm:text-base font-semibold text-white shadow-sm hover:bg-white/10 hover:border-[#FFD700] transition-all duration-300 hover:scale-105"
-              >
-                Our Services
-              </Link>
+              <Image
+                src="https://placehold.co/600x400/111111/D4AF37?text=Vuyela+Facility"
+                alt="Vuyela facility infrastructure"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Location Section */}
       <section className="w-full py-12 sm:py-16 bg-[#2a2a2a]">
         <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={springConfig}
-            className="bg-[#1a1a1a] rounded-xl p-8 border border-[#3a3a3a]"
-          >
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-              <div className="w-16 h-16 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
-                <MapPin className="h-8 w-8 text-[#1a1a1a]" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={springConfig}
+              className="bg-[#1a1a1a] rounded-xl p-8 border border-[#3a3a3a]"
+            >
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="w-16 h-16 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
+                  <MapPin className="h-8 w-8 text-[#1a1a1a]" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-2 font-poppins">Elandsfontein Facility</h3>
+                  <p className="text-gray-300 text-base sm:text-lg">
+                    Main Reef Road, Elandsfontein, Gauteng, South Africa
+                  </p>
+                  <p className="text-gray-400 text-sm mt-2">
+                    Strategically located for optimal access to major transport routes and ports
+                  </p>
+                </div>
               </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-white mb-2 font-poppins">Elandsfontein Facility</h3>
-                <p className="text-gray-300 text-base sm:text-lg">
-                  Main Reef Road, Elandsfontein, Gauteng, South Africa
-                </p>
-                <p className="text-gray-400 text-sm mt-2">
-                  Strategically located for optimal access to major transport routes and ports
-                </p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Location Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={springConfig}
+              className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
+            >
+              <Image
+                src="https://placehold.co/600x400/111111/D4AF37?text=Facility+Location"
+                alt="Vuyela facility location and entrance"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -353,6 +390,25 @@ export function FacilitiesPageContent() {
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
               Comprehensive infrastructure designed to meet the highest standards of security, compliance, and operational excellence
             </p>
+          </motion.div>
+
+          {/* Facility Image 2 - Before facilities grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+            className="mb-8"
+          >
+            <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
+              <Image
+                src="https://placehold.co/800x400/111111/D4AF37?text=Facility+Infrastructure"
+                alt="Vuyela facility infrastructure and operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 800px"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -404,6 +460,25 @@ export function FacilitiesPageContent() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Facility Image 3 - After facilities grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={springConfig}
+            className="mt-8"
+          >
+            <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
+              <Image
+                src="https://placehold.co/800x400/111111/D4AF37?text=Warehouse+Operations"
+                alt="Warehouse operations and facility management"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 800px"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -425,7 +500,7 @@ export function FacilitiesPageContent() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8">
             {trustFeatures.map((feature, index) => (
               <motion.div
                 key={index}
@@ -446,6 +521,40 @@ export function FacilitiesPageContent() {
                 </p>
               </motion.div>
             ))}
+          </div>
+
+          {/* Trust Features Images - 2 images grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={springConfig}
+              className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
+            >
+              <Image
+                src="https://placehold.co/600x400/111111/D4AF37?text=Security+Systems"
+                alt="Security systems and monitoring"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={springConfig}
+              className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
+            >
+              <Image
+                src="https://placehold.co/600x400/111111/D4AF37?text=Operations+Center"
+                alt="Operations center and monitoring"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
