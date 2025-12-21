@@ -142,8 +142,12 @@ export function IndustriesPageContent() {
                   className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
                 >
                   <Image
-                    src={`https://placehold.co/600x300/111111/D4AF37?text=${encodeURIComponent(industry.title === 'Mining Logistics' ? 'Ore Stockpiles' : 'Grain Silos')}`}
-                    alt={`${industry.title} header image`}
+                    src={industry.title === 'Mining Logistics' 
+                      ? '/images/Mining Logisticshp.jpg'
+                      : '/images/Gemini_Generated_Image_f386w1f386w1f386.png'}
+                    alt={industry.title === 'Mining Logistics' 
+                      ? 'Mining logistics operations'
+                      : 'Agricultural logistics - truck being loaded with grain'}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"

@@ -193,7 +193,7 @@ export function RefuelServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_91v5y691v5y691v5.png"
+                src="/images/refuel-quality-testing.png"
                 alt="Fuel quality testing equipment and laboratory"
                 fill
                 className="object-cover"
@@ -316,7 +316,7 @@ export function RefuelServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_z8drbcz8drbcz8dr.png"
+                  src="/images/refuel-operations.png"
                   alt="Fuel quality testing in laboratory"
                   fill
                   className="object-cover"

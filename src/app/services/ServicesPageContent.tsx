@@ -178,8 +178,18 @@ export function ServicesPageContent() {
                     className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
                   >
                     <Image
-                      src={`https://placehold.co/200x200/111111/D4AF37?text=Icon+${encodeURIComponent(service.title)}`}
-                      alt={`${service.title} icon`}
+                      src={
+                        service.title === 'Vuyela Bulk'
+                          ? '/images/home-service-bulk.png'
+                          : service.title === 'Vuyela Logistics'
+                          ? '/images/home-service-logistics.png'
+                          : service.title === 'Vuyela Freight'
+                          ? '/images/home-service-freight.png'
+                          : service.title === 'Vuyela Refuel'
+                          ? '/images/home-service-refuel.png'
+                          : '/images/home-service-logistics.png'
+                      }
+                      alt={`${service.title} service`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"

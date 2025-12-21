@@ -158,7 +158,7 @@ export function BulkServiceContent() {
               className="relative w-full h-full min-h-[400px] rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_ucwgxsucwgxsucwg.png"
+                src="/images/bulk-hero.png"
                 alt="Warehouse and bulk handling facility"
                 fill
                 className="object-cover"
@@ -197,7 +197,7 @@ export function BulkServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_z6blgez6blgez6bl.png"
+                src="/images/bulk-warehouse-facilities.png"
                 alt="Warehouse facilities and infrastructure"
                 fill
                 className="object-cover"
@@ -248,7 +248,7 @@ export function BulkServiceContent() {
               className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_ctn26ectn26ectn2.png"
+                src="/images/bulk-bagging-operations.png"
                 alt="Bagging operations"
                 fill
                 className="object-cover"
@@ -262,7 +262,7 @@ export function BulkServiceContent() {
               className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_x2ws1x2ws1x2ws1x.png"
+                src="/images/bulk-weighbridge.png"
                 alt="Weighbridge operations"
                 fill
                 className="object-cover"
@@ -305,7 +305,7 @@ export function BulkServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_l58myil58myil58m.png"
+                  src="/images/bulk-storage.png"
                   alt="Bulk storage and warehousing"
                   fill
                   className="object-cover"
@@ -342,7 +342,7 @@ export function BulkServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_kwix6tkwix6tkwix.png"
+                  src="/images/bulk-commodities.png"
                   alt="Bulk commodities storage"
                   fill
                   className="object-cover"

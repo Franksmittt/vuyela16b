@@ -157,8 +157,8 @@ export function FreightServiceContent() {
               className="relative w-full h-full min-h-[400px] rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="https://placehold.co/600x400/111111/D4AF37?text=Ocean+Freight"
-                alt="Ocean freight and shipping operations"
+                src="/images/Gemini_Generated_Image_4ewnum4ewnum4ewn.png"
+                alt="Aerial view of Vuyela truck at Port of Durban with Maersk container ship"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -196,8 +196,8 @@ export function FreightServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="https://placehold.co/800x400/111111/D4AF37?text=Shipping+Operations"
-                alt="Shipping and freight operations"
+                src="/images/Gemini_Generated_Image_2l459o2l459o2l45.png"
+                alt="Reach stacker loading container onto Vuyela truck at port"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 800px"
@@ -238,8 +238,8 @@ export function FreightServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="https://placehold.co/800x400/111111/D4AF37?text=Durban+Port+Ship"
-                alt="Durban port shipping operations"
+                src="/images/Gemini_Generated_Image_aghl65aghl65aghl.png"
+                alt="Reach stacker precision-loading container in shipping yard"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 800px"
@@ -281,8 +281,8 @@ export function FreightServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="https://placehold.co/400x300/111111/D4AF37?text=SA+Border+Map"
-                  alt="South African border clearance map"
+                  src="/images/Gemini_Generated_Image_1is9dc1is9dc1is9.png"
+                  alt="Vuyela truck on weighbridge with security checkpoint"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -318,8 +318,8 @@ export function FreightServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="https://placehold.co/400x300/111111/D4AF37?text=Global+Shipping"
-                  alt="Global shipping and freight services"
+                  src="/images/Gemini_Generated_Image_ddqo9kddqo9kddqo.png"
+                  alt="Volvo truck with refrigerated trailer at container terminal"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

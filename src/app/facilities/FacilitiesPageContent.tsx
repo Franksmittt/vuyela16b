@@ -246,7 +246,7 @@ export function FacilitiesPageContent() {
           className="relative w-full h-64 md:h-96"
         >
           <Image
-            src="/images/Gemini_Generated_Image_yong6oyong6oyong.png"
+            src="/images/facilities-aerial-view.png"
             alt="Vuyela facility aerial view"
             fill
             className="object-cover"
@@ -316,7 +316,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="https://placehold.co/600x400/111111/D4AF37?text=Vuyela+Facility"
+                src="/images/Gemini_Generated_Image_k9qnbnk9qnbnk9qn.png"
                 alt="Vuyela facility infrastructure"
                 fill
                 className="object-cover"
@@ -363,7 +363,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="https://placehold.co/600x400/111111/D4AF37?text=Facility+Location"
+                src="/images/Gemini_Generated_Image_ad0yq3ad0yq3ad0y.png"
                 alt="Vuyela facility location and entrance"
                 fill
                 className="object-cover"
@@ -402,7 +402,7 @@ export function FacilitiesPageContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="https://placehold.co/800x400/111111/D4AF37?text=Facility+Infrastructure"
+                src="/images/facilities-aerial-view.png"
                 alt="Vuyela facility infrastructure and operations"
                 fill
                 className="object-cover"
@@ -471,7 +471,7 @@ export function FacilitiesPageContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="https://placehold.co/800x400/111111/D4AF37?text=Warehouse+Operations"
+                src="/images/Gemini_Generated_Image_k9qnbnk9qnbnk9qn.png"
                 alt="Warehouse operations and facility management"
                 fill
                 className="object-cover"
@@ -533,7 +533,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="https://placehold.co/600x400/111111/D4AF37?text=Security+Systems"
+                src="/images/Gemini_Generated_Image_1is9dc1is9dc1is9.png"
                 alt="Security systems and monitoring"
                 fill
                 className="object-cover"
@@ -548,7 +548,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="https://placehold.co/600x400/111111/D4AF37?text=Operations+Center"
+                src="/images/Gemini_Generated_Image_np7vzanp7vzanp7v.png"
                 alt="Operations center and monitoring"
                 fill
                 className="object-cover"

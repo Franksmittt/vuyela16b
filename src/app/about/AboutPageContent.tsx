@@ -282,7 +282,7 @@ export default function AboutPageContent() {
             className="relative w-full h-64 md:h-96 mb-12 rounded-lg overflow-hidden"
           >
             <Image
-              src="/images/Gemini_Generated_Image_z73zn9z73zn9z73z.png"
+              src="/images/about-timeline.png"
               alt="Company timeline graphic"
               fill
               className="object-cover"
@@ -387,7 +387,7 @@ export default function AboutPageContent() {
         {/* AI Prompt Goal: Global Map Dark - Dark themed world map showing global logistics network */}
         <div className="absolute inset-0">
           <Image
-            src="https://placehold.co/1920x600/111111/D4AF37?text=Global+Map+Dark"
+            src="/images/network-infographic.png"
             alt="Global logistics network map"
             fill
             className="object-cover opacity-20"
@@ -668,7 +668,7 @@ export default function AboutPageContent() {
                   role: 'Logistics',
                   phone: '+27 82 345 6789',
                   email: 'sipho@vuyelalogistics.co.za',
-                  image: '/images/staff/Gemini_Generated_Image_9ycf789ycf789ycf.png',
+                  image: '/images/staff/sipho.png',
                 },
                 {
                   name: 'Alan',

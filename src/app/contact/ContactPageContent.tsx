@@ -331,8 +331,8 @@ export function ContactPageContent() {
           className="relative w-full max-w-4xl mx-auto h-64 md:h-96 mb-12"
         >
           <Image
-            src="https://placehold.co/800x400/111111/D4AF37?text=Facility+Entrance"
-            alt="Vuyela facility entrance"
+            src="/images/Gemini_Generated_Image_ad0yq3ad0yq3ad0y.png"
+            alt="Vuyela facility with trucks"
             fill
             className="object-cover rounded-lg"
             sizes="(max-width: 1024px) 100vw, 800px"

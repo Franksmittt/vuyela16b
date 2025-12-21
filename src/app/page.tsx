@@ -198,13 +198,13 @@ export default function Home() {
                   <Image
                     src={
                       service.title === 'Vuyela Bulk' 
-                        ? '/images/Gemini_Generated_Image_wa7qvewa7qvewa7q.png'
+                        ? '/images/home-service-bulk.png'
                         : service.title === 'Vuyela Logistics'
-                        ? '/images/Gemini_Generated_Image_zcvciizcvciizcvc.png'
+                        ? '/images/home-service-logistics.png'
                         : service.title === 'Vuyela Refuel'
-                        ? '/images/Gemini_Generated_Image_k7jw5hk7jw5hk7jw.png'
+                        ? '/images/home-service-refuel.png'
                         : service.title === 'Vuyela Freight'
-                        ? '/images/Gemini_Generated_Image_j5eynmj5eynmj5ey.png'
+                        ? '/images/home-service-freight.png'
                         : `https://placehold.co/300x200/111111/D4AF37?text=${encodeURIComponent(service.title)}`
                     }
                     alt={`${service.title} service`}
@@ -282,7 +282,7 @@ export default function Home() {
                     className="relative w-full md:w-1/2 flex-shrink-0 h-64 md:h-80 rounded-lg overflow-hidden"
                   >
                     <Image
-                      src="/images/Gemini_Generated_Image_a7w2wpa7w2wpa7w2.png"
+                      src="/images/home-facility-aerial.png"
                       alt="Elandsfontein facility aerial view"
                       fill
                       className="object-cover"
@@ -423,8 +423,8 @@ export default function Home() {
                 className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
               >
                 <Image
-                  src="https://placehold.co/800x400/111111/D4AF37?text=Agricultural+Logistics"
-                  alt="Agricultural logistics operations"
+                  src="/images/Gemini_Generated_Image_f386w1f386w1f386.png"
+                  alt="Agricultural logistics operations - truck being loaded with grain"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

@@ -159,7 +159,7 @@ export function LogisticsServiceContent() {
               className="relative w-full h-full min-h-[400px] rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_g127djg127djg127.png"
+                src="/images/logistics-hero.png"
                 alt="Vuyela logistics fleet and transport operations"
                 fill
                 className="object-cover"
@@ -198,7 +198,7 @@ export function LogisticsServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_fpj20kfpj20kfpj2.png"
+                src="/images/logistics-why-choose.png"
                 alt="Vuyela logistics operations and fleet"
                 fill
                 className="object-cover"
@@ -241,7 +241,7 @@ export function LogisticsServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_74nw2174nw2174nw.png"
+                src="/images/logistics-features-after.png"
                 alt="Container transport and logistics"
                 fill
                 className="object-cover"
@@ -284,7 +284,7 @@ export function LogisticsServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_xyo0qyxyo0qyxyo01.png"
+                  src="/images/logistics-services.png"
                   alt="Road transport and logistics services"
                   fill
                   className="object-cover"
@@ -321,7 +321,7 @@ export function LogisticsServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_oaebbpoaebbpoaeb.png"
+                  src="/images/logistics-capabilities.png"
                   alt="Fleet operations and capabilities"
                   fill
                   className="object-cover"
