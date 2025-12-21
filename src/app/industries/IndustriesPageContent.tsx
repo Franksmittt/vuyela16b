@@ -144,7 +144,7 @@ export function IndustriesPageContent() {
                   <Image
                     src={industry.title === 'Mining Logistics' 
                       ? '/images/Mining Logisticshp.jpg'
-                      : '/images/Gemini_Generated_Image_f386w1f386w1f386.png'}
+                      : '/images/agricultural-grain-loading.png'}
                     alt={industry.title === 'Mining Logistics' 
                       ? 'Mining logistics operations'
                       : 'Agricultural logistics - truck being loaded with grain'}

@@ -134,7 +134,7 @@ export function RefuelServiceContent() {
                   href="/contact"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-[#FFD700] px-8 text-sm font-semibold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-[#FFD700] border-2 border-[#FFD700] transition-all duration-300 group"
                 >
-                  Get a Quote
+                  Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link

@@ -59,7 +59,7 @@ export default function Home() {
                   href="/contact"
                   className="inline-flex h-12 sm:h-14 items-center justify-center rounded-full bg-[#FFD700] px-6 sm:px-8 text-sm sm:text-base font-semibold text-[#1a1a1a] shadow-lg hover:bg-[#1a1a1a] hover:text-[#FFD700] transition-all duration-300 hover:scale-105 w-full sm:w-auto"
                 >
-                  Request a Quote
+                  Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Link>
                 <Link
@@ -125,7 +125,7 @@ export default function Home() {
 
       {/* Services Overview Section */}
       <motion.section
-        className="w-full py-16 sm:py-20 md:py-24 bg-white"
+        className="w-full py-12 sm:py-16 md:py-20 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
@@ -240,7 +240,7 @@ export default function Home() {
 
       {/* About Vuyela Group Section */}
       <motion.section
-        className="w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]"
+        className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
@@ -339,7 +339,7 @@ export default function Home() {
 
       {/* Industries We Serve Section */}
       <motion.section
-        className="w-full py-16 sm:py-20 md:py-24 bg-white"
+        className="w-full py-12 sm:py-16 md:py-20 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
@@ -423,7 +423,7 @@ export default function Home() {
                 className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_f386w1f386w1f386.png"
+                  src="/images/agricultural-grain-loading.png"
                   alt="Agricultural logistics operations - truck being loaded with grain"
                   fill
                   className="object-cover"
@@ -504,7 +504,7 @@ export default function Home() {
 
       {/* Vision & Mission Section */}
       <motion.section
-        className="w-full py-16 sm:py-20 md:py-24 bg-white"
+        className="w-full py-12 sm:py-16 md:py-20 bg-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
@@ -588,7 +588,7 @@ export default function Home() {
 
       {/* Why Choose Vuyela Section */}
       <motion.section
-        className="w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]"
+        className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}

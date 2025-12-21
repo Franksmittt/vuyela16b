@@ -322,7 +322,7 @@ export function ContactPageContent() {
 
       {/* Facility Entrance Image */}
       {/* AI Prompt Goal: Facility Entrance - Image showing the entrance to the Vuyela facility at 83 Main Reef Road */}
-      <section className="w-full py-0 relative">
+      <section className="w-full py-12 sm:py-16 md:py-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -331,7 +331,7 @@ export function ContactPageContent() {
           className="relative w-full max-w-4xl mx-auto h-64 md:h-96 mb-12"
         >
           <Image
-            src="/images/Gemini_Generated_Image_ad0yq3ad0yq3ad0y.png"
+            src="/images/facility-trucks.png"
             alt="Vuyela facility with trucks"
             fill
             className="object-cover rounded-lg"

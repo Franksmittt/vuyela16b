@@ -123,7 +123,7 @@ export default function AboutPageContent() {
   return (
     <div ref={containerRef} className="flex flex-col w-full overflow-hidden bg-[#1a1a1a]">
       {/* Hero Section */}
-      <section className="relative w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]">
+      <section className="relative w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]">
         <div className="container px-4 sm:px-6 max-w-5xl mx-auto text-center">
           <motion.div
             variants={containerVariants}

@@ -221,7 +221,7 @@ export function NetworkPageContent() {
     {
       title: 'SOLAS-Verified Weighbridges',
       description: 'Internationally certified weighbridges meeting SOLAS (Safety of Life at Sea) standards for accurate cargo weighing and international shipping compliance.',
-      image: '/images/Gemini_Generated_Image_np7vzanp7vzanp7v.png',
+      image: '/images/weighbridge-solas.png',
       icon: Scale,
     },
     {
@@ -239,7 +239,7 @@ export function NetworkPageContent() {
     {
       title: 'Security Checkpoints',
       description: 'Restricted access areas with security checkpoints ensuring cargo safety and compliance with international trade regulations.',
-      image: '/images/Gemini_Generated_Image_1is9dc1is9dc1is9.png',
+      image: '/images/weighbridge-checkpoint.png',
       icon: ShieldCheck,
     },
   ];
@@ -305,7 +305,7 @@ export function NetworkPageContent() {
       </section>
 
       {/* Network Infographic */}
-      <section className="w-full py-0 relative">
+      <section className="w-full py-12 sm:py-16 md:py-20 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -137,7 +137,7 @@ export function FreightServiceContent() {
                   href="/contact"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-[#FFD700] px-8 text-sm font-semibold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-[#FFD700] border-2 border-[#FFD700] transition-all duration-300 group"
                 >
-                  Get a Quote
+                  Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
@@ -157,7 +157,7 @@ export function FreightServiceContent() {
               className="relative w-full h-full min-h-[400px] rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_4ewnum4ewnum4ewn.png"
+                src="/images/freight-port-durban.png"
                 alt="Aerial view of Vuyela truck at Port of Durban with Maersk container ship"
                 fill
                 className="object-cover"
@@ -196,7 +196,7 @@ export function FreightServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_2l459o2l459o2l45.png"
+                src="/images/freight-container-loading.png"
                 alt="Reach stacker loading container onto Vuyela truck at port"
                 fill
                 className="object-cover"
@@ -238,7 +238,7 @@ export function FreightServiceContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_aghl65aghl65aghl.png"
+                src="/images/freight-shipping-yard.png"
                 alt="Reach stacker precision-loading container in shipping yard"
                 fill
                 className="object-cover"
@@ -281,7 +281,7 @@ export function FreightServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_1is9dc1is9dc1is9.png"
+                  src="/images/weighbridge-checkpoint.png"
                   alt="Vuyela truck on weighbridge with security checkpoint"
                   fill
                   className="object-cover"
@@ -318,7 +318,7 @@ export function FreightServiceContent() {
                 className="relative w-full h-56 rounded-lg overflow-hidden border border-[#3a3a3a]"
               >
                 <Image
-                  src="/images/Gemini_Generated_Image_ddqo9kddqo9kddqo.png"
+                  src="/images/freight-container-terminal.png"
                   alt="Volvo truck with refrigerated trailer at container terminal"
                   fill
                   className="object-cover"

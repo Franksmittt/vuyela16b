@@ -237,26 +237,31 @@ export function FacilitiesPageContent() {
     <div className="flex flex-col w-full overflow-hidden bg-[#1a1a1a]">
       {/* Hero Section */}
       {/* Facility Aerial Security - Large hero image showing aerial view of facility with security features visible */}
-      <section className="relative w-full py-0">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative w-full h-64 md:h-96"
-        >
-          <Image
-            src="/images/facilities-aerial-view.png"
-            alt="Vuyela facility aerial view"
-            fill
-            className="object-cover"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-[#1a1a1a]/60" />
-        </motion.div>
+      {/* Hero Image Section */}
+      <section className="relative w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]">
+        <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden"
+          >
+            <Image
+              src="/images/facilities-aerial-view.png"
+              alt="Vuyela facility aerial view"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1200px"
+              priority
+            />
+            <div className="absolute inset-0 bg-[#1a1a1a]/60" />
+          </motion.div>
+        </div>
       </section>
-      <section className="relative w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]">
+
+      {/* Hero Content Section */}
+      <section className="relative w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]">
         <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <motion.div
@@ -316,7 +321,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_k9qnbnk9qnbnk9qn.png"
+                src="/images/warehouse-interior.png"
                 alt="Vuyela facility infrastructure"
                 fill
                 className="object-cover"
@@ -363,7 +368,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_ad0yq3ad0yq3ad0y.png"
+                src="/images/facility-trucks.png"
                 alt="Vuyela facility location and entrance"
                 fill
                 className="object-cover"
@@ -375,7 +380,7 @@ export function FacilitiesPageContent() {
       </section>
 
       {/* Facilities Grid */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-[#1a1a1a]">
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-[#1a1a1a]">
         <div className="container px-4 sm:px-6 max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -471,7 +476,7 @@ export function FacilitiesPageContent() {
           >
             <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]">
               <Image
-                src="/images/Gemini_Generated_Image_k9qnbnk9qnbnk9qn.png"
+                src="/images/warehouse-interior.png"
                 alt="Warehouse operations and facility management"
                 fill
                 className="object-cover"
@@ -483,7 +488,7 @@ export function FacilitiesPageContent() {
       </section>
 
       {/* Trust Building Section */}
-      <section className="w-full py-16 sm:py-20 md:py-24 bg-[#2a2a2a]">
+      <section className="w-full py-12 sm:py-16 md:py-20 bg-[#2a2a2a]">
         <div className="container px-4 sm:px-6 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -533,7 +538,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_1is9dc1is9dc1is9.png"
+                src="/images/weighbridge-checkpoint.png"
                 alt="Security systems and monitoring"
                 fill
                 className="object-cover"
@@ -548,7 +553,7 @@ export function FacilitiesPageContent() {
               className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#3a3a3a]"
             >
               <Image
-                src="/images/Gemini_Generated_Image_np7vzanp7vzanp7v.png"
+                src="/images/weighbridge-solas.png"
                 alt="Operations center and monitoring"
                 fill
                 className="object-cover"
