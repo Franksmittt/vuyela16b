@@ -39,8 +39,8 @@ export default function Home() {
     },
   };
   const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.3 } },
   };
 
   return (
@@ -48,11 +48,13 @@ export default function Home() {
       <Script
         id="website-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <Script
         id="organization-schema-home"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <div className="flex flex-col items-center w-full overflow-hidden">
@@ -63,7 +65,7 @@ export default function Home() {
           className="w-full pt-6 pb-4 sm:pt-8 sm:pb-6 md:pt-12 md:pb-8 relative overflow-hidden flex-1 flex items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.2 }}
         >
           {/* Hero Background Image */}
           {/* AI Prompt Goal: Hero Truck Dusk - Full-width hero image showing Vuyela truck at dusk/sunset */}
@@ -75,7 +77,7 @@ export default function Home() {
               className="object-cover"
               priority
               fetchPriority="high"
-              quality={85}
+              quality={75}
               sizes="100vw"
             />
             <div className="absolute inset-0 bg-[#1a1a1a]/80" />
@@ -172,7 +174,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="container px-4 sm:px-6 max-w-full">
           <motion.div
@@ -225,17 +227,17 @@ export default function Home() {
               <motion.div
                 key={index}
                 className="bg-[#1a1a1a] rounded-xl p-8 border border-[#2a2a2a] hover:border-[#FFD700] transition-all duration-300 hover:shadow-xl group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
               >
                 {/* Service thumbnail image */}
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                  transition={{ duration: 0.2, delay: index * 0.05 }}
                   className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
                 >
                   <Image
@@ -253,7 +255,9 @@ export default function Home() {
                     alt={`${service.title} service`}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    loading="lazy"
+                    quality={75}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </motion.div>
                 <div className={`${service.color} w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -287,16 +291,16 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="container px-4 sm:px-6 max-w-full">
           <div className="max-w-4xl mx-auto">
             <motion.div
               className="flex flex-col"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.2 }}
             >
               <div>
                 <div className="inline-flex items-center gap-2 text-[#FFD700] mb-4">
@@ -318,10 +322,10 @@ export default function Home() {
                   </div>
                   {/* Elandsfontein facility aerial view */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.2 }}
                     className="relative w-full md:w-1/2 flex-shrink-0 h-64 md:h-80 rounded-lg overflow-hidden"
                   >
                     <Image
@@ -329,6 +333,8 @@ export default function Home() {
                       alt="Elandsfontein facility aerial view"
                       fill
                       className="object-cover"
+                      loading="lazy"
+                      quality={75}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </motion.div>
@@ -386,7 +392,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="container px-4 sm:px-6 max-w-full">
           <motion.div
@@ -404,17 +410,17 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <motion.div
               className="bg-[#1a1a1a] rounded-xl p-8 border border-[#2a2a2a] hover:border-[#FFD700] transition-all duration-300"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.2 }}
             >
               {/* Mining Logistics Image - Ground-level medium shot showing mining logistics operations */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.2 }}
                 className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
               >
                 <Image
@@ -422,6 +428,8 @@ export default function Home() {
                   alt="Mining logistics operations"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  quality={75}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </motion.div>
@@ -452,17 +460,17 @@ export default function Home() {
 
             <motion.div
               className="bg-[#1a1a1a] rounded-xl p-8 border border-[#2a2a2a] hover:border-[#FFD700] transition-all duration-300"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.2 }}
             >
               {/* Agricultural Logistics Image - Ground-level medium shot showing agricultural logistics operations */}
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.2 }}
                 className="relative w-full h-48 mb-6 rounded-lg overflow-hidden"
               >
                 <Image
@@ -470,6 +478,8 @@ export default function Home() {
                   alt="Agricultural logistics operations - truck being loaded with grain"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  quality={75}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </motion.div>
@@ -513,10 +523,10 @@ export default function Home() {
         <div className="container px-4 sm:px-6 relative z-10 max-w-full">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.2 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-poppins">
                 Ready to Move Your{' '}
@@ -551,16 +561,16 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="container px-4 sm:px-6 max-w-full">
           <div className="max-w-6xl mx-auto">
             <motion.div
               className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.2 }}
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-poppins text-[#1a1a1a] mb-4">
                 Our <span className="text-[#FFD700]">Vision & Mission</span>
@@ -573,10 +583,10 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <motion.div
                 className="bg-[#1a1a1a] rounded-xl p-8 border border-[#2a2a2a] hover:border-[#FFD700] transition-all duration-300"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.2 }}
               >
                 <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <Eye className="h-8 w-8 text-[#1a1a1a]" />
@@ -591,10 +601,10 @@ export default function Home() {
 
               <motion.div
                 className="bg-[#1a1a1a] rounded-xl p-8 border border-[#2a2a2a] hover:border-[#FFD700] transition-all duration-300"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.2 }}
               >
                 <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <Target className="h-8 w-8 text-[#1a1a1a]" />
@@ -635,15 +645,15 @@ export default function Home() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "100px" }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="container px-4 sm:px-6 max-w-full">
           <motion.div
             className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.2 }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-poppins text-white mb-4">
               Why Choose <span className="text-[#FFD700]">Vuyela Group?</span>
@@ -689,10 +699,10 @@ export default function Home() {
               <motion.div
                 key={index}
                 className="bg-[#2a2a2a] rounded-xl p-6 border border-[#3a3a3a] hover:border-[#FFD700] transition-all duration-300 hover:shadow-lg"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.2, delay: index * 0.05 }}
               >
                 <div className="bg-[#FFD700] w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-[#1a1a1a]" />
