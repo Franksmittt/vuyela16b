@@ -4,15 +4,58 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowRight, Clock, ShieldCheck, Truck, Warehouse, CheckCircle2, Ship, Fuel, Target, Users, Award, MapPin, Eye, Handshake, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export default function Home() {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Vuyela Group',
+    url: 'https://vuyela.com',
+    description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, and energy solutions.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://vuyela.com/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Vuyela Group',
+    url: 'https://vuyela.com',
+    logo: 'https://vuyela.com/images/og.png',
+    description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, and energy solutions.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Elandsfontein',
+      addressCountry: 'ZA',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      areaServed: 'ZA',
+    },
+  };
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <div className="flex flex-col items-center w-full overflow-hidden">
+    <>
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <Script
+        id="organization-schema-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <div className="flex flex-col items-center w-full overflow-hidden">
       {/* Hero + Slider Container - Fits exactly in viewport */}
       <div className="w-full bg-[#1a1a1a] flex flex-col" style={{ minHeight: 'calc(100vh - 4rem)' }}>
         {/* Hero Section */}
@@ -666,5 +709,6 @@ export default function Home() {
         </div>
       </motion.section>
     </div>
+    </>
   );
 }

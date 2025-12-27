@@ -1,86 +1,44 @@
-'use client';
+import { Metadata } from 'next';
+import DashboardPageClient from './DashboardPageClient';
+import JsonLd from '@/components/JsonLd';
 
-import { motion } from 'framer-motion';
-import { Settings, User } from 'lucide-react';
-import Link from 'next/link';
+export const metadata: Metadata = {
+  title: 'Dashboard | Vuyela Group',
+  description:
+    'Access your Vuyela Group dashboard to manage your account, view logistics information, and track your shipments and services.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+  alternates: {
+    canonical: '/dashboard',
+  },
+  openGraph: {
+    title: 'Dashboard | Vuyela Group',
+    description: 'Manage your account and logistics services with Vuyela Group.',
+    url: 'https://vuyela.com/dashboard',
+  },
+};
+
+const dashboardSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Vuyela Group Dashboard',
+  description: 'Access your Vuyela Group dashboard to manage your account and logistics services.',
+  url: 'https://vuyela.com/dashboard',
+  applicationCategory: 'BusinessApplication',
+  provider: {
+    '@type': 'Organization',
+    name: 'Vuyela Group',
+  },
+};
 
 export default function DashboardPage() {
-
-  const fadeIn = {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-  };
-
   return (
-    <div className="flex min-h-screen bg-(--background)">
-      {/* Sidebar */}
-      <motion.aside
-        className="w-64 bg-(--card) border-r border-(--border) flex flex-col"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="p-4 border-b border-(--border)">
-          <h2 className="text-xl font-semibold text-(--foreground)">
-            Dashboard
-          </h2>
-        </div>
-        <nav className="flex-1 p-4 space-y-2">
-          <Link
-            href="/dashboard"
-            className="flex items-center gap-2 p-2 text-sm font-medium text-(--foreground) hover:bg-(--primary) hover:text-(--primary-foreground) rounded-md transition-colors duration-200"
-          >
-            <User className="h-5 w-5" />
-            Profile
-          </Link>
-          <Link
-            href="/dashboard/settings"
-            className="flex items-center gap-2 p-2 text-sm font-medium text-(--foreground) hover:bg-(--primary) hover:text-(--primary-foreground) rounded-md transition-colors duration-200"
-          >
-            <Settings className="h-5 w-5" />
-            Settings
-          </Link>
-        </nav>
-      </motion.aside>
-
-      {/* Main Content */}
-      <main className="flex-1 p-8">
-        <motion.div className="max-w-4xl mx-auto" {...fadeIn}>
-          <h1 className="text-3xl font-bold text-(--foreground) mb-4">
-            Welcome to your Dashboard!
-          </h1>
-          <p className="text-lg text-(--muted-foreground) mb-8">
-            This is your dashboard. Use the sidebar to navigate through your
-            profile and settings.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div
-              className="bg-(--card) p-6 rounded-lg border border-(--border) shadow-sm hover:shadow-md transition-all duration-300"
-              whileHover={{ y: -5 }}
-            >
-              <h3 className="text-xl font-semibold text-(--foreground) mb-2">
-                Account Stats
-              </h3>
-              <p className="text-(--muted-foreground)">
-                View your account activity and statistics.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className="bg-(--card) p-6 rounded-lg border border-(--border) shadow-sm hover:shadow-md transition-all duration-300"
-              whileHover={{ y: -5 }}
-            >
-              <h3 className="text-xl font-semibold text-(--foreground) mb-2">
-                Recent Activity
-              </h3>
-              <p className="text-(--muted-foreground)">
-                Check your recent actions and updates.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
-      </main>
-    </div>
+    <>
+      <JsonLd data={dashboardSchema} />
+      <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', borderWidth: 0 }}>User Dashboard</h1>
+      <DashboardPageClient />
+    </>
   );
 }

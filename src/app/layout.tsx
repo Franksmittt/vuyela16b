@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 
 import MainFooter from '@/components/Footer';
 import MainNavbar from '@/components/Navbar';
+import JsonLd from '@/components/JsonLd';
 import { QueryProvider } from '@/providers/query';
 import { ThemeProvider } from '@/providers/theme';
 import '@/styles/globals.css';
@@ -32,6 +33,9 @@ export const metadata = {
   authors: [{ name: 'Vuyela Group' }],
   creator: 'Vuyela Group',
   metadataBase: new URL('https://vuyela.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -40,6 +44,14 @@ export const metadata = {
     description:
       'Premier logistics solutions from the heart of Elandsfontein. We deliver precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7.',
     siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/hero_1.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Group - Premier Logistics Solutions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -49,12 +61,33 @@ export const metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Vuyela Group',
+  url: 'https://vuyela.com',
+  logo: 'https://vuyela.com/images/og.png',
+  description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, and energy solutions.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Elandsfontein',
+    addressCountry: 'ZA',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Customer Service',
+    areaServed: 'ZA',
+  },
+  sameAs: [],
+};
+
 function RootLayoutContent({ children }: ChildrenProps) {
   return (
     <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased overflow-x-hidden`}
       >
+        <JsonLd data={organizationSchema} />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <QueryProvider>
             <div className="flex min-h-screen bg-(--background) w-full overflow-x-hidden">
