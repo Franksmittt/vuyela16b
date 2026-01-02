@@ -92,7 +92,7 @@ export function CarrierRegistrationForm() {
       {/* Section 1: Business Identification */}
       <div>
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-[#FFD700] flex items-center justify-center">
             <Building2 className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-white">Business Identification</h3>
@@ -109,7 +109,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.companyName}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="ABC Transport (Pty) Ltd"
             />
           </div>
@@ -124,7 +124,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.registrationNumber}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="2023/123456/07"
             />
           </div>
@@ -139,7 +139,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.vatNumber}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="4123456789"
             />
           </div>
@@ -155,7 +155,7 @@ export function CarrierRegistrationForm() {
               min="2"
               value={formData.yearsInOperation}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="5"
             />
             <p className="text-gray-400 text-xs mt-1">Minimum 2 years required</p>
@@ -166,7 +166,7 @@ export function CarrierRegistrationForm() {
       {/* Section 2: Compliance & Documentation */}
       <div className="pt-6 border-t border-[#3a3a3a]">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-[#FFD700] flex items-center justify-center">
             <ShieldCheck className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-white">Compliance & Documentation</h3>
@@ -183,7 +183,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.dotMcNumber}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="MC-123456"
             />
           </div>
@@ -203,9 +203,9 @@ export function CarrierRegistrationForm() {
               />
               <label
                 htmlFor="insuranceFile"
-                className="flex items-center gap-3 px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg cursor-pointer hover:border-orange-500 transition-colors"
+                className="flex items-center gap-3 px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg cursor-pointer hover:border-[#FFD700] transition-colors"
               >
-                <Upload className="h-5 w-5 text-orange-500" />
+                <Upload className="h-5 w-5 text-[#FFD700]" />
                 <span className="text-white text-sm">
                   {formData.insuranceFile ? formData.insuranceFile.name : 'Upload Insurance Certificate (PDF)'}
                 </span>
@@ -225,7 +225,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.safetyRating}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white focus:outline-none focus:border-[#FFD700] transition-colors"
             >
               <option value="">Select safety rating</option>
               <option value="satisfactory">Satisfactory</option>
@@ -239,7 +239,7 @@ export function CarrierRegistrationForm() {
       {/* Section 3: Fleet & Equipment */}
       <div className="pt-6 border-t border-[#3a3a3a]">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-[#FFD700] flex items-center justify-center">
             <Truck className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-white">Fleet & Equipment</h3>
@@ -257,7 +257,7 @@ export function CarrierRegistrationForm() {
               min="1"
               value={formData.powerUnits}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="10"
             />
           </div>
@@ -274,7 +274,7 @@ export function CarrierRegistrationForm() {
                     value={type}
                     checked={formData.equipmentTypes.includes(type)}
                     onChange={handleInputChange}
-                    className="w-4 h-4 text-orange-500 bg-[#1a1a1a] border-[#3a3a3a] rounded focus:ring-orange-500"
+                    className="w-4 h-4 text-[#FFD700] bg-[#1a1a1a] border-[#3a3a3a] rounded focus:ring-orange-500"
                   />
                   <span className="text-gray-300 text-sm">{type}</span>
                 </label>
@@ -292,7 +292,7 @@ export function CarrierRegistrationForm() {
               rows={3}
               value={formData.preferredLanes}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors resize-none"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors resize-none"
               placeholder="e.g., Johannesburg to Durban, Cape Town to Port Elizabeth"
             />
           </div>
@@ -302,7 +302,7 @@ export function CarrierRegistrationForm() {
       {/* Section 4: References */}
       <div className="pt-6 border-t border-[#3a3a3a]">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-lg bg-[#FFD700] flex items-center justify-center">
             <Users className="h-5 w-5 text-white" />
           </div>
           <h3 className="text-2xl font-bold text-white">Trade References</h3>
@@ -325,7 +325,7 @@ export function CarrierRegistrationForm() {
                   required
                   value={formData.reference1Company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
                   placeholder="Company Name"
                 />
               </div>
@@ -340,7 +340,7 @@ export function CarrierRegistrationForm() {
                   required
                   value={formData.reference1Contact}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
                   placeholder="Contact Name"
                 />
               </div>
@@ -355,7 +355,7 @@ export function CarrierRegistrationForm() {
                   required
                   value={formData.reference1Phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
                   placeholder="+27 11 123 4567"
                 />
               </div>
@@ -375,7 +375,7 @@ export function CarrierRegistrationForm() {
                   required
                   value={formData.reference2Company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
                   placeholder="Company Name"
                 />
               </div>
@@ -390,7 +390,7 @@ export function CarrierRegistrationForm() {
                   required
                   value={formData.reference2Contact}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
                   placeholder="Contact Name"
                 />
               </div>
@@ -405,7 +405,7 @@ export function CarrierRegistrationForm() {
                   required
                   value={formData.reference2Phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-2 bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
                   placeholder="+27 11 123 4567"
                 />
               </div>
@@ -429,7 +429,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.contactName}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="John Doe"
             />
           </div>
@@ -444,7 +444,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.contactEmail}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="john@company.com"
             />
           </div>
@@ -459,7 +459,7 @@ export function CarrierRegistrationForm() {
               required
               value={formData.contactPhone}
               onChange={handleInputChange}
-              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="+27 11 123 4567"
             />
           </div>
@@ -476,7 +476,7 @@ export function CarrierRegistrationForm() {
             required
             checked={formData.termsAccepted}
             onChange={handleInputChange}
-            className="w-5 h-5 mt-1 text-orange-500 bg-[#1a1a1a] border-[#3a3a3a] rounded focus:ring-orange-500"
+            className="w-5 h-5 mt-1 text-[#FFD700] bg-[#1a1a1a] border-[#3a3a3a] rounded focus:ring-orange-500"
           />
           <label htmlFor="termsAccepted" className="text-gray-300 text-sm leading-relaxed">
             I certify that all information provided is accurate and complete. I understand that Vuyela Group 
@@ -486,7 +486,7 @@ export function CarrierRegistrationForm() {
         </div>
         <div className="mt-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#3a3a3a]">
           <div className="flex items-start gap-2">
-            <AlertCircle className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+            <AlertCircle className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
             <div className="text-gray-300 text-sm">
               <p className="font-semibold text-white mb-1">Review Process:</p>
               <p>Applications are reviewed within 5-7 business days. We will contact you via email or phone to discuss 
@@ -500,7 +500,7 @@ export function CarrierRegistrationForm() {
       <button
         type="submit"
         disabled={isSubmitting || !formData.termsAccepted}
-        className="w-full sm:w-auto inline-flex items-center justify-center h-12 px-8 rounded-full bg-orange-600 text-white font-semibold hover:bg-orange-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+        className="w-full sm:w-auto inline-flex items-center justify-center h-12 px-8 rounded-full bg-[#FFD700] text-white font-semibold hover:bg-[#FFD700] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
       >
         {isSubmitting ? (
           <>Submitting...</>

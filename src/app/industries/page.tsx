@@ -18,13 +18,32 @@ export const metadata: Metadata = {
   title: 'Industries We Serve | Vuyela Group',
   description:
     'Specialized logistics solutions for mining and agricultural sectors. From pit to port, we provide practical, real-world solutions for key industries.',
+  keywords:
+    'mining logistics, agricultural logistics, industry-specific logistics, chrome transport, manganese logistics, grain transport, South Africa industries',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/industries',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Industries We Serve | Vuyela Group',
-    description: 'Mining and agricultural logistics solutions across South Africa.',
+    description: 'Mining and agricultural logistics solutions across South Africa with specialized industry expertise.',
     url: 'https://vuyela.com/industries',
+    siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/Mining Logisticshp.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Group - Industries We Serve',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industries We Serve | Vuyela Group',
+    description: 'Specialized logistics solutions for mining and agricultural sectors across South Africa.',
   },
 };
 
@@ -54,15 +73,15 @@ export default function IndustriesPage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Industries
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Serve</span>
+            Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Serve</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Every industry has its rhythm. Mining operations don't move on a 9-to-5 schedule. Agricultural harvests don't wait for convenient timing. We've built our expertise by deeply understanding the industries we know best. This isn't generic logistics. It's specialized knowledge. Industry-specific solutions. Partnerships built on understanding.
           </p>
         </section>
@@ -77,35 +96,35 @@ export default function IndustriesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Target className="w-10 h-10 text-orange-500 mb-6" />
+                <Target className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Industry Expertise</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Deep Sector Knowledge</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Commodity Specifications</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Regulatory Understanding</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Proven Solutions</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Deep Sector Knowledge</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Commodity Specifications</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Regulatory Understanding</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Proven Solutions</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Clock className="w-10 h-10 text-orange-500 mb-6" />
+                <Clock className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Timing Expertise</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Seasonal Awareness</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Critical Deadlines</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Vessel Scheduling</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Harvest Windows</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Seasonal Awareness</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Critical Deadlines</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Vessel Scheduling</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Harvest Windows</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Reliable Partnerships</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> TFR Relationships</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Port Access</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Shipping Line Partners</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Proven Track Record</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> TFR Relationships</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Port Access</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Shipping Line Partners</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Proven Track Record</li>
                 </ul>
               </div>
             </div>
@@ -117,7 +136,7 @@ export default function IndustriesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center">
                   <Warehouse className="h-6 w-6 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold text-white">Mining Logistics</h2>
@@ -134,7 +153,7 @@ export default function IndustriesPage() {
                   <ul className="space-y-2">
                     {['Chrome (Concentrate & ROM)', 'Manganese & Iron Ore', 'Coal & Ferroalloys', 'Ferrochrome', 'Ferromanganese'].map((item, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -145,7 +164,7 @@ export default function IndustriesPage() {
                   <ul className="space-y-2">
                     {['Containerized rail transport', 'Bulk commodity handling', 'Stockpiling & storage', 'Port logistics management', 'Strategic TFR partnerships'].map((item, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -179,7 +198,7 @@ export default function IndustriesPage() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center">
                   <Truck className="h-6 w-6 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold text-white">Agricultural Logistics</h2>
@@ -196,7 +215,7 @@ export default function IndustriesPage() {
                   <ul className="space-y-2">
                     {['Grain & Cereals', 'Fresh Produce', 'Agricultural Inputs', 'Fertilizers', 'Bagged Cargo'].map((item, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -207,7 +226,7 @@ export default function IndustriesPage() {
                   <ul className="space-y-2">
                     {['Flexible transport solutions', 'Seasonal demand management', 'Reliable supply chain partners', 'Time-sensitive deliveries'].map((item, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -224,7 +243,7 @@ export default function IndustriesPage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Do you handle all types of mining commodities?
               </h3>
               <p className="text-sm text-gray-400">
@@ -233,7 +252,7 @@ export default function IndustriesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How do you handle seasonal agricultural demands?
               </h3>
               <p className="text-sm text-gray-400">
@@ -242,7 +261,7 @@ export default function IndustriesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What makes your industry solutions different?
               </h3>
               <p className="text-sm text-gray-400">
@@ -251,7 +270,7 @@ export default function IndustriesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Can you handle both domestic and international shipments?
               </h3>
               <p className="text-sm text-gray-400">
@@ -268,7 +287,7 @@ export default function IndustriesPage() {
             Every industry has its own story. Its own challenges. Its own requirements. We've chosen to specialize in mining and agricultural logistics. We understand these sectors deeply. Let's discuss how our specialized expertise can become your competitive advantage.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/services" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

@@ -19,13 +19,32 @@ export const metadata: Metadata = {
   title: 'Our Services | Vuyela Group',
   description:
     'Comprehensive logistics solutions across four specialized divisions: Vuyela Bulk, Logistics, Freight, and Refuel. Complete warehousing, transport, and energy services.',
+  keywords:
+    'logistics services, warehousing, freight, transport, energy solutions, bulk handling, South Africa logistics, complete logistics solutions',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/services',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Our Services | Vuyela Group',
-    description: 'Complete logistics solutions for warehousing, transport, freight, and energy needs.',
+    description: 'Complete logistics solutions for warehousing, transport, freight, and energy needs across South Africa.',
     url: 'https://vuyela.com/services',
+    siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/home-service-bulk.png',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Group Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Services | Vuyela Group',
+    description: 'Comprehensive logistics solutions across four specialized divisions.',
   },
 };
 
@@ -159,15 +178,15 @@ export default function ServicesPage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Our Services
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Logistics Services</span>
+            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Logistics Services</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Four divisions. One mission. We keep South Africa moving. Vuyela Bulk handles warehousing. Vuyela Logistics runs our fleet. Vuyela Freight manages ocean shipping. Vuyela Refuel supplies premium diesel. These services work together. They create a complete logistics solution.
           </p>
         </section>
@@ -182,35 +201,35 @@ export default function ServicesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Complete Solutions</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Four Integrated Services</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> One Partner</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> No Multiple Vendors</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Seamless Coordination</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Four Integrated Services</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> One Partner</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> No Multiple Vendors</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Seamless Coordination</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Truck className="w-10 h-10 text-orange-500 mb-6" />
+                <Truck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Own Fleet Control</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> We Own Our Trucks</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> We Control Maintenance</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> We Train Our Drivers</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> No Third-Party Excuses</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> We Own Our Trucks</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> We Control Maintenance</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> We Train Our Drivers</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> No Third-Party Excuses</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Clock className="w-10 h-10 text-orange-500 mb-6" />
+                <Clock className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">24/7 Operations</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Never Stop Moving</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Always Available</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Real-Time Tracking</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Full Visibility</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Never Stop Moving</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Always Available</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Real-Time Tracking</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Full Visibility</li>
                 </ul>
               </div>
             </div>
@@ -241,7 +260,7 @@ export default function ServicesPage() {
           <div className="space-y-6 max-w-4xl mx-auto">
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
               <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                <span className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</span>
+                <span className="bg-[#FFD700] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</span>
                 Consultation & Planning
               </h3>
               <p className="text-gray-300 leading-relaxed">
@@ -251,7 +270,7 @@ export default function ServicesPage() {
 
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
               <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                <span className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</span>
+                <span className="bg-[#FFD700] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</span>
                 Service Selection
               </h3>
               <p className="text-gray-300 leading-relaxed">
@@ -261,7 +280,7 @@ export default function ServicesPage() {
 
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
               <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                <span className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</span>
+                <span className="bg-[#FFD700] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</span>
                 Execution & Monitoring
               </h3>
               <p className="text-gray-300 leading-relaxed">
@@ -271,7 +290,7 @@ export default function ServicesPage() {
 
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
               <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                <span className="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</span>
+                <span className="bg-[#FFD700] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</span>
                 Delivery & Follow-Up
               </h3>
               <p className="text-gray-300 leading-relaxed">
@@ -287,7 +306,7 @@ export default function ServicesPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-[#141414] rounded-lg p-8 border border-[#2a2a2a] hover:border-orange-500/50 transition-all duration-300 h-full flex flex-col">
+              <div key={index} className="bg-[#141414] rounded-lg p-8 border border-[#2a2a2a] hover:border-[#FFD700]/50 transition-all duration-300 h-full flex flex-col">
                 <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
                   <Image
                     src={service.image}
@@ -297,14 +316,14 @@ export default function ServicesPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
-                <div className="w-16 h-16 rounded-lg bg-orange-500 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-lg bg-[#FFD700] flex items-center justify-center mb-6">
                   <service.icon className="h-8 w-8 text-white" />
                 </div>
                 
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-orange-500 text-sm font-medium mb-4">
+                <p className="text-[#FFD700] text-sm font-medium mb-4">
                   {service.subtitle}
                 </p>
                 
@@ -317,7 +336,7 @@ export default function ServicesPage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -326,7 +345,7 @@ export default function ServicesPage() {
 
                 <Link
                   href={service.href}
-                  className="inline-flex items-center text-orange-500 font-semibold hover:text-white transition-colors duration-200 group/link mt-auto"
+                  className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link mt-auto"
                 >
                   Learn More about {service.title}
                   <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
@@ -342,7 +361,7 @@ export default function ServicesPage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Can I use multiple services together?
               </h3>
               <p className="text-sm text-gray-400">
@@ -351,7 +370,7 @@ export default function ServicesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Do you operate outside South Africa?
               </h3>
               <p className="text-sm text-gray-400">
@@ -360,7 +379,7 @@ export default function ServicesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What makes your services different from competitors?
               </h3>
               <p className="text-sm text-gray-400">
@@ -369,7 +388,7 @@ export default function ServicesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How do I get started?
               </h3>
               <p className="text-sm text-gray-400">
@@ -386,7 +405,7 @@ export default function ServicesPage() {
             Every business has unique logistics challenges. Every challenge has a solution. Let's discuss your needs. We'll show you how our four divisions work together.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/about" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

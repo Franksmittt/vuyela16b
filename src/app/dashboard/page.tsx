@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Dashboard | Vuyela Group',
   description:
     'Access your Vuyela Group dashboard to manage your account, view logistics information, and track your shipments and services.',
+  metadataBase: new URL('https://vuyela.com'),
   robots: {
     index: false,
     follow: false,
@@ -14,9 +15,12 @@ export const metadata: Metadata = {
     canonical: '/dashboard',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Dashboard | Vuyela Group',
     description: 'Manage your account and logistics services with Vuyela Group.',
     url: 'https://vuyela.com/dashboard',
+    siteName: 'Vuyela Group',
   },
 };
 

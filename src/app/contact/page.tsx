@@ -21,13 +21,19 @@ export const metadata: Metadata = {
   title: 'Contact Us | Vuyela Group',
   description:
     'Contact Vuyela Group for logistics solutions. Visit our HQ in Elandsfontein, call 24/7 support, or use our contact form. We serve South Africa and beyond.',
+  keywords:
+    'contact Vuyela Group, logistics contact, Elandsfontein, South Africa logistics, get quote, logistics inquiry',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Contact Us | Vuyela Group',
-    description: 'Reach out to discuss your logistics requirements with our expert team.',
+    description: 'Reach out to discuss your logistics requirements with our expert team. 24/7 support available.',
     url: 'https://vuyela.com/contact',
+    siteName: 'Vuyela Group',
     images: [
       {
         url: '/images/facility-trucks.png',
@@ -36,6 +42,11 @@ export const metadata: Metadata = {
         alt: 'Vuyela Group - Contact Us',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Vuyela Group',
+    description: 'Contact Vuyela Group for logistics solutions. 24/7 support available.',
   },
 };
 
@@ -65,15 +76,15 @@ export default function ContactPage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Get in Touch
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Vuyela Group</span>
+            Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Vuyela Group</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Ready to partner with us? Contact our team. We discuss your logistics needs. We provide solutions. We deliver excellence. Our team operates 24/7. We respond quickly. We solve problems.
           </p>
         </section>
@@ -88,35 +99,35 @@ export default function ContactPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">24/7 Support</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Always Available</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Quick Response Times</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Emergency Support</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Direct Director Access</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Always Available</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Quick Response Times</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Emergency Support</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Direct Director Access</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Users className="w-10 h-10 text-orange-500 mb-6" />
+                <Users className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Expert Team</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Logistics Specialists</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Custom Solutions</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Industry Experience</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Personal Service</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Logistics Specialists</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Custom Solutions</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Industry Experience</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Personal Service</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Globe className="w-10 h-10 text-orange-500 mb-6" />
+                <Globe className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Nationwide Reach</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> South Africa Coverage</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> International Connections</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Port Access</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Cross-Border Services</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> South Africa Coverage</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> International Connections</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Port Access</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Cross-Border Services</li>
                 </ul>
               </div>
             </div>
@@ -137,7 +148,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a]">
-                  <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -147,7 +158,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a]">
-                  <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -157,7 +168,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a]">
-                  <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -190,10 +201,10 @@ export default function ContactPage() {
                 Our Elandsfontein facility is the heart of operations. We're located at 83 Main Reef Road. This location gives us easy access to major transport routes. We're close to the Port of Durban. We're near TFR terminals.
               </p>
               <ul className="space-y-3 text-gray-300">
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Easy access from N3 and N12 highways</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Close to OR Tambo International Airport</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Strategic position for nationwide distribution</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Secure facility with full CCTV coverage</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Easy access from N3 and N12 highways</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Close to OR Tambo International Airport</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Strategic position for nationwide distribution</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Secure facility with full CCTV coverage</li>
               </ul>
             </div>
 
@@ -203,10 +214,10 @@ export default function ContactPage() {
                 During your visit, you'll see our SOLAS certified weighbridges. You'll see our SARS Bonded Warehouse. You'll see container handling facilities. You'll see our operations center. Our team will walk you through everything.
               </p>
               <ul className="space-y-3 text-gray-300">
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> SOLAS certified weighbridge operations</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> SARS Bonded Warehouse facilities</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Container handling and storage areas</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> 24/7 security and monitoring systems</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> SOLAS certified weighbridge operations</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> SARS Bonded Warehouse facilities</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Container handling and storage areas</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> 24/7 security and monitoring systems</li>
               </ul>
             </div>
           </div>
@@ -218,17 +229,17 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-[#141414] p-8 rounded-xl border border-[#2a2a2a] text-center">
               <h3 className="text-xl font-bold text-white mb-3">Operations</h3>
-              <p className="text-orange-500 text-3xl font-bold mb-2">24/7</p>
+              <p className="text-[#FFD700] text-3xl font-bold mb-2">24/7</p>
               <p className="text-gray-400 text-sm">Our facility operates around the clock. Cargo moves day and night. Weekends and holidays included.</p>
             </div>
             <div className="bg-[#141414] p-8 rounded-xl border border-[#2a2a2a] text-center">
               <h3 className="text-xl font-bold text-white mb-3">Customer Support</h3>
-              <p className="text-orange-500 text-3xl font-bold mb-2">24/7</p>
+              <p className="text-[#FFD700] text-3xl font-bold mb-2">24/7</p>
               <p className="text-gray-400 text-sm">Our team is always available. Emergency? Urgent shipment? We answer calls and emails anytime.</p>
             </div>
             <div className="bg-[#141414] p-8 rounded-xl border border-[#2a2a2a] text-center">
               <h3 className="text-xl font-bold text-white mb-3">Office Visits</h3>
-              <p className="text-orange-500 text-3xl font-bold mb-2">By Appointment</p>
+              <p className="text-[#FFD700] text-3xl font-bold mb-2">By Appointment</p>
               <p className="text-gray-400 text-sm">Schedule a visit to our facility. We'll give you a full tour. We'll discuss your logistics needs in person.</p>
             </div>
           </div>
@@ -244,10 +255,10 @@ export default function ContactPage() {
                 We operate nationwide. We cover all major cities and ports. From Durban to Cape Town. From Johannesburg to Bloemfontein. Our network covers every corner of South Africa.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> Port of Durban operations</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> TFR terminal access nationwide</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> Major city distribution</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> Cross-border capabilities</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> Port of Durban operations</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> TFR terminal access nationwide</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> Major city distribution</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> Cross-border capabilities</li>
               </ul>
             </div>
             <div>
@@ -256,10 +267,10 @@ export default function ContactPage() {
                 Through our freight division, we connect South Africa to the world. Strategic partnerships with major shipping lines give us access to global routes and ports.
               </p>
               <ul className="space-y-2 text-gray-300">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> Asia-Pacific shipping routes</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> European trade connections</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> Americas import/export</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1"/> Global carrier network</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> Asia-Pacific shipping routes</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> European trade connections</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> Americas import/export</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-1"/> Global carrier network</li>
               </ul>
             </div>
           </div>
@@ -271,7 +282,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How quickly do you respond to inquiries?
               </h3>
               <p className="text-sm text-gray-400">
@@ -280,7 +291,7 @@ export default function ContactPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Can I visit your facility?
               </h3>
               <p className="text-sm text-gray-400">
@@ -289,7 +300,7 @@ export default function ContactPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Do you handle international shipments?
               </h3>
               <p className="text-sm text-gray-400">
@@ -298,7 +309,7 @@ export default function ContactPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What services can you provide?
               </h3>
               <p className="text-sm text-gray-400">
@@ -315,7 +326,7 @@ export default function ContactPage() {
             Join leading companies that trust Vuyela Group. Let us handle your logistics. You focus on your business.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/services" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/services" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Our Services <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/about" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

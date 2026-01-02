@@ -17,13 +17,32 @@ export const metadata: Metadata = {
   title: 'Vuyela Bulk - Warehousing & Handling | Vuyela Group',
   description:
     'Strategic warehousing, stockpiling, and containerization at our Elandsfontein facility. SARS Bonded Warehouse with SOLAS certified weighbridges.',
+  keywords:
+    'warehousing, bulk handling, SARS bonded warehouse, SOLAS certified, containerization, stockpiling, Elandsfontein, logistics, South Africa',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/services/bulk',
   },
   openGraph: {
-    title: 'Vuyela Bulk - Warehousing & Handling',
-    description: 'Professional warehousing and bulk handling solutions in Elandsfontein.',
+    type: 'website',
+    locale: 'en_US',
+    title: 'Vuyela Bulk - Warehousing & Handling | Vuyela Group',
+    description: 'Professional warehousing and bulk handling solutions in Elandsfontein with SARS Bonded Warehouse and SOLAS certified weighbridges.',
     url: 'https://vuyela.com/services/bulk',
+    siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/bulk-warehouse-facilities.png',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Bulk - Warehousing & Handling',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vuyela Bulk - Warehousing & Handling',
+    description: 'Strategic warehousing and bulk handling solutions with SARS Bonded Warehouse and SOLAS certified weighbridges.',
   },
 };
 
@@ -106,15 +125,15 @@ export default function BulkServicePage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Vuyela Bulk
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Bulk Cargo <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Transport</span>
+            Bulk Cargo <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Transport</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             We handle bulk cargo transport. Chrome goes to international markets. Manganese goes to steel production. Iron ore goes to global trade. Our Elandsfontein facility stores these commodities safely. We become their custodians.
           </p>
         </section>
@@ -132,14 +151,14 @@ export default function BulkServicePage() {
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-orange-600 px-8 text-sm font-semibold text-white hover:bg-orange-500 transition-all duration-300 group"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#FFD700] px-8 text-sm font-semibold text-white hover:bg-[#FFD700] transition-all duration-300 group"
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 text-sm font-semibold text-white hover:bg-white/10 hover:border-orange-500 transition-all duration-300"
+                  className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 text-sm font-semibold text-white hover:bg-white/10 hover:border-[#FFD700] transition-all duration-300"
                 >
                   All Services
                 </Link>
@@ -167,35 +186,35 @@ export default function BulkServicePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Certified Infrastructure</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> SARS Bonded Warehouse</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> SOLAS Certified Weighbridges</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> ISO Compliance</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> NOSA Safety Standards</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> SARS Bonded Warehouse</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> SOLAS Certified Weighbridges</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> ISO Compliance</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> NOSA Safety Standards</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Warehouse className="w-10 h-10 text-orange-500 mb-6" />
+                <Warehouse className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Large Capacity</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> 10,000+ Square Meters</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Large Stockpiles</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Flexible Storage</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Scalable Solutions</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> 10,000+ Square Meters</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Large Stockpiles</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Flexible Storage</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Scalable Solutions</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Clock className="w-10 h-10 text-orange-500 mb-6" />
+                <Clock className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">24/7 Operations</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Always Available</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Full Yard Camera Coverage</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Continuous Monitoring</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Real-Time Visibility</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Always Available</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Full Yard Camera Coverage</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Continuous Monitoring</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Real-Time Visibility</li>
                 </ul>
               </div>
             </div>
@@ -219,7 +238,7 @@ export default function BulkServicePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div key={index} className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
@@ -258,12 +277,12 @@ export default function BulkServicePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-[#141414] rounded-lg p-6 sm:p-8 border border-[#2a2a2a]">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Services <span className="text-orange-500">Offered</span>
+                Services <span className="text-[#FFD700]">Offered</span>
               </h3>
               <ul className="space-y-3 mb-6">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-sm sm:text-base">{service}</span>
                   </li>
                 ))}
@@ -281,12 +300,12 @@ export default function BulkServicePage() {
 
             <div className="bg-[#141414] rounded-lg p-6 sm:p-8 border border-[#2a2a2a]">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Key <span className="text-orange-500">Commodities</span>
+                Key <span className="text-[#FFD700]">Commodities</span>
               </h3>
               <ul className="space-y-3 mb-6">
                 {commodities.map((commodity, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-sm sm:text-base">{commodity}</span>
                   </li>
                 ))}
@@ -307,7 +326,7 @@ export default function BulkServicePage() {
         {/* LOCATION */}
         <section className="py-20 px-6 max-w-7xl mx-auto bg-[#141414] border-y border-[#1f1f1f]">
           <div className="bg-[#0f0f0f] rounded-lg p-6 sm:p-8 border border-[#222] text-center">
-            <div className="w-16 h-16 rounded-lg bg-orange-500 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-lg bg-[#FFD700] flex items-center justify-center mx-auto mb-6">
               <MapPin className="h-8 w-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Our Location</h3>
@@ -330,10 +349,10 @@ export default function BulkServicePage() {
                 Coal needs careful storage. We prevent moisture damage. Our stockpiles stay dry and secure. We handle thermal coal and coking coal. Each type gets proper treatment.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Thermal coal storage</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Coking coal handling</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Moisture protection</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Dust control measures</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Thermal coal storage</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Coking coal handling</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Moisture protection</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Dust control measures</li>
               </ul>
             </div>
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
@@ -342,10 +361,10 @@ export default function BulkServicePage() {
                 Chrome comes in two forms. Concentrate is processed. ROM is raw ore. We handle both. Our weighbridges verify weight accurately. Export documentation stays correct.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Chrome concentrate storage</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> ROM handling</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Accurate weighing</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Export preparation</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Chrome concentrate storage</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> ROM handling</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Accurate weighing</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Export preparation</li>
               </ul>
             </div>
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
@@ -354,10 +373,10 @@ export default function BulkServicePage() {
                 Iron ore is heavy. It needs strong storage. We use proper equipment. Our facility handles large volumes. Stockpiling works smoothly. Container packing stays efficient.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Large volume storage</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Heavy equipment handling</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Efficient stockpiling</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Container optimization</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Large volume storage</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Heavy equipment handling</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Efficient stockpiling</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Container optimization</li>
               </ul>
             </div>
           </div>
@@ -374,10 +393,10 @@ export default function BulkServicePage() {
                 We follow ISO 9001 quality management. Our processes stay consistent. We document everything. Regular audits keep us compliant. Quality never drops.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> ISO 9001:2015 certified</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Quality management systems</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Regular compliance audits</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Documented procedures</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> ISO 9001:2015 certified</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Quality management systems</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Regular compliance audits</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Documented procedures</li>
               </ul>
             </div>
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
@@ -386,10 +405,10 @@ export default function BulkServicePage() {
                 Our weighbridges meet SOLAS rules. International shipping requires this. Weight documents stay accurate. No disputes at ports. Compliance is guaranteed.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> SOLAS certified weighbridges</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> International shipping compliance</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Accurate weight documentation</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Port acceptance guaranteed</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> SOLAS certified weighbridges</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> International shipping compliance</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Accurate weight documentation</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Port acceptance guaranteed</li>
               </ul>
             </div>
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
@@ -398,10 +417,10 @@ export default function BulkServicePage() {
                 We follow NOSA safety standards. Worker safety comes first. Equipment stays maintained. Safety training happens regularly. Accidents stay prevented.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> NOSA safety standards</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Regular safety training</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Equipment maintenance</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Zero accident goal</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> NOSA safety standards</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Regular safety training</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Equipment maintenance</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Zero accident goal</li>
               </ul>
             </div>
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
@@ -410,10 +429,10 @@ export default function BulkServicePage() {
                 Our warehouse is SARS bonded. Customs rules get followed. Duty payments stay deferred. Export processes stay smooth. Documentation stays correct.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> SARS Bonded Warehouse</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Customs compliance</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Duty deferral benefits</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Export documentation</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> SARS Bonded Warehouse</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Customs compliance</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Duty deferral benefits</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Export documentation</li>
               </ul>
             </div>
           </div>
@@ -425,7 +444,7 @@ export default function BulkServicePage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How do you handle hazardous materials?
               </h3>
               <p className="text-sm text-gray-400">
@@ -434,7 +453,7 @@ export default function BulkServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What is your storage capacity?
               </h3>
               <p className="text-sm text-gray-400">
@@ -443,7 +462,7 @@ export default function BulkServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How long can cargo stay in storage?
               </h3>
               <p className="text-sm text-gray-400">
@@ -452,7 +471,7 @@ export default function BulkServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What commodities do you handle?
               </h3>
               <p className="text-sm text-gray-400">
@@ -469,7 +488,7 @@ export default function BulkServicePage() {
             Every bulk commodity has unique requirements, from handling specifications to packaging needs to timing constraints. Let's talk about your specific challenges and discover how our Elandsfontein facility can become your strategic advantage in bulk logistics.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/services" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

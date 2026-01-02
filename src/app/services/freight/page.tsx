@@ -17,13 +17,32 @@ export const metadata: Metadata = {
   title: 'Vuyela Freight - Ocean Freight & Customs | Vuyela Group',
   description:
     'Complete freight forwarding and customs clearing. Strategic partnerships with major shipping lines for global trade facilitation.',
+  keywords:
+    'ocean freight, freight forwarding, customs clearing, shipping, international trade, container shipping, South Africa exports',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/services/freight',
   },
   openGraph: {
-    title: 'Vuyela Freight - Ocean Freight & Customs',
-    description: 'Professional ocean freight forwarding and customs clearing services.',
+    type: 'website',
+    locale: 'en_US',
+    title: 'Vuyela Freight - Ocean Freight & Customs | Vuyela Group',
+    description: 'Professional ocean freight forwarding and customs clearing services with strategic shipping line partnerships.',
     url: 'https://vuyela.com/services/freight',
+    siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/home-service-freight.png',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Freight - Ocean Freight & Customs',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vuyela Freight - Ocean Freight & Customs',
+    description: 'Complete freight forwarding and customs clearing with strategic shipping line partnerships.',
   },
 };
 
@@ -106,15 +125,15 @@ export default function FreightServicePage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Vuyela Freight
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Freight <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Solutions</span>
+            Freight <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Solutions</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Ocean freight needs expertise. We understand routes, rates, and regulations. We built partnerships with major shipping lines. Years of reliable service created these relationships. Export chrome to Asia. Import machinery from Europe. Move commodities anywhere. We have the coverage and expertise.
           </p>
         </section>
@@ -132,14 +151,14 @@ export default function FreightServicePage() {
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-orange-600 px-8 text-sm font-semibold text-white hover:bg-orange-500 transition-all duration-300 group"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#FFD700] px-8 text-sm font-semibold text-white hover:bg-[#FFD700] transition-all duration-300 group"
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 text-sm font-semibold text-white hover:bg-white/10 hover:border-orange-500 transition-all duration-300"
+                  className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 text-sm font-semibold text-white hover:bg-white/10 hover:border-[#FFD700] transition-all duration-300"
                 >
                   All Services
                 </Link>
@@ -167,35 +186,35 @@ export default function FreightServicePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Globe className="w-10 h-10 text-orange-500 mb-6" />
+                <Globe className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Global Reach</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Major Shipping Lines</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Worldwide Coverage</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Best Rates</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Priority Booking</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Major Shipping Lines</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Worldwide Coverage</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Best Rates</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Priority Booking</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Customs Expertise</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Fast Clearance</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Correct Documentation</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Border Relationships</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Reduced Delays</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Fast Clearance</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Correct Documentation</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Border Relationships</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Reduced Delays</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <FileText className="w-10 h-10 text-orange-500 mb-6" />
+                <FileText className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Complete Documentation</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Bills of Lading</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Customs Forms</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Certificates</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Export Permits</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Bills of Lading</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Customs Forms</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Certificates</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Export Permits</li>
                 </ul>
               </div>
             </div>
@@ -219,7 +238,7 @@ export default function FreightServicePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div key={index} className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
@@ -244,12 +263,12 @@ export default function FreightServicePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-[#0f0f0f] rounded-lg p-6 sm:p-8 border border-[#222]">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Services <span className="text-orange-500">Offered</span>
+                Services <span className="text-[#FFD700]">Offered</span>
               </h3>
               <ul className="space-y-3 mb-6">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-sm sm:text-base">{service}</span>
                   </li>
                 ))}
@@ -267,12 +286,12 @@ export default function FreightServicePage() {
 
             <div className="bg-[#0f0f0f] rounded-lg p-6 sm:p-8 border border-[#222]">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Customer <span className="text-orange-500">Benefits</span>
+                Customer <span className="text-[#FFD700]">Benefits</span>
               </h3>
               <ul className="space-y-3 mb-6">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-sm sm:text-base">{benefit}</span>
                   </li>
                 ))}
@@ -362,34 +381,34 @@ export default function FreightServicePage() {
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-3">Container Types</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> 20ft Standard Containers</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> 40ft Standard Containers</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> 40ft High Cube Containers</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Refrigerated Containers</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Open Top Containers</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Flat Rack Containers</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> 20ft Standard Containers</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> 40ft Standard Containers</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> 40ft High Cube Containers</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Refrigerated Containers</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Open Top Containers</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Flat Rack Containers</li>
               </ul>
             </div>
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-3">Port Coverage</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Port of Durban (Primary)</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Port of Cape Town</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Port of Ngqura</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> All Major Global Ports</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Inland Container Depots</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> TFR Terminal Access</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Port of Durban (Primary)</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Port of Cape Town</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Port of Ngqura</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> All Major Global Ports</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Inland Container Depots</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> TFR Terminal Access</li>
               </ul>
             </div>
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-3">Service Features</h3>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> 24/7 Operations</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Real-time Tracking</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Customs Bond Facilities</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Insurance Options</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Multi-modal Transport</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Documentation Management</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> 24/7 Operations</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Real-time Tracking</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Customs Bond Facilities</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Insurance Options</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Multi-modal Transport</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Documentation Management</li>
               </ul>
             </div>
           </div>
@@ -406,10 +425,10 @@ export default function FreightServicePage() {
                 Interlink trucks move containers. They connect to shipping ports. TFR terminal access works smoothly. Container handling stays efficient. Heavy loads move safely.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Container transport</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Port connections</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> TFR terminal access</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Heavy load capacity</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Container transport</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Port connections</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> TFR terminal access</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Heavy load capacity</li>
               </ul>
             </div>
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
@@ -418,10 +437,10 @@ export default function FreightServicePage() {
                 Flatbeds carry oversized cargo. Coils fit perfectly. Machinery moves easily. Loading stays simple. Secure strapping protects cargo.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Oversized cargo</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Coil transport</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Machinery handling</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Secure strapping</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Oversized cargo</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Coil transport</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Machinery handling</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Secure strapping</li>
               </ul>
             </div>
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
@@ -430,10 +449,10 @@ export default function FreightServicePage() {
                 Tippers handle bulk materials. Quick unloading saves time. Construction sites use them. Mining operations depend on them. Efficiency stays high.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Bulk material transport</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Quick unloading</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Construction support</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Mining operations</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Bulk material transport</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Quick unloading</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Construction support</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Mining operations</li>
               </ul>
             </div>
           </div>
@@ -450,10 +469,10 @@ export default function FreightServicePage() {
                 We move cargo across SADC countries. Botswana, Zimbabwe, Mozambique, and more. Border procedures stay familiar. We know the rules. Delays stay minimal.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Botswana routes</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Zimbabwe connections</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Mozambique access</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Regional expertise</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Botswana routes</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Zimbabwe connections</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Mozambique access</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Regional expertise</li>
               </ul>
             </div>
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
@@ -462,10 +481,10 @@ export default function FreightServicePage() {
                 Border crossings need correct paperwork. We prepare documents properly. Customs officials know us. Clearance happens fast. Your cargo moves quickly.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Complete documentation</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Fast clearance</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Customs relationships</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Reduced delays</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Complete documentation</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Fast clearance</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Customs relationships</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Reduced delays</li>
               </ul>
             </div>
           </div>
@@ -477,7 +496,7 @@ export default function FreightServicePage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Which shipping lines do you work with?
               </h3>
               <p className="text-sm text-gray-400">
@@ -486,7 +505,7 @@ export default function FreightServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How long does customs clearing take?
               </h3>
               <p className="text-sm text-gray-400">
@@ -495,7 +514,7 @@ export default function FreightServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Can you handle both imports and exports?
               </h3>
               <p className="text-sm text-gray-400">
@@ -504,7 +523,7 @@ export default function FreightServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What documentation do you handle?
               </h3>
               <p className="text-sm text-gray-400">
@@ -521,7 +540,7 @@ export default function FreightServicePage() {
             Every international shipment is unique, different destinations, different cargo, different timelines. Let's discuss your specific requirements and explore how our shipping partnerships, customs expertise, and global coverage can simplify your international trade.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/services" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Settings | Dashboard | Vuyela Group',
   description:
     'Manage your Vuyela Group account settings, preferences, notifications, privacy, and security options from your dashboard.',
+  metadataBase: new URL('https://vuyela.com'),
   robots: {
     index: false,
     follow: false,
@@ -14,9 +15,12 @@ export const metadata: Metadata = {
     canonical: '/dashboard/settings',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Settings | Dashboard | Vuyela Group',
     description: 'Manage your account settings and preferences with Vuyela Group.',
     url: 'https://vuyela.com/dashboard/settings',
+    siteName: 'Vuyela Group',
   },
 };
 

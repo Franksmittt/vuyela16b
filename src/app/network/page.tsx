@@ -27,13 +27,32 @@ export const metadata: Metadata = {
   title: 'The Vuyela Network | Vuyela Group',
   description:
     'Strategic partnerships and relationships that power our logistics network. Strong connections with TFR, shipping agents, road freight companies, and global partners.',
+  keywords:
+    'logistics network, TFR partnerships, shipping agents, freight partnerships, carrier network, South Africa logistics network, global logistics',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/network',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'The Vuyela Network | Vuyela Group',
-    description: 'Our strategic partnerships and logistics network across South Africa and beyond.',
+    description: 'Our strategic partnerships and logistics network across South Africa and beyond with TFR and shipping line connections.',
     url: 'https://vuyela.com/network',
+    siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/network-infographic.png',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Group Network',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Vuyela Network | Vuyela Group',
+    description: 'Strategic partnerships and relationships that power our logistics network across South Africa and beyond.',
   },
 };
 
@@ -58,15 +77,15 @@ export default function NetworkPage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Our Network
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Our Global <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Network</span>
+            Our Global <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Network</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Strategic partnerships power our logistics network. Strong connections with TFR, shipping agents, road freight companies, and global partners ensure seamless operations. The Vuyela Network isn't just contacts. It's a carefully cultivated ecosystem of trusted partners who share our commitment to excellence.
           </p>
         </section>
@@ -94,35 +113,35 @@ export default function NetworkPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Handshake className="w-10 h-10 text-orange-500 mb-6" />
+                <Handshake className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Strategic Alliances</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Long-standing Relationships</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> TFR Partnerships</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Shipping Line Access</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Road Freight Network</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Long-standing Relationships</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> TFR Partnerships</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Shipping Line Access</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Road Freight Network</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Network className="w-10 h-10 text-orange-500 mb-6" />
+                <Network className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Comprehensive Coverage</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Nationwide Reach</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> International Connections</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Multi-Modal Solutions</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Port Access</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Nationwide Reach</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> International Connections</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Multi-Modal Solutions</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Port Access</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Reliable Partners</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Vetted Carriers</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Quality Standards</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Proven Track Record</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Shared Commitment</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Vetted Carriers</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Quality Standards</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Proven Track Record</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Shared Commitment</li>
                 </ul>
               </div>
             </div>
@@ -140,11 +159,11 @@ export default function NetworkPage() {
               { name: 'TFR Terminals', location: 'Nationwide', description: 'Strategic rail terminal access' },
             ].map((hub, index) => (
               <div key={index} className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{hub.name}</h3>
-                <p className="text-orange-500 text-sm font-medium mb-2">{hub.location}</p>
+                <p className="text-[#FFD700] text-sm font-medium mb-2">{hub.location}</p>
                 <p className="text-gray-300 text-sm leading-relaxed">{hub.description}</p>
               </div>
             ))}
@@ -161,11 +180,11 @@ export default function NetworkPage() {
                 { icon: Globe, value: '24/7', label: 'Operations', description: 'Never-stop logistics' },
               ].map((stat, index) => (
                 <div key={index} className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a] text-center">
-                  <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mx-auto mb-4">
                     <stat.icon className="h-6 w-6 text-white" />
                   </div>
                   <h4 className="text-2xl font-bold text-white mb-1">{stat.value}</h4>
-                  <p className="text-orange-500 text-sm font-medium mb-1">{stat.label}</p>
+                  <p className="text-[#FFD700] text-sm font-medium mb-1">{stat.label}</p>
                   <p className="text-gray-400 text-xs">{stat.description}</p>
                 </div>
               ))}
@@ -215,7 +234,7 @@ export default function NetworkPage() {
                   />
                 </div>
                 <div className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
@@ -254,7 +273,7 @@ export default function NetworkPage() {
               },
             ].map((feature, index) => (
               <div key={index} className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
@@ -290,7 +309,7 @@ export default function NetworkPage() {
               },
             ].map((partnership, index) => (
               <div key={index} className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                   <partnership.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{partnership.category}</h3>
@@ -298,7 +317,7 @@ export default function NetworkPage() {
                 <ul className="space-y-2">
                   {partnership.partners.map((partner, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0 mt-0.5" />
                       <span>{partner}</span>
                     </li>
                   ))}
@@ -311,12 +330,12 @@ export default function NetworkPage() {
         {/* CARRIER REGISTRATION */}
         <section className="py-20 px-6 max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-orange-500 mb-6">
+            <div className="inline-flex items-center gap-2 text-[#FFD700] mb-6">
               <Building2 className="h-6 w-6" />
               <span className="text-sm font-semibold uppercase tracking-wider">Join Our Network</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Professional Carrier <span className="text-orange-500">Registration</span>
+              Professional Carrier <span className="text-[#FFD700]">Registration</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
               We partner with established, professional carriers who share our commitment to excellence. 
@@ -335,7 +354,7 @@ export default function NetworkPage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How do you select network partners?
               </h3>
               <p className="text-sm text-gray-400">
@@ -344,7 +363,7 @@ export default function NetworkPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What are the benefits of joining your network?
               </h3>
               <p className="text-sm text-gray-400">
@@ -353,7 +372,7 @@ export default function NetworkPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How long does the registration process take?
               </h3>
               <p className="text-sm text-gray-400">
@@ -362,7 +381,7 @@ export default function NetworkPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What partnerships do you have?
               </h3>
               <p className="text-sm text-gray-400">
@@ -379,7 +398,7 @@ export default function NetworkPage() {
             Benefit from our strategic partnerships and extensive logistics network. Contact us to see how we can connect your business to seamless logistics solutions.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/services" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

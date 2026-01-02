@@ -28,13 +28,17 @@ export const metadata: Metadata = {
     'State-of-the-art facilities in Elandsfontein. SOLAS certified weighbridges, SARS bonded warehouse, full CCTV coverage, and 24/7 operations.',
   keywords:
     'logistics facilities, SOLAS certified, SARS bonded warehouse, weighbridges, CCTV coverage, Elandsfontein, warehousing, containerization, South Africa logistics',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/facilities',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Facilities | Vuyela Group',
     description: 'State-of-the-art logistics facilities in Elandsfontein with SOLAS certified weighbridges and SARS bonded warehouse.',
     url: 'https://vuyela.com/facilities',
+    siteName: 'Vuyela Group',
     images: [
       {
         url: '/images/facilities-aerial-view.png',
@@ -43,6 +47,11 @@ export const metadata: Metadata = {
         alt: 'Vuyela Group Facilities - Elandsfontein',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Facilities | Vuyela Group',
+    description: 'State-of-the-art logistics facilities in Elandsfontein with SOLAS certified weighbridges and SARS bonded warehouse.',
   },
 };
 
@@ -73,15 +82,15 @@ export default function FacilitiesPage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Our Infrastructure
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            Our Facilities & <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Infrastructure</span>
+            Our Facilities & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Infrastructure</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Our infrastructure works efficiently. Security stays strong. Compliance gets met. Our Elandsfontein facility uses modern technology. Industry standards get followed. Service stays exceptional.
           </p>
         </section>
@@ -110,35 +119,35 @@ export default function FacilitiesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Certified Compliance</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> SOLAS Certified Weighbridges</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> SARS Bonded Warehouse</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> NOSA Safety Standards</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> ISO Compliant Operations</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> SOLAS Certified Weighbridges</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> SARS Bonded Warehouse</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> NOSA Safety Standards</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> ISO Compliant Operations</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Camera className="w-10 h-10 text-orange-500 mb-6" />
+                <Camera className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Complete Security</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Full Yard CCTV Coverage</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> 24/7 Monitoring</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Controlled Access</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Security Guard Patrols</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Full Yard CCTV Coverage</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> 24/7 Monitoring</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Controlled Access</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Security Guard Patrols</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Clock className="w-10 h-10 text-orange-500 mb-6" />
+                <Clock className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">24/7 Operations</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Always Available</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> No Downtime</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Emergency Response</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Flexible Scheduling</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Always Available</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> No Downtime</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Emergency Response</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Flexible Scheduling</li>
                 </ul>
               </div>
             </div>
@@ -157,10 +166,10 @@ export default function FacilitiesPage() {
                 We handle bulk commodity storage. Containerization works smoothly. Road freight coordination happens here. Everything works under one roof. Reliability and security stay guaranteed.
               </p>
               <ul className="space-y-3 text-gray-300">
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Main Reef Road, Elandsfontein, Gauteng</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Strategic location for transport routes</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Close to Port of Durban</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5"/> Near TFR terminals</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Main Reef Road, Elandsfontein, Gauteng</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Strategic location for transport routes</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Close to Port of Durban</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-[#FFD700] flex-shrink-0 mt-0.5"/> Near TFR terminals</li>
               </ul>
             </div>
 
@@ -185,10 +194,10 @@ export default function FacilitiesPage() {
                   Our workshop maintains our fleet. Trucks get serviced regularly. Repairs happen quickly. Equipment stays maintained. Downtime stays minimal.
                 </p>
                 <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Full service bay</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Equipment storage</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Parts inventory</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Qualified mechanics</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Full service bay</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Equipment storage</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Parts inventory</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Qualified mechanics</li>
                 </ul>
               </div>
               <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
@@ -197,10 +206,10 @@ export default function FacilitiesPage() {
                   Our wash bay cleans trucks. Containers get washed before export. Equipment stays clean. Standards get met. Presentation stays professional.
                 </p>
                 <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> High-pressure washing</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Container cleaning</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Equipment maintenance</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Quality standards</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> High-pressure washing</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Container cleaning</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Equipment maintenance</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Quality standards</li>
                 </ul>
               </div>
               <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
@@ -209,10 +218,10 @@ export default function FacilitiesPage() {
                   Security protects our depot. Access gets controlled. CCTV monitors everything. Guards patrol regularly. Cargo stays safe.
                 </p>
                 <ul className="space-y-2 text-gray-300 text-sm">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Controlled access gates</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Security guard patrols</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> CCTV monitoring</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Alarm systems</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Controlled access gates</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Security guard patrols</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> CCTV monitoring</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Alarm systems</li>
                 </ul>
               </div>
             </div>
@@ -291,7 +300,7 @@ export default function FacilitiesPage() {
               }
             ].map((facility, index) => (
               <div key={index} className="bg-[#0f0f0f] rounded-xl p-6 border border-[#222]">
-                <div className="w-16 h-16 rounded-xl bg-orange-500 flex items-center justify-center mb-6">
+                <div className="w-16 h-16 rounded-xl bg-[#FFD700] flex items-center justify-center mb-6">
                   <facility.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{facility.title}</h3>
@@ -299,7 +308,7 @@ export default function FacilitiesPage() {
                 <ul className="space-y-2">
                   {facility.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-gray-300 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-orange-500 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 text-[#FFD700] flex-shrink-0 mt-0.5" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -336,7 +345,7 @@ export default function FacilitiesPage() {
               }
             ].map((feature, index) => (
               <div key={index} className="bg-[#141414] rounded-xl p-8 border border-[#2a2a2a]">
-                <div className="w-14 h-14 rounded-lg bg-orange-500 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-lg bg-[#FFD700] flex items-center justify-center mb-6">
                   <feature.icon className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
@@ -373,7 +382,7 @@ export default function FacilitiesPage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What certifications do your facilities have?
               </h3>
               <p className="text-sm text-gray-400">
@@ -382,7 +391,7 @@ export default function FacilitiesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How secure is your facility?
               </h3>
               <p className="text-sm text-gray-400">
@@ -391,7 +400,7 @@ export default function FacilitiesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 Can I visit your facility?
               </h3>
               <p className="text-sm text-gray-400">
@@ -400,7 +409,7 @@ export default function FacilitiesPage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What services are available at your facility?
               </h3>
               <p className="text-sm text-gray-400">
@@ -417,7 +426,7 @@ export default function FacilitiesPage() {
             See firsthand how our world-class infrastructure can support your logistics needs. Schedule a facility tour or contact us to learn more.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Schedule a Visit <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/services" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">

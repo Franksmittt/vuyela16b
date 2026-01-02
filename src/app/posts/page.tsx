@@ -6,13 +6,28 @@ export const metadata: Metadata = {
   title: 'Blog Posts | Vuyela Group',
   description:
     'Discover insightful articles, logistics news, and industry updates from Vuyela Group. Stay informed about warehousing, freight, bulk handling, and energy solutions.',
+  keywords:
+    'logistics blog, warehousing news, freight updates, supply chain insights, South Africa logistics, industry news',
+  metadataBase: new URL('https://vuyela.com'),
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: '/posts',
   },
   openGraph: {
+    type: 'website',
+    locale: 'en_US',
     title: 'Blog Posts | Vuyela Group',
     description: 'Insights and updates on logistics, warehousing, and supply chain solutions.',
     url: 'https://vuyela.com/posts',
+    siteName: 'Vuyela Group',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Blog Posts | Vuyela Group',
+    description: 'Insights and updates on logistics, warehousing, and supply chain solutions.',
   },
 };
 

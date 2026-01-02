@@ -17,13 +17,32 @@ export const metadata: Metadata = {
   title: 'Vuyela Refuel - Energy Solutions | Vuyela Group',
   description:
     'Premium 50ppm diesel supply with rigorous quality testing. Guaranteed pure fuel with our "Pregnancy Test" protocol.',
+  keywords:
+    'diesel supply, 50ppm diesel, fuel supply, energy solutions, quality testing, South Africa fuel, fleet fueling',
+  metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/services/refuel',
   },
   openGraph: {
-    title: 'Vuyela Refuel - Energy Solutions',
-    description: 'Quality-assured diesel supply with comprehensive testing protocols.',
+    type: 'website',
+    locale: 'en_US',
+    title: 'Vuyela Refuel - Energy Solutions | Vuyela Group',
+    description: 'Quality-assured diesel supply with comprehensive testing protocols and premium 50ppm diesel.',
     url: 'https://vuyela.com/services/refuel',
+    siteName: 'Vuyela Group',
+    images: [
+      {
+        url: '/images/home-service-refuel.png',
+        width: 1200,
+        height: 630,
+        alt: 'Vuyela Refuel - Energy Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vuyela Refuel - Energy Solutions',
+    description: 'Premium 50ppm diesel supply with rigorous quality testing and guaranteed pure fuel.',
   },
 };
 
@@ -104,15 +123,15 @@ export default function RefuelServicePage() {
         
         {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Vuyela Refuel
           </span>
           
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight font-poppins">
-            On-Site <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Refueling Services</span>
+            On-Site <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#B8860B]">Refueling Services</span>
           </h1>
           
-          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-orange-500/30 pl-6">
+          <p className="text-lg text-gray-400 leading-relaxed max-w-2xl border-l-2 border-[#FFD700]/30 pl-6">
             Dirty diesel destroys engines. It damages equipment. It costs money. We launched Vuyela Refuel in April 2024. Our principle is simple. Never compromise on fuel quality. This isn't just fuel supply. It's fuel integrity.
           </p>
         </section>
@@ -130,14 +149,14 @@ export default function RefuelServicePage() {
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-orange-600 px-8 text-sm font-semibold text-white hover:bg-orange-500 transition-all duration-300 group"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#FFD700] px-8 text-sm font-semibold text-white hover:bg-[#FFD700] transition-all duration-300 group"
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 text-sm font-semibold text-white hover:bg-white/10 hover:border-orange-500 transition-all duration-300"
+                  className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white/20 bg-transparent px-8 text-sm font-semibold text-white hover:bg-white/10 hover:border-[#FFD700] transition-all duration-300"
                 >
                   All Services
                 </Link>
@@ -165,35 +184,35 @@ export default function RefuelServicePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <ShieldCheck className="w-10 h-10 text-orange-500 mb-6" />
+                <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Quality Testing</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Pregnancy Test Protocol</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Water Contamination Tests</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Density Verification</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Visual Inspections</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Pregnancy Test Protocol</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Water Contamination Tests</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Density Verification</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Visual Inspections</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Droplet className="w-10 h-10 text-orange-500 mb-6" />
+                <Droplet className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Premium 50ppm</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Cleaner Emissions</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Better Engine Performance</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Industry Standards</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Verified Quality</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Cleaner Emissions</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Better Engine Performance</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Industry Standards</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Verified Quality</li>
                 </ul>
               </div>
 
               <div className="bg-[#0f0f0f] p-8 rounded-xl border border-[#222]">
-                <Clock className="w-10 h-10 text-orange-500 mb-6" />
+                <Clock className="w-10 h-10 text-[#FFD700] mb-6" />
                 <h3 className="text-xl font-bold text-white mb-4">Extended Hours</h3>
                 <ul className="space-y-3 text-sm text-gray-400">
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Weekdays: 06h00-23h00</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Weekends: 07h00-15h00</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Matches Your Schedule</li>
-                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500"/> Always Available</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Weekdays: 06h00-23h00</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Weekends: 07h00-15h00</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Matches Your Schedule</li>
+                  <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700]"/> Always Available</li>
                 </ul>
               </div>
             </div>
@@ -217,7 +236,7 @@ export default function RefuelServicePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div key={index} className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
-                <div className="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center mb-4">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
@@ -232,12 +251,12 @@ export default function RefuelServicePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-[#0f0f0f] rounded-lg p-6 sm:p-8 border border-[#222]">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Services <span className="text-orange-500">Offered</span>
+                Services <span className="text-[#FFD700]">Offered</span>
               </h3>
               <ul className="space-y-3 mb-6">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-sm sm:text-base">{service}</span>
                   </li>
                 ))}
@@ -246,12 +265,12 @@ export default function RefuelServicePage() {
 
             <div className="bg-[#0f0f0f] rounded-lg p-6 sm:p-8 border border-[#222]">
               <h3 className="text-2xl font-bold text-white mb-6">
-                Quality <span className="text-orange-500">Testing</span>
+                Quality <span className="text-[#FFD700]">Testing</span>
               </h3>
               <ul className="space-y-3 mb-6">
                 {qualityChecks.map((check, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <ShieldCheck className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                    <ShieldCheck className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-300 text-sm sm:text-base">{check}</span>
                   </li>
                 ))}
@@ -272,7 +291,7 @@ export default function RefuelServicePage() {
         {/* OPERATING HOURS */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
           <div className="bg-[#141414] rounded-lg p-6 sm:p-8 border border-[#2a2a2a]">
-            <div className="w-16 h-16 rounded-lg bg-orange-500 flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-lg bg-[#FFD700] flex items-center justify-center mx-auto mb-4">
               <Clock className="h-8 w-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2 text-center">Operating Hours</h3>
@@ -282,12 +301,12 @@ export default function RefuelServicePage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222] text-center">
-                <p className="text-orange-500 font-semibold text-lg mb-2">Weekdays</p>
+                <p className="text-[#FFD700] font-semibold text-lg mb-2">Weekdays</p>
                 <p className="text-white text-2xl font-bold mb-1">06h00 - 23h00</p>
                 <p className="text-gray-400 text-sm">Monday to Friday</p>
               </div>
               <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222] text-center">
-                <p className="text-orange-500 font-semibold text-lg mb-2">Weekends & Holidays</p>
+                <p className="text-[#FFD700] font-semibold text-lg mb-2">Weekends & Holidays</p>
                 <p className="text-white text-2xl font-bold mb-1">07h00 - 15h00</p>
                 <p className="text-gray-400 text-sm">Saturday, Sunday & Public Holidays</p>
               </div>
@@ -336,10 +355,10 @@ export default function RefuelServicePage() {
                 On-site refueling cuts costs. Trucks don't drive to stations. Driver time stays productive. Fuel prices stay competitive. Bulk delivery saves money.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Reduced travel costs</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Competitive fuel prices</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Bulk delivery discounts</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Lower operational expenses</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Reduced travel costs</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Competitive fuel prices</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Bulk delivery discounts</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Lower operational expenses</li>
               </ul>
             </div>
             <div className="bg-[#0f0f0f] rounded-lg p-6 border border-[#222]">
@@ -348,10 +367,10 @@ export default function RefuelServicePage() {
                 Trucks refuel on-site. No trips to stations. Operations keep running. Productivity stays high. Time waste disappears.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> No station trips</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Continuous operations</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Higher productivity</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Time savings</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> No station trips</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Continuous operations</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Higher productivity</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Time savings</li>
               </ul>
             </div>
           </div>
@@ -368,10 +387,10 @@ export default function RefuelServicePage() {
                 Every delivery gets tested. Water tests check contamination. Density tests verify standards. Pregnancy tests find paraffin. Visual checks confirm clarity. All tests must pass.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Water contamination test</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Density verification</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Paraffin detection</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Visual inspection</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Water contamination test</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Density verification</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Paraffin detection</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Visual inspection</li>
               </ul>
             </div>
             <div className="bg-[#141414] rounded-lg p-6 border border-[#2a2a2a]">
@@ -380,10 +399,10 @@ export default function RefuelServicePage() {
                 We guarantee fuel quality. Contaminated fuel never ships. Equipment stays protected. Engines run smoothly. Problems get prevented.
               </p>
               <ul className="space-y-2 text-gray-300 text-sm">
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Quality guarantee</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Equipment protection</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Engine performance</li>
-                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5"/> Problem prevention</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Quality guarantee</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Equipment protection</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Engine performance</li>
+                <li className="flex gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0 mt-0.5"/> Problem prevention</li>
               </ul>
             </div>
           </div>
@@ -395,7 +414,7 @@ export default function RefuelServicePage() {
           <div className="space-y-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What is the "Pregnancy Test" protocol?
               </h3>
               <p className="text-sm text-gray-400">
@@ -404,7 +423,7 @@ export default function RefuelServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What are your operating hours?
               </h3>
               <p className="text-sm text-gray-400">
@@ -413,7 +432,7 @@ export default function RefuelServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 What is your storage capacity?
               </h3>
               <p className="text-sm text-gray-400">
@@ -422,7 +441,7 @@ export default function RefuelServicePage() {
             </div>
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-orange-500" />
+                <HelpCircle className="w-5 h-5 text-[#FFD700]" />
                 How do you ensure fuel quality?
               </h3>
               <p className="text-sm text-gray-400">
@@ -439,7 +458,7 @@ export default function RefuelServicePage() {
             Your fleet depends on clean fuel, and your bottom line depends on reliability. Let's discuss your diesel supply requirements and discover how our quality-assured fuel can keep your operations running smoothly, efficiently, and profitably.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-orange-600 text-white rounded-lg font-bold hover:bg-orange-500 transition-colors flex items-center justify-center gap-2">
+            <Link href="/contact" className="px-8 py-4 bg-[#FFD700] text-white rounded-lg font-bold hover:bg-[#FFD700] transition-colors flex items-center justify-center gap-2">
               Contact Us <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/services" className="px-8 py-4 bg-[#1a1a1a] text-white border border-[#333] rounded-lg font-bold hover:bg-[#252525] transition-colors">
