@@ -559,6 +559,190 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* OUR TEAM */}
+        <section className="py-20 px-6 max-w-7xl mx-auto">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">Our Leadership Team</h2>
+              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                Meet the hands-on directors and key team members who drive Vuyela Group forward
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {/* Directors */}
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
+                  <Image
+                    src="/images/staff/Jaco.jpg"
+                    alt="Jaco - Director"
+                    fill
+                    className="object-cover"
+                    sizes="128px"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-1">Jaco</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">Director</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Co-founder and hands-on leader. Direct access to decision-making and strategic partnerships.
+                </p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
+                  <Image
+                    src="/images/staff/wayne.jpg"
+                    alt="Wayne - Director"
+                    fill
+                    className="object-cover"
+                    sizes="128px"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-1">Wayne</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">Director</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Co-founder focused on operational oversight, fleet acquisition, and yard development strategy.
+                </p>
+              </div>
+
+              {/* Key Team Members */}
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/Martin.jpg"
+                    alt="Martin - Shipping Manager"
+                    fill
+                    className="object-cover"
+                    sizes="128px"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-1">Martin</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">Shipping Manager</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Ocean freight bookings, customs clearing documentation, and port liaison for Vuyela Freight.
+                </p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/Aneri.jpg"
+                    alt="Aneri - HR Manager"
+                    fill
+                    className="object-cover"
+                    sizes="128px"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-1">Aneri</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">HR Manager</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Recruitment, staff contracts, disciplinary hearings, and leave management for our 60+ team members.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/mala.png"
+                    alt="Mala - Operations"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Mala</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Operations</p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/mike.png"
+                    alt="Mike - Operations"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Mike</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Operations</p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/verushka.jpg"
+                    alt="Verushka - Administration"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Verushka</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Administration</p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/deon.jpg"
+                    alt="Deon - Refuel Operations"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Deon</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Refuel Operations</p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/alan.jpg"
+                    alt="Alan - Team Member"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Alan</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Team Member</p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/shine.jpg"
+                    alt="Shine - Team Member"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Shine</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Team Member</p>
+              </div>
+
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/sipho.png"
+                    alt="Sipho - Team Member"
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">Sipho</h3>
+                <p className="text-[#FFD700] text-sm font-medium">Team Member</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* OUR DIVISIONS */}
         <section className="py-20 bg-[#141414] border-y border-[#1f1f1f]">
           <div className="px-6 max-w-7xl mx-auto">
