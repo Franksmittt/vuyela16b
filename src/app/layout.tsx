@@ -25,7 +25,10 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Vuyela Group | Premier Logistics Solutions in South Africa',
+  title: {
+    template: '%s | Vuyela Group',
+    default: 'Vuyela Group | Premier Logistics Solutions in South Africa',
+  },
   description:
     'Locally invested, globally connected. Vuyela Group delivers precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7, on time, every time.',
   keywords:
@@ -35,6 +38,17 @@ export const metadata = {
   metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     type: 'website',

@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   experimental: {
     turbopackFileSystemCacheForDev: true,
   },
@@ -32,6 +33,8 @@ const nextConfig: NextConfig = {
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
+  // Trailing slash: Next.js defaults to removing trailing slashes
+  // This is consistent across the application
 };
 
 export default nextConfig;
