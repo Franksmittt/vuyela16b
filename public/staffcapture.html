@@ -178,11 +178,11 @@
                     
                     <!-- New Image Field -->
                      <div class="col-span-2">
-                        <label class="block text-xs font-medium text-gray-400 uppercase mb-1">Photo Path (Relative to HTML file)</label>
+                        <label class="block text-xs font-medium text-gray-400 uppercase mb-1">Photo Path</label>
                         <div class="flex gap-2">
-                             <input type="text" id="imagePath" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all" placeholder="./public/images/staff/filename.jpg">
+                             <input type="text" id="imagePath" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow transition-all" placeholder="/images/staff/filename.jpg">
                         </div>
-                        <p class="text-[10px] text-gray-500 mt-1">Example: ./public/images/staff/alan.jpg</p>
+                        <p class="text-[10px] text-gray-500 mt-1">Example: /images/staff/alan.jpg</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
@@ -253,19 +253,19 @@
     <!-- Scripts -->
     <script>
         const initialStaff = [
-            { id: 1, name: "Jaco", title: "Director", dept: "Executive", image: "./public/images/staff/Jaco.jpg", email: "jaco@vuyelalogistics.co.za", phone: "+27 72 405 9931", routing: "secondary", responsibilities: "Overall company strategy, High-level financial approval, Strategic partnerships." },
-            { id: 2, name: "Wayne", title: "Director", dept: "Executive", image: "", email: "wayne@vuyelalogistics.co.za", phone: "+27 73 030 9679", routing: "secondary", responsibilities: "Operational oversight, Fleet acquisition, Yard development strategy." },
+            { id: 1, name: "Jaco", title: "Director", dept: "Executive", image: "/images/staff/Jaco.jpg", email: "jaco@vuyelalogistics.co.za", phone: "+27 72 405 9931", routing: "secondary", responsibilities: "Overall company strategy, High-level financial approval, Strategic partnerships." },
+            { id: 2, name: "Wayne", title: "Director", dept: "Executive", image: "/images/staff/wayne.jpg", email: "wayne@vuyelalogistics.co.za", phone: "+27 73 030 9679", routing: "secondary", responsibilities: "Operational oversight, Fleet acquisition, Yard development strategy." },
             { id: 3, name: "Melissa", title: "Accounts", dept: "Administration", image: "", email: "accounts@vuyelalogistics.co.za", phone: "+27 78 592 4123", routing: "primary", responsibilities: "Invoicing, Payroll, Supplier payments, Financial reporting." },
-            { id: 4, name: "Verushka", title: "Administration", dept: "Administration", image: "", email: "admin@vuyelalogistics.co.za", phone: "+27 82 457 8760", routing: "primary", responsibilities: "General office management, Documentation filing, Reception oversight." },
-            { id: 5, name: "Mala", title: "Operations", dept: "Operations", image: "./public/images/staff/mala.png", email: "mala@vuyelalogistics.co.za", phone: "+27 73 490 0317", routing: "primary", responsibilities: "Daily fleet coordination, Driver communication, Load scheduling." },
-            { id: 6, name: "Martin", title: "Shipping Manager", dept: "Vuyela Freight", image: "./public/images/staff/Martin.jpg", email: "shipping@vuyelalogistics.co.za", phone: "+27 67 881 8419", routing: "primary", responsibilities: "Ocean freight bookings, Customs clearing documentation, Port liaison." },
-            { id: 7, name: "Aneri", title: "HR Manager", dept: "HR", image: "./public/images/staff/Aneri.jpg", email: "aneri@vuyelalogistics.co.za", phone: "+27 82 670 9214", routing: "primary", responsibilities: "Recruitment, Staff contracts, Disciplinary hearings, Leave management." },
+            { id: 4, name: "Verushka", title: "Administration", dept: "Administration", image: "/images/staff/verushka.jpg", email: "admin@vuyelalogistics.co.za", phone: "+27 82 457 8760", routing: "primary", responsibilities: "General office management, Documentation filing, Reception oversight." },
+            { id: 5, name: "Mala", title: "Operations", dept: "Operations", image: "/images/staff/mala.png", email: "mala@vuyelalogistics.co.za", phone: "+27 73 490 0317", routing: "primary", responsibilities: "Daily fleet coordination, Driver communication, Load scheduling." },
+            { id: 6, name: "Martin", title: "Shipping Manager", dept: "Vuyela Freight", image: "/images/staff/Martin.jpg", email: "shipping@vuyelalogistics.co.za", phone: "+27 67 881 8419", routing: "primary", responsibilities: "Ocean freight bookings, Customs clearing documentation, Port liaison." },
+            { id: 7, name: "Aneri", title: "HR Manager", dept: "HR", image: "/images/staff/Aneri.jpg", email: "aneri@vuyelalogistics.co.za", phone: "+27 82 670 9214", routing: "primary", responsibilities: "Recruitment, Staff contracts, Disciplinary hearings, Leave management." },
             { id: 8, name: "Karina", title: "Operations", dept: "Operations", image: "", email: "karina.rossouw@vuyelalogistics.co.za", phone: "+27 83 349 5467", routing: "none", responsibilities: "Vehicle tracking, Route planning, GIT Insurance updates." },
-            { id: 9, name: "Mike", title: "Operations", dept: "Operations", image: "./public/images/staff/mike.png", email: "mike@vuyelalogistics.co.za", phone: "+27 62 848 8623", routing: "none", responsibilities: "Yard traffic control, Weighbridge oversight, Vehicle inspections." },
-            { id: 10, name: "Deon", title: "Refuel Operations", dept: "Vuyela Refuel", image: "./public/images/staff/deon.jpg", email: "refuel@vuyelalogistics.co.za", phone: "+27 67 209 0841", routing: "primary", responsibilities: "Fuel station management, Diesel inventory, Pump attendant supervision." },
-            { id: 11, name: "Shine", title: "Team Member", dept: "Yard Staff", image: "./public/images/staff/shine.jpg", email: "", phone: "", routing: "none", responsibilities: "General yard duties (Need to define specific role)." },
-            { id: 12, name: "Sipho", title: "Team Member", dept: "Yard Staff", image: "./public/images/staff/sipho.png", email: "", phone: "", routing: "none", responsibilities: "General yard duties (Need to define specific role)." },
-            { id: 13, name: "Alan", title: "Team Member", dept: "Yard Staff", image: "./public/images/staff/alan.jpg", email: "", phone: "", routing: "none", responsibilities: "General yard duties (Need to define specific role)." }
+            { id: 9, name: "Mike", title: "Operations", dept: "Operations", image: "/images/staff/mike.png", email: "mike@vuyelalogistics.co.za", phone: "+27 62 848 8623", routing: "none", responsibilities: "Yard traffic control, Weighbridge oversight, Vehicle inspections." },
+            { id: 10, name: "Deon", title: "Refuel Operations", dept: "Vuyela Refuel", image: "/images/staff/deon.jpg", email: "refuel@vuyelalogistics.co.za", phone: "+27 67 209 0841", routing: "primary", responsibilities: "Fuel station management, Diesel inventory, Pump attendant supervision." },
+            { id: 11, name: "Shine", title: "Team Member", dept: "Yard Staff", image: "/images/staff/shine.jpg", email: "", phone: "", routing: "none", responsibilities: "General yard duties (Need to define specific role)." },
+            { id: 12, name: "Sipho", title: "Team Member", dept: "Yard Staff", image: "/images/staff/sipho.png", email: "", phone: "", routing: "none", responsibilities: "General yard duties (Need to define specific role)." },
+            { id: 13, name: "Alan", title: "Team Member", dept: "Yard Staff", image: "/images/staff/alan.jpg", email: "", phone: "", routing: "none", responsibilities: "General yard duties (Need to define specific role)." }
         ];
 
         const app = {
@@ -274,22 +274,28 @@
             init() {
                 // Load from local storage or use initial data
                 const stored = localStorage.getItem('vuyela_staff_data');
-                // Note: Only use initial data if local storage is empty, to persist changes.
-                // However, since we updated initials with images, we might want to force update if the user hasn't made custom edits.
-                // For this session, let's prioritize the new hardcoded data if it's the first load or if you clear cache.
-                // To ensure images show up immediately, I will merge images into existing data if found.
                 
                 let loadedData = stored ? JSON.parse(stored) : initialStaff;
 
-                // Migration script to add images to existing local storage data
+                // Migration script: Update image paths and add missing images to existing local storage data
                 if (stored) {
                     loadedData = loadedData.map(item => {
                         const template = initialStaff.find(s => s.name === item.name);
+                        // Update image path format if it's old format
+                        if (item.image && item.image.startsWith('./public/')) {
+                            item.image = item.image.replace('./public', '');
+                        }
+                        // Add missing images from template
                         if (template && template.image && !item.image) {
                             item.image = template.image;
                         }
                         return item;
                     });
+                    // Save updated data back to localStorage
+                    localStorage.setItem('vuyela_staff_data', JSON.stringify(loadedData));
+                } else {
+                    // First time load - save initial data to localStorage
+                    localStorage.setItem('vuyela_staff_data', JSON.stringify(initialStaff));
                 }
                 
                 this.data = loadedData;
@@ -299,7 +305,26 @@
 
             saveToStorage() {
                 localStorage.setItem('vuyela_staff_data', JSON.stringify(this.data));
+                // Show save confirmation
+                this.showNotification('Data saved successfully!', 'success');
                 this.render();
+            },
+
+            showNotification(message, type = 'success') {
+                // Create a simple toast notification
+                const toast = document.createElement('div');
+                toast.className = `fixed top-24 right-4 z-50 px-4 py-3 rounded-lg shadow-lg transition-all transform translate-x-0 ${
+                    type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
+                }`;
+                toast.innerHTML = `<div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5"></i> ${message}</div>`;
+                document.body.appendChild(toast);
+                lucide.createIcons();
+                
+                setTimeout(() => {
+                    toast.style.transform = 'translateX(400px)';
+                    toast.style.opacity = '0';
+                    setTimeout(() => toast.remove(), 300);
+                }, 2000);
             },
 
             render() {
@@ -464,6 +489,17 @@
 
             saveStaff() {
                 const id = document.getElementById('staffId').value;
+                let imagePath = document.getElementById('imagePath').value.trim();
+                
+                // Normalize image path - convert old format to new format
+                if (imagePath && imagePath.startsWith('./public/')) {
+                    imagePath = imagePath.replace('./public', '');
+                }
+                // Ensure it starts with / if it's a path
+                if (imagePath && !imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+                    imagePath = '/images/staff/' + imagePath.replace(/^\/images\/staff\//, '');
+                }
+                
                 const staffData = {
                     id: id ? parseInt(id) : Date.now(),
                     name: document.getElementById('name').value,
@@ -473,7 +509,7 @@
                     phone: document.getElementById('phone').value,
                     routing: document.getElementById('routing').value,
                     responsibilities: document.getElementById('responsibilities').value,
-                    image: document.getElementById('imagePath').value,
+                    image: imagePath,
                 };
 
                 if (id) {
