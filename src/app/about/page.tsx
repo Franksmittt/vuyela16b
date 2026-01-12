@@ -563,13 +563,14 @@ export default function AboutPage() {
         <section className="py-20 px-6 max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">Our Leadership Team</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">Our Team</h2>
               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
                 Meet the hands-on directors and key team members who drive Vuyela Group forward
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {/* UNIFIED TEAM GRID FOR BETTER FLOW */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {/* Directors */}
               <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
                 <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
@@ -605,7 +606,43 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* Key Team Members */}
+              {/* Melissa - Account Manager (New Slot 3) */}
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/Melissa.jpg"
+                    alt="Melissa - Account Manager"
+                    fill
+                    className="object-cover"
+                    sizes="128px"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-1">Melissa</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">Account Manager</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                   Dedicated client support, ensuring seamless logistics coordination and personalized service delivery.
+                </p>
+              </div>
+
+              {/* Aneri - HR Manager */}
+              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
+                  <Image
+                    src="/images/staff/Aneri.jpg"
+                    alt="Aneri - HR Manager"
+                    fill
+                    className="object-cover"
+                    sizes="128px"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-1">Aneri</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">HR Manager</p>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Recruitment, staff contracts, disciplinary hearings, and leave management for our 60+ team members.
+                </p>
+              </div>
+
+               {/* Martin - Moved here after Aneri */}
               <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
                 <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
                   <Image
@@ -623,25 +660,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/Aneri.jpg"
-                    alt="Aneri - HR Manager"
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">Aneri</h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">HR Manager</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Recruitment, staff contracts, disciplinary hearings, and leave management for our 60+ team members.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Staff Members Continuing in the same Grid */}
               <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
                 <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
                   <Image
