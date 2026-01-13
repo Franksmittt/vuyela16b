@@ -5,7 +5,6 @@ import JsonLd from '@/components/JsonLd';
 import { ContactForm } from './ContactForm';
 import { 
   Mail, 
-  Phone, 
   MapPin, 
   Clock,
   CheckCircle2,
@@ -13,8 +12,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Users,
-  Globe,
-  Building2
+  Globe
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -67,6 +65,135 @@ const contactPageSchema = {
   },
 };
 
+// 1. Define the Interface
+interface StaffMember {
+  name: string;
+  role: string;
+  email: string | null;
+  phone: string | null;
+  image: string;
+}
+
+// 2. Strictly typed data array with updated Titles and Phone numbers
+const staffMembers: StaffMember[] = [
+  // --- DIRECTORS ---
+  {
+    name: 'Jaco Nagel',
+    role: 'Director',
+    email: 'jaco@vuyelalogistics.co.za',
+    phone: '+27 72 405 9931',
+    image: '/images/staff/Jaco.jpg'
+  },
+  {
+    name: 'Wayne Johnson',
+    role: 'Director',
+    email: 'wayne@vuyelalogistics.co.za',
+    phone: '+27 73 030 9679',
+    image: '/images/staff/wayne.jpg'
+  },
+  
+  // --- ADMINISTRATION & HR ---
+  {
+    name: 'Melissa Johnson',
+    role: 'Accounts Manager',
+    email: 'accounts@vuyelalogistics.co.za',
+    phone: '+27 78 592 4123',
+    image: '/images/staff/Melissa.jpg'
+  },
+  {
+    name: 'Aneri Nagel',
+    role: 'HR Manager',
+    email: 'aneri@vuyelalogistics.co.za',
+    phone: '+27 82 670 9214',
+    image: '/images/staff/Aneri.jpeg' // Updated to .jpeg
+  },
+
+  // --- MANAGEMENT ---
+  {
+    name: 'Martin Jacobs',
+    role: 'Shipping Manager',
+    email: 'shipping@vuyelalogistics.co.za',
+    phone: '+27 67 881 8419',
+    image: '/images/staff/Martin.jpg'
+  },
+  {
+    name: 'Verushka Rossouw',
+    role: 'Administration',
+    email: 'admin@vuyelalogistics.co.za',
+    phone: '+27 82 457 8760',
+    image: '/images/staff/verushka.jpg'
+  },
+
+  // --- OPERATIONS ---
+  {
+    name: 'Mala Dorsamy',
+    role: 'Operations',
+    email: 'mala@vuyelalogistics.co.za',
+    phone: '+27 73 490 0317',
+    image: '/images/staff/mala.png'
+  },
+  {
+    name: 'Mike Dorsamy',
+    role: 'Operations',
+    email: 'mike@vuyelalogistics.co.za',
+    phone: '+27 62 848 8623',
+    image: '/images/staff/mike.png'
+  },
+  {
+    name: 'Karina Rossouw',
+    role: 'Operations',
+    email: 'karina.rossouw@vuyelalogistics.co.za',
+    phone: '+27 83 349 5467',
+    image: '/images/staff/karina.jpg' // Updated to .jpg
+  },
+  {
+    name: 'Deon Rossouw',
+    role: 'Refuel Operations',
+    email: 'refuel@vuyelalogistics.co.za',
+    phone: '+27 67 209 0841',
+    image: '/images/staff/deon.jpg'
+  },
+
+  // --- YARD MANAGEMENT & LEADERSHIP ---
+  {
+    name: 'Reinhard Strydom',
+    role: 'Yard Manager',
+    email: null,
+    phone: '+27 76 436 7823',
+    image: '/images/staff/reinhardt.jpg'
+  },
+  {
+    name: 'Sipho Shabalala',
+    role: 'Team Leader',
+    email: null,
+    phone: '+27 73 315 4852',
+    image: '/images/staff/sipho.png'
+  },
+
+  // --- YARD STAFF & SECURITY ---
+  {
+    name: 'Shine Lombard',
+    role: 'Admin',
+    email: 'ops.admin@vuyelalogistics.co.za',
+    phone: '+27 72 949 7084',
+    image: '/images/staff/shine.jpg'
+  },
+  {
+    name: 'Alan Kirkhoff',
+    role: 'Security',
+    email: 'alan@vuyelalogistics.co.za',
+    phone: '+27 71 650 0115',
+    image: '/images/staff/alan.jpg'
+  },
+  {
+    name: 'Charmaine Erasmus',
+    role: 'Clerk',
+    email: 'ops@vuyelalogistics.co.za',
+    phone: '+27 71 786 2201',
+    image: '/images/staff/charmaine.png'
+  }
+];
+
 export default function ContactPage() {
   return (
     <>
@@ -74,7 +201,7 @@ export default function ContactPage() {
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         
-        {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
+        {/* HERO SECTION */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
           <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Get in Touch
@@ -245,231 +372,45 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* TEAM SECTION */}
+        {/* TEAM SECTION - STAFF MAP */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">Our Team</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Meet the dedicated professionals who make Vuyela Group a trusted logistics partner. Our team is available 24/7 to serve your needs.
+              Meet the dedicated professionals who make Vuyela Group a trusted logistics partner.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {/* Directors - NUMBERS REMOVED AS REQUESTED */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
-                <Image
-                  src="/images/staff/Jaco.jpg"
-                  alt="Jaco - Director"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Jaco</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Director</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:jaco@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  jaco@vuyelalogistics.co.za
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
-                <Image
-                  src="/images/staff/wayne.jpg"
-                  alt="Wayne - Director"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Wayne</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Director</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:wayne@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  wayne@vuyelalogistics.co.za
-                </a>
-              </div>
-            </div>
-
-            {/* Administration & Accounts */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/Melissa.jpg"
-                  alt="Melissa - Accounts"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Melissa</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Accounts</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:accounts@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  accounts@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27785924123" className="block hover:text-[#FFD700] transition-colors">
-                  +27 78 592 4123
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/verushka.jpg"
-                  alt="Verushka - Administration"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Verushka</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Administration</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:admin@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  admin@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27824578760" className="block hover:text-[#FFD700] transition-colors">
-                  +27 82 457 8760
-                </a>
-              </div>
-            </div>
-
-            {/* Operations */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/mala.png"
-                  alt="Mala - Operations"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Mala</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Operations</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:mala@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  mala@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27734900317" className="block hover:text-[#FFD700] transition-colors">
-                  +27 73 490 0317
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-400 text-2xl font-bold">
-                  K
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {staffMembers.map((staff, index) => (
+              <div key={index} className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
+                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700] bg-gray-800">
+                  <Image
+                    src={staff.image}
+                    alt={`${staff.name} - ${staff.role}`}
+                    fill
+                    className="object-cover"
+                    sizes="96px"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">{staff.name}</h3>
+                <p className="text-[#FFD700] text-sm font-medium mb-3">{staff.role}</p>
+                <div className="space-y-1 text-sm text-gray-400">
+                  {staff.email ? (
+                    <a href={`mailto:${staff.email}`} className="block hover:text-[#FFD700] transition-colors break-all">
+                      {staff.email}
+                    </a>
+                  ) : (
+                     <span className="block text-gray-600">-</span>
+                  )}
+                  {staff.phone ? (
+                    <a href={`tel:${staff.phone.replace(/\s/g, '')}`} className="block hover:text-[#FFD700] transition-colors">
+                      {staff.phone}
+                    </a>
+                  ) : null}
                 </div>
               </div>
-              <h3 className="text-lg font-bold text-white mb-1">Karina</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Operations</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:karina.rossouw@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  karina.rossouw@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27833495467" className="block hover:text-[#FFD700] transition-colors">
-                  +27 83 349 5467
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/mike.png"
-                  alt="Mike - Operations"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Mike</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Operations</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:mike@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  mike@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27628488623" className="block hover:text-[#FFD700] transition-colors">
-                  +27 62 848 8623
-                </a>
-              </div>
-            </div>
-
-            {/* Vuyela Freight */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/Martin.jpg"
-                  alt="Martin - Shipping Manager"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Martin</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Shipping Manager</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:shipping@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  shipping@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27678818419" className="block hover:text-[#FFD700] transition-colors">
-                  +27 67 881 8419
-                </a>
-              </div>
-            </div>
-
-            {/* Vuyela Refuel */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/deon.jpg"
-                  alt="Deon - Refuel Operations"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Deon</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">Refuel Operations</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:refuel@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  refuel@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27672090841" className="block hover:text-[#FFD700] transition-colors">
-                  +27 67 209 0841
-                </a>
-              </div>
-            </div>
-
-            {/* HR */}
-            <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-              <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <Image
-                  src="/images/staff/Aneri.jpg"
-                  alt="Aneri - HR Manager"
-                  fill
-                  className="object-cover"
-                  sizes="96px"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-1">Aneri</h3>
-              <p className="text-[#FFD700] text-sm font-medium mb-3">HR Manager</p>
-              <div className="space-y-1 text-sm text-gray-400">
-                <a href="mailto:aneri@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
-                  aneri@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27826709214" className="block hover:text-[#FFD700] transition-colors">
-                  +27 82 670 9214
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -504,7 +445,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* FAQ SECTION - UPDATED WIDTH TO MATCH GLOBAL REACH */}
+        {/* FAQ SECTION */}
         <section className="py-20 px-6 max-w-7xl mx-auto border-t border-[#1f1f1f]">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

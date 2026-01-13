@@ -21,10 +21,12 @@ import {
   Clock,
   TrendingUp,
   Building2,
-  Globe
+  Globe,
+  Mail,
+  Phone
 } from 'lucide-react';
 
-// 1. METADATA (CRITICAL FOR SEO)
+// 1. METADATA
 export const metadata: Metadata = {
   title: 'About Vuyela Group | Premier Logistics & Supply Chain Solutions',
   description:
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
   },
 };
 
-// 2. SCHEMA MARKUP (THE "SECRET WEAPON")
+// 2. SCHEMA MARKUP
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -80,6 +82,133 @@ const organizationSchema = {
   },
 };
 
+// 3. STAFF DATA INTERFACE
+interface StaffMember {
+  name: string;
+  role: string;
+  email: string | null;
+  phone: string | null;
+  image: string;
+}
+
+// 4. CLEAN DATA ARRAY
+const staffMembers: StaffMember[] = [
+  // --- DIRECTORS ---
+  {
+    name: 'Jaco Nagel',
+    role: 'Director',
+    email: 'jaco@vuyelalogistics.co.za',
+    phone: '+27 72 405 9931',
+    image: '/images/staff/Jaco.jpg'
+  },
+  {
+    name: 'Wayne Johnson',
+    role: 'Director',
+    email: 'wayne@vuyelalogistics.co.za',
+    phone: '+27 73 030 9679',
+    image: '/images/staff/wayne.jpg'
+  },
+  
+  // --- ADMINISTRATION & HR ---
+  {
+    name: 'Melissa Johnson',
+    role: 'Accounts Manager',
+    email: 'accounts@vuyelalogistics.co.za',
+    phone: '+27 78 592 4123',
+    image: '/images/staff/Melissa.jpg'
+  },
+  {
+    name: 'Aneri Nagel',
+    role: 'HR Manager',
+    email: 'aneri@vuyelalogistics.co.za',
+    phone: '+27 82 670 9214',
+    image: '/images/staff/Aneri.jpeg' // Updated to .jpeg
+  },
+
+  // --- MANAGEMENT ---
+  {
+    name: 'Martin Jacobs',
+    role: 'Shipping Manager',
+    email: 'shipping@vuyelalogistics.co.za',
+    phone: '+27 67 881 8419',
+    image: '/images/staff/Martin.jpg'
+  },
+  {
+    name: 'Verushka Rossouw',
+    role: 'Administration',
+    email: 'admin@vuyelalogistics.co.za',
+    phone: '+27 82 457 8760',
+    image: '/images/staff/verushka.jpg'
+  },
+
+  // --- OPERATIONS ---
+  {
+    name: 'Mala Dorsamy',
+    role: 'Operations',
+    email: 'mala@vuyelalogistics.co.za',
+    phone: '+27 73 490 0317',
+    image: '/images/staff/mala.png'
+  },
+  {
+    name: 'Mike Dorsamy',
+    role: 'Operations',
+    email: 'mike@vuyelalogistics.co.za',
+    phone: '+27 62 848 8623',
+    image: '/images/staff/mike.png'
+  },
+  {
+    name: 'Karina Rossouw',
+    role: 'Operations',
+    email: 'karina.rossouw@vuyelalogistics.co.za',
+    phone: '+27 83 349 5467',
+    image: '/images/staff/karina.jpg' // Updated to .jpg
+  },
+  {
+    name: 'Deon Rossouw',
+    role: 'Refuel Operations',
+    email: 'refuel@vuyelalogistics.co.za',
+    phone: '+27 67 209 0841',
+    image: '/images/staff/deon.jpg'
+  },
+
+  // --- YARD MANAGEMENT & STAFF ---
+  {
+    name: 'Reinhard Strydom',
+    role: 'Yard Manager',
+    email: null,
+    phone: '+27 76 436 7823',
+    image: '/images/staff/reinhardt.jpg'
+  },
+  {
+    name: 'Sipho Shabalala',
+    role: 'Team Leader',
+    email: null,
+    phone: '+27 73 315 4852',
+    image: '/images/staff/sipho.png'
+  },
+  {
+    name: 'Shine Lombard',
+    role: 'Admin',
+    email: 'ops.admin@vuyelalogistics.co.za',
+    phone: '+27 72 949 7084',
+    image: '/images/staff/shine.jpg'
+  },
+  {
+    name: 'Alan Kirkhoff',
+    role: 'Security',
+    email: 'alan@vuyelalogistics.co.za',
+    phone: '+27 71 650 0115',
+    image: '/images/staff/alan.jpg'
+  },
+  {
+    name: 'Charmaine Erasmus',
+    role: 'Clerk',
+    email: 'ops@vuyelalogistics.co.za',
+    phone: '+27 71 786 2201',
+    image: '/images/staff/charmaine.png'
+  }
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -87,7 +216,7 @@ export default function AboutPage() {
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300 selection:bg-[#FFD700]/30">
         
-        {/* HERO SECTION - H1 IS HERE FOR THE SCANNER */}
+        {/* HERO SECTION */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto border-b border-[#1f1f1f]">
           <span className="inline-block px-3 py-1 mb-6 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20 text-[#FFD700] text-xs font-bold uppercase tracking-wider">
             Since 2019
@@ -141,7 +270,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* OUR STORY - EXPANDED CONTENT */}
+        {/* OUR STORY */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -214,7 +343,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* TIMELINE SECTION WITH IMAGES */}
+        {/* TIMELINE SECTION */}
         <section className="py-20 bg-[#141414] border-y border-[#1f1f1f]">
           <div className="px-6 max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -500,7 +629,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* PILLARS - BULLET POINTS FOR READABILITY */}
+        {/* PILLARS */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -559,205 +688,50 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* OUR TEAM */}
+        {/* TEAM SECTION */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">Our Team</h2>
               <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-                Meet the hands-on directors and key team members who drive Vuyela Group forward
+                Meet the dedicated professionals who make Vuyela Group a trusted logistics partner.
               </p>
             </div>
 
-            {/* UNIFIED TEAM GRID FOR BETTER FLOW */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {/* Directors */}
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
-                  <Image
-                    src="/images/staff/Jaco.jpg"
-                    alt="Jaco - Director"
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {staffMembers.map((staff, index) => (
+                <div key={index} className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
+                  <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700] bg-gray-800">
+                    <Image
+                      src={staff.image}
+                      alt={`${staff.name} - ${staff.role}`}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-1">{staff.name}</h3>
+                  <p className="text-[#FFD700] text-sm font-medium mb-3">{staff.role}</p>
+                  <div className="space-y-1 text-sm text-gray-400">
+                    {staff.email ? (
+                      <a href={`mailto:${staff.email}`} className="flex items-center justify-center gap-2 hover:text-[#FFD700] transition-colors break-all">
+                        <Mail className="w-3 h-3 flex-shrink-0" />
+                        {staff.email}
+                      </a>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2 text-gray-600">
+                        <Mail className="w-3 h-3 flex-shrink-0" /> -
+                      </span>
+                    )}
+                    {staff.phone ? (
+                      <a href={`tel:${staff.phone.replace(/\s/g, '')}`} className="flex items-center justify-center gap-2 hover:text-[#FFD700] transition-colors">
+                        <Phone className="w-3 h-3 flex-shrink-0" />
+                        {staff.phone}
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-1">Jaco</h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">Director</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Co-founder and hands-on leader. Direct access to decision-making and strategic partnerships.
-                </p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
-                  <Image
-                    src="/images/staff/wayne.jpg"
-                    alt="Wayne - Director"
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">Wayne</h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">Director</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Co-founder focused on operational oversight, fleet acquisition, and yard development strategy.
-                </p>
-              </div>
-
-              {/* Melissa - Account Manager (New Slot 3) */}
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/Melissa.jpg"
-                    alt="Melissa - Account Manager"
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">Melissa</h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">Account Manager</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                   Dedicated client support, ensuring seamless logistics coordination and personalized service delivery.
-                </p>
-              </div>
-
-              {/* Aneri - HR Manager */}
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/Aneri.jpg"
-                    alt="Aneri - HR Manager"
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">Aneri</h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">HR Manager</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Recruitment, staff contracts, disciplinary hearings, and leave management for our 60+ team members.
-                </p>
-              </div>
-
-               {/* Martin - Moved here after Aneri */}
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#2a2a2a] transition-colors">
-                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/Martin.jpg"
-                    alt="Martin - Shipping Manager"
-                    fill
-                    className="object-cover"
-                    sizes="128px"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-1">Martin</h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">Shipping Manager</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Ocean freight bookings, customs clearing documentation, and port liaison for Vuyela Freight.
-                </p>
-              </div>
-
-              {/* Staff Members Continuing in the same Grid */}
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/mala.png"
-                    alt="Mala - Operations"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Mala</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Operations</p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/mike.png"
-                    alt="Mike - Operations"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Mike</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Operations</p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/verushka.jpg"
-                    alt="Verushka - Administration"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Verushka</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Administration</p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/deon.jpg"
-                    alt="Deon - Refuel Operations"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Deon</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Refuel Operations</p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/alan.jpg"
-                    alt="Alan - Team Member"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Alan</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Team Member</p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/shine.jpg"
-                    alt="Shine - Team Member"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Shine</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Team Member</p>
-              </div>
-
-              <div className="bg-[#141414] p-6 rounded-xl border border-[#2a2a2a] text-center">
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                  <Image
-                    src="/images/staff/sipho.png"
-                    alt="Sipho - Team Member"
-                    fill
-                    className="object-cover"
-                    sizes="96px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-white mb-1">Sipho</h3>
-                <p className="text-[#FFD700] text-sm font-medium">Team Member</p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -928,7 +902,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* FAQ SECTION - MASSIVE SEO BOOSTER */}
+        {/* FAQ SECTION */}
         <section className="py-20 px-6 max-w-7xl mx-auto border-t border-[#1f1f1f]">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-12 text-center font-poppins">Frequently Asked Questions</h2>
