@@ -255,7 +255,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {/* Directors */}
+            {/* Directors - NUMBERS REMOVED AS REQUESTED */}
             <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
               <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#FFD700]">
                 <Image
@@ -271,9 +271,6 @@ export default function ContactPage() {
               <div className="space-y-1 text-sm text-gray-400">
                 <a href="mailto:jaco@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
                   jaco@vuyelalogistics.co.za
-                </a>
-                <a href="tel:+27724059931" className="block hover:text-[#FFD700] transition-colors">
-                  +27 72 405 9931
                 </a>
               </div>
             </div>
@@ -294,18 +291,19 @@ export default function ContactPage() {
                 <a href="mailto:wayne@vuyelalogistics.co.za" className="block hover:text-[#FFD700] transition-colors">
                   wayne@vuyelalogistics.co.za
                 </a>
-                <a href="tel:+27730309679" className="block hover:text-[#FFD700] transition-colors">
-                  +27 73 030 9679
-                </a>
               </div>
             </div>
 
             {/* Administration & Accounts */}
             <div className="bg-[#1a1a1a] p-6 rounded-xl border border-[#2a2a2a] text-center hover:border-[#FFD700]/30 transition-colors">
               <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gray-700">
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-400 text-2xl font-bold">
-                  M
-                </div>
+                <Image
+                  src="/images/staff/Melissa.jpg"
+                  alt="Melissa - Accounts"
+                  fill
+                  className="object-cover"
+                  sizes="96px"
+                />
               </div>
               <h3 className="text-lg font-bold text-white mb-1">Melissa</h3>
               <p className="text-[#FFD700] text-sm font-medium mb-3">Accounts</p>
@@ -506,10 +504,10 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* FAQ SECTION */}
-        <section className="py-20 px-6 max-w-4xl mx-auto border-t border-[#1f1f1f]">
+        {/* FAQ SECTION - UPDATED WIDTH TO MATCH GLOBAL REACH */}
+        <section className="py-20 px-6 max-w-7xl mx-auto border-t border-[#1f1f1f]">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <HelpCircle className="w-5 h-5 text-[#FFD700]" />
