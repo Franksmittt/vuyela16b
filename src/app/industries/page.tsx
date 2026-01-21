@@ -56,6 +56,7 @@ const industriesPageSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
   serviceType: ['Mining Logistics', 'Agricultural Logistics'],
   areaServed: {
@@ -64,10 +65,50 @@ const industriesPageSchema = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do you handle all types of mining commodities?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We handle chrome concentrate and ROM. We handle manganese and iron ore. We handle coal and ferroalloys. We handle ferrochrome and ferromanganese. Our experience covers the full range of mining commodities. We understand the specific requirements of each.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you handle seasonal agricultural demands?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We plan for seasonal peaks. We scale our operations to meet harvest demands. We understand that timing is critical. We coordinate with farmers and agribusinesses. We ensure flexible transport solutions. We manage seasonal demand effectively.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What makes your industry solutions different?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We specialize in mining and agricultural logistics. We don\'t try to serve everyone. We focus on what we know best. We understand commodity specifications. We know regulatory requirements. We deliver practical, proven solutions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you handle both domestic and international shipments?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We handle domestic transport across South Africa. We also manage international shipments through our freight division. We coordinate with shipping lines. We handle customs clearing. We provide complete solutions from pit to port.',
+      },
+    },
+  ],
+};
+
 export default function IndustriesPage() {
   return (
     <>
       <JsonLd data={industriesPageSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

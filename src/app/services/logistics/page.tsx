@@ -56,12 +56,88 @@ const logisticsServiceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
   serviceType: 'Road Freight & Transport',
   areaServed: {
     '@type': 'Country',
     name: 'South Africa',
   },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Road Freight Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Container Transport',
+          description: 'Professional container logistics with own fleet',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Intermodal Solutions',
+          description: 'Seamless rail and road transport integration',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: '24/7 Fleet Operations',
+          description: 'Round-the-clock transport with GPS tracking',
+        },
+      },
+    ],
+  },
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://vuyela.com/contact',
+    servicePhone: '+27-11-123-4567',
+    availableLanguage: 'English',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Do you own your fleet?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We own our fleet. We don\'t use third-party contractors. This means we control maintenance, driver training, and vehicle standards. No excuses. No blame-shifting. Just reliable transport when you need it.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you handle urgent shipments?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We operate 24/7. Urgent shipments get priority. Weekend deliveries work fine. We understand that timing matters. We move cargo when it needs to move.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you track cargo?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We use GPS tracking systems. Every truck has GPS. Location updates every minute. You can track cargo in real-time through our systems. We also have full yard camera coverage. You see operations as they happen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What areas do you cover?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We cover all of South Africa. From Durban to Cape Town. From Johannesburg to Bloemfontein. We also handle cross-border transport into SADC countries. Our network covers major routes and ports.',
+      },
+    },
+  ],
 };
 
 export default function LogisticsServicePage() {
@@ -123,6 +199,7 @@ export default function LogisticsServicePage() {
   return (
     <>
       <JsonLd data={logisticsServiceSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

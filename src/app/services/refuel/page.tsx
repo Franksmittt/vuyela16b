@@ -55,12 +55,88 @@ const refuelServiceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
   serviceType: 'Energy Solutions - Diesel Supply',
   areaServed: {
     '@type': 'Country',
     name: 'South Africa',
   },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Energy Solutions',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Premium 50ppm Diesel',
+          description: 'High-quality diesel meeting highest industry standards',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Quality Testing Protocol',
+          description: 'Comprehensive fuel testing including paraffin contamination checks',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Bulk Diesel Supply',
+          description: '80,000 liter capacity with two pumping stations',
+        },
+      },
+    ],
+  },
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://vuyela.com/contact',
+    servicePhone: '+27-11-123-4567',
+    availableLanguage: 'English',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is the "Pregnancy Test" protocol?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The "Pregnancy Test" is our paraffin contamination check. We test every fuel delivery for paraffin before it enters our tanks. This simple but effective test ensures contaminated fuel never reaches your equipment. It\'s called the "Pregnancy Test" because it detects contamination that other tests might miss.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are your operating hours?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Weekdays: 06h00 to 23h00. Weekends and public holidays: 07h00 to 15h00. These hours match when your fleet needs fuel. Early morning starts work. Late evening operations work. Weekend shifts work. We\'re here when you need us.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is your storage capacity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We have 80,000 liters of storage capacity. Two pumping stations handle high volumes. We currently process 40,000 liters per week. Large volumes don\'t mean long waits. We handle bulk deliveries efficiently.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you ensure fuel quality?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We test every delivery before it enters our tanks. Water tests check contamination. Density tests verify standards. Pregnancy tests find paraffin. Visual inspections confirm clarity. Temperature checks verify proper fuel temperature. All tests must pass. Contaminated fuel never ships.',
+      },
+    },
+  ],
 };
 
 export default function RefuelServicePage() {
@@ -118,6 +194,7 @@ export default function RefuelServicePage() {
   return (
     <>
       <JsonLd data={refuelServiceSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

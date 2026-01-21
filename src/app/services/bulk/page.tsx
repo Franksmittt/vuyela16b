@@ -55,12 +55,88 @@ const bulkServiceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
   serviceType: 'Warehousing & Bulk Handling',
   areaServed: {
     '@type': 'Country',
     name: 'South Africa',
   },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Bulk Handling Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'SARS Bonded Warehouse',
+          description: 'Deferred duty payments with secure customs-controlled storage',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'SOLAS Certified Weighbridges',
+          description: 'Internationally recognized weight certification for shipping',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Containerization Services',
+          description: 'Professional container packing and handling',
+        },
+      },
+    ],
+  },
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://vuyela.com/contact',
+    servicePhone: '+27-11-123-4567',
+    availableLanguage: 'English',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you handle hazardous materials?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We follow strict safety rules. Hazardous materials get special handling. Our team receives proper training. Storage areas stay secure. Documentation stays complete. We work with certified handlers. Safety stays our top priority.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is your storage capacity?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We have over 10,000 square meters of warehouse space. Large stockpiles fit easily. Our facility handles high volumes. We can scale up when needed. Capacity matches your requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long can cargo stay in storage?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Storage time depends on your needs. SARS bonded status helps. Duty payments stay deferred. We offer flexible terms. Long-term storage works fine. We discuss timelines with you.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What commodities do you handle?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We handle chrome concentrate and ROM. We handle manganese and iron ore. We handle coal and ferroalloys. We handle ferrochrome and ferromanganese. We handle bagged cargo. Our experience covers the full range of bulk commodities.',
+      },
+    },
+  ],
 };
 
 export default function BulkServicePage() {
@@ -120,6 +196,7 @@ export default function BulkServicePage() {
   return (
     <>
       <JsonLd data={bulkServiceSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

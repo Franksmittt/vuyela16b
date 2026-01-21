@@ -57,6 +57,7 @@ const servicesPageSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
   areaServed: {
     '@type': 'Country',
@@ -100,6 +101,45 @@ const servicesPageSchema = {
       },
     ],
   },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can I use multiple services together?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Many clients use multiple services. For example, you might need warehousing from Vuyela Bulk, transport from Vuyela Logistics, and ocean freight from Vuyela Freight. We coordinate all services seamlessly. One partner. One point of contact. Complete solutions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you operate outside South Africa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our facility is in Elandsfontein, South Africa. We handle domestic transport across the country. For international shipping, Vuyela Freight manages ocean freight and customs clearing. We work with global shipping partners. We facilitate trade worldwide.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What makes your services different from competitors?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We offer four integrated services. We own our fleet. We operate 24/7. Our directors are hands-on. We have certified infrastructure. We provide real-time tracking. Most importantly, we treat every shipment like our own. This combination is rare in logistics.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I get started?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Contact us. We\'ll discuss your needs. We\'ll explain our services. We\'ll create a custom plan. Then we execute. It\'s that simple. No complicated processes. No long wait times. Just direct communication and reliable service.',
+      },
+    },
+  ],
 };
 
 export default function ServicesPage() {
@@ -173,6 +213,7 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd data={servicesPageSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

@@ -65,13 +65,54 @@ const networkPageSchema = {
   memberOf: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do you select network partners?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We select partners carefully. We require business documentation. We verify compliance. We check safety ratings. We review trade references. We only work with professional, compliant carriers who share our commitment to excellence.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the benefits of joining your network?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Network partners get access to our client base. They benefit from our TFR relationships. They access our shipping line partnerships. They work with a company that values quality and reliability. They become part of a trusted logistics ecosystem.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does the registration process take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Applications are reviewed within 5-7 business days. We verify all documentation. We check references. We assess compliance. We contact you via email or phone to discuss your application and next steps.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What partnerships do you have?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We have partnerships with Transnet Freight Rail. We work with major shipping lines. We partner with registered road freight companies. We have relationships with shipping agents and ship planners. These partnerships enable seamless logistics operations.',
+      },
+    },
+  ],
 };
 
 export default function NetworkPage() {
   return (
     <>
       <JsonLd data={networkPageSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

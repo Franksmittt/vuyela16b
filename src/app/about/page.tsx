@@ -82,6 +82,61 @@ const organizationSchema = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Are you SARS accredited?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We run a SARS Bonded Warehouse. This is a secure facility that allows us to store imported goods without paying duty immediately. This helps your cash flow and is fully compliant with South African law. Our bonded status means we\'ve met rigorous financial and operational standards set by SARS.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where do you operate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We are based in Elandsfontein, Gauteng, strategically located on Main Reef Road. However, we work nationally, covering all major routes from Durban to Cape Town, Johannesburg to Bloemfontein. We also provide cross-border transport services into neighboring SADC countries, leveraging our network of trusted partners.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you handle dangerous goods?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, we do. Our drivers are trained and certified for handling dangerous goods. Our trucks have the right permits and comply with all safety regulations. We treat every load with the care and attention it requires. Safety is our top priority, and we maintain strict protocols for all cargo types.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What makes Vuyela different from other logistics companies?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Several things set us apart: We own our fleet, so we control quality. Our directors are hands-on and accessible. We operate 24/7. We have certified infrastructure (SOLAS, SARS Bonded). Most importantly, we treat every shipment as if it\'s our own. This combination of ownership, accessibility, and commitment is rare in the logistics industry.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do you ensure cargo safety?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We use multiple layers of security: 24/7 satellite tracking on all vehicles, full yard CCTV coverage, controlled access to our facility, security guard patrols, and comprehensive insurance coverage. When your cargo enters our facility, we become its custodian, and we take that responsibility seriously.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I visit your facility?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. We welcome facility visits by appointment. Schedule a tour to see our operations firsthand our weighbridges, warehouse, security systems, and fleet. Our team will walk you through everything and answer all your questions. Seeing is believing, and we\'re proud to show what we\'ve built.',
+      },
+    },
+  ],
+};
+
 // 3. STAFF DATA INTERFACE
 interface StaffMember {
   name: string;
@@ -213,6 +268,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={organizationSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300 selection:bg-[#FFD700]/30">
         

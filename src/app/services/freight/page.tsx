@@ -55,12 +55,88 @@ const freightServiceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
   },
   serviceType: 'Ocean Freight & Customs Clearing',
   areaServed: {
     '@type': 'Place',
     name: 'Global',
   },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Freight Forwarding Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Ocean Freight Forwarding',
+          description: 'Global container shipping with major shipping line partnerships',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Customs Clearing',
+          description: 'Complete customs documentation and clearing services',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Import/Export Management',
+          description: 'End-to-end international trade facilitation',
+        },
+      },
+    ],
+  },
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://vuyela.com/contact',
+    servicePhone: '+27-11-123-4567',
+    availableLanguage: 'English',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Which shipping lines do you work with?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We work with major shipping lines worldwide. Our partnerships include Maersk, MSC, CMA CGM, and others. These relationships give us access to routes, rates, and priority booking that others can\'t match. We leverage these partnerships for your benefit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does customs clearing take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Customs clearing time varies. Standard shipments clear within 24-48 hours. Our expertise and relationships help speed up the process. We prepare all documentation correctly. We avoid common mistakes. This reduces delays significantly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you handle both imports and exports?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We handle both imports and exports. We manage import containers from port to delivery. We handle export containers from pickup to port. We coordinate customs clearing for both directions. Complete solutions for international trade.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What documentation do you handle?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We handle all shipping documentation. Bills of lading, customs declarations, certificates of origin, export permits, and more. Our team ensures everything is correct. We file documents on time. We avoid errors that cause delays.',
+      },
+    },
+  ],
 };
 
 export default function FreightServicePage() {
@@ -120,6 +196,7 @@ export default function FreightServicePage() {
   return (
     <>
       <JsonLd data={freightServiceSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

@@ -73,10 +73,50 @@ const facilitiesPageSchema = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What certifications do your facilities have?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our facilities have multiple certifications. SOLAS certified weighbridges ensure international shipping compliance. SARS Bonded Warehouse status allows deferred duty payments. NOSA safety standards protect workers. ISO compliance ensures quality operations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How secure is your facility?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our facility is highly secure. CCTV cameras cover the entire yard. Monitoring happens 24/7. Access is controlled through gates. Security guards patrol regularly. Alarm systems protect against unauthorized access.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I visit your facility?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We welcome facility visits by appointment. Schedule a tour to see our operations. You\'ll see our weighbridges, warehouse, and security systems. Our team will answer all your questions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What services are available at your facility?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our facility offers multiple services. We handle bulk commodity storage. We provide containerization. We offer bagging services. We coordinate road freight. We maintain our fleet. Everything works under one roof.',
+      },
+    },
+  ],
+};
+
 export default function FacilitiesPage() {
   return (
     <>
       <JsonLd data={facilitiesPageSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         

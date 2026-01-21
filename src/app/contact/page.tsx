@@ -61,12 +61,52 @@ const contactPageSchema = {
   mainEntity: {
     '@type': 'Organization',
     name: 'Vuyela Group',
+    '@id': 'https://vuyela.com/#organization',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
       areaServed: 'ZA',
     },
   },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How quickly do you respond to inquiries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We respond to all inquiries within 24 hours during business days. For urgent matters, we respond immediately. Our directors are available for direct contact. Emergency situations get priority attention.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I visit your facility?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We welcome facility visits by appointment. Schedule a tour to see our operations. You\'ll see our weighbridges, warehouse, and security systems. Our team will answer all your questions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you handle international shipments?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Our freight division handles international shipments. We manage ocean freight. We handle customs clearing. We work with major shipping lines. We connect South Africa to the world.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What services can you provide?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We provide four main services. Vuyela Bulk handles warehousing. Vuyela Logistics handles transport. Vuyela Freight handles ocean shipping. Vuyela Refuel handles fuel supply. We can combine these services for complete solutions.',
+      },
+    },
+  ],
 };
 
 // 1. Define the Interface
@@ -202,6 +242,7 @@ export default function ContactPage() {
   return (
     <>
       <JsonLd data={contactPageSchema} />
+      <JsonLd data={faqSchema} />
       
       <main className="bg-[#0f0f0f] min-h-screen font-sans text-gray-300">
         
