@@ -80,15 +80,15 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Jaco Nagel',
     role: 'Director',
-    email: 'jaco@vuyelalogistics.co.za',
-    phone: '+27 72 405 9931',
+    email: null,
+    phone: null,
     image: '/images/staff/Jaco.jpg'
   },
   {
     name: 'Wayne Johnson',
     role: 'Director',
-    email: 'wayne@vuyelalogistics.co.za',
-    phone: '+27 73 030 9679',
+    email: null,
+    phone: null,
     image: '/images/staff/wayne.jpg'
   },
   
@@ -96,15 +96,15 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Melissa Johnson',
     role: 'Accounts Manager',
-    email: 'accounts@vuyelalogistics.co.za',
-    phone: '+27 78 592 4123',
+    email: null,
+    phone: null,
     image: '/images/staff/Melissa.jpg'
   },
   {
     name: 'Aneri Nagel',
     role: 'HR Manager',
-    email: 'aneri@vuyelalogistics.co.za',
-    phone: '+27 82 670 9214',
+    email: null,
+    phone: null,
     image: '/images/staff/Aneri.jpeg' // Updated to .jpeg
   },
 
@@ -119,8 +119,8 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Verushka Rossouw',
     role: 'Administration',
-    email: 'admin@vuyelalogistics.co.za',
-    phone: '+27 82 457 8760',
+    email: null,
+    phone: null,
     image: '/images/staff/verushka.jpg'
   },
 
@@ -135,15 +135,15 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Mike Dorsamy',
     role: 'Operations',
-    email: 'mike@vuyelalogistics.co.za',
-    phone: '+27 62 848 8623',
+    email: null,
+    phone: null,
     image: '/images/staff/mike.png'
   },
   {
     name: 'Karina Rossouw',
     role: 'Operations',
-    email: 'karina.rossouw@vuyelalogistics.co.za',
-    phone: '+27 83 349 5467',
+    email: null,
+    phone: null,
     image: '/images/staff/karina.jpg' // Updated to .jpg
   },
   {
@@ -166,7 +166,7 @@ const staffMembers: StaffMember[] = [
     name: 'Sipho Shabalala',
     role: 'Team Leader',
     email: null,
-    phone: '+27 73 315 4852',
+    phone: null,
     image: '/images/staff/sipho.png'
   },
 
@@ -174,8 +174,8 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Shine Lombard',
     role: 'Admin',
-    email: 'ops.admin@vuyelalogistics.co.za',
-    phone: '+27 72 949 7084',
+    email: null,
+    phone: null,
     image: '/images/staff/shine.jpg'
   },
   {
@@ -188,8 +188,8 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Charmaine Erasmus',
     role: 'Clerk',
-    email: 'ops@vuyelalogistics.co.za',
-    phone: '+27 71 786 2201',
+    email: null,
+    phone: null,
     image: '/images/staff/charmaine.png'
   }
 ];
