@@ -12,7 +12,11 @@ import {
   ArrowRight,
   ShieldCheck,
   Users,
-  Globe
+  Globe,
+  Warehouse,
+  Truck,
+  Ship,
+  Fuel
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -273,7 +277,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a]">
                   <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center flex-shrink-0">
                     <MapPin className="h-6 w-6 text-white" />
@@ -303,12 +307,58 @@ export default function ContactPage() {
                     <p className="text-gray-300 text-sm">24/7 Operations</p>
                   </div>
                 </div>
+
+                {/* Our Divisions */}
+                <div className="pt-4">
+                  <h3 className="text-lg font-bold text-white mb-3">Our Divisions</h3>
+                  <div className="space-y-3">
+                    <Link href="/services/bulk" className="flex items-center gap-3 p-3 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a] hover:border-[#FFD700]/30 transition-colors group">
+                      <div className="w-10 h-10 rounded-lg bg-[#FFD700]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FFD700] transition-colors">
+                        <Warehouse className="h-5 w-5 text-[#FFD700] group-hover:text-white transition-colors" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-white font-medium text-sm group-hover:text-[#FFD700] transition-colors">Vuyela Bulk</p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-gray-500 group-hover:text-[#FFD700] transition-colors" />
+                    </Link>
+
+                    <Link href="/services/logistics" className="flex items-center gap-3 p-3 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a] hover:border-[#FFD700]/30 transition-colors group">
+                      <div className="w-10 h-10 rounded-lg bg-[#FFD700]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FFD700] transition-colors">
+                        <Truck className="h-5 w-5 text-[#FFD700] group-hover:text-white transition-colors" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-white font-medium text-sm group-hover:text-[#FFD700] transition-colors">Vuyela Logistics</p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-gray-500 group-hover:text-[#FFD700] transition-colors" />
+                    </Link>
+
+                    <Link href="/services/freight" className="flex items-center gap-3 p-3 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a] hover:border-[#FFD700]/30 transition-colors group">
+                      <div className="w-10 h-10 rounded-lg bg-[#FFD700]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FFD700] transition-colors">
+                        <Ship className="h-5 w-5 text-[#FFD700] group-hover:text-white transition-colors" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-white font-medium text-sm group-hover:text-[#FFD700] transition-colors">Vuyela Freight</p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-gray-500 group-hover:text-[#FFD700] transition-colors" />
+                    </Link>
+
+                    <Link href="/services/refuel" className="flex items-center gap-3 p-3 bg-[#1a1a1a] rounded-lg border border-[#2a2a2a] hover:border-[#FFD700]/30 transition-colors group">
+                      <div className="w-10 h-10 rounded-lg bg-[#FFD700]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#FFD700] transition-colors">
+                        <Fuel className="h-5 w-5 text-[#FFD700] group-hover:text-white transition-colors" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-white font-medium text-sm group-hover:text-[#FFD700] transition-colors">Vuyela Refuel</p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-gray-500 group-hover:text-[#FFD700] transition-colors" />
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-[#141414] p-10 rounded-2xl border border-[#2a2a2a]">
+              <div className="bg-[#141414] p-10 rounded-2xl border border-[#2a2a2a] h-full">
                 <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
                 <p className="text-gray-400 mb-8">
                   Fill out the form below. We'll respond within 24 hours. For urgent matters, call us directly.
