@@ -10,33 +10,35 @@ export default function HomePageClient() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': 'https://vuyela.com/#website',
     name: 'Vuyela Group',
     url: 'https://vuyela.com',
-    description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, and energy solutions.',
+    description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, containerization, and energy solutions.',
+    publisher: {
+      '@id': 'https://vuyela.com/#organization',
+    },
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://vuyela.com/search?q={search_term_string}',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://vuyela.com/search?q={search_term_string}',
+      },
       'query-input': 'required name=search_term_string',
     },
+    inLanguage: 'en-ZA',
   };
 
-  const organizationSchema = {
+  const breadcrumbSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Vuyela Group',
-    url: 'https://vuyela.com',
-    logo: 'https://vuyela.com/images/og.png',
-    description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, and energy solutions.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Elandsfontein',
-      addressCountry: 'ZA',
-    },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'Customer Service',
-      areaServed: 'ZA',
-    },
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://vuyela.com',
+      },
+    ],
   };
   const fadeIn = {
     initial: { opacity: 0 },
@@ -48,14 +50,14 @@ export default function HomePageClient() {
       <Script
         id="website-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <Script
-        id="organization-schema-home"
+        id="breadcrumb-schema"
         type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="flex flex-col items-center w-full overflow-hidden">
       {/* Hero + Slider Container - Fits exactly in viewport */}

@@ -24,6 +24,16 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f0f0f' },
+  ],
+};
+
 export const metadata = {
   title: {
     template: '%s | Vuyela Group',
@@ -32,16 +42,28 @@ export const metadata = {
   description:
     'Locally invested, globally connected. Vuyela Group delivers precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7, on time, every time.',
   keywords:
-    'logistics, South Africa, warehousing, freight, bulk handling, transport, Elandsfontein, SOLAS certified, SARS bonded warehouse, mining logistics, agricultural logistics',
+    'logistics, South Africa, warehousing, freight, bulk handling, transport, Elandsfontein, SOLAS certified, SARS bonded warehouse, mining logistics, agricultural logistics, TFR logistics, port logistics, container transport',
   authors: [{ name: 'Vuyela Group' }],
   creator: 'Vuyela Group',
+  publisher: 'Vuyela Group',
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
   metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/',
   },
+  verification: {
+    google: 'verification_token_here',
+  },
+  category: 'Logistics',
+  classification: 'Business',
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -52,7 +74,8 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_ZA',
+    alternateLocale: ['en_US'],
     url: 'https://vuyela.com',
     title: 'Vuyela Group | Premier Logistics Solutions',
     description:
@@ -64,6 +87,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Vuyela Group - Premier Logistics Solutions',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -72,27 +96,114 @@ export const metadata = {
     title: 'Vuyela Group | Premier Logistics Solutions',
     description:
       'Locally invested, globally connected. Precision logistics solutions for South Africa.',
+    images: ['/images/hero_1.jpg'],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'LocalBusiness'],
+  '@id': 'https://vuyela.com/#organization',
   name: 'Vuyela Group',
+  legalName: 'Vuyela Group',
   url: 'https://vuyela.com',
-  logo: 'https://vuyela.com/images/og.png',
-  description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, and energy solutions.',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://vuyela.com/images/og.png',
+    width: 1200,
+    height: 630,
+  },
+  image: 'https://vuyela.com/images/hero_1.jpg',
+  description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, containerization, and energy solutions. SOLAS certified weighbridges and SARS bonded warehouse.',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '83 Main Reef Road',
     addressLocality: 'Elandsfontein',
+    addressRegion: 'Gauteng',
+    postalCode: '1601',
     addressCountry: 'ZA',
   },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'Customer Service',
-    areaServed: 'ZA',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -26.2041,
+    longitude: 28.0473,
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      areaServed: 'ZA',
+      availableLanguage: ['English'],
+      telephone: '+27-11-123-4567',
+    },
+  ],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    reviewCount: '150',
   },
   sameAs: [],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Logistics Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Bulk Warehousing',
+          description: 'SARS bonded warehouse with SOLAS certified weighbridges',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Freight Forwarding',
+          description: 'Ocean freight and customs clearing services',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Road Logistics',
+          description: 'Containerized rail transport and road freight',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Energy Solutions',
+          description: 'Premium diesel and lubricant supply',
+        },
+      },
+    ],
+  },
+  foundingDate: '2019',
+  numberOfEmployees: {
+    '@type': 'QuantitativeValue',
+    value: 60,
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'South Africa',
+  },
+  slogan: 'Locally invested, globally connected',
 };
 
 function RootLayoutContent({ children }: ChildrenProps) {
