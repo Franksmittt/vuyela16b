@@ -147,7 +147,7 @@ export default function IndustriesPage() {
               <p className="text-gray-400 leading-relaxed mb-6">
                 We understand the weight of ROM versus concentrate. We know the timing critical to vessel bookings. We handle the documentation required for international trade. When mining companies trust us with their ores and minerals, they're trusting partners who speak their language. We understand their challenges. We deliver practical, real-world solutions that actually work.
               </p>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Key Commodities</h3>
                   <ul className="space-y-2">
@@ -240,7 +240,7 @@ export default function IndustriesPage() {
               <p className="text-gray-400 leading-relaxed mb-6">
                 We've worked alongside farmers and agribusinesses long enough to understand that agricultural logistics isn't just about transport. It's about respecting nature's calendar. Seasonality isn't an inconvenience. It's the reality that shapes everything we do. We understand the sensitivity of agricultural products. We know the urgency of harvest windows. We recognize the critical importance of getting it right when timing matters most.
               </p>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Key Commodities</h3>
                   <ul className="space-y-2">
