@@ -133,7 +133,7 @@ export default function IndustriesPage() {
 
         {/* MINING LOGISTICS */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-stretch">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-lg bg-[#FFD700] flex items-center justify-center">
@@ -172,7 +172,7 @@ export default function IndustriesPage() {
                 </div>
               </div>
             </div>
-            <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#2a2a2a]">
+            <div className="relative w-full min-h-[400px] rounded-lg overflow-hidden border border-[#2a2a2a]">
               <Image
                 src="/images/Mining Logisticshp.jpg"
                 alt="Mining logistics operations"
@@ -182,12 +182,43 @@ export default function IndustriesPage() {
               />
             </div>
           </div>
+
+          {/* Mining Image Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+              <Image
+                src="/images/bulk-warehouse-facilities.png"
+                alt="Mining commodity storage and handling"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+              <Image
+                src="/images/weighbridge-checkpoint.png"
+                alt="Mining logistics weighbridge operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+              <Image
+                src="/images/facility-trucks.png"
+                alt="Mining transport fleet"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+          </div>
         </section>
 
         {/* AGRICULTURAL LOGISTICS */}
         <section className="py-20 px-6 max-w-7xl mx-auto bg-[#141414] border-y border-[#1f1f1f]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#2a2a2a] order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-stretch">
+            <div className="relative w-full min-h-[400px] rounded-lg overflow-hidden border border-[#2a2a2a] order-2 lg:order-1">
               <Image
                 src="/images/agricultural-grain-loading.png"
                 alt="Agricultural logistics - truck being loaded with grain"
@@ -235,12 +266,43 @@ export default function IndustriesPage() {
               </div>
             </div>
           </div>
+
+          {/* Agricultural Image Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+              <Image
+                src="/images/warehouse-interior.png"
+                alt="Agricultural product storage"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+              <Image
+                src="/images/logistics-hero.png"
+                alt="Agricultural transport operations"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+              <Image
+                src="/images/facilities-aerial-view.png"
+                alt="Agricultural logistics facility"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+          </div>
         </section>
 
         {/* FAQ SECTION */}
-        <section className="py-20 px-6 max-w-4xl mx-auto border-t border-[#1f1f1f]">
+        <section className="py-20 px-6 max-w-7xl mx-auto border-t border-[#1f1f1f]">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <HelpCircle className="w-5 h-5 text-[#FFD700]" />
