@@ -156,7 +156,7 @@ export default function FacilitiesPage() {
 
         {/* FACILITY DETAILS */}
         <section className="py-20 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-stretch">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Elandsfontein Facility</h2>
               <p className="text-gray-400 leading-relaxed mb-6">
@@ -173,7 +173,7 @@ export default function FacilitiesPage() {
               </ul>
             </div>
 
-            <div className="relative w-full h-64 sm:h-80 rounded-lg overflow-hidden border border-[#2a2a2a]">
+            <div className="relative w-full min-h-[300px] rounded-lg overflow-hidden border border-[#2a2a2a]">
               <Image
                 src="/images/warehouse-interior.png"
                 alt="Vuyela facility infrastructure"
@@ -377,9 +377,9 @@ export default function FacilitiesPage() {
         </section>
 
         {/* FAQ SECTION */}
-        <section className="py-20 px-6 max-w-4xl mx-auto border-t border-[#1f1f1f]">
+        <section className="py-20 px-6 max-w-7xl mx-auto border-t border-[#1f1f1f]">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-[#141414] p-6 rounded-lg border border-[#2a2a2a]">
               <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
                 <HelpCircle className="w-5 h-5 text-[#FFD700]" />
