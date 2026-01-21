@@ -356,8 +356,8 @@ export default function AboutPage() {
             <div className="max-w-6xl mx-auto">
               <div className="space-y-12">
                 {/* 2019 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a] order-2 md:order-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                  <div className="relative w-full min-h-[300px] rounded-lg overflow-hidden border border-[#2a2a2a] order-2 md:order-1">
                     <Image
                       src="/images/logistics-hero.png"
                       alt="Vuyela Group early operations"
@@ -384,7 +384,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* 2021 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                   <div>
                     <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20">
                       <span className="text-[#FFD700] text-sm font-bold">2021</span>
@@ -399,7 +399,7 @@ export default function AboutPage() {
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0"/> TFR integration</li>
                     </ul>
                   </div>
-                  <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+                  <div className="relative w-full min-h-[300px] rounded-lg overflow-hidden border border-[#2a2a2a]">
                     <Image
                       src="/images/bulk-warehouse-facilities.png"
                       alt="Vuyela Group warehouse and bulk operations"
@@ -412,8 +412,8 @@ export default function AboutPage() {
                 </div>
 
                 {/* 2023 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a] order-2 md:order-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                  <div className="relative w-full min-h-[300px] rounded-lg overflow-hidden border border-[#2a2a2a] order-2 md:order-1">
                     <Image
                       src="/images/weighbridge-solas.png"
                       alt="Vuyela Group SOLAS certified weighbridge"
@@ -440,7 +440,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* 2024 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                   <div>
                     <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#FFD700]/10 border border-[#FFD700]/20">
                       <span className="text-[#FFD700] text-sm font-bold">2024</span>
@@ -455,7 +455,7 @@ export default function AboutPage() {
                       <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#FFD700] flex-shrink-0"/> One-stop solutions</li>
                     </ul>
                   </div>
-                  <div className="relative w-full h-64 rounded-lg overflow-hidden border border-[#2a2a2a]">
+                  <div className="relative w-full min-h-[300px] rounded-lg overflow-hidden border border-[#2a2a2a]">
                     <Image
                       src="/images/refuel-operations.png"
                       alt="Vuyela Refuel energy operations"
