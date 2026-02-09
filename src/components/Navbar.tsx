@@ -9,6 +9,7 @@ const navigationItems = [
   { name: 'Facilities', href: '/facilities' },
   { name: 'Industries', href: '/industries' },
   { name: 'The Vuyela Network', href: '/network' },
+  { name: 'Company Profile', href: '/company-profile/', external: true },
 ];
 
 const servicesItems = [
@@ -44,6 +45,7 @@ export default function MainNavbar() {
               key={item.name}
               href={item.href}
               className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors duration-200"
+              {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
             >
               {item.name}
             </Link>
@@ -126,6 +128,7 @@ export default function MainNavbar() {
                   href={item.href}
                   className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors duration-200"
                   onClick={handleToggle}
+                  {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                 >
                   {item.name}
                 </Link>

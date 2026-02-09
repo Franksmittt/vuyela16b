@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuyela Group - Corporate Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- CORE: Dark theme (default) --- */
+        :root {
+            --vuyela-gold: #D4AF37;
+            --vuyela-gold-light: #FADD75;
+            --bg-page: #080808;
+            --bg-body: #1a1a1a;
+            --bg-card: #121212;
+            --bg-card-hover: rgba(255,255,255,0.05);
+            --border: rgba(255,255,255,0.08);
+            --text: #ffffff;
+            --text-muted: #a3a3a3;
+            --text-dim: #737373;
+            /* A4 portrait: 210mm × 297mm, safe area so nothing cuts off */
+            --a4-w: 210mm;
+            --a4-h: 297mm;
+            --safe: 12mm;
+            --inner-h: calc(297mm - 24mm);
+            --inner-w: calc(210mm - 24mm);
+        }
+
+        /* --- Light theme (strong contrast on white) --- */
+        body.theme-light {
+            --bg-page: #ffffff;
+            --bg-body: #f0f0f0;
+            --bg-card: #ffffff;
+            --bg-card-hover: rgba(0,0,0,0.05);
+            --border: rgba(0,0,0,0.12);
+            --text: #0f0f0f;
+            --text-muted: #374151;
+            --text-dim: #4b5563;
+        }
+        body.theme-light .page { color: var(--text); }
+        body.theme-light .text-white { color: var(--text) !important; }
+        body.theme-light .text-zinc-300 { color: var(--text-muted) !important; }
+        body.theme-light .text-zinc-400 { color: var(--text-muted) !important; }
+        body.theme-light .text-zinc-500 { color: var(--text-dim) !important; }
+        body.theme-light .text-zinc-600 { color: #374151 !important; }
+        body.theme-light .gold-gradient-text { background: linear-gradient(135deg, #B38728, #D4AF37, #AA771C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        body.theme-light .glass-panel { background: rgba(255,255,255,0.9); border-color: rgba(0,0,0,0.08); }
+        body.theme-light .border-white\/10 { border-color: var(--border); }
+        body.theme-light .bg-white\/5 { background: var(--bg-card-hover); }
+        body.theme-light .bg-black\/80 { background: rgba(255,255,255,0.9); }
+        body.theme-light .from-black { --tw-gradient-from: #fff; --tw-gradient-stretch: transparent; }
+        body.theme-light .bg-gradient-to-t.from-black { --tw-gradient-from: #fff; }
+
+        body {
+            background-color: var(--bg-body);
+            margin: 0;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.25s ease;
+        }
+
+        .page {
+            width: var(--a4-w);
+            height: var(--a4-h);
+            min-height: var(--a4-h);
+            max-height: var(--a4-h);
+            padding-top: var(--safe);
+            padding-bottom: var(--safe);
+            padding-left: var(--safe);
+            padding-right: var(--safe);
+            background-color: var(--bg-page);
+            color: var(--text);
+            position: relative;
+            margin: 24px auto;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .page-inner {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            max-height: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .page .img-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background-color: #5a5a5a;
+        }
+        .page .img-fill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            pointer-events: none;
+        }
+        .page .img-fill img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .img-placeholder {
+            background-color: #5a5a5a;
+            width: 100%;
+            height: 100%;
+            min-height: 120px;
+        }
+
+        .font-display {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        .font-display-heavy { font-weight: 800; }
+        .text-gold { color: var(--vuyela-gold); }
+
+        @media print {
+            @page { size: 210mm 297mm; margin: 0; }
+            body { background: #fff; margin: 0; padding: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page {
+                margin: 0 !important;
+                padding-top: var(--safe) !important;
+                padding-bottom: var(--safe) !important;
+                padding-left: var(--safe) !important;
+                padding-right: var(--safe) !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                min-height: 297mm !important;
+                max-height: 297mm !important;
+                box-shadow: none !important;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            .page:last-child { page-break-after: auto; }
+            .no-print { display: none !important; }
+        }
+
+        .glass-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #AA771C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .separator {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--vuyela-gold), transparent);
+            opacity: 0.5;
+            width: 100%;
+            margin: 2rem 0;
+        }
+
+        .bullet-point { position: relative; padding-left: 1.5rem; }
+        .bullet-point::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            background-color: var(--vuyela-gold);
+            transform: rotate(45deg);
+        }
+
+        /* Theme toggle */
+        .theme-btn {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 50;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            transition: all 0.2s;
+        }
+        .theme-btn:hover { background: var(--bg-card-hover); }
+    </style>
+</head>
+<body>
+
+    <!-- Theme toggle + Export -->
+    <div class="no-print fixed top-6 right-6 z-50 flex flex-col gap-2">
+        <button type="button" id="themeToggle" class="theme-btn" aria-label="Toggle dark/light theme">
+            <span id="themeLabel">Switch to light</span>
+        </button>
+        <div class="rounded-lg shadow-2xl border w-72 p-4 text-sm" style="background: var(--bg-card); border-color: var(--border); color: var(--text);">
+            <div class="flex items-center gap-2 mb-3" style="color: var(--vuyela-gold);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v14"/><path d="M6 18h12"/><path d="M6 22h12"/></svg>
+                <h3 class="font-bold tracking-wide uppercase">Export</h3>
+            </div>
+            <p class="text-xs mb-4 leading-relaxed" style="color: var(--text-muted);">
+                Chrome/Edge: Save as PDF, margins None, Background graphics on.
+            </p>
+            <button onclick="window.print()" class="w-full py-2 rounded text-xs font-bold uppercase tracking-widest transition-colors" style="background: var(--vuyela-gold); color: #000;">
+                Print / Save PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 1: COVER (no overlays on image) -->
+    <div class="page">
+        <div class="img-fill img-placeholder" aria-hidden="true">
+            <img src="vuyela-cover.jpg" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 page-inner flex flex-col justify-between min-h-0 overflow-hidden">
+            <div class="flex justify-between items-start border-t pt-3 flex-shrink-0" style="border-color: var(--border);">
+                <div>
+                    <h2 class="text-2xl font-display text-white mt-0.5" style="letter-spacing: 0.2em;">Vuyela Group</h2>
+                    <p class="text-xs font-bold tracking-[0.15em] uppercase mt-2 py-2 px-3 rounded-sm inline-block" style="color: var(--vuyela-gold); background: rgba(0, 0, 0, 0.65); text-shadow: 0 0 1px rgba(0,0,0,0.8);">Bulk · Logistics · Freight · Refuel</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-[9px] font-mono uppercase text-zinc-500">Company Profile</p>
+                    <p class="text-[9px] font-mono uppercase text-zinc-500">Restricted Distribution</p>
+                </div>
+            </div>
+            <div class="space-y-3 py-4 px-5 flex-shrink-0 rounded-sm max-w-md" style="background: rgba(0, 0, 0, 0.55);">
+                <div class="w-16 h-0.5" style="background: var(--vuyela-gold);"></div>
+                <h1 class="font-display font-display-heavy text-4xl sm:text-5xl text-white leading-[0.95]" style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
+                    THE ARCHITECTURE<br>
+                    OF <span class="italic" style="color: var(--vuyela-gold);">MOTION.</span>
+                </h1>
+                <p class="text-sm font-light max-w-md leading-relaxed text-zinc-300">
+                    Built on the Road, Defined by Excellence.
+                </p>
+                <p class="text-[11px] font-light mt-1 text-zinc-400">Founded 2019 · Elandsfontein, Gauteng</p>
+            </div>
+            <div class="border-t pt-3 flex-shrink-0 flex items-center justify-between gap-4" style="border-color: var(--border);">
+                <p class="text-sm font-semibold tracking-wide text-zinc-300">Locally Invested. Globally Connected.</p>
+                <p class="text-sm font-medium text-zinc-400 shrink-0">www.vuyelalogistics.co.za</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: ABOUT / LEADERSHIP -->
+    <div class="page">
+        <div class="absolute top-0 right-0 w-1/3 h-full z-0" style="background: var(--bg-page); border-left: 1px solid var(--border);"></div>
+        <div class="relative z-10 page-inner flex flex-col min-h-0">
+            <div class="flex items-center gap-3 mb-4 flex-shrink-0">
+                <span class="font-mono text-xs" style="color: var(--vuyela-gold);">01</span>
+                <span class="h-px w-8 bg-zinc-800"></span>
+                <span class="text-xs uppercase tracking-widest text-zinc-500">Executive Summary</span>
+            </div>
+            <div class="flex flex-1 min-h-0 gap-8">
+                <div class="w-2/3 flex flex-col min-h-0">
+                    <h2 class="font-display text-3xl text-white mb-4 leading-tight flex-shrink-0">RELIABILITY IS NOT <br><span class="text-zinc-600">NEGOTIABLE.</span></h2>
+                    <div class="space-y-3 text-xs leading-relaxed text-justify text-zinc-400 flex-shrink-0" style="padding-right: 1rem;">
+                        <p><strong class="text-white">What happens when two logistics professionals decide to build something different?</strong> They start with one truck, one contract, and one unshakeable belief: reliability isn't negotiable. Five years later, that same principle has grown into a company that moves millions of tons of cargo, employs over 60 people, and never forgets where it started.</p>
+                        <p><strong class="text-white">Vuyela Group</strong> is a premier logistics solutions provider based in Elandsfontein, Gauteng. We specialize in road freight, bulk warehousing, ocean freight, customs clearing, and premium fuel supply. Our state-of-the-art facility combines SOLAS certified weighbridges, SARS bonded warehouse capabilities, and 24/7 operations to deliver exceptional service across South Africa.</p>
+                        <p>We don't see ourselves as a vendor; we see ourselves as <span class="text-white italic">your logistics partner</span>. When you succeed, we succeed. The moment your cargo enters our hands, we become its custodian: <span class="text-white">"If it is in our hands, it is our responsibility."</span> No excuses, no exceptions.</p>
+                    </div>
+                    <div class="flex-1 min-h-0 flex flex-col justify-center">
+                        <div class="rounded overflow-hidden img-placeholder flex-shrink-0 w-full" style="height: 280px;">
+                            <img src="vuyela-executive-summary.jpg" alt="Logistics partner" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="mt-auto p-4 rounded-sm border flex-shrink-0" style="background: var(--bg-card-hover); border-color: var(--border);">
+                        <h3 class="text-[10px] uppercase tracking-widest mb-1" style="color: var(--vuyela-gold);">Vision</h3>
+                        <p class="text-[11px] text-zinc-300 mb-2">To be recognized as a new-generation logistics company that combines cutting-edge infrastructure with hands-on leadership, delivering precision logistics that keep South Africa moving 24/7.</p>
+                        <h3 class="text-[10px] uppercase tracking-widest mb-1" style="color: var(--vuyela-gold);">Leadership by Example</h3>
+                        <p class="text-[11px] italic mb-2 text-zinc-300">"Jaco and Wayne didn't build Vuyela from a distance; they built it from the front lines. When directors are personally involved, it sends a message: no job is too small, no promise too difficult to keep."</p>
+                        <div class="flex items-center gap-2">
+                            <div class="w-7 h-7 rounded flex items-center justify-center text-black font-bold font-display text-xs" style="background: var(--vuyela-gold);">D</div>
+                            <div>
+                                <p class="text-white text-xs font-bold uppercase">Jaco & Wayne</p>
+                                <p class="text-[10px] text-zinc-500 uppercase tracking-wider">Founding Directors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-1/3 flex flex-col pt-0 min-h-0 overflow-hidden" style="padding-left: 1rem;">
+                    <div class="flex-shrink-0 space-y-4">
+                        <div>
+                            <h4 class="text-white font-display text-base mb-1.5">Our DNA</h4>
+                            <div class="w-6 h-0.5 mb-2" style="background: var(--vuyela-gold);"></div>
+                            <ul class="space-y-1.5 text-[11px] text-zinc-400">
+                                <li class="bullet-point">Partnership, not transactions</li>
+                                <li class="bullet-point">Custodian of your cargo</li>
+                                <li class="bullet-point">Excellence in motion · 24/7</li>
+                                <li class="bullet-point">Leadership by example</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-display text-base mb-1.5">Scale</h4>
+                            <div class="w-6 h-0.5 mb-2" style="background: var(--vuyela-gold);"></div>
+                            <div class="space-y-2">
+                                <div>
+                                    <span class="block text-xl text-white font-display">60+</span>
+                                    <span class="text-[10px] uppercase text-zinc-500">Full-time Staff</span>
+                                </div>
+                                <div>
+                                    <span class="block text-xl text-white font-display">1M+</span>
+                                    <span class="text-[10px] uppercase text-zinc-500">Tons Moved Annually</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-h-0 flex flex-col justify-end mt-2">
+                        <div class="grid grid-cols-1 gap-2 w-full flex-shrink-0">
+                            <div class="aspect-square rounded overflow-hidden img-placeholder border w-full" style="border-color: var(--border);">
+                                <img src="vuyela-about-01.jpg" alt="Vuyela" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square rounded overflow-hidden img-placeholder border w-full" style="border-color: var(--border);">
+                                <img src="vuyela-about-02.jpg" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <div class="aspect-square rounded overflow-hidden img-placeholder border w-full" style="border-color: var(--border);">
+                                <img src="vuyela-about-03.jpg" alt="" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: OPERATIONAL CAPABILITY – all four services on one page -->
+    <div class="page">
+        <div class="flex flex-col page-inner min-h-0">
+            <div class="flex items-center gap-3 mb-2 flex-shrink-0">
+                <span class="font-mono text-xs" style="color: var(--vuyela-gold);">02</span>
+                <span class="h-px w-8 bg-zinc-800"></span>
+                <span class="text-xs uppercase tracking-widest text-zinc-500">Operational Capability</span>
+            </div>
+            <div class="flex-shrink-0 w-full relative border-b overflow-hidden img-placeholder" style="height: 26%; min-height: 80px; border-color: var(--border);">
+                <img src="vuyela-operational-capability.png" alt="Operational capability" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-shrink-0 flex items-center justify-center py-5" style="background: var(--bg-page);">
+                <h2 class="font-display text-xl text-white">OPERATIONAL CAPABILITY</h2>
+            </div>
+            <div class="flex-1 min-h-0 grid grid-cols-2 grid-rows-2 gap-3 pt-2 pb-2 overflow-hidden" style="align-content: stretch;">
+                <!-- 1. Vuyela Bulk -->
+                <div class="glass-panel p-3 min-h-0 overflow-hidden flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-1.5 flex-shrink-0">
+                        <h3 class="text-base font-display text-white leading-tight">Vuyela Bulk<br><span class="text-sm" style="color: var(--vuyela-gold);">Warehousing & Handling</span></h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vuyela-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05"/><path d="M12 22.08V12"/></svg>
+                    </div>
+                    <p class="text-[10px] text-zinc-400 leading-relaxed flex-1 min-h-0 mb-0">Strategic warehousing, stockpiling, and containerization at our Elandsfontein facility. SARS Bonded Warehouse with SOLAS certified weighbridges.</p>
+                    <div class="-mt-1 rounded overflow-hidden flex-shrink-0 w-full bg-zinc-800" style="height: 144px; background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&h=400&fit=crop'); background-size: cover; background-position: center;"></div>
+                </div>
+                <!-- 2. Vuyela Logistics -->
+                <div class="glass-panel p-3 min-h-0 overflow-hidden flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-1.5 flex-shrink-0">
+                        <h3 class="text-base font-display text-white leading-tight">Vuyela Logistics<br><span class="text-sm" style="color: var(--vuyela-gold);">Road Freight & Transport</span></h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vuyela-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11"/><path d="M15 18h2"/><path d="M19 18h2"/><path d="M16 6h4v8"/></svg>
+                    </div>
+                    <p class="text-[10px] text-zinc-400 leading-relaxed flex-1 min-h-0 mb-0">Own fleet operations with 24/7 monitoring. Container logistics, intermodal solutions, and reliable transport across South Africa.</p>
+                    <div class="-mt-1 rounded overflow-hidden flex-shrink-0 w-full bg-zinc-800" style="height: 144px; background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=600&h=400&fit=crop'); background-size: cover; background-position: center;"></div>
+                </div>
+                <!-- 3. Vuyela Freight -->
+                <div class="glass-panel p-3 min-h-0 overflow-hidden flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-1.5 flex-shrink-0">
+                        <h3 class="text-base font-display text-white leading-tight">Vuyela Freight<br><span class="text-sm" style="color: var(--vuyela-gold);">Ocean Freight & Customs</span></h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vuyela-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 4-8 4 8"/><path d="M12 16V4"/><path d="M8 16V4"/><path d="M4 16v-4"/></svg>
+                    </div>
+                    <p class="text-[10px] text-zinc-400 leading-relaxed flex-1 min-h-0 mb-0">Complete freight forwarding and customs clearing. Strategic partnerships with major shipping lines for global trade facilitation.</p>
+                    <div class="-mt-1 rounded overflow-hidden flex-shrink-0 w-full bg-zinc-800" style="height: 144px; background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=600&h=400&fit=crop'); background-size: cover; background-position: center;"></div>
+                </div>
+                <!-- 4. Vuyela Refuel -->
+                <div class="glass-panel p-3 min-h-0 overflow-hidden flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-1.5 flex-shrink-0">
+                        <h3 class="text-base font-display text-white leading-tight">Vuyela Refuel<br><span class="text-sm" style="color: var(--vuyela-gold);">Energy Solutions</span></h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--vuyela-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <p class="text-[10px] text-zinc-400 leading-relaxed flex-1 min-h-0 mb-0">Premium 50ppm diesel supply with rigorous quality testing. Guaranteed pure fuel with our "Pregnancy Test" protocol.</p>
+                    <div class="-mt-1 rounded overflow-hidden flex-shrink-0 w-full bg-zinc-800" style="height: 144px; background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=600&h=400&fit=crop'); background-size: cover; background-position: center;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4: THE HUB – Map & first facility features -->
+    <div class="page">
+        <div class="relative z-10 page-inner flex flex-col min-h-0">
+            <div class="flex items-center gap-3 mb-2 flex-shrink-0">
+                <span class="font-mono text-xs" style="color: var(--vuyela-gold);">03</span>
+                <span class="h-px w-8 bg-zinc-800"></span>
+                <span class="text-xs uppercase tracking-widest text-zinc-500">The Hub</span>
+            </div>
+            <div class="flex justify-between items-end mb-3 flex-shrink-0">
+                <div>
+                    <p class="text-[10px] uppercase tracking-[0.3em] mb-0.5" style="color: var(--vuyela-gold);">Strategic Infrastructure</p>
+                    <h2 class="font-display text-2xl text-white">THE ELANDSFONTEIN HUB</h2>
+                </div>
+                <div class="text-right">
+                    <p class="font-mono text-[10px] text-zinc-500">Lat: -26.1751 | Long: 28.1652</p>
+                </div>
+            </div>
+            <div class="relative border mb-4 overflow-hidden img-placeholder flex-shrink-0" style="border-color: var(--border); height: 300px;">
+                <img src="vuyela-executive-summary.jpg" alt="Elandsfontein Hub" class="w-full h-full object-cover">
+            </div>
+            <div class="grid grid-cols-3 gap-4 flex-shrink-0">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full rounded overflow-hidden border flex-shrink-0 mb-3" style="aspect-ratio: 1/1; border-color: var(--border);">
+                        <img src="vuyela-sars-bonded-warehouse.png" alt="SARS Bonded Warehouse" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-white font-bold mb-1 text-xs uppercase">SARS Bonded Warehouse</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Customs-accredited bonded storage for international trade. Deferred duty handling, secure stockholding, and full compliance for imports and exports.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full rounded overflow-hidden border flex-shrink-0 mb-3" style="aspect-ratio: 1/1; border-color: var(--border);">
+                        <img src="vuyela-solas-weighbridges.png" alt="Certified SOLAS Weighbridges" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-white font-bold mb-1 text-xs uppercase">Certified SOLAS Weighbridges</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Internationally certified weighbridges for accurate mass declaration. SOLAS-compliant weighing for containers and cargo; full documentation for shipping and road freight.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-full rounded overflow-hidden border flex-shrink-0 mb-3" style="aspect-ratio: 1/1; border-color: var(--border);">
+                        <img src="vuyela-24-7-security.png" alt="24 / 7 Security" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-white font-bold mb-1 text-xs uppercase">24 / 7 Security</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Round-the-clock operations with full yard camera coverage and live tracking. NOSA safety standards; complete visibility and proactive monitoring.</p>
+                </div>
+            </div>
+            <div class="relative border mt-4 overflow-hidden img-placeholder flex-1 min-h-[280px]" style="border-color: var(--border);">
+                <img src="vuyela-hub-bottom.jpg" alt="Elandsfontein Hub" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: THE HUB – Facility features continued (3 rows × 2 columns) -->
+    <div class="page">
+        <div class="relative z-10 page-inner flex flex-col min-h-0 py-2">
+            <div class="flex items-center gap-3 mb-4 flex-shrink-0">
+                <span class="font-mono text-xs" style="color: var(--vuyela-gold);">04</span>
+                <span class="h-px w-8 bg-zinc-800"></span>
+                <span class="text-xs uppercase tracking-widest text-zinc-500">Facility capabilities</span>
+            </div>
+            <div class="grid grid-cols-2 grid-rows-3 gap-4 flex-1 min-h-0 overflow-hidden">
+                <!-- Row 1: Text left, Image right -->
+                <div class="glass-panel p-4 flex flex-col justify-center min-h-0">
+                    <h4 class="text-white font-display text-base mb-2" style="color: var(--vuyela-gold);">Containerization Facility</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Professional container packing for 6m and 12m containers. Proper handling and documentation, vessel-ready containers and efficient loading processes.</p>
+                </div>
+                <div class="rounded overflow-hidden img-placeholder border min-h-0 flex items-stretch" style="border-color: var(--border);">
+                    <img src="vuyela-containerization-facility.png" alt="Containerization Facility" class="w-full h-full object-cover">
+                </div>
+                <!-- Row 2: Image left, Text right -->
+                <div class="rounded overflow-hidden img-placeholder border min-h-0 flex items-stretch" style="border-color: var(--border);">
+                    <img src="vuyela-bagging-facility.png" alt="Bagging Facility" class="w-full h-full object-cover">
+                </div>
+                <div class="glass-panel p-4 flex flex-col justify-center min-h-0">
+                    <h4 class="text-white font-display text-base mb-2" style="color: var(--vuyela-gold);">Bagging Facility</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Custom bagging for various commodities, tailored to customer requirements. Quality packaging materials and flexible service options.</p>
+                </div>
+                <!-- Row 3: Text left, Image right -->
+                <div class="glass-panel p-4 flex flex-col justify-center min-h-0">
+                    <h4 class="text-white font-display text-base mb-2" style="color: var(--vuyela-gold);">Strategic Warehousing & Live Tracking</h4>
+                    <p class="text-[11px] text-zinc-400 leading-relaxed">Dedicated warehouse space for stockpiling and storage. Real-time tracking and monitoring, with complete visibility into operations, inventory, and cargo movements. Proactive issue resolution.</p>
+                </div>
+                <div class="rounded overflow-hidden img-placeholder border min-h-0 flex items-stretch" style="border-color: var(--border);">
+                    <img src="vuyela-live-tracking.png" alt="Strategic Warehousing & Live Tracking" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: BACK COVER / CONTACT (no overlays) -->
+    <div class="page">
+        <div class="relative z-10 page-inner flex flex-col justify-between min-h-0 overflow-hidden">
+            <div class="flex flex-col items-center text-center pt-10 flex-shrink-0">
+                <div class="mb-4">
+                    <div class="w-20 h-20 border-2 flex items-center justify-center rotate-45 mx-auto" style="border-color: var(--vuyela-gold);">
+                        <div class="w-16 h-16 border flex items-center justify-center -rotate-45" style="border-color: var(--border);">
+                            <span class="font-display text-4xl" style="color: var(--vuyela-gold);">V</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl text-white mb-2 tracking-wide leading-tight">
+                    PARTNER WITH <br>
+                    <span style="color: var(--vuyela-gold);">PRECISION.</span>
+                </h2>
+                <p class="text-sm max-w-lg mb-2 font-light text-zinc-400 leading-relaxed">
+                    Locally invested, globally connected. Vuyela Group delivers precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7, on time, every time. We don't see ourselves as a vendor; we see ourselves as your logistics partner. Contact our team for a bespoke assessment.
+                </p>
+                <p class="text-xs uppercase tracking-widest text-zinc-500 mt-4 mb-3">By Appointment Only</p>
+                <div class="w-full max-w-xl mx-auto rounded overflow-hidden img-placeholder flex-shrink-0" style="height: 300px;">
+                    <img src="vuyela-mining-logistics.jpg" alt="Mining logistics" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="flex-shrink-0 flex flex-col justify-center border-t border-b py-6 mt-6" style="border-color: var(--border);">
+                <div class="space-y-6 max-w-xl mx-auto w-full">
+                    <div class="flex items-center justify-between gap-6">
+                        <span class="uppercase text-xs tracking-widest text-zinc-500 shrink-0">Address</span>
+                        <span class="text-white text-sm text-right">83 Main Reef Road, Elandsfontein, Germiston, 1601</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-6">
+                        <span class="uppercase text-xs tracking-widest text-zinc-500 shrink-0">General Enquiries</span>
+                        <span class="text-white font-mono text-sm">info@vuyelalogistics.co.za</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-6">
+                        <span class="uppercase text-xs tracking-widest text-zinc-500 shrink-0">Operations</span>
+                        <span class="text-white font-mono text-sm">+27 (0) 11 123 4567</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-6">
+                        <span class="uppercase text-xs tracking-widest text-zinc-500 shrink-0">Web</span>
+                        <span class="text-white font-mono text-sm">www.vuyelalogistics.co.za</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t flex-shrink-0" style="border-color: var(--border);">
+                <p class="text-center text-[10px] uppercase tracking-[0.12em] text-zinc-500 leading-relaxed">
+                    Vuyela Group © 2026. All Rights Reserved.<br>
+                    Registered in South Africa. Locally Invested. Globally Connected.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var body = document.body;
+            var btn = document.getElementById('themeToggle');
+            var label = document.getElementById('themeLabel');
+
+            function applyTheme(isLight) {
+                if (isLight) {
+                    body.classList.add('theme-light');
+                    label.textContent = 'Switch to dark';
+                } else {
+                    body.classList.remove('theme-light');
+                    label.textContent = 'Switch to light';
+                }
+            }
+
+            btn.addEventListener('click', function() {
+                var isLight = body.classList.toggle('theme-light');
+                label.textContent = isLight ? 'Switch to dark' : 'Switch to light';
+                try { localStorage.setItem('vuyela-theme', isLight ? 'light' : 'dark'); } catch (e) {}
+            });
+
+            try {
+                var saved = localStorage.getItem('vuyela-theme');
+                if (saved === 'light') applyTheme(true);
+            } catch (e) {}
+        })();
+    </script>
+</body>
+</html>

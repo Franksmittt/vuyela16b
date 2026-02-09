@@ -73,6 +73,17 @@ export default function MainFooter() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/company-profile/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 text-sm hover:text-[#FFD700] transition-colors duration-200 inline-flex items-center gap-1"
+                >
+                  Company Profile
+                  <ArrowRight className="h-3 w-3 opacity-70" />
+                </Link>
+              </li>
             </ul>
           </div>
 
