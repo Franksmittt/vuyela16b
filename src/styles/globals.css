@@ -1,68 +1,92 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-family-poppins: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans:
+    var(--font-body), 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+  --font-family-display:
+    var(--font-display), 'Barlow Condensed', ui-sans-serif, system-ui,
+    sans-serif;
+  /* Keep existing class name working across marketing pages */
+  --font-family-poppins:
+    var(--font-display), 'Barlow Condensed', ui-sans-serif, system-ui,
+    sans-serif;
 
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
 
-  --color-border: oklch(88% 0.03 260);
-  --color-input: oklch(88% 0.03 260);
-  --color-ring: oklch(65% 0.2 270);
-  --color-background: oklch(100% 0 0);
-  --color-foreground: oklch(25% 0.15 260);
-  --color-primary: oklch(65% 0.2 270);
-  --color-primary-foreground: oklch(98% 0.01 270);
-  --color-secondary: oklch(80% 0.1 190);
-  --color-secondary-foreground: oklch(25% 0.15 260);
-  --color-accent: oklch(80% 0.15 60);
-  --color-accent-foreground: oklch(25% 0.15 260);
-  --color-muted: oklch(90% 0.02 260);
-  --color-muted-foreground: oklch(60% 0.05 260);
-  --color-card: oklch(98% 0.01 260);
-  --color-card-foreground: oklch(25% 0.15 260);
+  /* Brand: industrial charcoal + safety yellow */
+  --color-brand-ink: #141414;
+  --color-brand-ink-soft: #1a1a1a;
+  --color-brand-surface: #222222;
+  --color-brand-border: #2e2e2e;
+  --color-brand-yellow: #ffd700;
+  --color-brand-yellow-deep: #c4a000;
+  --color-brand-muted: #9a9a9a;
+
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #c4a000;
+  --color-background: #ffffff;
+  --color-foreground: #141414;
+  --color-primary: #141414;
+  --color-primary-foreground: #ffd700;
+  --color-secondary: #f4f4f4;
+  --color-secondary-foreground: #141414;
+  --color-accent: #ffd700;
+  --color-accent-foreground: #141414;
+  --color-muted: #f4f4f4;
+  --color-muted-foreground: #666666;
+  --color-card: #ffffff;
+  --color-card-foreground: #141414;
 }
 
 @layer base {
   :root {
-    --background: oklch(100% 0 0);
-    --foreground: oklch(25% 0.15 260);
-    --card: oklch(98% 0.01 260);
-    --card-foreground: oklch(25% 0.15 260);
-    --popover: oklch(98% 0.01 260);
-    --popover-foreground: oklch(25% 0.15 260);
-    --primary: oklch(65% 0.2 270);
-    --primary-foreground: oklch(98% 0.01 270);
-    --secondary: oklch(80% 0.1 190);
-    --secondary-foreground: oklch(25% 0.15 260);
-    --muted: oklch(90% 0.02 260);
-    --muted-foreground: oklch(60% 0.05 260);
-    --accent: oklch(80% 0.15 60);
-    --accent-foreground: oklch(25% 0.15 260);
-    --border: oklch(88% 0.03 260);
-    --input: oklch(88% 0.03 260);
-    --ring: oklch(65% 0.2 270);
+    --brand-ink: #141414;
+    --brand-ink-soft: #1a1a1a;
+    --brand-surface: #222222;
+    --brand-border: #2e2e2e;
+    --brand-yellow: #ffd700;
+    --brand-yellow-deep: #c4a000;
+    --brand-muted: #9a9a9a;
+
+    --background: #ffffff;
+    --foreground: #141414;
+    --card: #ffffff;
+    --card-foreground: #141414;
+    --popover: #ffffff;
+    --popover-foreground: #141414;
+    --primary: #141414;
+    --primary-foreground: #ffd700;
+    --secondary: #f4f4f4;
+    --secondary-foreground: #141414;
+    --muted: #f4f4f4;
+    --muted-foreground: #666666;
+    --accent: #ffd700;
+    --accent-foreground: #141414;
+    --border: #e5e5e5;
+    --input: #e5e5e5;
+    --ring: #c4a000;
   }
 
   .dark {
-    --background: oklch(15% 0.05 260);
-    --foreground: oklch(90% 0.02 260);
-    --card: oklch(20% 0.05 260);
-    --card-foreground: oklch(90% 0.02 260);
-    --popover: oklch(20% 0.05 260);
-    --popover-foreground: oklch(90% 0.02 260);
-    --primary: oklch(30% 0.05 260);
-    --primary-foreground: oklch(90% 0.02 260);
-    --secondary: oklch(40% 0.06 260);
-    --secondary-foreground: oklch(90% 0.02 260);
-    --muted: oklch(30% 0.04 260);
-    --muted-foreground: oklch(65% 0.05 260);
-    --accent: oklch(75% 0.15 60);
-    --accent-foreground: oklch(90% 0.02 260);
-    --border: oklch(30% 0.04 260);
-    --input: oklch(30% 0.04 260);
-    --ring: oklch(30% 0.05 260);
+    --background: #141414;
+    --foreground: #f5f5f5;
+    --card: #1a1a1a;
+    --card-foreground: #f5f5f5;
+    --popover: #1a1a1a;
+    --popover-foreground: #f5f5f5;
+    --primary: #ffd700;
+    --primary-foreground: #141414;
+    --secondary: #222222;
+    --secondary-foreground: #f5f5f5;
+    --muted: #222222;
+    --muted-foreground: #9a9a9a;
+    --accent: #ffd700;
+    --accent-foreground: #141414;
+    --border: #2e2e2e;
+    --input: #2e2e2e;
+    --ring: #ffd700;
   }
 }
 
@@ -78,6 +102,14 @@
   html {
     @apply overflow-x-hidden max-w-full;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-family-display);
+    letter-spacing: 0.01em;
+  }
 }
 
 @keyframes scroll {
@@ -89,6 +121,42 @@
   }
 }
 
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 36s linear infinite;
+}
+
+.animate-hero-fade-up {
+  animation: hero-fade-up 0.7s ease-out both;
+}
+
+.animate-hero-fade-up-delay {
+  animation: hero-fade-up 0.75s ease-out 0.12s both;
+}
+
+.animate-hero-fade-up-delay-2 {
+  animation: hero-fade-up 0.8s ease-out 0.24s both;
+}
+
+.animate-hero-kenburns {
+  animation: hero-kenburns 12s ease-out forwards;
 }
