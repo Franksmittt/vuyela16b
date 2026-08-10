@@ -138,13 +138,26 @@ export default function MainFooter() {
         </div>
 
         <div className="border-t border-[#2e2e2e] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-sm text-gray-400">
-            ©{' '}
-            <Suspense fallback="2024">
-              <CurrentYear />
-            </Suspense>{' '}
-            Vuyela Group. All rights reserved.
-          </span>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <span className="text-sm text-gray-400">
+              ©{' '}
+              <Suspense fallback="2024">
+                <CurrentYear />
+              </Suspense>{' '}
+              Vuyela Group. All rights reserved.
+            </span>
+            <p className="text-xs text-gray-500">
+              Designed, Developed and Maintained by{' '}
+              <a
+                href="https://www.endpointmedia.co.za/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FFD700] hover:text-white transition-colors"
+              >
+                Endpoint Media
+              </a>
+            </p>
+          </div>
           <div className="flex items-center gap-6 text-sm text-gray-400">
             <span className="text-xs tracking-wide uppercase">
               SOLAS Certified
