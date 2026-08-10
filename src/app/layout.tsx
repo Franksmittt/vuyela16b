@@ -1,5 +1,5 @@
 // app/layout.tsx
-import { Inter, Poppins } from 'next/font/google';
+import { Barlow_Condensed, Source_Sans_3 } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 
 import MainFooter from '@/components/Footer';
@@ -10,18 +10,17 @@ import { ThemeProvider } from '@/providers/theme';
 import '@/styles/globals.css';
 import type { ChildrenProps } from '@/types';
 
-const inter = Inter({
+const display = Barlow_Condensed({
+  weight: ['500', '600', '700'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
-  adjustFontFallback: false,
+  variable: '--font-display',
 });
 
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
+const body = Source_Sans_3({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-poppins',
+  variable: '--font-body',
 });
 
 export const viewport = {
@@ -30,7 +29,7 @@ export const viewport = {
   maximumScale: 5,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f0f0f' },
+    { media: '(prefers-color-scheme: dark)', color: '#141414' },
   ],
 };
 
@@ -54,9 +53,6 @@ export const metadata = {
   metadataBase: new URL('https://vuyela.com'),
   alternates: {
     canonical: '/',
-  },
-  verification: {
-    google: 'verification_token_here',
   },
   category: 'Logistics',
   classification: 'Business',
@@ -116,12 +112,13 @@ const organizationSchema = {
   url: 'https://vuyela.com',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://vuyela.com/images/og.png',
+    url: 'https://vuyela.com/images/hero_1.jpg',
     width: 1200,
     height: 630,
   },
   image: 'https://vuyela.com/images/hero_1.jpg',
-  description: 'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, containerization, and energy solutions. SOLAS certified weighbridges and SARS bonded warehouse.',
+  description:
+    'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, containerization, and energy solutions. SOLAS certified weighbridges and SARS bonded warehouse.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '83 Main Reef Road',
@@ -141,19 +138,23 @@ const organizationSchema = {
       contactType: 'Customer Service',
       areaServed: 'ZA',
       availableLanguage: ['English'],
-      telephone: '+27-11-123-4567',
+      email: 'info@vuyelalogistics.co.za',
+      url: 'https://vuyela.com/contact',
     },
   ],
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
     opens: '00:00',
     closes: '23:59',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '150',
   },
   sameAs: [],
   hasOfferCatalog: {
@@ -165,7 +166,8 @@ const organizationSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Bulk Warehousing',
-          description: 'SARS bonded warehouse with SOLAS certified weighbridges',
+          description:
+            'SARS bonded warehouse with SOLAS certified weighbridges',
         },
       },
       {
@@ -204,21 +206,23 @@ const organizationSchema = {
     name: 'South Africa',
   },
   slogan: 'Locally invested, globally connected',
+  email: 'info@vuyelalogistics.co.za',
 };
 
-function RootLayoutContent({ children }: ChildrenProps) {
+export default function RootLayout({ children }: ChildrenProps) {
   return (
-    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-      </head>
-      <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased overflow-x-hidden`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${display.variable} ${body.variable} overflow-x-hidden`}
+    >
+      <body className="font-sans antialiased overflow-x-hidden">
         <JsonLd data={organizationSchema} />
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
           <QueryProvider>
             <div className="flex min-h-screen bg-(--background) w-full overflow-x-hidden">
               <div className="flex-1 flex flex-col w-full">
@@ -238,18 +242,6 @@ function RootLayoutContent({ children }: ChildrenProps) {
             />
           </QueryProvider>
         </ThemeProvider>
-      </body>
-    </html>
-  );
-}
-
-export default function RootLayout({ children }: ChildrenProps) {
-  return (
-    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
-      <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased overflow-x-hidden`}
-      >
-        <RootLayoutContent>{children}</RootLayoutContent>
       </body>
     </html>
   );

@@ -1,7 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Building2, ShieldCheck, Truck, Users, Upload, AlertCircle } from 'lucide-react';
+import {
+  ArrowRight,
+  Building2,
+  ShieldCheck,
+  Truck,
+  Users,
+  Upload,
+  AlertCircle,
+} from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export function CarrierRegistrationForm() {
@@ -30,28 +38,32 @@ export function CarrierRegistrationForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value, type } = e.target;
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
       if (name === 'termsAccepted') {
-        setFormData(prev => ({ ...prev, [name]: checked }));
+        setFormData((prev) => ({ ...prev, [name]: checked }));
       } else {
-        setFormData(prev => ({
+        setFormData((prev) => ({
           ...prev,
           equipmentTypes: checked
             ? [...prev.equipmentTypes, value]
-            : prev.equipmentTypes.filter(item => item !== value)
+            : prev.equipmentTypes.filter((item) => item !== value),
         }));
       }
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData(prev => ({ ...prev, insuranceFile: e.target.files![0] }));
+      setFormData((prev) => ({ ...prev, insuranceFile: e.target.files![0] }));
     }
   };
 
@@ -60,7 +72,9 @@ export function CarrierRegistrationForm() {
     setIsSubmitting(true);
 
     setTimeout(() => {
-      toast.success('Application submitted successfully! We will review your registration and contact you within 5-7 business days.');
+      toast.success(
+        'Application submitted successfully! We will review your registration and contact you within 5-7 business days.'
+      );
       setFormData({
         companyName: '',
         registrationNumber: '',
@@ -95,11 +109,16 @@ export function CarrierRegistrationForm() {
           <div className="w-10 h-10 rounded-lg bg-[#FFD700] flex items-center justify-center">
             <Building2 className="h-5 w-5 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-white">Business Identification</h3>
+          <h3 className="text-2xl font-bold text-white">
+            Business Identification
+          </h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="companyName" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="companyName"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Registered Company Name *
             </label>
             <input
@@ -114,7 +133,10 @@ export function CarrierRegistrationForm() {
             />
           </div>
           <div>
-            <label htmlFor="registrationNumber" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="registrationNumber"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Company Registration Number *
             </label>
             <input
@@ -129,7 +151,10 @@ export function CarrierRegistrationForm() {
             />
           </div>
           <div>
-            <label htmlFor="vatNumber" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="vatNumber"
+              className="block text-sm font-medium text-white mb-2"
+            >
               VAT Number *
             </label>
             <input
@@ -144,7 +169,10 @@ export function CarrierRegistrationForm() {
             />
           </div>
           <div>
-            <label htmlFor="yearsInOperation" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="yearsInOperation"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Years in Operation *
             </label>
             <input
@@ -158,7 +186,9 @@ export function CarrierRegistrationForm() {
               className="w-full px-4 py-3 bg-[#1a1a1a] border border-[#3a3a3a] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FFD700] transition-colors"
               placeholder="5"
             />
-            <p className="text-gray-400 text-xs mt-1">Minimum 2 years required</p>
+            <p className="text-gray-400 text-xs mt-1">
+              Minimum 2 years required
+            </p>
           </div>
         </div>
       </div>
@@ -169,11 +199,16 @@ export function CarrierRegistrationForm() {
           <div className="w-10 h-10 rounded-lg bg-[#FFD700] flex items-center justify-center">
             <ShieldCheck className="h-5 w-5 text-white" />
           </div>
-          <h3 className="text-2xl font-bold text-white">Compliance & Documentation</h3>
+          <h3 className="text-2xl font-bold text-white">
+            Compliance & Documentation
+          </h3>
         </div>
         <div className="space-y-6">
           <div>
-            <label htmlFor="dotMcNumber" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="dotMcNumber"
+              className="block text-sm font-medium text-white mb-2"
+            >
               DOT/MC Number or PRDP/Operator Card *
             </label>
             <input
@@ -188,7 +223,10 @@ export function CarrierRegistrationForm() {
             />
           </div>
           <div>
-            <label htmlFor="insuranceFile" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="insuranceFile"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Certificate of Insurance (PDF) *
             </label>
             <div className="relative">
@@ -207,16 +245,22 @@ export function CarrierRegistrationForm() {
               >
                 <Upload className="h-5 w-5 text-[#FFD700]" />
                 <span className="text-white text-sm">
-                  {formData.insuranceFile ? formData.insuranceFile.name : 'Upload Insurance Certificate (PDF)'}
+                  {formData.insuranceFile
+                    ? formData.insuranceFile.name
+                    : 'Upload Insurance Certificate (PDF)'}
                 </span>
               </label>
             </div>
             <p className="text-gray-400 text-xs mt-1">
-              Minimum coverage: R1,000,000 Cargo Liability / R10,000,000 Auto Liability
+              Minimum coverage: R1,000,000 Cargo Liability / R10,000,000 Auto
+              Liability
             </p>
           </div>
           <div>
-            <label htmlFor="safetyRating" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="safetyRating"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Safety Rating *
             </label>
             <select
@@ -246,7 +290,10 @@ export function CarrierRegistrationForm() {
         </div>
         <div className="space-y-6">
           <div>
-            <label htmlFor="powerUnits" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="powerUnits"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Total Number of Power Units (Trucks) *
             </label>
             <input
@@ -266,8 +313,16 @@ export function CarrierRegistrationForm() {
               Equipment Types * (Select all that apply)
             </label>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Side-tippers', 'Flatbeds', 'Reefer', 'Skeleton/Container Trailers'].map((type) => (
-                <label key={type} className="flex items-center gap-2 cursor-pointer">
+              {[
+                'Side-tippers',
+                'Flatbeds',
+                'Reefer',
+                'Skeleton/Container Trailers',
+              ].map((type) => (
+                <label
+                  key={type}
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <input
                     type="checkbox"
                     name="equipmentType"
@@ -282,7 +337,10 @@ export function CarrierRegistrationForm() {
             </div>
           </div>
           <div>
-            <label htmlFor="preferredLanes" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="preferredLanes"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Preferred Lanes/Regions *
             </label>
             <textarea
@@ -308,14 +366,18 @@ export function CarrierRegistrationForm() {
           <h3 className="text-2xl font-bold text-white">Trade References</h3>
         </div>
         <p className="text-gray-300 text-sm mb-6">
-          Provide two active trade references. Professional carriers always have these ready.
+          Provide two active trade references. Professional carriers always have
+          these ready.
         </p>
         <div className="space-y-6">
           <div className="bg-[#1a1a1a] rounded-lg p-4 border border-[#3a3a3a]">
             <h4 className="text-white font-semibold mb-4">Reference 1 *</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label htmlFor="reference1Company" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="reference1Company"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Company Name
                 </label>
                 <input
@@ -330,7 +392,10 @@ export function CarrierRegistrationForm() {
                 />
               </div>
               <div>
-                <label htmlFor="reference1Contact" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="reference1Contact"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Contact Person
                 </label>
                 <input
@@ -345,7 +410,10 @@ export function CarrierRegistrationForm() {
                 />
               </div>
               <div>
-                <label htmlFor="reference1Phone" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="reference1Phone"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Phone Number
                 </label>
                 <input
@@ -365,7 +433,10 @@ export function CarrierRegistrationForm() {
             <h4 className="text-white font-semibold mb-4">Reference 2 *</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label htmlFor="reference2Company" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="reference2Company"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Company Name
                 </label>
                 <input
@@ -380,7 +451,10 @@ export function CarrierRegistrationForm() {
                 />
               </div>
               <div>
-                <label htmlFor="reference2Contact" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="reference2Contact"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Contact Person
                 </label>
                 <input
@@ -395,7 +469,10 @@ export function CarrierRegistrationForm() {
                 />
               </div>
               <div>
-                <label htmlFor="reference2Phone" className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="reference2Phone"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   Phone Number
                 </label>
                 <input
@@ -416,10 +493,15 @@ export function CarrierRegistrationForm() {
 
       {/* Contact Information */}
       <div className="pt-6 border-t border-[#3a3a3a]">
-        <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
+        <h3 className="text-xl font-bold text-white mb-6">
+          Contact Information
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <label htmlFor="contactName" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="contactName"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Contact Name *
             </label>
             <input
@@ -434,7 +516,10 @@ export function CarrierRegistrationForm() {
             />
           </div>
           <div>
-            <label htmlFor="contactEmail" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="contactEmail"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Email Address *
             </label>
             <input
@@ -449,7 +534,10 @@ export function CarrierRegistrationForm() {
             />
           </div>
           <div>
-            <label htmlFor="contactPhone" className="block text-sm font-medium text-white mb-2">
+            <label
+              htmlFor="contactPhone"
+              className="block text-sm font-medium text-white mb-2"
+            >
               Phone Number *
             </label>
             <input
@@ -478,9 +566,13 @@ export function CarrierRegistrationForm() {
             onChange={handleInputChange}
             className="w-5 h-5 mt-1 text-[#FFD700] bg-[#1a1a1a] border-[#3a3a3a] rounded focus:ring-orange-500"
           />
-          <label htmlFor="termsAccepted" className="text-gray-300 text-sm leading-relaxed">
-            I certify that all information provided is accurate and complete. I understand that Vuyela Group 
-            will verify all documentation and references. I agree to comply with Vuyela Group's carrier standards 
+          <label
+            htmlFor="termsAccepted"
+            className="text-gray-300 text-sm leading-relaxed"
+          >
+            I certify that all information provided is accurate and complete. I
+            understand that Vuyela Group will verify all documentation and
+            references. I agree to comply with Vuyela Group's carrier standards
             and operational requirements. *
           </label>
         </div>
@@ -489,8 +581,12 @@ export function CarrierRegistrationForm() {
             <AlertCircle className="h-5 w-5 text-[#FFD700] flex-shrink-0 mt-0.5" />
             <div className="text-gray-300 text-sm">
               <p className="font-semibold text-white mb-1">Review Process:</p>
-              <p>Applications are reviewed within 5-7 business days. We will contact you via email or phone to discuss 
-              your application and next steps. Only professional, compliant carriers will be accepted into our network.</p>
+              <p>
+                Applications are reviewed within 5-7 business days. We will
+                contact you via email or phone to discuss your application and
+                next steps. Only professional, compliant carriers will be
+                accepted into our network.
+              </p>
             </div>
           </div>
         </div>
@@ -500,7 +596,7 @@ export function CarrierRegistrationForm() {
       <button
         type="submit"
         disabled={isSubmitting || !formData.termsAccepted}
-        className="w-full sm:w-auto inline-flex items-center justify-center h-12 px-8 rounded-full bg-[#FFD700] text-white font-semibold hover:bg-[#FFD700] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
+        className="w-full sm:w-auto inline-flex items-center justify-center h-12 px-8 bg-[#FFD700] text-[#141414] font-semibold hover:bg-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group"
       >
         {isSubmitting ? (
           <>Submitting...</>
@@ -514,4 +610,3 @@ export function CarrierRegistrationForm() {
     </form>
   );
 }
-
