@@ -382,13 +382,22 @@ export default function HomePageClient() {
                   everything we do, from our 24/7 operations to our hands-on
                   director involvement in daily logistics challenges.
                 </p>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link"
-                >
-                  Discover Our Full Story
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center text-[#FFD700] font-semibold hover:text-white transition-colors duration-200 group/link"
+                  >
+                    Discover Our Full Story
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/gallery"
+                    className="inline-flex items-center text-white/80 font-semibold hover:text-[#FFD700] transition-colors duration-200 group/link"
+                  >
+                    View Operations Gallery
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

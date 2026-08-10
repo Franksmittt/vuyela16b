@@ -8,6 +8,7 @@ import BrandMark from '@/components/BrandMark';
 const navigationItems = [
   { name: 'About Us', href: '/about' },
   { name: 'Facilities', href: '/facilities' },
+  { name: 'Gallery', href: '/gallery' },
   { name: 'Industries', href: '/industries' },
   { name: 'The Vuyela Network', href: '/network' },
   { name: 'Company Profile', href: '/company-profile/', external: true },

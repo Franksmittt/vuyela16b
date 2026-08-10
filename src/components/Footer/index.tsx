@@ -41,6 +41,8 @@ export default function MainFooter() {
               {[
                 { href: '/about', label: 'About Us' },
                 { href: '/services', label: 'Services' },
+                { href: '/facilities', label: 'Facilities' },
+                { href: '/gallery', label: 'Gallery' },
                 { href: '/industries', label: 'Industries' },
                 { href: '/network', label: 'The Vuyela Network' },
                 { href: '/contact', label: 'Contact' },
