@@ -40,30 +40,26 @@ export default function GalleryClient() {
 
   return (
     <>
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-3 space-y-3">
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
         {galleryImages.map((image, index) => (
           <button
             key={image.src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className="group relative block w-full break-inside-avoid overflow-hidden bg-[#1a1a1a] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFD700]"
+            className="group relative block w-full aspect-square overflow-hidden bg-[#1a1a1a] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FFD700]"
           >
-            <div
-              className={`relative w-full ${image.orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                quality={80}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <p className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm font-medium translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                {image.caption}
-              </p>
-            </div>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <p className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm font-medium translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              {image.caption}
+            </p>
           </button>
         ))}
       </div>
@@ -112,7 +108,7 @@ export default function GalleryClient() {
           </button>
 
           <div
-            className="relative w-full max-w-5xl max-h-[85vh] aspect-[4/3]"
+            className="relative w-full max-w-5xl h-[75vh] sm:h-[85vh]"
             onClick={(event) => event.stopPropagation()}
           >
             <Image
