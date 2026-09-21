@@ -189,7 +189,7 @@ const staffMembers: StaffMember[] = [
     role: 'General Manager',
     email: 'richard@vuyelalogistics.co.za',
     phone: '+27 82 440 9827',
-    image: '/images/staff/placeholder.svg',
+    image: '/images/staff/richard.jpg',
   },
   {
     name: 'Aneri Nagel',
