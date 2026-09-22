@@ -175,15 +175,15 @@ const staffMembers: StaffMember[] = [
     phone: null,
     image: '/images/staff/Melissa.jpg',
   },
+  {
+    name: 'Aneri Nagel',
+    role: 'HR Manager',
+    email: null,
+    phone: null,
+    image: '/images/staff/Aneri.jpeg',
+  },
 
   // --- MANAGEMENT ---
-  {
-    name: 'Martin Jacobs',
-    role: 'Shipping Manager',
-    email: 'shipping@vuyelalogistics.co.za',
-    phone: '+27 67 881 8419',
-    image: '/images/staff/Martin.jpg',
-  },
   {
     name: 'Richard Clark',
     role: 'General Manager',
@@ -192,11 +192,11 @@ const staffMembers: StaffMember[] = [
     image: '/images/staff/richard.jpg',
   },
   {
-    name: 'Aneri Nagel',
-    role: 'HR Manager',
-    email: null,
-    phone: null,
-    image: '/images/staff/Aneri.jpeg',
+    name: 'Martin Jacobs',
+    role: 'Shipping Manager',
+    email: 'shipping@vuyelalogistics.co.za',
+    phone: '+27 67 881 8419',
+    image: '/images/staff/Martin.jpg',
   },
   {
     name: 'Verushka Rossouw',
