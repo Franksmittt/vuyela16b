@@ -188,7 +188,7 @@ const staffMembers: StaffMember[] = [
     name: 'Richard Clark',
     role: 'General Manager',
     email: 'richard@vuyelalogistics.co.za',
-    phone: '+27 82 440 9827',
+    phone: null,
     image: '/images/staff/richard.jpg',
   },
   {
