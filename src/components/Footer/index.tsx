@@ -39,13 +39,13 @@ export default function MainFooter() {
             </h4>
             <ul className="space-y-2">
               {[
-                { href: '/about', label: 'About Us' },
-                { href: '/services', label: 'Services' },
-                { href: '/facilities', label: 'Facilities' },
+                { href: '/facilities', label: 'The yard' },
+                { href: '/about', label: 'Company' },
+                { href: '/services', label: 'The work' },
+                { href: '/contact', label: 'Contact' },
                 { href: '/gallery', label: 'Gallery' },
                 { href: '/industries', label: 'Industries' },
                 { href: '/network', label: 'The Vuyela Network' },
-                { href: '/contact', label: 'Contact' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link

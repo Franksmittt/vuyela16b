@@ -6,12 +6,8 @@ import { useState } from 'react';
 import BrandMark from '@/components/BrandMark';
 
 const navigationItems = [
-  { name: 'About Us', href: '/about' },
-  { name: 'Facilities', href: '/facilities' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'The Vuyela Network', href: '/network' },
-  { name: 'Company Profile', href: '/company-profile/', external: true },
+  { name: 'The yard', href: '/facilities' },
+  { name: 'Company', href: '/about' },
 ];
 
 const servicesItems = [
@@ -64,10 +60,6 @@ export default function MainNavbar() {
               key={item.name}
               href={item.href}
               className="text-sm font-medium text-white/90 hover:text-[#FFD700] transition-colors duration-200"
-              {...(item.external && {
-                target: '_blank',
-                rel: 'noopener noreferrer',
-              })}
             >
               {item.name}
             </Link>
@@ -79,7 +71,7 @@ export default function MainNavbar() {
             onMouseLeave={() => setServicesDropdownOpen(false)}
           >
             <button className="text-sm font-medium text-white/90 hover:text-[#FFD700] transition-colors duration-200 flex items-center gap-1 py-2">
-              Services
+              The work
               <ChevronDown
                 className={`h-4 w-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`}
               />
@@ -148,10 +140,6 @@ export default function MainNavbar() {
                   href={item.href}
                   className="text-sm font-medium text-white hover:text-[#FFD700] transition-colors duration-200"
                   onClick={handleToggle}
-                  {...(item.external && {
-                    target: '_blank',
-                    rel: 'noopener noreferrer',
-                  })}
                 >
                   {item.name}
                 </Link>
@@ -159,7 +147,7 @@ export default function MainNavbar() {
 
               <div className="pt-2">
                 <div className="text-sm font-medium text-white mb-2">
-                  Services
+                  The work
                 </div>
                 <div className="pl-4 space-y-2 border-l-2 border-[#FFD700]/40">
                   {servicesItems.map((service) => (
