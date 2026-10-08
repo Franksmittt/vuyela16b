@@ -183,9 +183,10 @@ export default function HomePageClient() {
                 <br />
                 <span className="text-[#FFD700]">Globally Connected.</span>
               </h1>
-              <p className="animate-hero-fade-up-delay-2 mt-6 text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl">
-                Precision logistics, bulk handling, and energy solutions from
-                Elandsfontein — keeping South Africa moving 24/7.
+              <p className="animate-hero-fade-up-delay-2 mt-6 text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl">
+                Elandsfontein. Chrome and bulk in. Containers onto rail, by
+                road. Vuyela Logistics stores, packs, weighs, books, and stays
+                on schedule.
               </p>
               <div className="animate-hero-fade-up-delay-2 mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
