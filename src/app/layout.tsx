@@ -1,5 +1,9 @@
 // app/layout.tsx
-import { Barlow_Condensed, Source_Sans_3 } from 'next/font/google';
+import {
+  Barlow_Condensed,
+  Source_Sans_3,
+  Source_Serif_4,
+} from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 
 import MainFooter from '@/components/Footer';
@@ -21,6 +25,12 @@ const body = Source_Sans_3({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-body',
+});
+
+const serif = Source_Serif_4({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-serif',
 });
 
 export const viewport = {
@@ -214,7 +224,7 @@ export default function RootLayout({ children }: ChildrenProps) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${display.variable} ${body.variable} overflow-x-hidden`}
+      className={`${display.variable} ${body.variable} ${serif.variable} overflow-x-hidden`}
     >
       <body className="font-sans antialiased overflow-x-hidden">
         <JsonLd data={organizationSchema} />

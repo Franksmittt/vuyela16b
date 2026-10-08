@@ -4,7 +4,7 @@ import HomePageClient from './HomePageClient';
 export const metadata: Metadata = {
   title: 'Vuyela Group | Premier Logistics Solutions in South Africa',
   description:
-    'Locally invested, globally connected. Vuyela Group delivers precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7, on time, every time.',
+    'Locally invested, globally connected. Elandsfontein. Chrome and bulk in. Containers onto rail, by road. Vuyela Logistics stores, packs, weighs, books, and stays on schedule.',
   keywords:
     'logistics, South Africa, warehousing, freight, bulk handling, transport, Elandsfontein, SOLAS certified, SARS bonded warehouse, mining logistics, agricultural logistics',
   authors: [{ name: 'Vuyela Group' }],
