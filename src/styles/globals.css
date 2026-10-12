@@ -10,8 +10,6 @@
   --font-family-poppins:
     var(--font-display), 'Barlow Condensed', ui-sans-serif, system-ui,
     sans-serif;
-  --font-family-serif:
-    var(--font-serif), 'Source Serif 4', Georgia, ui-serif, serif;
 
   --container-padding: 2rem;
   --container-max-width-2xl: 1400px;
