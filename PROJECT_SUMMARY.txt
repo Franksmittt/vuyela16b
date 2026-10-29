@@ -77,7 +77,6 @@ Team:
 - Melissa (Accounts) - accounts@vuyelalogistics.co.za - +27 78 592 4123
 - Verushka (Administration) - admin@vuyelalogistics.co.za - +27 82 457 8760
 - Mala (Operations) - mala@vuyelalogistics.co.za - +27 73 490 0317
-- Martin (Shipping) - shipping@vuyelalogistics.co.za - +27 67 881 8419
 - Aneri (HR) - aneri@vuyelalogistics.co.za - +27 82 670 9214
 - Karina (Operations) - karina.rossouw@vuyelalogistics.co.za - +27 83 349 5467
 - Mike (Operations) - mike@vuyelalogistics.co.za - +27 62 848 8623
