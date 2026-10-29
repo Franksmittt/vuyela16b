@@ -258,7 +258,6 @@
             { id: 3, name: "Melissa", title: "Accounts", dept: "Administration", image: "", email: "accounts@vuyelalogistics.co.za", phone: "+27 78 592 4123", routing: "primary", responsibilities: "Invoicing, Payroll, Supplier payments, Financial reporting." },
             { id: 4, name: "Verushka", title: "Administration", dept: "Administration", image: "/images/staff/verushka.jpg", email: "admin@vuyelalogistics.co.za", phone: "+27 82 457 8760", routing: "primary", responsibilities: "General office management, Documentation filing, Reception oversight." },
             { id: 5, name: "Mala", title: "Operations", dept: "Operations", image: "/images/staff/mala.png", email: "mala@vuyelalogistics.co.za", phone: "+27 73 490 0317", routing: "primary", responsibilities: "Daily fleet coordination, Driver communication, Load scheduling." },
-            { id: 6, name: "Martin", title: "Shipping Manager", dept: "Vuyela Freight", image: "/images/staff/Martin.jpg", email: "shipping@vuyelalogistics.co.za", phone: "+27 67 881 8419", routing: "primary", responsibilities: "Ocean freight bookings, Customs clearing documentation, Port liaison." },
             { id: 7, name: "Aneri", title: "HR Manager", dept: "HR", image: "/images/staff/Aneri.jpg", email: "aneri@vuyelalogistics.co.za", phone: "+27 82 670 9214", routing: "primary", responsibilities: "Recruitment, Staff contracts, Disciplinary hearings, Leave management." },
             { id: 8, name: "Karina", title: "Operations", dept: "Operations", image: "", email: "karina.rossouw@vuyelalogistics.co.za", phone: "+27 83 349 5467", routing: "none", responsibilities: "Vehicle tracking, Route planning, GIT Insurance updates." },
             { id: 9, name: "Mike", title: "Operations", dept: "Operations", image: "/images/staff/mike.png", email: "mike@vuyelalogistics.co.za", phone: "+27 62 848 8623", routing: "none", responsibilities: "Yard traffic control, Weighbridge oversight, Vehicle inspections." },
@@ -276,6 +275,17 @@
                 const stored = localStorage.getItem('vuyela_staff_data');
                 
                 let loadedData = stored ? JSON.parse(stored) : initialStaff;
+
+                // Drop resigned staff that may still be cached in this browser.
+                loadedData = loadedData.filter(item => {
+                    const name = (item.name || "").trim().toLowerCase();
+                    const image = (item.image || "").toLowerCase();
+                    const phone = (item.phone || "").replace(/\s/g, "");
+                    if (name === "martin" || name.startsWith("martin ")) return false;
+                    if (image.includes("martin")) return false;
+                    if (phone.includes("678818419")) return false;
+                    return true;
+                });
 
                 // Migration script: Update image paths and add missing images to existing local storage data
                 if (stored) {

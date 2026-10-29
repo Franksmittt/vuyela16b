@@ -163,13 +163,6 @@ const staffMembers: StaffMember[] = [
     image: '/images/staff/richard.jpg',
   },
   {
-    name: 'Martin Jacobs',
-    role: 'Shipping Manager',
-    email: 'shipping@vuyelalogistics.co.za',
-    phone: '+27 67 881 8419',
-    image: '/images/staff/Martin.jpg',
-  },
-  {
     name: 'Verushka Rossouw',
     role: 'Administration',
     email: null,
