@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import AnimatedVuyelaLogo from './AnimatedVuyelaLogo';
 
 const navItems = [
   { id: 'yard', label: 'Yard' },
@@ -46,23 +45,19 @@ export default function PremiereHeader({
     else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const chapterIds = ['arrive', ...navItems.map((n) => n.id)] as const;
   const activeId =
-    activeChapter <= 0
-      ? 'arrive'
-      : activeChapter >= navItems.length
-        ? navItems[navItems.length - 1].id
-        : (['arrive', ...navItems.map((n) => n.id)][activeChapter] ?? 'arrive');
+    chapterIds[Math.min(activeChapter, chapterIds.length - 1)] ?? 'arrive';
 
   return (
     <header
       className={`premiere-header fixed top-0 left-0 right-0 z-50 transition-[background,box-shadow,backdrop-filter] duration-300 ${
         scrolled || open
-          ? 'bg-[var(--pm-paper)]/92 shadow-[0_1px_0_rgba(28,26,23,0.08)] backdrop-blur-md'
-          : 'bg-transparent'
+          ? 'bg-[var(--pm-paper)]/95 shadow-[0_1px_0_rgba(28,26,23,0.12)] backdrop-blur-md'
+          : 'bg-[var(--pm-paper)]/70 backdrop-blur-sm'
       }`}
     >
-      {/* progress rail sits above; pad for it */}
-      <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-4 px-4 pt-[3px] md:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 pt-[3px] md:h-[4.5rem] md:px-8">
         <Link
           href="#arrive"
           className="relative z-10 shrink-0"
@@ -70,52 +65,46 @@ export default function PremiereHeader({
             e.preventDefault();
             go('arrive');
           }}
-          aria-label="Vuyela Group — back to top"
         >
-          <AnimatedVuyelaLogo size="nav" variant="light" priority />
+          <span className="pm-display text-[1.4rem] font-bold leading-none tracking-[0.03em] text-[var(--pm-ink)] md:text-[1.65rem]">
+            Vuyela <span className="text-[var(--pm-yellow-deep)]">Group</span>
+          </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-1 xl:gap-2 lg:flex"
           aria-label="Premiere primary"
         >
           {navItems.map((item) => {
-            const isActive =
-              activeId === item.id ||
-              (item.id === 'yard' && activeId === 'arrive');
+            const isActive = activeId === item.id;
             return (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => go(item.id)}
-                className={`pm-display text-[0.8rem] font-semibold tracking-[0.16em] transition-colors ${
+                className={`pm-display rounded-sm px-3.5 py-2.5 text-[1.05rem] font-bold tracking-[0.06em] transition-colors md:text-[1.15rem] ${
                   isActive
-                    ? 'text-[var(--pm-ink)]'
-                    : 'text-[var(--pm-muted)] hover:text-[var(--pm-ink)]'
+                    ? 'bg-[var(--pm-ink)] text-[var(--pm-yellow)]'
+                    : 'text-[var(--pm-ink)] hover:bg-[var(--pm-ink)]/10'
                 }`}
               >
                 {item.label}
-                <span
-                  className={`mt-1 block h-[2px] origin-left bg-[var(--pm-yellow-deep)] transition-transform duration-300 ${
-                    activeId === item.id ? 'scale-x-100' : 'scale-x-0'
-                  }`}
-                />
               </button>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/"
-            className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--pm-muted)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
+            className="px-2 py-2 text-sm font-semibold text-[var(--pm-ink-soft)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
           >
             Main site
           </Link>
           <button
             type="button"
             onClick={() => go('close')}
-            className="bg-[var(--pm-ink)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
+            className="bg-[var(--pm-ink)] px-5 py-2.5 text-sm font-semibold tracking-[0.06em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
           >
             Enter
           </button>
@@ -123,22 +112,22 @@ export default function PremiereHeader({
 
         <button
           type="button"
-          className="relative z-10 flex h-10 w-10 items-center justify-center lg:hidden"
+          className="relative z-10 flex h-11 w-11 items-center justify-center lg:hidden"
           aria-expanded={open}
           aria-controls="premiere-mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Menu</span>
-          <span className="flex w-5 flex-col gap-1.5">
+          <span className="flex w-6 flex-col gap-1.5">
             <span
-              className={`block h-[1.5px] bg-[var(--pm-ink)] transition-transform ${open ? 'translate-y-[6px] rotate-45' : ''}`}
+              className={`block h-[2px] bg-[var(--pm-ink)] transition-transform ${open ? 'translate-y-[8px] rotate-45' : ''}`}
             />
             <span
-              className={`block h-[1.5px] bg-[var(--pm-ink)] transition-opacity ${open ? 'opacity-0' : ''}`}
+              className={`block h-[2px] bg-[var(--pm-ink)] transition-opacity ${open ? 'opacity-0' : ''}`}
             />
             <span
-              className={`block h-[1.5px] bg-[var(--pm-ink)] transition-transform ${open ? '-translate-y-[6px] -rotate-45' : ''}`}
+              className={`block h-[2px] bg-[var(--pm-ink)] transition-transform ${open ? '-translate-y-[8px] -rotate-45' : ''}`}
             />
           </span>
         </button>
@@ -147,7 +136,7 @@ export default function PremiereHeader({
       {open && (
         <div
           id="premiere-mobile-nav"
-          className="border-t border-[var(--pm-ink)]/10 bg-[var(--pm-paper)] px-4 py-6 lg:hidden"
+          className="border-t border-[var(--pm-ink)]/15 bg-[var(--pm-paper)] px-4 py-5 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Premiere mobile">
             {navItems.map((item) => (
@@ -155,14 +144,14 @@ export default function PremiereHeader({
                 key={item.id}
                 type="button"
                 onClick={() => go(item.id)}
-                className="pm-display py-3 text-left text-lg font-semibold tracking-[0.12em] text-[var(--pm-ink)]"
+                className="pm-display py-3.5 text-left text-xl font-semibold tracking-[0.06em] text-[var(--pm-ink)]"
               >
                 {item.label}
               </button>
             ))}
             <Link
               href="/"
-              className="mt-4 py-3 text-sm uppercase tracking-[0.14em] text-[var(--pm-muted)]"
+              className="mt-3 py-3 text-base font-semibold text-[var(--pm-ink-soft)]"
             >
               Main site
             </Link>

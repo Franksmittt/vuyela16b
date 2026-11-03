@@ -89,31 +89,152 @@ function Placeholder({
 }
 
 function ShippingContainer({ rotateY }: { rotateY: number }) {
+  // SVG isometric — CSS 3D is flattened by ancestor overflow-x-hidden
+  const tilt = Math.max(-6, Math.min(6, rotateY * 0.2));
   return (
-    <div className="pm-stage">
+    <div className="pm-stage" aria-hidden="true">
       <div className="pm-container-float">
         <div
-          className="pm-container-3d"
-          style={{
-            transform: `rotateX(14deg) rotateY(${-32 + rotateY}deg) rotateZ(2deg)`,
-          }}
+          className="pm-iso-svg-wrap"
+          style={{ transform: `rotate(${tilt}deg)` }}
         >
-          <div className="pm-face pm-face-front">
-            <div className="pm-corrugation" />
-            <div className="pm-brand-plate">VUYELA</div>
-          </div>
-          <div className="pm-face pm-face-side">
-            <div className="pm-corrugation" />
-          </div>
-          <div className="pm-face pm-face-top" />
-          <div className="pm-face pm-face-door">
-            <span
-              className="pm-display text-[clamp(1.4rem,3vw,2.2rem)] font-bold tracking-[0.2em] text-[var(--pm-ink)]"
-              style={{ transform: 'rotateY(180deg)' }}
-            >
-              GROUP
-            </span>
-          </div>
+          <svg
+            className="pm-iso-svg"
+            viewBox="0 0 640 400"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="isoSide" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#d8d1c4" />
+                <stop offset="50%" stopColor="#a8a193" />
+                <stop offset="100%" stopColor="#7a7368" />
+              </linearGradient>
+              <linearGradient id="isoTop" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#f2ebdd" />
+                <stop offset="100%" stopColor="#b7b09f" />
+              </linearGradient>
+              <linearGradient id="isoDoor" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#f5d000" />
+                <stop offset="55%" stopColor="#e6b800" />
+                <stop offset="100%" stopColor="#9a7a00" />
+              </linearGradient>
+              <filter
+                id="isoShadow"
+                x="-15%"
+                y="-10%"
+                width="140%"
+                height="140%"
+              >
+                <feDropShadow
+                  dx="4"
+                  dy="20"
+                  stdDeviation="14"
+                  floodColor="#1c1a17"
+                  floodOpacity="0.2"
+                />
+              </filter>
+            </defs>
+
+            <g filter="url(#isoShadow)">
+              {/* Roof */}
+              <polygon
+                points="150,78 510,38 590,98 230,138"
+                fill="url(#isoTop)"
+                stroke="#3f3a34"
+                strokeWidth="2.5"
+              />
+              {[0.15, 0.3, 0.45, 0.6, 0.75, 0.9].map((t) => (
+                <line
+                  key={`top-${t}`}
+                  x1={150 + (510 - 150) * t}
+                  y1={78 + (38 - 78) * t}
+                  x2={230 + (590 - 230) * t}
+                  y2={138 + (98 - 138) * t}
+                  stroke="rgba(28,26,23,0.14)"
+                  strokeWidth="2"
+                />
+              ))}
+
+              {/* Long corrugated side (facing camera) */}
+              <polygon
+                points="230,138 590,98 590,258 230,298"
+                fill="url(#isoSide)"
+                stroke="#3f3a34"
+                strokeWidth="2.5"
+              />
+              {[0.08, 0.18, 0.28, 0.38, 0.48, 0.58, 0.68, 0.78, 0.88].map(
+                (t) => (
+                  <line
+                    key={`rib-${t}`}
+                    x1={230 + (590 - 230) * t}
+                    y1={138 + (98 - 138) * t}
+                    x2={230 + (590 - 230) * t}
+                    y2={298 + (258 - 298) * t}
+                    stroke="rgba(28,26,23,0.2)"
+                    strokeWidth="3"
+                  />
+                )
+              )}
+
+              {/* Brand plate */}
+              <g transform="translate(390,198) skewY(-6.5)">
+                <rect
+                  x="-52"
+                  y="-15"
+                  width="104"
+                  height="30"
+                  rx="1"
+                  fill="#141414"
+                  stroke="#ffd700"
+                  strokeWidth="1.5"
+                />
+                <text
+                  x="0"
+                  y="6"
+                  textAnchor="middle"
+                  fill="#ffd700"
+                  fontFamily="var(--font-family-display), Arial Black, sans-serif"
+                  fontSize="13"
+                  fontWeight="700"
+                  letterSpacing="2.5"
+                >
+                  VUYELA
+                </text>
+              </g>
+
+              {/* Yellow doors — near short end */}
+              <polygon
+                points="150,78 230,138 230,298 150,238"
+                fill="url(#isoDoor)"
+                stroke="#3f3a34"
+                strokeWidth="2.5"
+              />
+              <line
+                x1="190"
+                y1="108"
+                x2="190"
+                y2="268"
+                stroke="#3f3a34"
+                strokeWidth="2.5"
+              />
+              <line
+                x1="168"
+                y1="120"
+                x2="168"
+                y2="255"
+                stroke="#2a2622"
+                strokeWidth="4"
+              />
+              <line
+                x1="212"
+                y1="132"
+                x2="212"
+                y2="268"
+                stroke="#2a2622"
+                strokeWidth="4"
+              />
+            </g>
+          </svg>
         </div>
       </div>
     </div>
@@ -205,7 +326,7 @@ export default function PremiereClient() {
             </p>
             <h1 className="pm-hero-brand sr-only">Vuyela Group</h1>
             <div className="pm-hero-brand">
-              <AnimatedVuyelaLogo size="hero" variant="light" priority />
+              <AnimatedVuyelaLogo size="hero" animate />
             </div>
             <p className="pm-hero-line mt-8 max-w-md text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
               A logistics house built in the yard — not the boardroom.
