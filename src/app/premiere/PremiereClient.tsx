@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 import PremiereHeader from './PremiereHeader';
+import YardSection from './YardSection';
 
 const chapters = [
   { id: 'arrive', label: 'Arrive' },
@@ -233,64 +234,8 @@ export default function PremiereClient() {
         </p>
       </section>
 
-      {/* 2 — SCALE / YARD */}
-      <section
-        id="yard"
-        className="pm-chapter relative overflow-hidden bg-[var(--pm-night)] text-[var(--pm-paper)]"
-      >
-        <div className="absolute inset-0">
-          <Image
-            src="/images/facilities-aerial-view.png"
-            alt="Vuyela Elandsfontein facility aerial"
-            fill
-            className="object-cover opacity-55"
-            sizes="100vw"
-            priority={false}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--pm-night)] via-[var(--pm-night)]/85 to-transparent" />
-        </div>
-        <div
-          className="pm-wipe"
-          style={{ animation: 'pm-accent-draw 1s ease both' }}
-        />
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-6 py-24 md:grid-cols-2 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-yellow)]">
-              02 · The Yard
-            </p>
-            <h2 className="pm-display text-[clamp(2.4rem,6vw,4.5rem)] font-bold leading-[0.95]">
-              Built where
-              <br />
-              the cargo lives
-            </h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[var(--pm-paper)]/75 md:text-lg">
-              Main Reef Road, Elandsfontein. Aerial proof of a working machine —
-              weighbridges, bonded space, fleet staging, and the ground truth of
-              South African logistics.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="relative aspect-[4/3] w-full overflow-hidden"
-          >
-            <Image
-              src="/images/home-facility-aerial.png"
-              alt="Vuyela yard detail"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </motion.div>
-        </div>
-      </section>
+      {/* 2 — THE YARD (3 layout variants to compare) */}
+      <YardSection />
 
       {/* 3 — THE MACHINE (divisions as chapters) */}
       <section id="machine" className="relative bg-[var(--pm-paper)]">
