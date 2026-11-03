@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuyela Staff Photos</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #1a1a1a;
+      padding: 32px 20px 60px;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    p { margin: 0 0 24px; color: #555; line-height: 1.5; }
+    .download-all {
+      display: inline-block;
+      background: #E6B828;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 14px 22px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+    }
+    .download-all:hover { background: #d4a820; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+    .card .meta { padding: 12px; }
+    .card .name { font-weight: bold; font-size: 14px; margin-bottom: 4px; }
+    .card .role { font-size: 12px; color: #666; margin-bottom: 10px; }
+    .card a {
+      display: inline-block;
+      font-size: 13px;
+      color: #1a1a1a;
+      text-decoration: none;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 6px 10px;
+    }
+    .card a:hover { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Vuyela Staff Photos</h1>
+    <p>Download every staff photo in one zip, or save individual photos below.</p>
+
+    <a class="download-all" href="/staff-photos.zip" download="Vuyela-Staff-Photos.zip">
+      Download all photos (ZIP)
+    </a>
+
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <script>
+    const staff = [
+      { name: 'Jaco Nagel', role: 'Director', file: 'Jaco.jpg', zipName: 'Jaco-Nagel.jpg' },
+      { name: 'Wayne Johnson', role: 'Director', file: 'wayne.jpg', zipName: 'Wayne-Johnson.jpg' },
+      { name: 'Melissa Johnson', role: 'Accounts Manager', file: 'Melissa.jpg', zipName: 'Melissa-Johnson.jpg' },
+      { name: 'Aneri Nagel', role: 'HR Manager', file: 'Aneri.jpeg', zipName: 'Aneri-Nagel.jpeg' },
+      { name: 'Richard Clark', role: 'General Manager', file: 'richard.jpg', zipName: 'Richard-Clark.jpg' },
+      { name: 'Monique du Plessis', role: 'Shipping Co-ordinator', file: 'monique.jpg', zipName: 'Monique-du-Plessis.jpg' },
+      { name: 'Verushka Rossouw', role: 'Administration', file: 'verushka.jpg', zipName: 'Verushka-Rossouw.jpg' },
+      { name: 'Mala Dorsamy', role: 'Operations', file: 'mala.png', zipName: 'Mala-Dorsamy.png' },
+      { name: 'Mike Dorsamy', role: 'Operations', file: 'mike.png', zipName: 'Mike-Dorsamy.png' },
+      { name: 'Karina Rossouw', role: 'Operations', file: 'karina.jpg', zipName: 'Karina-Rossouw.jpg' },
+      { name: 'Deon Rossouw', role: 'Refuel Operations', file: 'deon.jpg', zipName: 'Deon-Rossouw.jpg' },
+      { name: 'Reinhard Strydom', role: 'Yard Manager', file: 'reinhardt.jpg', zipName: 'Reinhard-Strydom.jpg' },
+      { name: 'Sipho Shabalala', role: 'Team Leader', file: 'sipho.png', zipName: 'Sipho-Shabalala.png' },
+      { name: 'Shine Lombard', role: 'Admin', file: 'shine.jpg', zipName: 'Shine-Lombard.jpg' },
+      { name: 'Alan Kirkhoff', role: 'Security', file: 'alan.jpg', zipName: 'Alan-Kirkhoff.jpg' },
+      { name: 'Charmaine', role: 'Staff', file: 'charmaine.png', zipName: 'Charmaine.png' },
+    ];
+
+    const grid = document.getElementById('grid');
+    grid.innerHTML = staff.map((s) => `
+      <div class="card">
+        <img src="/images/staff/${s.file}" alt="${s.name}" loading="lazy" />
+        <div class="meta">
+          <div class="name">${s.name}</div>
+          <div class="role">${s.role}</div>
+          <a href="/images/staff/${s.file}" download="${s.zipName}">Download</a>
+        </div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
