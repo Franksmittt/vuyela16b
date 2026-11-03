@@ -10,6 +10,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
+import MachineSection from './MachineSection';
 import PremiereHeader from './PremiereHeader';
 import YardSection from './YardSection';
 
@@ -21,45 +22,6 @@ const chapters = [
   { id: 'people', label: 'People' },
   { id: 'close', label: 'Close' },
 ] as const;
-
-const divisions = [
-  {
-    key: 'bulk',
-    name: 'Vuyela Bulk',
-    line: 'Warehousing & handling',
-    copy: 'Bonded storage, stockpiling, and containerization from the Elandsfontein yard — cargo under our roof, under our watch.',
-    image: '/images/bulk-warehouse-facilities.png',
-    href: '/services/bulk',
-    tone: 'paper' as const,
-  },
-  {
-    key: 'logistics',
-    name: 'Vuyela Logistics',
-    line: 'Road freight & transport',
-    copy: 'Own fleet. Own standards. Live tracking from gate-out to gate-in across South Africa.',
-    image: '/images/facility-trucks.png',
-    href: '/services/logistics',
-    tone: 'steel' as const,
-  },
-  {
-    key: 'freight',
-    name: 'Vuyela Freight',
-    line: 'Ocean freight & customs',
-    copy: 'Port to inland, cleared and sequenced — shipping-line relationships that move cargo when the clock is tight.',
-    image: '/images/freight-container-terminal.png',
-    href: '/services/freight',
-    tone: 'sky' as const,
-  },
-  {
-    key: 'refuel',
-    name: 'Vuyela Refuel',
-    line: 'Energy solutions',
-    copy: '50ppm diesel with a quality protocol that refuses shortcuts. Fuel that keeps the machine running.',
-    image: '/images/refuel-operations.png',
-    href: '/services/refuel',
-    tone: 'night' as const,
-  },
-];
 
 const proofs = [
   { label: 'Operations', value: '24/7' },
@@ -234,118 +196,11 @@ export default function PremiereClient() {
         </p>
       </section>
 
-      {/* 2 — THE YARD (3 layout variants to compare) */}
+      {/* 2 — THE YARD */}
       <YardSection />
 
-      {/* 3 — THE MACHINE (divisions as chapters) */}
-      <section id="machine" className="relative bg-[var(--pm-paper)]">
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-24 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
-              03 · The Machine
-            </p>
-            <h2 className="pm-display max-w-3xl text-[clamp(2.2rem,5.5vw,4rem)] font-bold leading-[0.95] text-[var(--pm-ink)]">
-              Four divisions.
-              <span className="text-[var(--pm-yellow-deep)]"> One house.</span>
-            </h2>
-            <p className="mt-5 max-w-xl text-[var(--pm-ink-soft)]">
-              Move through the group — not a grid of equal cards. Each chapter
-              is a door into how Vuyela actually works.
-            </p>
-          </motion.div>
-        </div>
-
-        {divisions.map((d, i) => {
-          const bg =
-            d.tone === 'paper'
-              ? 'var(--pm-paper)'
-              : d.tone === 'steel'
-                ? 'var(--pm-paper-deep)'
-                : d.tone === 'sky'
-                  ? 'var(--pm-sky)'
-                  : 'var(--pm-night)';
-          const fg = d.tone === 'night' ? 'var(--pm-paper)' : 'var(--pm-ink)';
-          const muted =
-            d.tone === 'night' ? 'rgba(243,239,230,0.7)' : 'var(--pm-ink-soft)';
-
-          return (
-            <article
-              key={d.key}
-              id={`div-${d.key}`}
-              className="relative min-h-[85vh] overflow-hidden"
-              style={{ background: bg, color: fg }}
-            >
-              <div className="mx-auto grid min-h-[85vh] w-full max-w-7xl items-center gap-10 px-6 py-20 md:grid-cols-2 md:px-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 36 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{ duration: 0.75 }}
-                  className={i % 2 === 1 ? 'md:order-2' : ''}
-                >
-                  <p
-                    className="mb-3 text-xs font-semibold uppercase tracking-[0.28em]"
-                    style={{
-                      color:
-                        d.tone === 'night'
-                          ? 'var(--pm-yellow)'
-                          : 'var(--pm-yellow-deep)',
-                    }}
-                  >
-                    0{i + 1} · {d.line}
-                  </p>
-                  <h3 className="pm-display text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-[0.95]">
-                    {d.name}
-                  </h3>
-                  <p
-                    className="mt-5 max-w-md text-base leading-relaxed md:text-lg"
-                    style={{ color: muted }}
-                  >
-                    {d.copy}
-                  </p>
-                  <Link
-                    href={d.href}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] underline-offset-4 hover:underline"
-                    style={{
-                      color:
-                        d.tone === 'night'
-                          ? 'var(--pm-yellow)'
-                          : 'var(--pm-ink)',
-                    }}
-                  >
-                    Open division
-                    <span aria-hidden>→</span>
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.8 }}
-                  className={`relative aspect-[5/4] w-full overflow-hidden ${i % 2 === 1 ? 'md:order-1' : ''}`}
-                >
-                  <Image
-                    src={d.image}
-                    alt={d.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  {d.key === 'refuel' && (
-                    <div className="absolute inset-0 bg-[var(--pm-night)]/25" />
-                  )}
-                </motion.div>
-              </div>
-            </article>
-          );
-        })}
-      </section>
+      {/* 3 — THE MACHINE */}
+      <MachineSection />
 
       {/* Truck emerging placeholder strip */}
       <section className="relative overflow-hidden bg-[var(--pm-paper-deep)] py-16 md:py-24">
