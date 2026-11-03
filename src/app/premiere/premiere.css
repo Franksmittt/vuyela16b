@@ -52,25 +52,115 @@ body.premiere-mode > div > div > main {
   mix-blend-mode: multiply;
 }
 
-/* Isometric shipping container (SVG — survives overflow flattening) */
-.pm-stage {
+/* Hanging side containers (Sendify-style bookends) */
+.pm-hero-hang {
+  background: #ffffff;
+}
+
+.pm-hang {
+  position: absolute;
+  top: 4.5rem;
+  bottom: 0;
+  z-index: 2;
+  width: min(38vw, 340px);
+  pointer-events: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  min-height: 300px;
+}
+
+.pm-hang--left {
+  left: -4%;
+}
+
+.pm-hang--right {
+  right: -4%;
+}
+
+.pm-hang-inner {
   width: 100%;
+  transform-origin: top center;
 }
 
-.pm-iso-svg-wrap {
-  width: min(92%, 480px);
-  transition: transform 0.12s linear;
-}
-
-.pm-iso-svg {
+.pm-hang-img {
   width: 100%;
   height: auto;
   display: block;
-  overflow: visible;
+  filter: drop-shadow(0 22px 28px rgba(28, 26, 23, 0.18));
+}
+
+@media (max-width: 900px) {
+  .pm-hang {
+    width: min(46vw, 220px);
+    opacity: 0.92;
+  }
+  .pm-hang--left {
+    left: -12%;
+  }
+  .pm-hang--right {
+    right: -12%;
+  }
+}
+
+@media (max-width: 640px) {
+  .pm-hang {
+    width: 42vw;
+    opacity: 0.55;
+  }
+}
+
+@keyframes pm-hang-drop-left {
+  from {
+    opacity: 0;
+    transform: translate(-40px, -80px) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-3deg);
+  }
+}
+
+@keyframes pm-hang-drop-right {
+  from {
+    opacity: 0;
+    transform: translate(40px, -80px) rotate(8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(3deg);
+  }
+}
+
+.pm-hang--left .pm-hang-inner {
+  animation:
+    pm-hang-drop-left 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both,
+    pm-hang-sway-left 5.5s ease-in-out 1.4s infinite;
+}
+
+.pm-hang--right .pm-hang-inner {
+  animation:
+    pm-hang-drop-right 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both,
+    pm-hang-sway-right 6s ease-in-out 1.6s infinite;
+}
+
+@keyframes pm-hang-sway-left {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-3deg);
+  }
+  50% {
+    transform: translate(6px, 10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes pm-hang-sway-right {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(3deg);
+  }
+  50% {
+    transform: translate(-6px, 12px) rotate(1.5deg);
+  }
 }
 
 .pm-placeholder {
@@ -170,11 +260,6 @@ body.premiere-mode > div > div > main {
   animation: pm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.7s both;
 }
 
-.pm-container-float {
-  transform-style: preserve-3d;
-  animation: pm-float 7s ease-in-out infinite;
-}
-
 .pm-scroll-hint {
   animation: pm-rise 1s ease 3s both;
 }
@@ -182,8 +267,12 @@ body.premiere-mode > div > div > main {
 /* —— Layered logo pieces (swoosh → VUYELA → GROUP → tagline) —— */
 .pm-logo-pieces {
   display: block;
-  width: min(92vw, 540px);
+  width: min(72vw, 460px);
   line-height: 0;
+}
+
+.pm-hero-hang .pm-logo-pieces {
+  width: min(68vw, 420px);
 }
 
 .pm-logo-pieces--nav {
@@ -332,8 +421,9 @@ body.premiere-mode > div > div > main {
   .pm-hero-brand,
   .pm-hero-line,
   .pm-hero-cta,
-  .pm-container-float,
   .pm-scroll-hint,
+  .pm-hang--left .pm-hang-inner,
+  .pm-hang--right .pm-hang-inner,
   .pm-logo-live .pm-swoosh,
   .pm-logo-live .pm-piece-swooshes,
   .pm-logo-live .pm-piece-arrow,
@@ -346,7 +436,10 @@ body.premiere-mode > div > div > main {
     clip-path: none !important;
   }
 
-  .pm-iso {
-    transition: none;
+  .pm-hang--left .pm-hang-inner {
+    transform: rotate(-3deg) !important;
+  }
+  .pm-hang--right .pm-hang-inner {
+    transform: rotate(3deg) !important;
   }
 }

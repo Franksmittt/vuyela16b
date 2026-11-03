@@ -88,154 +88,25 @@ function Placeholder({
   );
 }
 
-function ShippingContainer({ rotateY }: { rotateY: number }) {
-  // SVG isometric — CSS 3D is flattened by ancestor overflow-x-hidden
-  const tilt = Math.max(-6, Math.min(6, rotateY * 0.2));
+function HangingContainer({
+  side,
+  src,
+}: {
+  side: 'left' | 'right';
+  src: string;
+}) {
   return (
-    <div className="pm-stage" aria-hidden="true">
-      <div className="pm-container-float">
-        <div
-          className="pm-iso-svg-wrap"
-          style={{ transform: `rotate(${tilt}deg)` }}
-        >
-          <svg
-            className="pm-iso-svg"
-            viewBox="0 0 640 400"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="isoSide" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#d8d1c4" />
-                <stop offset="50%" stopColor="#a8a193" />
-                <stop offset="100%" stopColor="#7a7368" />
-              </linearGradient>
-              <linearGradient id="isoTop" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#f2ebdd" />
-                <stop offset="100%" stopColor="#b7b09f" />
-              </linearGradient>
-              <linearGradient id="isoDoor" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#f5d000" />
-                <stop offset="55%" stopColor="#e6b800" />
-                <stop offset="100%" stopColor="#9a7a00" />
-              </linearGradient>
-              <filter
-                id="isoShadow"
-                x="-15%"
-                y="-10%"
-                width="140%"
-                height="140%"
-              >
-                <feDropShadow
-                  dx="4"
-                  dy="20"
-                  stdDeviation="14"
-                  floodColor="#1c1a17"
-                  floodOpacity="0.2"
-                />
-              </filter>
-            </defs>
-
-            <g filter="url(#isoShadow)">
-              {/* Roof */}
-              <polygon
-                points="150,78 510,38 590,98 230,138"
-                fill="url(#isoTop)"
-                stroke="#3f3a34"
-                strokeWidth="2.5"
-              />
-              {[0.15, 0.3, 0.45, 0.6, 0.75, 0.9].map((t) => (
-                <line
-                  key={`top-${t}`}
-                  x1={150 + (510 - 150) * t}
-                  y1={78 + (38 - 78) * t}
-                  x2={230 + (590 - 230) * t}
-                  y2={138 + (98 - 138) * t}
-                  stroke="rgba(28,26,23,0.14)"
-                  strokeWidth="2"
-                />
-              ))}
-
-              {/* Long corrugated side (facing camera) */}
-              <polygon
-                points="230,138 590,98 590,258 230,298"
-                fill="url(#isoSide)"
-                stroke="#3f3a34"
-                strokeWidth="2.5"
-              />
-              {[0.08, 0.18, 0.28, 0.38, 0.48, 0.58, 0.68, 0.78, 0.88].map(
-                (t) => (
-                  <line
-                    key={`rib-${t}`}
-                    x1={230 + (590 - 230) * t}
-                    y1={138 + (98 - 138) * t}
-                    x2={230 + (590 - 230) * t}
-                    y2={298 + (258 - 298) * t}
-                    stroke="rgba(28,26,23,0.2)"
-                    strokeWidth="3"
-                  />
-                )
-              )}
-
-              {/* Brand plate */}
-              <g transform="translate(390,198) skewY(-6.5)">
-                <rect
-                  x="-52"
-                  y="-15"
-                  width="104"
-                  height="30"
-                  rx="1"
-                  fill="#141414"
-                  stroke="#ffd700"
-                  strokeWidth="1.5"
-                />
-                <text
-                  x="0"
-                  y="6"
-                  textAnchor="middle"
-                  fill="#ffd700"
-                  fontFamily="var(--font-family-display), Arial Black, sans-serif"
-                  fontSize="13"
-                  fontWeight="700"
-                  letterSpacing="2.5"
-                >
-                  VUYELA
-                </text>
-              </g>
-
-              {/* Yellow doors — near short end */}
-              <polygon
-                points="150,78 230,138 230,298 150,238"
-                fill="url(#isoDoor)"
-                stroke="#3f3a34"
-                strokeWidth="2.5"
-              />
-              <line
-                x1="190"
-                y1="108"
-                x2="190"
-                y2="268"
-                stroke="#3f3a34"
-                strokeWidth="2.5"
-              />
-              <line
-                x1="168"
-                y1="120"
-                x2="168"
-                y2="255"
-                stroke="#2a2622"
-                strokeWidth="4"
-              />
-              <line
-                x1="212"
-                y1="132"
-                x2="212"
-                y2="268"
-                stroke="#2a2622"
-                strokeWidth="4"
-              />
-            </g>
-          </svg>
-        </div>
+    <div className={`pm-hang pm-hang--${side}`} aria-hidden="true">
+      <div className="pm-hang-inner">
+        <Image
+          src={src}
+          alt=""
+          width={864}
+          height={1152}
+          priority
+          className="pm-hang-img"
+          sizes="(max-width: 768px) 48vw, 30vw"
+        />
       </div>
     </div>
   );
@@ -256,16 +127,12 @@ export default function PremiereClient() {
     offset: ['start start', 'end start'],
   });
 
-  const containerRotate = useTransform(heroProgress, [0, 1], [0, 28]);
   const heroFade = useTransform(heroProgress, [0, 0.75], [1, 0]);
-  const heroLift = useTransform(heroProgress, [0, 1], [0, -80]);
+  const heroLift = useTransform(heroProgress, [0, 1], [0, -40]);
   const progressWidth = useSpring(
     useTransform(scrollYProgress, [0, 1], ['0%', '100%']),
     { stiffness: 80, damping: 28 }
   );
-
-  const [rotateY, setRotateY] = useState(0);
-  useMotionValueEvent(containerRotate, 'change', (v) => setRotateY(v));
 
   useMotionValueEvent(scrollYProgress, 'change', (v) => {
     const idx = Math.min(chapters.length - 1, Math.floor(v * chapters.length));
@@ -305,59 +172,57 @@ export default function PremiereClient() {
         ))}
       </nav>
 
-      {/* 1 — ARRIVAL */}
+      {/* 1 — ARRIVAL: Sendify-style hanging containers L/R */}
       <section
         id="arrive"
         ref={heroRef}
-        className="pm-chapter relative overflow-hidden"
-        style={{
-          background:
-            'radial-gradient(ellipse 90% 70% at 70% 40%, #eef3f7 0%, var(--pm-paper) 55%, var(--pm-yard) 100%)',
-        }}
+        className="pm-chapter pm-hero-hang relative overflow-hidden bg-white"
       >
-        <div className="pm-grain" />
+        <div className="pm-grain opacity-[0.04]" />
+
+        <HangingContainer
+          side="left"
+          src="/images/brand/container-left-dark.webp"
+        />
+        <HangingContainer
+          side="right"
+          src="/images/brand/container-right-yellow.webp"
+        />
+
         <motion.div
           style={{ opacity: heroFade, y: heroLift }}
-          className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-6 pb-24 pt-28 md:grid-cols-[1.05fr_0.95fr] md:px-10 md:pt-32 lg:gap-16"
+          className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-3xl flex-col items-center justify-center px-6 pb-20 pt-28 text-center md:px-10"
         >
-          <div>
-            <p className="pm-hero-brand mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
-              Elandsfontein · South Africa
-            </p>
-            <h1 className="pm-hero-brand sr-only">Vuyela Group</h1>
-            <div className="pm-hero-brand">
-              <AnimatedVuyelaLogo size="hero" animate />
-            </div>
-            <p className="pm-hero-line mt-8 max-w-md text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
-              A logistics house built in the yard — not the boardroom.
-            </p>
-            <div className="pm-hero-cta mt-10 flex flex-wrap items-center gap-4">
-              <button
-                type="button"
-                onClick={() => scrollTo('yard')}
-                className="inline-flex items-center gap-3 bg-[var(--pm-ink)] px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
-              >
-                Enter the Yard
-                <span aria-hidden>↓</span>
-              </button>
-              <Link
-                href="/"
-                className="text-sm font-medium uppercase tracking-[0.14em] text-[var(--pm-muted)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
-              >
-                Current site
-              </Link>
-            </div>
+          <p className="pm-hero-brand mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-ink-soft)]">
+            Elandsfontein · South Africa
+          </p>
+          <h1 className="sr-only">Vuyela Group</h1>
+          <div className="pm-hero-brand flex w-full justify-center">
+            <AnimatedVuyelaLogo size="hero" animate />
           </div>
-
-          <div className="relative flex min-h-[280px] items-center justify-center md:min-h-[420px]">
-            <div
-              className="absolute inset-[12%] rounded-full opacity-70 blur-3xl"
-              style={{
-                background:
-                  'radial-gradient(circle, rgba(230,184,0,0.28), transparent 70%)',
-              }}
-            />
-            <ShippingContainer rotateY={rotateY} />
+          <p className="pm-hero-line mx-auto mt-7 max-w-lg text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
+            Precision logistics from the yard — anytime the cargo needs to move.
+          </p>
+          <div className="pm-hero-cta mt-9 flex flex-wrap items-center justify-center gap-4">
+            <button
+              type="button"
+              onClick={() => scrollTo('yard')}
+              className="inline-flex items-center gap-3 rounded-full bg-[var(--pm-ink)] px-7 py-3.5 text-sm font-bold tracking-[0.04em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
+            >
+              Enter the Yard
+              <span
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--pm-yellow)] text-[var(--pm-ink)]"
+                aria-hidden
+              >
+                ↓
+              </span>
+            </button>
+            <Link
+              href="/"
+              className="text-sm font-semibold text-[var(--pm-ink-soft)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
+            >
+              Main site
+            </Link>
           </div>
         </motion.div>
 

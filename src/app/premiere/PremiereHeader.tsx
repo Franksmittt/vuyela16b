@@ -24,7 +24,7 @@ export default function PremiereHeader({
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -51,28 +51,28 @@ export default function PremiereHeader({
 
   return (
     <header
-      className={`premiere-header fixed top-0 left-0 right-0 z-50 transition-[background,box-shadow,backdrop-filter] duration-300 ${
+      className={`premiere-header fixed top-0 left-0 right-0 z-50 border-b transition-[background,border-color,box-shadow] duration-300 ${
         scrolled || open
-          ? 'bg-[var(--pm-paper)]/95 shadow-[0_1px_0_rgba(28,26,23,0.12)] backdrop-blur-md'
-          : 'bg-[var(--pm-paper)]/70 backdrop-blur-sm'
+          ? 'border-[var(--pm-ink)]/12 bg-white/95 shadow-sm backdrop-blur-md'
+          : 'border-transparent bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 pt-[3px] md:h-[4.5rem] md:px-8">
+      <div className="mx-auto grid h-[4.5rem] max-w-7xl grid-cols-[1fr_auto] items-center gap-4 px-4 pt-[3px] md:grid-cols-[1fr_auto_1fr] md:px-8">
         <Link
           href="#arrive"
-          className="relative z-10 shrink-0"
+          className="justify-self-start"
           onClick={(e) => {
             e.preventDefault();
             go('arrive');
           }}
         >
-          <span className="pm-display text-[1.4rem] font-bold leading-none tracking-[0.03em] text-[var(--pm-ink)] md:text-[1.65rem]">
+          <span className="pm-display text-[1.45rem] font-bold tracking-[0.02em] text-[var(--pm-ink)] md:text-[1.7rem]">
             Vuyela <span className="text-[var(--pm-yellow-deep)]">Group</span>
           </span>
         </Link>
 
         <nav
-          className="hidden items-center gap-1 xl:gap-2 lg:flex"
+          className="hidden items-center justify-center gap-1 md:gap-2 lg:flex"
           aria-label="Premiere primary"
         >
           {navItems.map((item) => {
@@ -82,10 +82,10 @@ export default function PremiereHeader({
                 key={item.id}
                 type="button"
                 onClick={() => go(item.id)}
-                className={`pm-display rounded-sm px-3.5 py-2.5 text-[1.05rem] font-bold tracking-[0.06em] transition-colors md:text-[1.15rem] ${
+                className={`rounded-full px-4 py-2 text-[1.05rem] font-semibold text-[var(--pm-ink)] transition-colors md:text-[1.125rem] ${
                   isActive
                     ? 'bg-[var(--pm-ink)] text-[var(--pm-yellow)]'
-                    : 'text-[var(--pm-ink)] hover:bg-[var(--pm-ink)]/10'
+                    : 'hover:bg-[var(--pm-ink)]/8'
                 }`}
               >
                 {item.label}
@@ -94,41 +94,48 @@ export default function PremiereHeader({
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center justify-end gap-3 lg:flex">
           <Link
             href="/"
-            className="px-2 py-2 text-sm font-semibold text-[var(--pm-ink-soft)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
+            className="text-[0.95rem] font-semibold text-[var(--pm-ink-soft)] hover:text-[var(--pm-ink)]"
           >
             Main site
           </Link>
           <button
             type="button"
             onClick={() => go('close')}
-            className="bg-[var(--pm-ink)] px-5 py-2.5 text-sm font-semibold tracking-[0.06em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--pm-yellow)] px-5 py-2.5 text-[0.95rem] font-bold text-[var(--pm-ink)] transition-transform hover:translate-y-[-1px]"
           >
-            Enter
+            Contact us
+            <span
+              className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--pm-ink)] text-[var(--pm-yellow)]"
+              aria-hidden
+            >
+              →
+            </span>
           </button>
         </div>
 
         <button
           type="button"
-          className="relative z-10 flex h-11 w-11 items-center justify-center lg:hidden"
+          className="justify-self-end lg:hidden"
           aria-expanded={open}
           aria-controls="premiere-mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="sr-only">Menu</span>
-          <span className="flex w-6 flex-col gap-1.5">
-            <span
-              className={`block h-[2px] bg-[var(--pm-ink)] transition-transform ${open ? 'translate-y-[8px] rotate-45' : ''}`}
-            />
-            <span
-              className={`block h-[2px] bg-[var(--pm-ink)] transition-opacity ${open ? 'opacity-0' : ''}`}
-            />
-            <span
-              className={`block h-[2px] bg-[var(--pm-ink)] transition-transform ${open ? '-translate-y-[8px] -rotate-45' : ''}`}
-            />
+          <span className="flex h-11 w-11 items-center justify-center">
+            <span className="flex w-6 flex-col gap-1.5">
+              <span
+                className={`block h-[2px] bg-[var(--pm-ink)] transition-transform ${open ? 'translate-y-[8px] rotate-45' : ''}`}
+              />
+              <span
+                className={`block h-[2px] bg-[var(--pm-ink)] transition-opacity ${open ? 'opacity-0' : ''}`}
+              />
+              <span
+                className={`block h-[2px] bg-[var(--pm-ink)] transition-transform ${open ? '-translate-y-[8px] -rotate-45' : ''}`}
+              />
+            </span>
           </span>
         </button>
       </div>
@@ -136,25 +143,26 @@ export default function PremiereHeader({
       {open && (
         <div
           id="premiere-mobile-nav"
-          className="border-t border-[var(--pm-ink)]/15 bg-[var(--pm-paper)] px-4 py-5 lg:hidden"
+          className="border-t border-[var(--pm-ink)]/10 bg-white px-4 py-5 lg:hidden"
         >
-          <nav className="flex flex-col gap-1" aria-label="Premiere mobile">
+          <nav className="flex flex-col" aria-label="Premiere mobile">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => go(item.id)}
-                className="pm-display py-3.5 text-left text-xl font-semibold tracking-[0.06em] text-[var(--pm-ink)]"
+                className="py-3.5 text-left text-xl font-semibold text-[var(--pm-ink)]"
               >
                 {item.label}
               </button>
             ))}
-            <Link
-              href="/"
-              className="mt-3 py-3 text-base font-semibold text-[var(--pm-ink-soft)]"
+            <button
+              type="button"
+              onClick={() => go('close')}
+              className="mt-3 rounded-full bg-[var(--pm-yellow)] px-5 py-3 text-left text-base font-bold text-[var(--pm-ink)]"
             >
-              Main site
-            </Link>
+              Contact us
+            </button>
           </nav>
         </div>
       )}
