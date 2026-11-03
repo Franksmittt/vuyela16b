@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'See Vuyela Group in action — yard operations, bulk handling, container logistics, and fleet at our Elandsfontein facility.',
   keywords:
     'Vuyela gallery, logistics photos, Elandsfontein yard, container handling, bulk stockpiles, South Africa logistics',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/gallery',
   },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: 'Gallery | Vuyela Group Operations',
     description:
       'Real operations photography from the Vuyela Group yard — bulk handling, containers, and fleet.',
-    url: 'https://vuyela.com/gallery',
+    url: 'https://www.vuyelalogistics.co.za/gallery',
     siteName: 'Vuyela Group',
     images: [
       {

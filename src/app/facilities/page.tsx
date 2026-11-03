@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     'State-of-the-art facilities in Elandsfontein. SOLAS certified weighbridges, SARS bonded warehouse, full CCTV coverage, and 24/7 operations.',
   keywords:
     'logistics facilities, SOLAS certified, SARS bonded warehouse, weighbridges, CCTV coverage, Elandsfontein, warehousing, containerization, South Africa logistics',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/facilities',
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Facilities | Vuyela Group',
     description:
       'State-of-the-art logistics facilities in Elandsfontein with SOLAS certified weighbridges and SARS bonded warehouse.',
-    url: 'https://vuyela.com/facilities',
+    url: 'https://www.vuyelalogistics.co.za/facilities',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -63,7 +63,7 @@ const facilitiesPageSchema = {
   name: 'Vuyela Group Facilities',
   description:
     'State-of-the-art logistics facilities in Elandsfontein with SOLAS certified weighbridges and SARS bonded warehouse.',
-  url: 'https://vuyela.com/facilities',
+  url: 'https://www.vuyelalogistics.co.za/facilities',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Elandsfontein',

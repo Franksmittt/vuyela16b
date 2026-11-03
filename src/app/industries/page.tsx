@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Specialized logistics solutions for mining and agricultural sectors. From pit to port, we provide practical, real-world solutions for key industries.',
   keywords:
     'mining logistics, agricultural logistics, industry-specific logistics, chrome transport, manganese logistics, grain transport, South Africa industries',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/industries',
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Industries We Serve | Vuyela Group',
     description:
       'Mining and agricultural logistics solutions across South Africa with specialized industry expertise.',
-    url: 'https://vuyela.com/industries',
+    url: 'https://www.vuyelalogistics.co.za/industries',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -55,11 +55,11 @@ const industriesPageSchema = {
   name: 'Industry-Specific Logistics Solutions',
   description:
     'Specialized logistics solutions for mining and agricultural sectors in South Africa.',
-  url: 'https://vuyela.com/industries',
+  url: 'https://www.vuyelalogistics.co.za/industries',
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
   serviceType: ['Mining Logistics', 'Agricultural Logistics'],
   areaServed: {

@@ -50,7 +50,7 @@ export const metadata = {
     email: true,
     address: true,
   },
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/',
   },
@@ -72,7 +72,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_ZA',
     alternateLocale: ['en_US'],
-    url: 'https://vuyela.com',
+    url: 'https://www.vuyelalogistics.co.za',
     title: 'Vuyela Group | Premier Logistics Solutions',
     description:
       'Premier logistics solutions from the heart of Elandsfontein. We deliver precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7.',
@@ -106,17 +106,17 @@ export const metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': ['Organization', 'LocalBusiness'],
-  '@id': 'https://vuyela.com/#organization',
+  '@id': 'https://www.vuyelalogistics.co.za/#organization',
   name: 'Vuyela Group',
   legalName: 'Vuyela Group',
-  url: 'https://vuyela.com',
+  url: 'https://www.vuyelalogistics.co.za',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://vuyela.com/images/hero_1.jpg',
+    url: 'https://www.vuyelalogistics.co.za/images/hero_1.jpg',
     width: 1200,
     height: 630,
   },
-  image: 'https://vuyela.com/images/hero_1.jpg',
+  image: 'https://www.vuyelalogistics.co.za/images/hero_1.jpg',
   description:
     'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, containerization, and energy solutions. SOLAS certified weighbridges and SARS bonded warehouse.',
   address: {
@@ -139,7 +139,7 @@ const organizationSchema = {
       areaServed: 'ZA',
       availableLanguage: ['English'],
       email: 'info@vuyelalogistics.co.za',
-      url: 'https://vuyela.com/contact',
+      url: 'https://www.vuyelalogistics.co.za/contact',
     },
   ],
   openingHoursSpecification: {

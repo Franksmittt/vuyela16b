@@ -117,13 +117,13 @@ export default function HomePageClient() {
   const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://vuyela.com/#website',
+    '@id': 'https://www.vuyelalogistics.co.za/#website',
     name: 'Vuyela Group',
-    url: 'https://vuyela.com',
+    url: 'https://www.vuyelalogistics.co.za',
     description:
       'Premier logistics solutions provider in South Africa specializing in warehousing, freight, bulk handling, containerization, and energy solutions.',
     publisher: {
-      '@id': 'https://vuyela.com/#organization',
+      '@id': 'https://www.vuyelalogistics.co.za/#organization',
     },
     inLanguage: 'en-ZA',
   };
@@ -136,7 +136,7 @@ export default function HomePageClient() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://vuyela.com',
+        item: 'https://www.vuyelalogistics.co.za',
       },
     ],
   };
