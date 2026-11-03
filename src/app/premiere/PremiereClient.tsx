@@ -10,7 +10,8 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import BrandMark from '@/components/BrandMark';
+import AnimatedVuyelaLogo from './AnimatedVuyelaLogo';
+import PremiereHeader from './PremiereHeader';
 
 const chapters = [
   { id: 'arrive', label: 'Arrive' },
@@ -157,12 +158,14 @@ export default function PremiereClient() {
   return (
     <div ref={rootRef} className="premiere-root relative">
       {/* Progress rail */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-[3px] bg-[var(--pm-paper-deep)]">
+      <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-[var(--pm-paper-deep)]">
         <motion.div
           className="h-full bg-[var(--pm-yellow)]"
           style={{ width: progressWidth }}
         />
       </div>
+
+      <PremiereHeader activeChapter={activeChapter} onNavigate={scrollTo} />
 
       {/* Chapter dots */}
       <nav
@@ -181,19 +184,6 @@ export default function PremiereClient() {
         ))}
       </nav>
 
-      {/* Mini brand strip */}
-      <div className="fixed top-4 left-4 z-40 md:left-8 md:top-6">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-sm bg-[var(--pm-paper)]/80 px-2.5 py-1.5 backdrop-blur-sm transition-opacity hover:opacity-80"
-        >
-          <BrandMark className="h-6 w-6" />
-          <span className="pm-display text-sm font-semibold tracking-wide text-[var(--pm-ink)]">
-            Vuyela
-          </span>
-        </Link>
-      </div>
-
       {/* 1 — ARRIVAL */}
       <section
         id="arrive"
@@ -207,19 +197,18 @@ export default function PremiereClient() {
         <div className="pm-grain" />
         <motion.div
           style={{ opacity: heroFade, y: heroLift }}
-          className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-6 py-24 md:grid-cols-[1.05fr_0.95fr] md:px-10 lg:gap-16"
+          className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-6 pb-24 pt-28 md:grid-cols-[1.05fr_0.95fr] md:px-10 md:pt-32 lg:gap-16"
         >
           <div>
-            <p className="pm-hero-brand mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
+            <p className="pm-hero-brand mb-6 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
               Elandsfontein · South Africa
             </p>
-            <h1 className="pm-hero-brand pm-display text-[clamp(3.4rem,11vw,7.5rem)] font-bold leading-[0.88] tracking-tight text-[var(--pm-ink)]">
-              Vuyela
-              <span className="block text-[var(--pm-yellow-deep)]">Group</span>
-            </h1>
-            <p className="pm-hero-line mt-6 max-w-md text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
-              Locally invested. Globally connected. A logistics house built in
-              the yard — not the boardroom.
+            <h1 className="pm-hero-brand sr-only">Vuyela Group</h1>
+            <div className="pm-hero-brand">
+              <AnimatedVuyelaLogo size="hero" variant="light" priority />
+            </div>
+            <p className="pm-hero-line mt-8 max-w-md text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
+              A logistics house built in the yard — not the boardroom.
             </p>
             <div className="pm-hero-cta mt-10 flex flex-wrap items-center gap-4">
               <button

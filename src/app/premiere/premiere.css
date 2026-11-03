@@ -1,6 +1,7 @@
 /* Premiere showcase — light industrial monument, independent of brochure chrome */
 
-body.premiere-mode header,
+/* Hide brochure chrome only — keep .premiere-header */
+body.premiere-mode header:not(.premiere-header),
 body.premiere-mode footer {
   display: none !important;
 }
@@ -248,13 +249,174 @@ body.premiere-mode > div > div > main {
   animation: pm-rise 1s ease 1.1s both;
 }
 
+/* —— Living official logo —— */
+.pm-logo-alive {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  isolation: isolate;
+}
+
+.pm-logo-alive--nav {
+  width: clamp(132px, 22vw, 168px);
+}
+
+.pm-logo-alive--hero {
+  width: min(92vw, 520px);
+}
+
+.pm-logo-bands {
+  position: absolute;
+  inset: -8% -4% -18% -8%;
+  width: 112%;
+  height: 120%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.pm-logo-alive--nav .pm-logo-bands {
+  opacity: 0.35;
+}
+
+.pm-logo-band {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: pm-band-draw 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.pm-logo-band--1 {
+  animation-delay: 0.05s;
+}
+.pm-logo-band--2 {
+  animation-delay: 0.18s;
+}
+.pm-logo-band--3 {
+  animation-delay: 0.3s;
+}
+
+.pm-logo-band-group {
+  animation: pm-band-drift 7s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.pm-logo-arrow {
+  transform-origin: 310px 168px;
+  animation:
+    pm-arrow-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both,
+    pm-arrow-pulse 2.8s ease-in-out 1.4s infinite;
+}
+
+.pm-logo-mark {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  animation: pm-logo-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.pm-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pm-logo-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 34%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(255, 220, 80, 0.35) 52%,
+    transparent 66%
+  );
+  transform: translateX(-130%);
+  animation: pm-logo-sheen 4.5s ease-in-out 1.2s infinite;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.pm-logo-alive--dark .pm-logo-sheen {
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+@keyframes pm-band-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pm-band-drift {
+  from {
+    transform: translateX(-1.5%) translateY(1%);
+  }
+  to {
+    transform: translateX(2%) translateY(-2%);
+  }
+}
+
+@keyframes pm-arrow-in {
+  from {
+    opacity: 0;
+    transform: translate(-12px, 8px) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes pm-arrow-pulse {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(5px, -3px);
+  }
+}
+
+@keyframes pm-logo-reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 35% 0 0);
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes pm-logo-sheen {
+  0%,
+  28% {
+    transform: translateX(-130%);
+  }
+  48%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pm-hero-brand,
   .pm-hero-line,
   .pm-hero-cta,
   .pm-container-float,
-  .pm-scroll-hint {
-    animation: none;
+  .pm-scroll-hint,
+  .pm-logo-band,
+  .pm-logo-band-group,
+  .pm-logo-arrow,
+  .pm-logo-mark,
+  .pm-logo-sheen {
+    animation: none !important;
+  }
+
+  .pm-logo-band {
+    stroke-dashoffset: 0;
   }
 
   .pm-container-3d {
