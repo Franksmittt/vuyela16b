@@ -10,7 +10,6 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import AnimatedVuyelaLogo from './AnimatedVuyelaLogo';
 import PremiereHeader from './PremiereHeader';
 
 const chapters = [
@@ -196,12 +195,15 @@ export default function PremiereClient() {
           <p className="pm-hero-brand mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-ink-soft)]">
             Elandsfontein · South Africa
           </p>
-          <h1 className="sr-only">Vuyela Group</h1>
-          <div className="pm-hero-brand flex w-full justify-center">
-            <AnimatedVuyelaLogo size="hero" animate />
-          </div>
-          <p className="pm-hero-line mx-auto mt-7 max-w-lg text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
-            Precision logistics from the yard — anytime the cargo needs to move.
+          <h1 className="pm-hero-brand pm-display text-[clamp(2.6rem,7vw,4.6rem)] font-bold leading-[0.95] tracking-tight text-[var(--pm-ink)]">
+            Precision logistics.
+            <span className="mt-2 block text-[var(--pm-yellow-deep)]">
+              Built in the yard.
+            </span>
+          </h1>
+          <p className="pm-hero-line mx-auto mt-6 max-w-lg text-lg leading-relaxed text-[var(--pm-ink-soft)] md:text-xl">
+            Locally invested, globally connected — cargo under our watch from
+            gate-in to gate-out, 24/7.
           </p>
           <div className="pm-hero-cta mt-9 flex flex-wrap items-center justify-center gap-4">
             <button

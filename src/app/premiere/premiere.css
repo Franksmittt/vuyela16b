@@ -249,15 +249,15 @@ body.premiere-mode > div > div > main {
 }
 
 .pm-hero-brand {
-  animation: none;
+  animation: pm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 .pm-hero-line {
-  animation: pm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.4s both;
+  animation: pm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
 }
 
 .pm-hero-cta {
-  animation: pm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 2.7s both;
+  animation: pm-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
 }
 
 .pm-scroll-hint {
