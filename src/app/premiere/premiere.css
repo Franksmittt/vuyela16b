@@ -14,6 +14,16 @@ body.premiere-mode > div > div > main {
   padding: 0;
 }
 
+/* Preserve sticky/fixed chrome: root layout uses overflow-x-hidden which
+   creates a scrollport. Clip does not break position:sticky the same way. */
+html:has(body.premiere-mode),
+body.premiere-mode,
+body.premiere-mode > div,
+body.premiere-mode > div > div,
+body.premiere-mode main {
+  overflow-x: clip !important;
+}
+
 .premiere-root {
   --pm-ink: #1c1a17;
   --pm-ink-soft: #3a3630;
@@ -31,7 +41,8 @@ body.premiere-mode > div > div > main {
   color: var(--pm-ink);
   background: var(--pm-paper);
   font-family: var(--font-family-sans);
-  overflow-x: hidden;
+  /* clip keeps sticky nav working; hidden creates a scrollport that kills sticky */
+  overflow-x: clip;
 }
 
 .premiere-root h1,
