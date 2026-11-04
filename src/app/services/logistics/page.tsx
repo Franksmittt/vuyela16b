@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'Own fleet operations with 24/7 monitoring. Container logistics, intermodal solutions, and reliable transport across South Africa.',
   keywords:
     'road freight, transport, logistics, own fleet, container logistics, intermodal, South Africa transport, 24/7 operations',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/services/logistics',
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Vuyela Logistics - Road Freight & Transport | Vuyela Group',
     description:
       'Professional road freight and transport solutions with own fleet operations and 24/7 monitoring.',
-    url: 'https://vuyela.com/services/logistics',
+    url: 'https://www.vuyelalogistics.co.za/services/logistics',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -55,11 +55,11 @@ const logisticsServiceSchema = {
   name: 'Vuyela Logistics - Road Freight & Transport',
   description:
     'Own fleet operations with 24/7 monitoring. Container logistics, intermodal solutions, and reliable transport across South Africa.',
-  url: 'https://vuyela.com/services/logistics',
+  url: 'https://www.vuyelalogistics.co.za/services/logistics',
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
   serviceType: 'Road Freight & Transport',
   areaServed: {
@@ -98,7 +98,7 @@ const logisticsServiceSchema = {
   },
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: 'https://vuyela.com/contact',
+    serviceUrl: 'https://www.vuyelalogistics.co.za/contact',
     servicePhone: '+27 72 405 9931',
     availableLanguage: 'English',
   },

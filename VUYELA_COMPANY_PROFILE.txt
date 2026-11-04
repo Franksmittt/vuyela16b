@@ -9,7 +9,7 @@ Company Name: Vuyela Group
 Tagline: "Built on the Road, Defined by Excellence"
 Founded: 2019
 Location: Main Reef Road, Elandsfontein, Gauteng, South Africa
-Website: https://vuyela.com
+Website: https://www.vuyelalogistics.co.za
 
 VISION STATEMENT
 --------------------------------------------------------------------------------
@@ -532,7 +532,7 @@ Location:
 Main Reef Road, Elandsfontein, Gauteng, South Africa
 
 Website:
-https://vuyela.com
+https://www.vuyelalogistics.co.za
 
 Key Personnel:
 - Directors: Jaco and Wayne

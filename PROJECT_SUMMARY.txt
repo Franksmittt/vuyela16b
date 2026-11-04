@@ -21,7 +21,7 @@ Company: Vuyela Group
 Industry: Logistics & Supply Chain Solutions
 Location: 83 Main Reef Road, Elandsfontein, Germiston, 1601, South Africa
 Website: www.vuyelalogistics.co.za
-Primary Domain: https://vuyela.com
+Primary Domain: https://www.vuyelalogistics.co.za
 Tagline: "Locally Invested. Globally Connected."
 Brand Colors: Safety Yellow (#FFD700), Dark Background (#1a1a1a)
 
@@ -366,7 +366,7 @@ METADATA STANDARDS (100% Coverage)
    4. Canonical Tag - Absolute URL via metadataBase
    5. OpenGraph - Complete with type, locale, url, siteName, images
    6. Twitter Card - summary_large_image or summary
-   7. metadataBase - new URL('https://vuyela.com') on all pages
+   7. metadataBase - new URL('https://www.vuyelalogistics.co.za') on all pages
    8. JSON-LD - Appropriate schema type for each page
 
 CANONICAL TAGS (100% Coverage)
@@ -388,7 +388,7 @@ CANONICAL TAGS (100% Coverage)
    14. /dashboard/settings (blocked but has canonical)
 
 Implementation: Using Next.js Metadata API with alternates.canonical
-Base URL: https://vuyela.com (set in metadataBase on every page)
+Base URL: https://www.vuyelalogistics.co.za (set in metadataBase on every page)
 
 OPENGRAPH METADATA (100% Coverage)
 -----------------------------------
@@ -448,7 +448,7 @@ Production Rules:
 - Disallow: /dashboard/ (User dashboard)
 - Disallow: /_next/ (Next.js internals)
 - Disallow: /posts/ (Blog - currently blocked)
-- Sitemap: https://vuyela.com/sitemap.xml
+- Sitemap: https://www.vuyelalogistics.co.za/sitemap.xml
 
 SITEMAP.XML (Dynamic Generation)
 ---------------------------------
@@ -979,8 +979,8 @@ GSC READINESS CHECKLIST
 
 GSC SUBMISSION READY
 --------------------
-✅ Sitemap URL: https://vuyela.com/sitemap.xml
-✅ Robots.txt: https://vuyela.com/robots.txt
+✅ Sitemap URL: https://www.vuyelalogistics.co.za/sitemap.xml
+✅ Robots.txt: https://www.vuyelalogistics.co.za/robots.txt
 ✅ All pages have complete metadata
 ✅ No missing canonical tags
 ✅ No missing OpenGraph images
@@ -1282,22 +1282,22 @@ MAINTENANCE
 STEP 1: VERIFY DOMAIN OWNERSHIP
 --------------------------------
 - Go to Google Search Console
-- Add property: https://vuyela.com
+- Add property: https://www.vuyelalogistics.co.za
 - Verify via DNS record or HTML file upload
 
 STEP 2: SUBMIT SITEMAP
 ----------------------
-- URL: https://vuyela.com/sitemap.xml
+- URL: https://www.vuyelalogistics.co.za/sitemap.xml
 - Submit in Sitemaps section
 - Monitor for any errors
 
 STEP 3: REQUEST INDEXING
 ------------------------
 Use URL Inspection Tool for key pages:
-- https://vuyela.com
-- https://vuyela.com/about
-- https://vuyela.com/services
-- https://vuyela.com/contact
+- https://www.vuyelalogistics.co.za
+- https://www.vuyelalogistics.co.za/about
+- https://www.vuyelalogistics.co.za/services
+- https://www.vuyelalogistics.co.za/contact
 - All service sub-pages
 
 STEP 4: MONITOR COVERAGE

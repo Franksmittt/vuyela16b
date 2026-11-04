@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Settings | Dashboard | Vuyela Group',
   description:
     'Manage your Vuyela Group account settings, preferences, notifications, privacy, and security options from your dashboard.',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   robots: {
     index: false,
     follow: false,
@@ -18,8 +18,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     title: 'Settings | Dashboard | Vuyela Group',
-    description: 'Manage your account settings and preferences with Vuyela Group.',
-    url: 'https://vuyela.com/dashboard/settings',
+    description:
+      'Manage your account settings and preferences with Vuyela Group.',
+    url: 'https://www.vuyelalogistics.co.za/dashboard/settings',
     siteName: 'Vuyela Group',
   },
 };
@@ -28,12 +29,13 @@ const settingsSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Settings | Dashboard | Vuyela Group',
-  description: 'Manage your account settings and preferences with Vuyela Group.',
-  url: 'https://vuyela.com/dashboard/settings',
+  description:
+    'Manage your account settings and preferences with Vuyela Group.',
+  url: 'https://www.vuyelalogistics.co.za/dashboard/settings',
   isPartOf: {
     '@type': 'WebApplication',
     name: 'Vuyela Group Dashboard',
-    url: 'https://vuyela.com/dashboard',
+    url: 'https://www.vuyelalogistics.co.za/dashboard',
   },
 };
 
@@ -41,7 +43,21 @@ export default function DashboardSettingsPage() {
   return (
     <>
       <JsonLd data={settingsSchema} />
-      <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', borderWidth: 0 }}>Dashboard Settings</h1>
+      <h1
+        style={{
+          position: 'absolute',
+          width: '1px',
+          height: '1px',
+          padding: 0,
+          margin: '-1px',
+          overflow: 'hidden',
+          clip: 'rect(0,0,0,0)',
+          whiteSpace: 'nowrap',
+          borderWidth: 0,
+        }}
+      >
+        Dashboard Settings
+      </h1>
       <DashboardSettingsPageClient />
     </>
   );
