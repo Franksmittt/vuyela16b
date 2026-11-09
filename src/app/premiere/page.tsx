@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     absolute: 'Premiere | Vuyela Group',
   },
   description:
-    'A showcase homepage for Vuyela Group — scroll-driven monument of the yard, the machine, and the team behind South African logistics.',
+    'Vuyela Group — corporate logistics homepage. Bulk, logistics, freight, and refuel from Elandsfontein, South Africa.',
   robots: {
     index: false,
     follow: false,
