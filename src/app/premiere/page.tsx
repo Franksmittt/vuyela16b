@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     absolute: 'Premiere | Vuyela Group',
   },
   description:
-    'A showcase homepage for Vuyela Group — scroll-driven monument of the yard, the machine, and the people behind South African logistics.',
+    'A showcase homepage for Vuyela Group — scroll-driven monument of the yard, the machine, and the team behind South African logistics.',
   robots: {
     index: false,
     follow: false,

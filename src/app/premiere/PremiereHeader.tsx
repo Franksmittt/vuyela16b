@@ -7,17 +7,17 @@ const navItems = [
   { id: 'yard', label: 'Yard' },
   { id: 'machine', label: 'Machine' },
   { id: 'proof', label: 'Proof' },
-  { id: 'people', label: 'People' },
+  { id: 'team', label: 'Team' },
   { id: 'close', label: 'Contact' },
 ] as const;
 
 type PremiereHeaderProps = {
-  activeChapter?: number;
+  activeId?: string;
   onNavigate?: (id: string) => void;
 };
 
 export default function PremiereHeader({
-  activeChapter = 0,
+  activeId = 'arrive',
   onNavigate,
 }: PremiereHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -45,10 +45,6 @@ export default function PremiereHeader({
     else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const chapterIds = ['arrive', ...navItems.map((n) => n.id)] as const;
-  const activeId =
-    chapterIds[Math.min(activeChapter, chapterIds.length - 1)] ?? 'arrive';
-
   return (
     <header
       className={`premiere-header fixed top-0 left-0 right-0 z-50 border-b transition-[background,border-color,box-shadow] duration-300 ${
@@ -72,7 +68,7 @@ export default function PremiereHeader({
         </Link>
 
         <nav
-          className="hidden items-center justify-center gap-1 md:gap-2 lg:flex"
+          className="hidden h-full items-stretch justify-center gap-0 lg:flex"
           aria-label="Premiere primary"
         >
           {navItems.map((item) => {
@@ -82,10 +78,10 @@ export default function PremiereHeader({
                 key={item.id}
                 type="button"
                 onClick={() => go(item.id)}
-                className={`rounded-full px-4 py-2 text-[1.05rem] font-semibold text-[var(--pm-ink)] transition-colors md:text-[1.125rem] ${
+                className={`rounded-none px-4 text-[1.05rem] font-semibold transition-colors md:text-[1.125rem] ${
                   isActive
                     ? 'bg-[var(--pm-ink)] text-[var(--pm-yellow)]'
-                    : 'hover:bg-[var(--pm-ink)]/8'
+                    : 'text-[var(--pm-ink)] hover:bg-[var(--pm-ink)]/8'
                 }`}
               >
                 {item.label}
@@ -104,11 +100,11 @@ export default function PremiereHeader({
           <button
             type="button"
             onClick={() => go('close')}
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--pm-yellow)] px-5 py-2.5 text-[0.95rem] font-bold text-[var(--pm-ink)] transition-transform hover:translate-y-[-1px]"
+            className="inline-flex items-center gap-2 bg-[var(--pm-yellow)] px-5 py-2.5 text-[0.95rem] font-bold text-[var(--pm-ink)] transition-transform hover:translate-y-[-1px]"
           >
             Contact us
             <span
-              className="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--pm-ink)] text-[var(--pm-yellow)]"
+              className="flex h-6 w-6 items-center justify-center bg-[var(--pm-ink)] text-[var(--pm-yellow)]"
               aria-hidden
             >
               →
@@ -146,20 +142,27 @@ export default function PremiereHeader({
           className="border-t border-[var(--pm-ink)]/10 bg-white px-4 py-5 lg:hidden"
         >
           <nav className="flex flex-col" aria-label="Premiere mobile">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => go(item.id)}
-                className="py-3.5 text-left text-xl font-semibold text-[var(--pm-ink)]"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeId === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => go(item.id)}
+                  className={`py-3.5 text-left text-xl font-semibold ${
+                    isActive
+                      ? 'bg-[var(--pm-ink)] px-3 text-[var(--pm-yellow)]'
+                      : 'text-[var(--pm-ink)]'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
             <button
               type="button"
               onClick={() => go('close')}
-              className="mt-3 rounded-full bg-[var(--pm-yellow)] px-5 py-3 text-left text-base font-bold text-[var(--pm-ink)]"
+              className="mt-3 bg-[var(--pm-yellow)] px-5 py-3 text-left text-base font-bold text-[var(--pm-ink)]"
             >
               Contact us
             </button>
