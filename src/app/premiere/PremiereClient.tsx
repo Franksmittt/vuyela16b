@@ -1,15 +1,9 @@
 'use client';
 
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform,
-} from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import MachineSection from './MachineSection';
 import PremiereHeader from './PremiereHeader';
 import YardSection from './YardSection';
@@ -19,7 +13,7 @@ const chapters = [
   { id: 'yard', label: 'Yard' },
   { id: 'machine', label: 'Machine' },
   { id: 'proof', label: 'Proof' },
-  { id: 'people', label: 'People' },
+  { id: 'team', label: 'Team' },
   { id: 'close', label: 'Close' },
 ] as const;
 
@@ -30,6 +24,81 @@ const proofs = [
   { label: 'Safety', value: 'NOSA' },
   { label: 'Fleet', value: 'Owned' },
   { label: 'Yard', value: 'Camera Covered' },
+];
+
+/** Full roster — name + role only (no personal contact details) */
+const teamMembers = [
+  { name: 'Jaco Nagel', role: 'Director', image: '/images/staff/Jaco.jpg' },
+  {
+    name: 'Wayne Johnson',
+    role: 'Director',
+    image: '/images/staff/wayne.jpg',
+  },
+  {
+    name: 'Melissa Johnson',
+    role: 'Accounts Manager',
+    image: '/images/staff/Melissa.jpg',
+  },
+  {
+    name: 'Aneri Nagel',
+    role: 'HR Manager',
+    image: '/images/staff/Aneri.jpeg',
+  },
+  {
+    name: 'Richard Clark',
+    role: 'General Manager',
+    image: '/images/staff/richard.jpg',
+  },
+  {
+    name: 'Verushka Rossouw',
+    role: 'Administration',
+    image: '/images/staff/verushka.jpg',
+  },
+  {
+    name: 'Mala Dorsamy',
+    role: 'Operations',
+    image: '/images/staff/mala.png',
+  },
+  {
+    name: 'Mike Dorsamy',
+    role: 'Operations',
+    image: '/images/staff/mike.png',
+  },
+  {
+    name: 'Karina Rossouw',
+    role: 'Operations',
+    image: '/images/staff/karina.jpg',
+  },
+  {
+    name: 'Deon Rossouw',
+    role: 'Refuel Operations',
+    image: '/images/staff/deon.jpg',
+  },
+  {
+    name: 'Reinhard Strydom',
+    role: 'Yard Manager',
+    image: '/images/staff/reinhardt.jpg',
+  },
+  {
+    name: 'Sipho Shabalala',
+    role: 'Logistics Team Leader',
+    image: '/images/staff/sipho.png',
+  },
+  {
+    name: 'Shine Lombard',
+    role: 'Stock Administration',
+    image: '/images/staff/shine.jpg',
+  },
+  {
+    name: 'Alan Kirkhoff',
+    role: 'Security',
+    image: '/images/staff/alan.jpg',
+  },
+  {
+    name: 'Charmaine Erasmus',
+    role: 'Weighbridge Clerk',
+    image: '/images/staff/charmaine.png',
+  },
 ];
 
 function Placeholder({
@@ -96,14 +165,39 @@ export default function PremiereClient() {
     { stiffness: 80, damping: 28 }
   );
 
-  useMotionValueEvent(scrollYProgress, 'change', (v) => {
-    const idx = Math.min(chapters.length - 1, Math.floor(v * chapters.length));
-    setActiveChapter(idx);
-  });
+  // Section-based spy — Machine is much taller than Arrive, so equal
+  // scroll-progress buckets always highlighted the wrong chapter.
+  useEffect(() => {
+    const updateActive = () => {
+      // Marker in the upper third so the in-view chapter wins even when
+      // the previous section's bottom still peeks under the header.
+      const marker = Math.max(120, window.innerHeight * 0.28);
+      let current = 0;
+      chapters.forEach((c, i) => {
+        const el = document.getElementById(c.id);
+        if (!el) return;
+        if (el.getBoundingClientRect().top <= marker) current = i;
+      });
+      setActiveChapter(current);
+    };
+
+    updateActive();
+    window.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+    return () => {
+      window.removeEventListener('scroll', updateActive);
+      window.removeEventListener('resize', updateActive);
+    };
+  }, []);
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 72;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
+
+  const activeId = chapters[activeChapter]?.id ?? 'arrive';
 
   return (
     <div ref={rootRef} className="premiere-root relative">
@@ -115,12 +209,12 @@ export default function PremiereClient() {
         />
       </div>
 
-      <PremiereHeader activeChapter={activeChapter} onNavigate={scrollTo} />
+      <PremiereHeader activeId={activeId} onNavigate={scrollTo} />
 
       {/* Chapter dots */}
       <nav
         aria-label="Premiere chapters"
-        className="fixed right-4 md:right-8 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 sm:flex"
+        className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 sm:flex md:right-8"
       >
         {chapters.map((c, i) => (
           <button
@@ -288,9 +382,9 @@ export default function PremiereClient() {
         </div>
       </section>
 
-      {/* 5 — PEOPLE */}
+      {/* 5 — TEAM */}
       <section
-        id="people"
+        id="team"
         className="pm-chapter relative bg-[var(--pm-night-soft)] text-[var(--pm-paper)]"
       >
         <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
@@ -300,7 +394,7 @@ export default function PremiereClient() {
             viewport={{ once: true }}
           >
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-yellow)]">
-              05 · People
+              05 · Team
             </p>
             <h2 className="pm-display max-w-2xl text-[clamp(2.2rem,5vw,3.8rem)] font-bold leading-[0.95]">
               Hands on the work.
@@ -308,58 +402,39 @@ export default function PremiereClient() {
               Names on the door.
             </h2>
             <p className="mt-5 max-w-lg text-[var(--pm-paper)]/70">
-              Directors who answer the phone. A team that runs the yard when the
-              rest of the industry clocks out.
+              The people who run the yard when the rest of the industry clocks
+              out. Reach the house at info@vuyelalogistics.co.za.
             </p>
           </motion.div>
 
-          <div className="mt-14 grid gap-8 md:grid-cols-2">
-            {[
-              {
-                name: 'Jaco Nagel',
-                role: 'Director',
-                image: '/images/staff/Jaco.jpg',
-              },
-              {
-                name: 'Wayne Johnson',
-                role: 'Director',
-                image: '/images/staff/wayne.jpg',
-              },
-            ].map((person, i) => (
-              <motion.figure
+          <ul className="mt-14 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {teamMembers.map((person, i) => (
+              <motion.li
                 key={person.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.7 }}
-                className="group relative"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: Math.min(i * 0.03, 0.35), duration: 0.5 }}
+                className="text-center"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--pm-night)]">
+                <div className="relative mx-auto mb-3 aspect-square w-full max-w-[140px] overflow-hidden bg-[var(--pm-night)]">
                   <Image
                     src={person.image}
                     alt={person.name}
                     fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-top"
+                    sizes="140px"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--pm-night)] via-transparent to-transparent" />
                 </div>
-                <figcaption className="mt-4">
-                  <p className="pm-display text-2xl font-bold">{person.name}</p>
-                  <p className="text-sm uppercase tracking-[0.18em] text-[var(--pm-yellow)]">
-                    {person.role}
-                  </p>
-                </figcaption>
-              </motion.figure>
+                <p className="pm-display text-sm font-bold leading-tight md:text-base">
+                  {person.name}
+                </p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[var(--pm-yellow)] md:text-[11px]">
+                  {person.role}
+                </p>
+              </motion.li>
             ))}
-          </div>
-
-          <div className="mt-12">
-            <Placeholder
-              label="Team strip — yard crew plate (optional)"
-              className="aspect-[21/6] w-full min-h-[120px]"
-            />
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -387,7 +462,7 @@ export default function PremiereClient() {
               The gate is open.
             </h2>
             <p className="mt-6 max-w-lg text-lg text-[var(--pm-ink-soft)]">
-              Visit the yard. Speak to the people who run it. This site
+              Visit the yard. Speak to the team who run it. This site
               doesn&apos;t chase — it stands.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
