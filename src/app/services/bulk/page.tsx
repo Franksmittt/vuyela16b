@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Strategic warehousing, stockpiling, and containerization at our Elandsfontein facility. SARS Bonded Warehouse with SOLAS certified weighbridges.',
   keywords:
     'warehousing, bulk handling, SARS bonded warehouse, SOLAS certified, containerization, stockpiling, Elandsfontein, logistics, South Africa',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/services/bulk',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Vuyela Bulk - Warehousing & Handling | Vuyela Group',
     description:
       'Professional warehousing and bulk handling solutions in Elandsfontein with SARS Bonded Warehouse and SOLAS certified weighbridges.',
-    url: 'https://vuyela.com/services/bulk',
+    url: 'https://www.vuyelalogistics.co.za/services/bulk',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -54,11 +54,11 @@ const bulkServiceSchema = {
   name: 'Vuyela Bulk - Warehousing & Handling',
   description:
     'Strategic warehousing, stockpiling, and containerization at our Elandsfontein facility. SARS Bonded Warehouse with SOLAS certified weighbridges.',
-  url: 'https://vuyela.com/services/bulk',
+  url: 'https://www.vuyelalogistics.co.za/services/bulk',
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
   serviceType: 'Warehousing & Bulk Handling',
   areaServed: {
@@ -99,7 +99,7 @@ const bulkServiceSchema = {
   },
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: 'https://vuyela.com/contact',
+    serviceUrl: 'https://www.vuyelalogistics.co.za/contact',
     servicePhone: '+27 72 405 9931',
     availableLanguage: 'English',
   },

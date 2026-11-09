@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     'Contact Vuyela Group for logistics solutions. Visit our HQ in Elandsfontein, call 24/7 support, or use our contact form. We serve South Africa and beyond.',
   keywords:
     'contact Vuyela Group, logistics contact, Elandsfontein, South Africa logistics, get quote, logistics inquiry',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/contact',
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: 'Contact Us | Vuyela Group',
     description:
       'Reach out to discuss your logistics requirements with our expert team. 24/7 support available.',
-    url: 'https://vuyela.com/contact',
+    url: 'https://www.vuyelalogistics.co.za/contact',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -59,11 +59,11 @@ const contactPageSchema = {
   '@type': 'ContactPage',
   name: 'Contact Us | Vuyela Group',
   description: 'Get in touch with Vuyela Group for your logistics needs.',
-  url: 'https://vuyela.com/contact',
+  url: 'https://www.vuyelalogistics.co.za/contact',
   mainEntity: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',

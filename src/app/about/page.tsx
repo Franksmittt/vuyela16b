@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Vuyela Group is South Africa's fastest-growing logistics partner. From a single truck in 2019 to a SARS-bonded powerhouse. Discover our story of resilience, compliance, and commitment to excellence.",
   keywords:
     'about Vuyela Group, logistics company history, South Africa logistics, Elandsfontein, SARS bonded, SOLAS certified, logistics story',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/about',
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'About Vuyela Group | Premier Logistics & Supply Chain Solutions',
     description:
       "From humble beginnings to a national logistics network. Read the story of Vuyela Group's commitment to reliability and safety.",
-    url: 'https://vuyela.com/about',
+    url: 'https://www.vuyelalogistics.co.za/about',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -65,8 +65,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Vuyela Group',
-  url: 'https://vuyela.com',
-  logo: 'https://vuyela.com/images/og.png',
+  url: 'https://www.vuyelalogistics.co.za',
+  logo: 'https://www.vuyelalogistics.co.za/images/og.png',
   description:
     'Premier logistics solutions provider in South Africa specializing in warehousing, freight, and energy.',
   foundingDate: '2019',

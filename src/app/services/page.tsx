@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'Comprehensive logistics solutions across four specialized divisions: Vuyela Bulk, Logistics, Freight, and Refuel. Complete warehousing, transport, and energy services.',
   keywords:
     'logistics services, warehousing, freight, transport, energy solutions, bulk handling, South Africa logistics, complete logistics solutions',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/services',
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: 'Our Services | Vuyela Group',
     description:
       'Complete logistics solutions for warehousing, transport, freight, and energy needs across South Africa.',
-    url: 'https://vuyela.com/services',
+    url: 'https://www.vuyelalogistics.co.za/services',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -56,11 +56,11 @@ const servicesPageSchema = {
   name: 'Vuyela Group Services',
   description:
     'Comprehensive logistics solutions including warehousing, freight, bulk handling, and energy solutions.',
-  url: 'https://vuyela.com/services',
+  url: 'https://www.vuyelalogistics.co.za/services',
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
   areaServed: {
     '@type': 'Country',
@@ -75,7 +75,7 @@ const servicesPageSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Vuyela Bulk - Warehousing & Handling',
-          url: 'https://vuyela.com/services/bulk',
+          url: 'https://www.vuyelalogistics.co.za/services/bulk',
         },
       },
       {
@@ -83,7 +83,7 @@ const servicesPageSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Vuyela Logistics - Road Freight & Transport',
-          url: 'https://vuyela.com/services/logistics',
+          url: 'https://www.vuyelalogistics.co.za/services/logistics',
         },
       },
       {
@@ -91,7 +91,7 @@ const servicesPageSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Vuyela Freight - Ocean Freight & Customs',
-          url: 'https://vuyela.com/services/freight',
+          url: 'https://www.vuyelalogistics.co.za/services/freight',
         },
       },
       {
@@ -99,7 +99,7 @@ const servicesPageSchema = {
         itemOffered: {
           '@type': 'Service',
           name: 'Vuyela Refuel - Energy Solutions',
-          url: 'https://vuyela.com/services/refuel',
+          url: 'https://www.vuyelalogistics.co.za/services/refuel',
         },
       },
     ],

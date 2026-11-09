@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Premium 50ppm diesel supply with rigorous quality testing. Guaranteed pure fuel with our "Pregnancy Test" protocol.',
   keywords:
     'diesel supply, 50ppm diesel, fuel supply, energy solutions, quality testing, South Africa fuel, fleet fueling',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/services/refuel',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Vuyela Refuel - Energy Solutions | Vuyela Group',
     description:
       'Quality-assured diesel supply with comprehensive testing protocols and premium 50ppm diesel.',
-    url: 'https://vuyela.com/services/refuel',
+    url: 'https://www.vuyelalogistics.co.za/services/refuel',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -54,11 +54,11 @@ const refuelServiceSchema = {
   name: 'Vuyela Refuel - Energy Solutions',
   description:
     'Premium 50ppm diesel supply with rigorous quality testing. Guaranteed pure fuel with comprehensive testing protocols.',
-  url: 'https://vuyela.com/services/refuel',
+  url: 'https://www.vuyelalogistics.co.za/services/refuel',
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
   serviceType: 'Energy Solutions - Diesel Supply',
   areaServed: {
@@ -98,7 +98,7 @@ const refuelServiceSchema = {
   },
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: 'https://vuyela.com/contact',
+    serviceUrl: 'https://www.vuyelalogistics.co.za/contact',
     servicePhone: '+27 72 405 9931',
     availableLanguage: 'English',
   },

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     'Strategic partnerships and relationships that power our logistics network. Strong connections with TFR, shipping agents, road freight companies, and global partners.',
   keywords:
     'logistics network, TFR partnerships, shipping agents, freight partnerships, carrier network, South Africa logistics network, global logistics',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/network',
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'The Vuyela Network | Vuyela Group',
     description:
       'Our strategic partnerships and logistics network across South Africa and beyond with TFR and shipping line connections.',
-    url: 'https://vuyela.com/network',
+    url: 'https://www.vuyelalogistics.co.za/network',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -64,11 +64,11 @@ const networkPageSchema = {
   name: 'Vuyela Network',
   description:
     'Strategic logistics network with partnerships across South Africa and globally.',
-  url: 'https://vuyela.com/network',
+  url: 'https://www.vuyelalogistics.co.za/network',
   memberOf: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
 };
 

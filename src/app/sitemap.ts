@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://vuyela.com';
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || 'https://www.vuyelalogistics.co.za';
 
   // Static routes - all main pages
   const staticRoutes = [

@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     'logistics, South Africa, warehousing, freight, bulk handling, transport, Elandsfontein, SOLAS certified, SARS bonded warehouse, mining logistics, agricultural logistics',
   authors: [{ name: 'Vuyela Group' }],
   creator: 'Vuyela Group',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://vuyela.com',
+    url: 'https://www.vuyelalogistics.co.za',
     title: 'Vuyela Group | Premier Logistics Solutions',
     description:
       'Premier logistics solutions from the heart of Elandsfontein. We deliver precision logistics, bulk handling, and energy solutions that keep South Africa moving 24/7.',

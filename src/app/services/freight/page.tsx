@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'Complete freight forwarding and customs clearing. Strategic partnerships with major shipping lines for global trade facilitation.',
   keywords:
     'ocean freight, freight forwarding, customs clearing, shipping, international trade, container shipping, South Africa exports',
-  metadataBase: new URL('https://vuyela.com'),
+  metadataBase: new URL('https://www.vuyelalogistics.co.za'),
   alternates: {
     canonical: '/services/freight',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Vuyela Freight - Ocean Freight & Customs | Vuyela Group',
     description:
       'Professional ocean freight forwarding and customs clearing services with strategic shipping line partnerships.',
-    url: 'https://vuyela.com/services/freight',
+    url: 'https://www.vuyelalogistics.co.za/services/freight',
     siteName: 'Vuyela Group',
     images: [
       {
@@ -54,11 +54,11 @@ const freightServiceSchema = {
   name: 'Vuyela Freight - Ocean Freight & Customs',
   description:
     'Complete freight forwarding and customs clearing. Strategic partnerships with major shipping lines for global trade facilitation.',
-  url: 'https://vuyela.com/services/freight',
+  url: 'https://www.vuyelalogistics.co.za/services/freight',
   provider: {
     '@type': 'Organization',
     name: 'Vuyela Group',
-    '@id': 'https://vuyela.com/#organization',
+    '@id': 'https://www.vuyelalogistics.co.za/#organization',
   },
   serviceType: 'Ocean Freight & Customs Clearing',
   areaServed: {
@@ -98,7 +98,7 @@ const freightServiceSchema = {
   },
   availableChannel: {
     '@type': 'ServiceChannel',
-    serviceUrl: 'https://vuyela.com/contact',
+    serviceUrl: 'https://www.vuyelalogistics.co.za/contact',
     servicePhone: '+27 72 405 9931',
     availableLanguage: 'English',
   },
