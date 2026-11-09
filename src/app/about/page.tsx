@@ -178,6 +178,11 @@ const staffMembers: StaffMember[] = [
     image: '/images/staff/richard.jpg',
   },
   {
+    name: 'Monique',
+    role: 'Shipping Co-Ordinator',
+    image: '/images/staff/monique.jpg',
+  },
+  {
     name: 'Verushka Rossouw',
     role: 'Administration',
     image: '/images/staff/verushka.jpg',
