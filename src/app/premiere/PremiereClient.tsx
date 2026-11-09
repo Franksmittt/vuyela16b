@@ -1,23 +1,43 @@
 'use client';
 
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import MachineSection from './MachineSection';
+import { useRef } from 'react';
 import PremiereHeader from './PremiereHeader';
-import YardSection from './YardSection';
 
-const chapters = [
-  { id: 'arrive', label: 'Arrive' },
-  { id: 'yard', label: 'Yard' },
-  { id: 'machine', label: 'Machine' },
-  { id: 'proof', label: 'Proof' },
-  { id: 'team', label: 'Team' },
-  { id: 'close', label: 'Close' },
-] as const;
+const services = [
+  {
+    name: 'Vuyela Bulk',
+    line: 'Warehousing & handling',
+    copy: 'Bonded storage, stockpiling, and containerization from the Elandsfontein yard.',
+    image: '/images/machine/bulk.webp',
+    href: '/services/bulk',
+  },
+  {
+    name: 'Vuyela Logistics',
+    line: 'Road freight & transport',
+    copy: 'Own fleet. Own standards. Live tracking from gate-out to gate-in.',
+    image: '/images/machine/logistics.webp',
+    href: '/services/logistics',
+  },
+  {
+    name: 'Vuyela Freight',
+    line: 'Ocean freight & customs',
+    copy: 'Port to inland, cleared and sequenced when the clock is tight.',
+    image: '/images/machine/freight.webp',
+    href: '/services/freight',
+  },
+  {
+    name: 'Vuyela Refuel',
+    line: 'Energy solutions',
+    copy: '50ppm diesel with a quality protocol that refuses shortcuts.',
+    image: '/images/machine/refuel.webp',
+    href: '/services/refuel',
+  },
+];
 
-const proofs = [
+const standards = [
   { label: 'Operations', value: '24/7' },
   { label: 'Weighbridges', value: 'SOLAS' },
   { label: 'Warehouse', value: 'SARS Bonded' },
@@ -26,7 +46,6 @@ const proofs = [
   { label: 'Yard', value: 'Camera Covered' },
 ];
 
-/** Full roster — name + role only (no personal contact details) */
 const teamMembers = [
   { name: 'Jaco Nagel', role: 'Director', image: '/images/staff/Jaco.jpg' },
   {
@@ -106,24 +125,6 @@ const teamMembers = [
   },
 ];
 
-function Placeholder({
-  label,
-  className = '',
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div className={`pm-placeholder ${className}`} aria-label={label}>
-      <span className="px-6 leading-relaxed">
-        Placeholder
-        <br />
-        {label}
-      </span>
-    </div>
-  );
-}
-
 function HangingContainer({
   side,
   src,
@@ -149,14 +150,7 @@ function HangingContainer({
 }
 
 export default function PremiereClient() {
-  const rootRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
-  const [activeChapter, setActiveChapter] = useState(0);
-
-  const { scrollYProgress } = useScroll({
-    target: rootRef,
-    offset: ['start start', 'end end'],
-  });
 
   const { scrollYProgress: heroProgress } = useScroll({
     target: heroRef,
@@ -165,35 +159,6 @@ export default function PremiereClient() {
 
   const heroFade = useTransform(heroProgress, [0, 0.75], [1, 0]);
   const heroLift = useTransform(heroProgress, [0, 1], [0, -40]);
-  const progressWidth = useSpring(
-    useTransform(scrollYProgress, [0, 1], ['0%', '100%']),
-    { stiffness: 80, damping: 28 }
-  );
-
-  // Section-based spy — Machine is much taller than Arrive, so equal
-  // scroll-progress buckets always highlighted the wrong chapter.
-  useEffect(() => {
-    const updateActive = () => {
-      // Marker in the upper third so the in-view chapter wins even when
-      // the previous section's bottom still peeks under the header.
-      const marker = Math.max(120, window.innerHeight * 0.28);
-      let current = 0;
-      chapters.forEach((c, i) => {
-        const el = document.getElementById(c.id);
-        if (!el) return;
-        if (el.getBoundingClientRect().top <= marker) current = i;
-      });
-      setActiveChapter(current);
-    };
-
-    updateActive();
-    window.addEventListener('scroll', updateActive, { passive: true });
-    window.addEventListener('resize', updateActive);
-    return () => {
-      window.removeEventListener('scroll', updateActive);
-      window.removeEventListener('resize', updateActive);
-    };
-  }, []);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -202,42 +167,15 @@ export default function PremiereClient() {
     window.scrollTo({ top, behavior: 'smooth' });
   };
 
-  const activeId = chapters[activeChapter]?.id ?? 'arrive';
-
   return (
-    <div ref={rootRef} className="premiere-root relative">
-      {/* Progress rail */}
-      <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-[var(--pm-paper-deep)]">
-        <motion.div
-          className="h-full bg-[var(--pm-yellow)]"
-          style={{ width: progressWidth }}
-        />
-      </div>
+    <div className="premiere-root relative">
+      <PremiereHeader onNavigate={scrollTo} />
 
-      <PremiereHeader activeId={activeId} onNavigate={scrollTo} />
-
-      {/* Chapter dots */}
-      <nav
-        aria-label="Premiere chapters"
-        className="fixed right-4 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-3 sm:flex md:right-8"
-      >
-        {chapters.map((c, i) => (
-          <button
-            key={c.id}
-            type="button"
-            className="pm-nav-dot"
-            data-active={activeChapter === i}
-            aria-label={c.label}
-            onClick={() => scrollTo(c.id)}
-          />
-        ))}
-      </nav>
-
-      {/* 1 — ARRIVAL: Sendify-style hanging containers L/R */}
+      {/* HERO — kept */}
       <section
-        id="arrive"
+        id="home"
         ref={heroRef}
-        className="pm-chapter pm-hero-hang relative overflow-hidden bg-white"
+        className="pm-hero-hang relative overflow-hidden bg-white"
       >
         <div className="pm-grain opacity-[0.04]" />
 
@@ -270,158 +208,201 @@ export default function PremiereClient() {
           <div className="pm-hero-cta mt-9 flex flex-wrap items-center justify-center gap-4">
             <button
               type="button"
-              onClick={() => scrollTo('yard')}
-              className="inline-flex items-center gap-3 rounded-full bg-[var(--pm-ink)] px-7 py-3.5 text-sm font-bold tracking-[0.04em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
+              onClick={() => scrollTo('services')}
+              className="inline-flex items-center gap-3 bg-[var(--pm-ink)] px-7 py-3.5 text-sm font-bold tracking-[0.04em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
             >
-              Enter the Yard
+              Our services
               <span
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--pm-yellow)] text-[var(--pm-ink)]"
+                className="flex h-7 w-7 items-center justify-center bg-[var(--pm-yellow)] text-[var(--pm-ink)]"
                 aria-hidden
               >
                 ↓
               </span>
             </button>
             <Link
-              href="/"
+              href="/contact"
               className="text-sm font-semibold text-[var(--pm-ink-soft)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
             >
-              Main site
+              Contact
             </Link>
           </div>
         </motion.div>
-
-        <p className="pm-scroll-hint absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-[11px] uppercase tracking-[0.3em] text-[var(--pm-muted)]">
-          Scroll the film
-        </p>
       </section>
 
-      {/* 2 — THE YARD */}
-      <YardSection />
-
-      {/* 3 — THE MACHINE */}
-      <MachineSection />
-
-      {/* Truck emerging placeholder strip */}
-      <section className="relative overflow-hidden bg-[var(--pm-paper-deep)] py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 md:grid-cols-[1fr_1.2fr] md:px-10">
-          <div>
+      {/* SERVICES — four divisions, corporate grid */}
+      <section id="services" className="bg-[var(--pm-paper)] py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="max-w-2xl">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
-              Fleet totem
+              Services
             </p>
-            <h3 className="pm-display text-[clamp(1.8rem,4vw,2.8rem)] font-bold leading-tight text-[var(--pm-ink)]">
-              Container stage.
-              <br />
-              Truck emerges.
-            </h3>
-            <p className="mt-4 max-w-sm text-[var(--pm-ink-soft)]">
-              When you have a cutout of a Vuyela truck on transparent plate,
-              drop it here — same lighting language as the yard photography.
+            <h2 className="pm-display text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-[0.95] text-[var(--pm-ink)]">
+              Four divisions.
+              <span className="text-[var(--pm-yellow-deep)]"> One group.</span>
+            </h2>
+            <p className="mt-5 text-[var(--pm-ink-soft)]">
+              Bulk, logistics, freight, and refuel — under one roof at Main Reef
+              Road, serving shippers across South Africa and beyond.
             </p>
           </div>
-          <Placeholder
-            label="Vuyela truck cutout PNG — product-lit, transparent"
-            className="aspect-[16/9] w-full"
-          />
+
+          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s, i) => (
+              <motion.article
+                key={s.href}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ delay: i * 0.06, duration: 0.5 }}
+              >
+                <Link href={s.href} className="group block">
+                  <div className="relative mb-5 aspect-[4/3] overflow-hidden bg-[var(--pm-paper-deep)]">
+                    <Image
+                      src={s.image}
+                      alt={s.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  </div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--pm-yellow-deep)]">
+                    {s.line}
+                  </p>
+                  <h3 className="pm-display mt-2 text-xl font-bold text-[var(--pm-ink)] md:text-2xl">
+                    {s.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--pm-ink-soft)]">
+                    {s.copy}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[var(--pm-ink)] underline-offset-4 group-hover:underline">
+                    Open division
+                    <span aria-hidden>→</span>
+                  </span>
+                </Link>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* 4 — PROOF */}
+      {/* FACILITY — one strong yard plate + copy */}
       <section
-        id="proof"
-        className="pm-chapter relative overflow-hidden bg-[var(--pm-paper)]"
+        id="facility"
+        className="bg-[var(--pm-night)] text-[var(--pm-paper)]"
       >
-        <div className="pm-grain opacity-[0.05]" />
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
-              04 · Proof
+        <div className="mx-auto grid max-w-7xl items-center gap-0 lg:grid-cols-2">
+          <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:min-h-[34rem]">
+            <Image
+              src="/images/yard/aerial.webp"
+              alt="Aerial view of the Elandsfontein yard"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div className="px-6 py-16 md:px-12 md:py-20 lg:px-16">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-yellow)]">
+              Facility
             </p>
-            <h2 className="pm-display max-w-2xl text-[clamp(2.2rem,5vw,3.8rem)] font-bold leading-[0.95] text-[var(--pm-ink)]">
+            <h2 className="pm-display text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[0.95]">
+              Built where the cargo lives.
+            </h2>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-[var(--pm-paper)]/75 md:text-lg">
+              83 Main Reef Road, Elandsfontein — containers, bulk stockpiles,
+              yellow fleet, and reach stackers on the same dirt. Own yard. Own
+              weighbridges. Camera covered, 24/7.
+            </p>
+            <Link
+              href="/facilities"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-[var(--pm-yellow)] underline-offset-4 hover:underline"
+            >
+              View facilities
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* STANDARDS */}
+      <section id="standards" className="bg-[var(--pm-paper)] py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
+              Standards
+            </p>
+            <h2 className="pm-display text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-[0.95] text-[var(--pm-ink)]">
               Quiet facts.
               <span className="text-[var(--pm-yellow-deep)]">
                 {' '}
                 Loud standards.
               </span>
             </h2>
-          </motion.div>
+          </div>
 
-          <ul className="mt-14 grid grid-cols-2 gap-px bg-[var(--pm-steel)] md:grid-cols-3">
-            {proofs.map((p, i) => (
-              <motion.li
-                key={p.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.5 }}
+          <ul className="mt-12 grid grid-cols-2 gap-px bg-[var(--pm-steel)] md:grid-cols-3">
+            {standards.map((s) => (
+              <li
+                key={s.label}
                 className="bg-[var(--pm-paper)] px-6 py-10 md:px-8"
               >
                 <p className="pm-display text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-[var(--pm-ink)]">
-                  {p.value}
+                  {s.value}
                 </p>
                 <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[var(--pm-muted)]">
-                  {p.label}
+                  {s.label}
                 </p>
-              </motion.li>
+              </li>
             ))}
           </ul>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
-            <div className="relative aspect-[16/10] overflow-hidden">
-              <Image
-                src="/images/weighbridge-solas.png"
-                alt="SOLAS certified weighbridge"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <Placeholder
-              label="Night yard still — amber floodlight plate"
-              className="aspect-[16/10] w-full"
+          <div className="relative mt-12 aspect-[21/9] w-full overflow-hidden bg-[var(--pm-paper-deep)]">
+            <Image
+              src="/images/weighbridge-solas.png"
+              alt="SOLAS certified weighbridge"
+              fill
+              className="object-cover"
+              sizes="100vw"
             />
           </div>
         </div>
       </section>
 
-      {/* 5 — TEAM */}
+      {/* TEAM */}
       <section
         id="team"
-        className="pm-chapter relative bg-[var(--pm-night-soft)] text-[var(--pm-paper)]"
+        className="bg-[var(--pm-night-soft)] py-20 text-[var(--pm-paper)] md:py-28"
       >
-        <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-yellow)]">
-              05 · Team
-            </p>
-            <h2 className="pm-display max-w-2xl text-[clamp(2.2rem,5vw,3.8rem)] font-bold leading-[0.95]">
-              Hands on the work.
-              <br />
-              Names on the door.
-            </h2>
-            <p className="mt-5 max-w-lg text-[var(--pm-paper)]/70">
-              The people who run the yard when the rest of the industry clocks
-              out. Reach the house at info@vuyelalogistics.co.za.
-            </p>
-          </motion.div>
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-xl">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-yellow)]">
+                Team
+              </p>
+              <h2 className="pm-display text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-[0.95]">
+                Hands on the work.
+              </h2>
+              <p className="mt-4 text-[var(--pm-paper)]/70">
+                The people who run the yard. Reach the house at{' '}
+                <a
+                  href="mailto:info@vuyelalogistics.co.za"
+                  className="text-[var(--pm-yellow)] hover:underline"
+                >
+                  info@vuyelalogistics.co.za
+                </a>
+                .
+              </p>
+            </div>
+            <Link
+              href="/about"
+              className="text-sm font-bold uppercase tracking-[0.14em] text-[var(--pm-yellow)] underline-offset-4 hover:underline"
+            >
+              About the group →
+            </Link>
+          </div>
 
           <ul className="mt-14 grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {teamMembers.map((person, i) => (
-              <motion.li
-                key={person.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: Math.min(i * 0.03, 0.35), duration: 0.5 }}
-                className="text-center"
-              >
+            {teamMembers.map((person) => (
+              <li key={person.name} className="text-center">
                 <div className="relative mx-auto mb-3 aspect-square w-full max-w-[140px] overflow-hidden bg-[var(--pm-night)]">
                   <Image
                     src={person.image}
@@ -437,61 +418,50 @@ export default function PremiereClient() {
                 <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[var(--pm-yellow)] md:text-[11px]">
                   {person.role}
                 </p>
-              </motion.li>
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* 6 — CLOSE */}
+      {/* CONTACT */}
       <section
-        id="close"
-        className="pm-chapter relative overflow-hidden"
+        id="contact"
+        className="relative overflow-hidden py-24 md:py-32"
         style={{
           background:
             'linear-gradient(165deg, var(--pm-paper) 0%, var(--pm-yard) 100%)',
         }}
       >
         <div className="pm-grain" />
-        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-start px-6 py-28 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
-              06 · Close
+        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
+          <div className="max-w-2xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--pm-muted)]">
+              Contact
             </p>
-            <h2 className="pm-display text-[clamp(2.4rem,6vw,4.2rem)] font-bold leading-[0.95] text-[var(--pm-ink)]">
+            <h2 className="pm-display text-[clamp(2.2rem,5vw,3.6rem)] font-bold leading-[0.95] text-[var(--pm-ink)]">
               The gate is open.
             </h2>
-            <p className="mt-6 max-w-lg text-lg text-[var(--pm-ink-soft)]">
-              Visit the yard. Speak to the team who run it. This site
-              doesn&apos;t chase — it stands.
+            <p className="mt-5 max-w-lg text-lg text-[var(--pm-ink-soft)]">
+              Visit the yard. Speak to the team. We respond through one house
+              email — no personal inboxes on this site.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/contact"
                 className="bg-[var(--pm-ink)] px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--pm-yellow)] transition-transform hover:translate-y-[-1px]"
               >
-                Contact
+                Contact form
               </Link>
-              <Link
-                href="/about"
-                className="border border-[var(--pm-ink)]/25 bg-transparent px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--pm-ink)] transition-colors hover:border-[var(--pm-ink)]"
+              <a
+                href="mailto:info@vuyelalogistics.co.za"
+                className="border border-[var(--pm-ink)]/25 px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--pm-ink)] transition-colors hover:border-[var(--pm-ink)]"
               >
-                About the Group
-              </Link>
-              <Link
-                href="/"
-                className="px-6 py-3.5 text-sm font-medium uppercase tracking-[0.14em] text-[var(--pm-muted)] underline-offset-4 hover:text-[var(--pm-ink)] hover:underline"
-              >
-                Brochure homepage
-              </Link>
+                Email info@
+              </a>
             </div>
-            <address className="mt-14 not-italic text-sm leading-relaxed text-[var(--pm-muted)]">
-              83 Main Reef Road, Elandsfontein, Gauteng
+            <address className="mt-12 not-italic text-sm leading-relaxed text-[var(--pm-muted)]">
+              83 Main Reef Road, Elandsfontein, Gauteng, 1601
               <br />
               <a
                 href="mailto:info@vuyelalogistics.co.za"
@@ -500,7 +470,7 @@ export default function PremiereClient() {
                 info@vuyelalogistics.co.za
               </a>
             </address>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>
