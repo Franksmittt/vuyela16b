@@ -115,26 +115,20 @@ const faqSchema = {
 interface StaffMember {
   name: string;
   role: string;
-  email: string | null;
-  phone: string | null;
   image: string;
 }
 
-// 2. Strictly typed data array with updated Titles and Phone numbers
+// 2. Staff roster — no personal contact details; site email is info@ only
 const staffMembers: StaffMember[] = [
   // --- DIRECTORS ---
   {
     name: 'Jaco Nagel',
     role: 'Director',
-    email: null,
-    phone: null,
     image: '/images/staff/Jaco.jpg',
   },
   {
     name: 'Wayne Johnson',
     role: 'Director',
-    email: null,
-    phone: null,
     image: '/images/staff/wayne.jpg',
   },
 
@@ -142,31 +136,23 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Melissa Johnson',
     role: 'Accounts Manager',
-    email: null,
-    phone: null,
     image: '/images/staff/Melissa.jpg',
   },
   {
     name: 'Aneri Nagel',
     role: 'HR Manager',
-    email: null,
-    phone: null,
-    image: '/images/staff/Aneri.jpeg', // Updated to .jpeg
+    image: '/images/staff/Aneri.jpeg',
   },
 
   // --- MANAGEMENT ---
   {
     name: 'Richard Clark',
     role: 'General Manager',
-    email: 'richard@vuyelalogistics.co.za',
-    phone: null,
     image: '/images/staff/richard.jpg',
   },
   {
     name: 'Verushka Rossouw',
     role: 'Administration',
-    email: null,
-    phone: null,
     image: '/images/staff/verushka.jpg',
   },
 
@@ -174,29 +160,21 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Mala Dorsamy',
     role: 'Operations',
-    email: 'mala@vuyelalogistics.co.za',
-    phone: '+27 73 490 0317',
     image: '/images/staff/mala.png',
   },
   {
     name: 'Mike Dorsamy',
     role: 'Operations',
-    email: null,
-    phone: null,
     image: '/images/staff/mike.png',
   },
   {
     name: 'Karina Rossouw',
     role: 'Operations',
-    email: null,
-    phone: null,
-    image: '/images/staff/karina.jpg', // Updated to .jpg
+    image: '/images/staff/karina.jpg',
   },
   {
     name: 'Deon Rossouw',
     role: 'Refuel Operations',
-    email: 'refuel@vuyelalogistics.co.za',
-    phone: '+27 67 209 0841',
     image: '/images/staff/deon.jpg',
   },
 
@@ -204,38 +182,28 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Reinhard Strydom',
     role: 'Yard Manager',
-    email: null,
-    phone: '+27 76 436 7823',
     image: '/images/staff/reinhardt.jpg',
   },
   {
     name: 'Sipho Shabalala',
-    role: 'Team Leader',
-    email: null,
-    phone: null,
+    role: 'Logistics Team Leader',
     image: '/images/staff/sipho.png',
   },
 
   // --- YARD STAFF & SECURITY ---
   {
     name: 'Shine Lombard',
-    role: 'Admin',
-    email: null,
-    phone: null,
+    role: 'Stock Administration',
     image: '/images/staff/shine.jpg',
   },
   {
     name: 'Alan Kirkhoff',
     role: 'Security',
-    email: 'alan@vuyelalogistics.co.za',
-    phone: '+27 71 650 0115',
     image: '/images/staff/alan.jpg',
   },
   {
     name: 'Charmaine Erasmus',
-    role: 'Clerk',
-    email: null,
-    phone: null,
+    role: 'Weighbridge Clerk',
     image: '/images/staff/charmaine.png',
   },
 ];
@@ -384,10 +352,13 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold mb-1">Website</h3>
-                    <p className="text-gray-300 text-sm">
-                      www.vuyelalogistics.co.za
-                    </p>
+                    <h3 className="text-white font-semibold mb-1">Email</h3>
+                    <a
+                      href="mailto:info@vuyelalogistics.co.za"
+                      className="text-gray-300 text-sm hover:text-[#FFD700] transition-colors"
+                    >
+                      info@vuyelalogistics.co.za
+                    </a>
                   </div>
                 </div>
 
@@ -481,7 +452,7 @@ export default function ContactPage() {
                 </h2>
                 <p className="text-gray-400 mb-8">
                   Fill out the form below. We'll respond within 24 hours. For
-                  urgent matters, call us directly.
+                  urgent matters, email info@vuyelalogistics.co.za.
                 </p>
                 <ContactForm />
               </div>
@@ -621,29 +592,9 @@ export default function ContactPage() {
                 <h3 className="text-lg font-bold text-white mb-1">
                   {staff.name}
                 </h3>
-                <p className="text-[#FFD700] text-sm font-medium mb-3">
+                <p className="text-[#FFD700] text-sm font-medium">
                   {staff.role}
                 </p>
-                <div className="space-y-1 text-sm text-gray-400">
-                  {staff.email ? (
-                    <a
-                      href={`mailto:${staff.email}`}
-                      className="block hover:text-[#FFD700] transition-colors break-all"
-                    >
-                      {staff.email}
-                    </a>
-                  ) : (
-                    <span className="block text-gray-600">-</span>
-                  )}
-                  {staff.phone ? (
-                    <a
-                      href={`tel:${staff.phone.replace(/\s/g, '')}`}
-                      className="block hover:text-[#FFD700] transition-colors"
-                    >
-                      {staff.phone}
-                    </a>
-                  ) : null}
-                </div>
               </div>
             ))}
           </div>

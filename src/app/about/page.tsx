@@ -22,8 +22,6 @@ import {
   TrendingUp,
   Building2,
   Globe,
-  Mail,
-  Phone,
 } from 'lucide-react';
 
 // 1. METADATA
@@ -144,26 +142,20 @@ const faqSchema = {
 interface StaffMember {
   name: string;
   role: string;
-  email: string | null;
-  phone: string | null;
   image: string;
 }
 
-// 4. CLEAN DATA ARRAY
+// 4. CLEAN DATA ARRAY — no personal contact details; site email is info@ only
 const staffMembers: StaffMember[] = [
   // --- DIRECTORS ---
   {
     name: 'Jaco Nagel',
     role: 'Director',
-    email: null,
-    phone: null,
     image: '/images/staff/Jaco.jpg',
   },
   {
     name: 'Wayne Johnson',
     role: 'Director',
-    email: null,
-    phone: null,
     image: '/images/staff/wayne.jpg',
   },
 
@@ -171,15 +163,11 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Melissa Johnson',
     role: 'Accounts Manager',
-    email: null,
-    phone: null,
     image: '/images/staff/Melissa.jpg',
   },
   {
     name: 'Aneri Nagel',
     role: 'HR Manager',
-    email: null,
-    phone: null,
     image: '/images/staff/Aneri.jpeg',
   },
 
@@ -187,15 +175,11 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Richard Clark',
     role: 'General Manager',
-    email: 'richard@vuyelalogistics.co.za',
-    phone: null,
     image: '/images/staff/richard.jpg',
   },
   {
     name: 'Verushka Rossouw',
     role: 'Administration',
-    email: null,
-    phone: null,
     image: '/images/staff/verushka.jpg',
   },
 
@@ -203,29 +187,21 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Mala Dorsamy',
     role: 'Operations',
-    email: 'mala@vuyelalogistics.co.za',
-    phone: '+27 73 490 0317',
     image: '/images/staff/mala.png',
   },
   {
     name: 'Mike Dorsamy',
     role: 'Operations',
-    email: null,
-    phone: null,
     image: '/images/staff/mike.png',
   },
   {
     name: 'Karina Rossouw',
     role: 'Operations',
-    email: null,
-    phone: null,
-    image: '/images/staff/karina.jpg', // Updated to .jpg
+    image: '/images/staff/karina.jpg',
   },
   {
     name: 'Deon Rossouw',
     role: 'Refuel Operations',
-    email: 'refuel@vuyelalogistics.co.za',
-    phone: '+27 67 209 0841',
     image: '/images/staff/deon.jpg',
   },
 
@@ -233,36 +209,26 @@ const staffMembers: StaffMember[] = [
   {
     name: 'Reinhard Strydom',
     role: 'Yard Manager',
-    email: null,
-    phone: '+27 76 436 7823',
     image: '/images/staff/reinhardt.jpg',
   },
   {
     name: 'Sipho Shabalala',
-    role: 'Team Leader',
-    email: null,
-    phone: null,
+    role: 'Logistics Team Leader',
     image: '/images/staff/sipho.png',
   },
   {
     name: 'Shine Lombard',
-    role: 'Admin',
-    email: null,
-    phone: null,
+    role: 'Stock Administration',
     image: '/images/staff/shine.jpg',
   },
   {
     name: 'Alan Kirkhoff',
     role: 'Security',
-    email: 'alan@vuyelalogistics.co.za',
-    phone: '+27 71 650 0115',
     image: '/images/staff/alan.jpg',
   },
   {
     name: 'Charmaine Erasmus',
-    role: 'Clerk',
-    email: null,
-    phone: null,
+    role: 'Weighbridge Clerk',
     image: '/images/staff/charmaine.png',
   },
 ];
@@ -1025,33 +991,9 @@ export default function AboutPage() {
                   <h3 className="text-lg font-bold text-white mb-1">
                     {staff.name}
                   </h3>
-                  <p className="text-[#FFD700] text-sm font-medium mb-3">
+                  <p className="text-[#FFD700] text-sm font-medium">
                     {staff.role}
                   </p>
-                  <div className="space-y-1 text-sm text-gray-400">
-                    {staff.email ? (
-                      <a
-                        href={`mailto:${staff.email}`}
-                        className="flex items-center justify-center gap-2 hover:text-[#FFD700] transition-colors break-all"
-                      >
-                        <Mail className="w-3 h-3 flex-shrink-0" />
-                        {staff.email}
-                      </a>
-                    ) : (
-                      <span className="flex items-center justify-center gap-2 text-gray-600">
-                        <Mail className="w-3 h-3 flex-shrink-0" /> -
-                      </span>
-                    )}
-                    {staff.phone ? (
-                      <a
-                        href={`tel:${staff.phone.replace(/\s/g, '')}`}
-                        className="flex items-center justify-center gap-2 hover:text-[#FFD700] transition-colors"
-                      >
-                        <Phone className="w-3 h-3 flex-shrink-0" />
-                        {staff.phone}
-                      </a>
-                    ) : null}
-                  </div>
                 </div>
               ))}
             </div>
